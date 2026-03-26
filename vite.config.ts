@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/' : '/', // If deploying to syedasif7.github.io, keep as '/'. If syedasif7.github.io/repo-name, use '/repo-name/'
   server: {
     host: "::",
     port: 8080,
