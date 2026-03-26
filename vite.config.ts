@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/DDSC_SSIEMS/' : '/', // Set the subfolder for GitHub Pages
+  base: './', // Using relative paths for better portability on GitHub Pages
   server: {
     host: "::",
     port: 8080,
