@@ -62,7 +62,7 @@ DDSC-main/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Node.js**: v24.x or higher
+- **Node.js**: v22.x or higher
 - **npm**: v9.x or higher
 
 ### Installation
