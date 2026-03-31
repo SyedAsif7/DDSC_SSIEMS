@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Linkedin, Github, Mail, Users, Star, Award, Shield, History } from "lucide-react";
 import { chapter1Data, chapter2Data } from "@/data/teamChapters1";
 import { useState } from "react";
+import { getAssetPath } from "@/lib/utils";
 
 /**
  * Sub-component: Section Header
@@ -84,7 +85,7 @@ const LeadershipCard = ({ member, type }: { member: any, type: 'president' | 'co
             <div className={`w-36 h-36 overflow-hidden rounded-full ring-1 ring-offset-4 ring-offset-transparent ${isPresident ? 'ring-ndc-purple/30 group-hover:ring-ndc-purple/60' : 'ring-emerald-400/30 group-hover:ring-emerald-400/60'} p-1 transition-all duration-1000 transform group-hover:scale-105 shadow-2xl`}>
               <Avatar className="w-full h-full bg-slate-900/80 backdrop-blur-xl">
                 {member.image ? (
-                  <AvatarImage src={member.image} alt={member.name} className="object-cover" />
+                  <AvatarImage src={getAssetPath(member.image)} alt={member.name} className="object-cover" />
                 ) : (
                   <AvatarFallback className="bg-slate-900/50 flex flex-col items-center justify-center">
                     <Users className={`h-10 w-10 text-${themeColor}/20 mb-2`} />
@@ -224,7 +225,7 @@ const CoreMemberCard = ({ member, index }: { member: any, index: number }) => (
           <div className="w-32 h-32 rounded-3xl bg-slate-800/40 backdrop-blur-xl overflow-hidden ring-1 ring-white/10 group-hover:ring-ndc-purple/40 transition-all duration-700 rotate-6 group-hover:rotate-0 transform shadow-2xl">
             <Avatar className="w-full h-full rounded-none">
               {member.image ? (
-                <AvatarImage src={member.image} alt={member.name} className="object-cover" />
+                <AvatarImage src={getAssetPath(member.image)} alt={member.name} className="object-cover" />
               ) : (
                 <AvatarFallback className="bg-slate-800/30 flex items-center justify-center">
                   <Shield className="h-10 w-10 text-ndc-purple/20" />

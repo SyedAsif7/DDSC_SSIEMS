@@ -6,8 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getAssetPath(path: string) {
+  // Use relative paths but ensure they work across routes
   const baseUrl = import.meta.env.BASE_URL || '/';
-  // Remove leading slash from path if it exists to avoid double slashes
-  const normalizedPath = path.startsWith('/') ? path.substring(1) : path;
-  return `${baseUrl}${normalizedPath}`;
+  // Ensure the path doesn't start with a slash
+  const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+  // Use root-relative path based on the deployment base
+  return `${baseUrl}${cleanPath}`;
 }

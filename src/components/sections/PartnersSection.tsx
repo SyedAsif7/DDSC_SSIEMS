@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getAssetPath } from "@/lib/utils";
 
 const PartnersSection = () => {
   const partners = [
@@ -60,7 +61,7 @@ const PartnersSection = () => {
                 {/* Logo */}
                 <div className="flex-shrink-0 w-full sm:w-32 flex justify-center">
                   <img 
-                    src={partner.logo} 
+                    src={getAssetPath(partner.logo)} 
                     alt={`${partner.name} Logo`} 
                     className="h-24 w-auto object-contain group-hover:scale-110 transition-transform duration-300"
                   />

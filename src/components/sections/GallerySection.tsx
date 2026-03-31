@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -144,7 +145,7 @@ const GallerySection = () => {
                 <div className="group relative overflow-hidden rounded-2xl border h-full cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-ndc-purple/20 bg-black/20 border-white/10 hover:shadow-2xl hover:border-ndc-blue/30">
                   <div className="relative overflow-hidden h-full">
                     <img
-                      src={item.image}
+                      src={getAssetPath(item.image)}
                       alt={item.title}
                       className="w-full h-full object-cover transition-all duration-700"
                     />
@@ -218,7 +219,7 @@ const GallerySection = () => {
           
           <div className="max-w-5xl max-h-[85vh] p-4 relative" onClick={(e) => e.stopPropagation()}>
             <img 
-              src={galleryItems[selectedImage].image} 
+              src={getAssetPath(galleryItems[selectedImage].image)} 
               alt={galleryItems[selectedImage].title}
               className="w-full h-full object-contain rounded-lg shadow-2xl shadow-ndc-purple/20"
             />
