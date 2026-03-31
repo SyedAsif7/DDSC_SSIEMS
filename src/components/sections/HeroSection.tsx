@@ -121,7 +121,7 @@ const HeroSection = () => {
                   <div className="relative w-full max-w-lg group">
                     <div className="absolute inset-0 bg-gradient-to-r from-ndc-purple to-ndc-blue rounded-full blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                     <img 
-                      src="/images/Dcode-Logo.png" 
+                      src="images/Dcode-Logo.png" 
                       alt="DCode Developers Club Logo" 
                       className="w-full h-auto object-contain opacity-95 hover:opacity-100 transition-all duration-500 drop-shadow-2xl group-hover:scale-105 group-hover:rotate-2" 
                     />

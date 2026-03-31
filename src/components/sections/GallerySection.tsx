@@ -9,25 +9,25 @@ const GallerySection = () => {
   const galleryItems = [
     {
       id: 1,
-      image: "/images/5e6f6f4e-3e10-4db7-8c58-1abdecf9cb21.png",
+      image: "images/5e6f6f4e-3e10-4db7-8c58-1abdecf9cb21.png",
       title: "First Meeting of DDSC",
       description: "The inaugural meeting of DCode Developers Student Club where passionate students gathered to discuss the club's vision and roadmap for the future."
     },
     {
       id: 2,
-      image: "/images/371c7355-893e-47ba-aee5-6b71e894e9ac.png",
+      image: "images/371c7355-893e-47ba-aee5-6b71e894e9ac.png",
       title: "Team Collaboration Session",
       description: "Club members engaged in collaborative discussions, sharing ideas and planning upcoming projects and events."
     },
     {
       id: 3,
-      image: "/images/8b55aaf1-820b-4689-838d-0cb2feb287e1.png",
+      image: "images/8b55aaf1-820b-4689-838d-0cb2feb287e1.png",
       title: "Knowledge Sharing Workshop",
       description: "Interactive workshop session where experienced members shared technical knowledge with newcomers, fostering a culture of learning and growth."
     },
     {
       id: 4,
-      image: "/images/42e7bbe7-c7ee-40ce-afc1-ed364cc71526.png",
+      image: "images/42e7bbe7-c7ee-40ce-afc1-ed364cc71526.png",
       title: "Strategic Planning Meeting",
       description: "Core team members discussing strategic initiatives and planning the club's activities for skill development and community building."
     }

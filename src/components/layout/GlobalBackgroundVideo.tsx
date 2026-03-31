@@ -19,9 +19,9 @@ const GlobalBackgroundVideo = () => {
         muted 
         loop 
         playsInline
-        poster="/images/ssiems-campus.webp"
+        poster="images/ssiems-campus.webp"
       >
-        <source src="/images/background_video.mp4" type="video/mp4" />
+        <source src="images/background_video.mp4" type="video/mp4" />
       </video>
       <div className="video-overlay"></div>
     </div>
