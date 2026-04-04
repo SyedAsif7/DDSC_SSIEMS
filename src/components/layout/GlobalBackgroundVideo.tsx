@@ -17,9 +17,11 @@ const GlobalBackgroundVideo = () => {
       <video 
         ref={videoRef}
         className="video-bg-content" 
+        autoPlay
         muted 
         loop 
         playsInline
+        preload="auto"
         poster={getAssetPath("images/ssiems-campus.webp")}
       >
         <source src={getAssetPath("images/background_video.mp4")} type="video/mp4" />

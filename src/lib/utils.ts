@@ -6,10 +6,15 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getAssetPath(path: string) {
-  // Use relative paths but ensure they work across routes
+  // Use Vite's built-in asset resolution for standard paths
+  // If the path already starts with http/https, return it as is
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path;
+  }
+  
   const baseUrl = import.meta.env.BASE_URL || '/';
-  // Ensure the path doesn't start with a slash
   const cleanPath = path.startsWith('/') ? path.substring(1) : path;
-  // Use root-relative path based on the deployment base
+  
+  // Ensure we don't have double slashes and the path is absolute from the base
   return `${baseUrl}${cleanPath}`;
 }
