@@ -13,25 +13,31 @@ import GlobalBackgroundVideo from "./components/layout/GlobalBackgroundVideo";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <TooltipProvider>
-        <GlobalBackgroundVideo />
-        <Toaster />
-        <Sonner />
-        <BrowserRouter basename="/DDSC_SSIEMS">
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/achievement/:id" element={<AchievementDetail />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // Dynamically set basename based on Vite's BASE_URL
+  // This allows the app to work on both Vercel (root /) and GitHub Pages (/DDSC_SSIEMS/)
+  const basename = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '');
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <TooltipProvider>
+          <GlobalBackgroundVideo />
+          <Toaster />
+          <Sonner />
+          <BrowserRouter basename={basename}>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/achievement/:id" element={<AchievementDetail />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
