@@ -15,6 +15,7 @@ const PartnersSection = () => {
       labelColor: theme === 'light' ? "text-blue-700" : "text-ndc-blue",
       website: "https://ssiems.org.in/"
     },
+    /*
     {
       name: "GDG on Campus PES College of Engineering - Aurangabad, India",
       description: "Supporting our technical events and providing access to Google technologies and resources for our student community.",
@@ -39,6 +40,7 @@ const PartnersSection = () => {
       labelColor: theme === 'light' ? "text-blue-700" : "text-ndc-blue",
       website: "https://www.womentechmakers.com/"
     }
+    */
   ];
   
   return (
