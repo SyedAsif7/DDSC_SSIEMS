@@ -1,7 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Linkedin, Github, Mail, Users, Star, Award, Shield, History } from "lucide-react";
-import { chapter1Data, chapter2Data } from "@/data/teamChapters1";
+import { chapter1Data } from "@/data/teamChapters1";
+// import { chapter2Data } from "@/data/teamChapters1";
 import { useState } from "react";
 import { getAssetPath } from "@/lib/utils";
 
@@ -393,7 +394,7 @@ const TeamChapterView = ({ data, isChapter2 }: { data: any, isChapter2: boolean 
 );
 
 const TeamSection = () => {
-  const [showChapter1, setShowChapter1] = useState(false);
+  const [showChapter1, setShowChapter1] = useState(true);
 
   return (
     <section id="team" className="py-24 md:py-32 bg-transparent relative overflow-hidden scroll-mt-20">
@@ -415,7 +416,8 @@ const TeamSection = () => {
             isChapter2={!showChapter1}
           />
           
-          {/* Chapter Toggle Button */}
+          {/* Chapter Toggle Button hidden since Chapter 2 is removed */}
+          {/* 
           <button 
             onClick={() => setShowChapter1(!showChapter1)}
             className="mb-12 group relative flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 hover:border-ndc-purple/40 hover:bg-white/10 transition-all duration-500 shadow-lg overflow-hidden"
@@ -426,9 +428,10 @@ const TeamSection = () => {
               {showChapter1 ? "Switch to Chapter 2" : "View Chapter 1 Team"}
             </span>
           </button>
+          */}
         </div>
 
-        <TeamChapterView data={showChapter1 ? chapter1Data : chapter2Data} isChapter2={!showChapter1} />
+        <TeamChapterView data={chapter1Data} isChapter2={false} />
 
         {/* Community Callout - Compact Premium Design */}
         <div className="text-center animate-fade-in mt-24">
