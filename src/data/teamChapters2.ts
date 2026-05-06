@@ -83,7 +83,7 @@ export const chapter2Data = {
       leader: "Sanjivani Jaiprakash Jadhav & Siddi Yaseen Hussain",
       icon: "🛠",
       members: [
-        "Arti Arjun Raut", "Kadam Samiksha Laxman", 
+        "Dipali Tukaram Karad", "Arti Arjun Raut", "Kadam Samiksha Laxman", 
         "Ahmad Hussain Siddiqui", "Sandhya Sunil Panchal", "Anjali Nivrutti Shelke", 
         "Rohit Sontakke", "Shila Kerbaji Dhembre", "Dolare Vaishnavi Vitthal", 
         "Samruddhi Chandrakant Chandajkar", "Rupali Rustum Harkal", 
@@ -91,7 +91,7 @@ export const chapter2Data = {
         "Sayyed Rehan Hashmi Sayyed", "Shinde Omkar Vitthal", "Priti Pawde", 
         "Surshri Suryakantrao Deshmukh", "Dnyaneshwar Baban Patil", 
         "Kalyani Vasantrao Khiste", "Shubham Munjaji Gadhave", "Gayatri Gawali", 
-        "Tanvi Rameshwar Dongre"
+        "Tanvi Rameshwar Dongre", "Gaytri Devidas Fatale", "Gayatri Santosh Bramhangaonkar"
       ]
     },
     design: {
@@ -107,26 +107,19 @@ export const chapter2Data = {
       leader: "Sarvadnya Annarao Kshirsagar",
       icon: "🎯",
       members: [
-        "Vaishnavi Udawant", "Yogita Manohar Chinke", "Supriya Panchal", 
+        "Priyanka Ganesh Awachar", "Vaishnavi Udawant", "Yogita Manohar Chinke", "Supriya Panchal", 
         "Mahesh Abdal", "Satyam Sharma", "Amarjyoti Bhimrao Varale", 
         "Vaishavi Ambhore", "Kartik Badrinarayan Sarda", 
         "Mohd Bilal Afzalludin Inamdar", "Suraj Murlidhar Dube", 
         "Yogesh Sanjay Gurav", "Uday Sudhakar Saswade", "Ritesh Raju Gokhane", 
-        "Kasturi Ashokrao Joshi", "Tanmay bhausaheb ilag", "Balraj Anil dhalkari"
+        "Kasturi Ashokrao Joshi", "Tanmay bhausaheb ilag", "Balraj Anil dhalkari", "Akshara Motiram Kalbande"
       ]
     },
     socialMedia: {
       leader: "Rushikesh Anilrao Deshmukh",
       icon: "📣",
       members: [
-        "Rohit Narayan Ambhore"
-      ]
-    },
-    treasury: {
-      leader: "Arpita Mukund Jondhale",
-      icon: "💰",
-      members: [
-        "Priyanka Ganesh Awachar", "Dipali Tukaram Karad"
+        "Vaibhav Sandshiv Bhosale", "Vijay Vishwanathrao Ture", "Vyankatesh Ajay Kulkarni", "Rohit Narayan Ambhore"
       ]
     }
   }
