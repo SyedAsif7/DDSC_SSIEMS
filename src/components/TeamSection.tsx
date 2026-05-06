@@ -118,13 +118,13 @@ const TeamSection = () => {
   };
 
   return (
-    <section id="team" className={`py-20 ${theme === 'light' ? 'bg-gradient-to-br from-blue-50 to-purple-50' : 'bg-gradient-to-br from-gray-900 to-black'}`}>
+    <section id="team" className={`py-20 \${theme === 'light' ? 'bg-gradient-to-br from-blue-50 to-purple-50' : 'bg-gradient-to-br from-gray-900 to-black'}`}>
       <div className="section-container">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="heading-md mb-6">Meet Our <span className="gradient-text">Team</span></h2>
           <div className="w-20 h-1 bg-gradient-to-r from-ndc-purple to-ndc-blue mx-auto mb-6"></div>
-          <p className={`text-lg ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
+          <p className={`text-lg \${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
             Meet the passionate individuals who lead the DCode Developers Club and work
             tirelessly to create valuable experiences for our members.
           </p>
@@ -133,12 +133,12 @@ const TeamSection = () => {
         {/* President Section (Featured Profile) */}
         <div className="mb-20">
           <div className="max-w-4xl mx-auto">
-            <div className={`${
+            <div className={`\${
               theme === 'light' 
                 ? 'bg-gradient-to-r from-blue-600 to-purple-600' 
                 : 'bg-gradient-to-r from-ndc-purple to-ndc-blue'
             } p-1 rounded-3xl shadow-2xl animate-fade-in`}>
-              <div className={`${
+              <div className={`\${
                 theme === 'light' 
                   ? 'bg-white' 
                   : 'bg-gray-900'
@@ -165,12 +165,12 @@ const TeamSection = () => {
                   
                   {/* President Info */}
                   <div className="flex-1 text-center lg:text-left">
-                    <h3 className={`text-3xl font-bold mb-2 ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
+                    <h3 className={`text-3xl font-bold mb-2 \${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
                       {president.name}
                     </h3>
                     
                     <div className="mb-4">
-                      <span className={`inline-block px-4 py-2 rounded-full text-lg font-semibold ${
+                      <span className={`inline-block px-4 py-2 rounded-full text-lg font-semibold \${
                         theme === 'light' 
                           ? 'bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800' 
                           : 'bg-gradient-to-r from-ndc-purple/20 to-ndc-blue/20 text-ndc-purple'
@@ -179,11 +179,11 @@ const TeamSection = () => {
                       </span>
                     </div>
                     
-                    <p className={`text-lg leading-relaxed mb-4 ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
+                    <p className={`text-lg leading-relaxed mb-4 \${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
                       {president.bio}
                     </p>
                     
-                    <p className={`text-xl font-semibold mb-6 italic ${theme === 'light' ? 'text-blue-600' : 'text-ndc-blue'}`}>
+                    <p className={`text-xl font-semibold mb-6 italic \${theme === 'light' ? 'text-blue-600' : 'text-ndc-blue'}`}>
                       "{president.tagline}"
                     </p>
                     
@@ -193,7 +193,7 @@ const TeamSection = () => {
                         href={president.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-3 rounded-full ${
+                        className={`p-3 rounded-full \${
                           theme === 'light' 
                             ? 'bg-blue-100 hover:bg-blue-200' 
                             : 'bg-white/10 hover:bg-white/20'
@@ -205,7 +205,7 @@ const TeamSection = () => {
                         href={president.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-3 rounded-full ${
+                        className={`p-3 rounded-full \${
                           theme === 'light' 
                             ? 'bg-purple-100 hover:bg-purple-200' 
                             : 'bg-white/10 hover:bg-white/20'
@@ -214,8 +214,8 @@ const TeamSection = () => {
                         <Github className="h-5 w-5 text-ndc-purple" />
                       </a>
                       <a 
-                        href={`mailto:${president.email}`}
-                        className={`p-3 rounded-full ${
+                        href={`mailto:\${president.email}`}
+                        className={`p-3 rounded-full \${
                           theme === 'light' 
                             ? 'bg-green-100 hover:bg-green-200' 
                             : 'bg-white/10 hover:bg-white/20'
@@ -235,7 +235,7 @@ const TeamSection = () => {
         <div className="mb-16">
           <div className="max-w-xl mx-auto">
             <Card
-              className={`${
+              className={`\${
                 theme === 'light'
                   ? 'bg-gradient-to-r from-blue-200 to-purple-200 border-blue-200 shadow-lg'
                   : 'bg-gradient-to-r from-ndc-purple/30 to-ndc-blue/30 border-white/10'
@@ -252,11 +252,11 @@ const TeamSection = () => {
                     </AvatarFallback>
                   </Avatar>
                 </div>
-                <h4 className={`text-xl font-bold mb-1 ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
+                <h4 className={`text-xl font-bold mb-1 \${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
                   {coordinator.name}
                 </h4>
                 <div className="mb-3">
-                  <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+                  <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium \${
                     theme === 'light'
                       ? 'bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800'
                       : 'bg-gradient-to-r from-ndc-purple/20 to-ndc-blue/20 text-ndc-purple'
@@ -264,7 +264,7 @@ const TeamSection = () => {
                     {coordinator.role}
                   </span>
                 </div>
-                <p className={`${theme === 'light' ? 'text-gray-700' : 'text-gray-300'} text-base`}>
+                <p className={`\${theme === 'light' ? 'text-gray-700' : 'text-gray-300'} text-base`}>
                   {coordinator.bio}
                 </p>
                 {/* Optional: Social/Email */}
@@ -274,7 +274,7 @@ const TeamSection = () => {
                       href={coordinator.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 rounded-full ${
+                      className={`p-3 rounded-full \${
                         theme === 'light'
                           ? 'bg-blue-100 hover:bg-blue-200'
                           : 'bg-white/10 hover:bg-white/20'
@@ -285,8 +285,8 @@ const TeamSection = () => {
                   )}
                   {coordinator.email && (
                     <a
-                      href={`mailto:${coordinator.email}`}
-                      className={`p-3 rounded-full ${
+                      href={`mailto:\${coordinator.email}`}
+                      className={`p-3 rounded-full \${
                         theme === 'light'
                           ? 'bg-green-100 hover:bg-green-200'
                           : 'bg-white/10 hover:bg-white/20'
@@ -303,19 +303,19 @@ const TeamSection = () => {
 
         {/* Core Team Section */}
         <div className="mb-16">
-          <h3 className={`text-2xl font-bold text-center mb-12 ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
+          <h3 className={`text-2xl font-bold text-center mb-12 \${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
             Core Team Leaders
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {coreTeam.map((member, index) => (
               <Card 
                 key={index} 
-                className={`${
+                className={`\${
                   theme === 'light' 
                     ? 'bg-white/80 backdrop-blur-sm shadow-lg border border-blue-100 hover:shadow-xl' 
                     : 'glass-card hover:bg-white/10'
                 } p-6 text-center group hover:transform hover:scale-105 transition-all duration-300 animate-fade-in`} 
-                style={{animationDelay: `${index * 100}ms`}}
+                style={{animationDelay: `\${index * 100}ms`}}
               >
                 <CardContent className="p-0">
                   <div className="w-20 h-20 mx-auto mb-4 overflow-hidden rounded-full ring-2 ring-gradient-to-r from-ndc-purple to-ndc-blue p-0.5">
@@ -329,12 +329,12 @@ const TeamSection = () => {
                     </Avatar>
                   </div>
                   
-                  <h4 className={`text-lg font-bold mb-1 ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
+                  <h4 className={`text-lg font-bold mb-1 \${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
                     {member.name}
                   </h4>
                   
                   <div className="mb-3">
-                    <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
+                    <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium \${
                       theme === 'light' 
                         ? 'bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800' 
                         : 'bg-gradient-to-r from-ndc-purple/20 to-ndc-blue/20 text-ndc-purple'
@@ -343,7 +343,7 @@ const TeamSection = () => {
                     </span>
                   </div>
                   
-                  <p className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-300'} text-sm`}>
+                  <p className={`\${theme === 'light' ? 'text-gray-600' : 'text-gray-300'} text-sm`}>
                     {member.bio}
                   </p>
                 </CardContent>
@@ -354,7 +354,7 @@ const TeamSection = () => {
 
         {/* Team Members Section */}
         <div className="mb-12">
-          <h3 className={`text-2xl font-bold text-center mb-12 ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
+          <h3 className={`text-2xl font-bold text-center mb-12 \${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
             Team Members
           </h3>
           
@@ -362,21 +362,21 @@ const TeamSection = () => {
             {Object.entries(teams).map(([teamKey, team], index) => (
               <Card 
                 key={teamKey}
-                className={`${
+                className={`\${
                   theme === 'light' 
                     ? 'bg-white/70 backdrop-blur-sm shadow-lg border border-blue-100' 
                     : 'glass-card'
                 } p-6 animate-fade-in`}
-                style={{animationDelay: `${index * 200}ms`}}
+                style={{animationDelay: `\${index * 200}ms`}}
               >
                 <CardContent className="p-0">
                   <div className="flex items-center mb-4">
                     <span className="text-2xl mr-3">{team.icon}</span>
                     <div>
-                      <h4 className={`text-lg font-bold ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
+                      <h4 className={`text-lg font-bold \${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
                         {teamKey.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())} Team
                       </h4>
-                      <p className={`text-sm ${theme === 'light' ? 'text-gray-600' : 'text-gray-400'}`}>
+                      <p className={`text-sm \${theme === 'light' ? 'text-gray-600' : 'text-gray-400'}`}>
                         Led by {team.leader}
                       </p>
                     </div>
@@ -386,14 +386,14 @@ const TeamSection = () => {
                     {team.members.map((member, memberIndex) => (
                       <div 
                         key={memberIndex}
-                        className={`flex items-center p-2 rounded-lg ${
+                        className={`flex items-center p-2 rounded-lg \${
                           theme === 'light' 
                             ? 'bg-blue-50 hover:bg-blue-100' 
                             : 'bg-white/5 hover:bg-white/10'
                         } transition-colors`}
                       >
                         <Users className="h-4 w-4 text-ndc-blue mr-2" />
-                        <span className={`text-sm ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
+                        <span className={`text-sm \${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
                           {member}
                         </span>
                       </div>
@@ -407,16 +407,16 @@ const TeamSection = () => {
 
         {/* DDSC Community Section */}
         <div className="text-center">
-          <Card className={`${
+          <Card className={`\${
             theme === 'light' 
               ? 'bg-gradient-to-r from-blue-100 to-purple-100 border-blue-200' 
               : 'bg-gradient-to-r from-ndc-purple/10 to-ndc-blue/10 border-white/10'
           } p-8 max-w-2xl mx-auto`}>
             <CardContent className="p-0">
-              <h4 className={`text-xl font-bold mb-3 ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
+              <h4 className={`text-xl font-bold mb-3 \${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
                 DDSC Community Members
               </h4>
-              <p className={`text-lg ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
+              <p className={`text-lg \${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
                 Actively participate and learn through our workshops, hackathons, and events.
               </p>
             </CardContent>

@@ -36,7 +36,7 @@ const Footer = () => {
             
             {/* Enhanced Social Links */}
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com/ddsc_club_ssiems/" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-pink-500/30 p-4 rounded-2xl transition-all duration-500 hover:scale-125 hover:rotate-12 group backdrop-blur-md border border-white/20 hover:border-pink-400/50">
+              <a href="https://www.instagram.com/ddsc_club/" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-pink-500/30 p-4 rounded-2xl transition-all duration-500 hover:scale-125 hover:rotate-12 group backdrop-blur-md border border-white/20 hover:border-pink-400/50">
                 <Instagram className="h-6 w-6 text-white group-hover:text-pink-400 transition-colors duration-300" />
               </a>
               <a href="https://www.linkedin.com/in/dcodeclub" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-blue-500/30 p-4 rounded-2xl transition-all duration-500 hover:scale-125 hover:-rotate-12 group backdrop-blur-md border border-white/20 hover:border-blue-400/50">
