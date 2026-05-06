@@ -1,9 +1,9 @@
 export const chapter2Data = {
   president: {
-    name: "Syed Asif Syed Gaffar",
+    name: "Coming soon...!!!",
     role: "Founder & President",
     initials: "SASG",
-    bio: "Asif leads DDSC Chapter 2 with a vision to create a vibrant tech community at SSIEMS. He focuses on fostering innovation, collaboration, and hands-on learning for every member.",
+    bio: ".... leads DDSC with a vision to create a vibrant tech community at SSIEMS. He focuses on fostering innovation, collaboration, and hands-on learning for every member.",
     tagline: "Building the future of tech, one line at a time.",
     image: "lovable-uploads/thesyedasif.png",
     linkedin: "https://www.linkedin.com/in/the-syed-asif/",
