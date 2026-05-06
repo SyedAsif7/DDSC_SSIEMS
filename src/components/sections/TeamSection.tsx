@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import { Linkedin, Github, Mail, Users, Star, Award, Shield, History, Crown, MessageCircle } from "lucide-react";
+import { Linkedin, Github, Mail, Users, Star, Award, Shield, History, Crown, MessageCircle, ChevronRight } from "lucide-react";
 import { chapter1Data } from "@/data/teamChapters1";
 import { chapter2Data } from "@/data/teamChapters2";
 import { useState } from "react";
@@ -64,11 +64,11 @@ const LeadershipCard = ({ member, type }: { member: any, type: 'president' | 'co
   const Icon = isPresident ? CrownIcon : Award;
 
   return (
-    <div className="relative group p-px rounded-[2rem] transition-all duration-700 animate-fade-in bg-gradient-to-br from-white/10 to-transparent border border-white/10 hover:border-white/20 shadow-xl overflow-hidden">
+    <div className="relative group p-px rounded-[2rem] transition-all duration-700 animate-fade-in bg-gradient-to-br from-white/10 to-transparent border border-white/10 hover:border-white/20 shadow-xl overflow-hidden will-change-transform">
       {/* Dynamic Glow Effect - Subtle for smaller footprint */}
       <div className={`absolute inset-0 bg-gradient-to-br ${isPresident ? 'from-ndc-purple/15 via-indigo-500/5' : 'from-emerald-400/15 via-teal-500/5'} to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-xl -z-10`}></div>
       
-      <div className="bg-slate-950/30 backdrop-blur-3xl p-8 md:p-10 rounded-[2rem] relative overflow-hidden h-full">
+      <div className="bg-slate-950/30 backdrop-blur-md md:backdrop-blur-3xl p-8 md:p-10 rounded-[2rem] relative overflow-hidden h-full">
         {/* Subtle Grid Background */}
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:15px_15px]"></div>
         
@@ -130,7 +130,7 @@ const LeadershipCard = ({ member, type }: { member: any, type: 'president' | 'co
                       href={member.linkedin} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className={`p-3 rounded-xl bg-white/5 hover:bg-${themeColor}/20 text-gray-400 hover:text-${themeColor} backdrop-blur-md border border-white/5 transition-all duration-500 transform hover:-translate-y-1`}
+                      className={`p-4 rounded-xl bg-white/5 hover:bg-${themeColor}/20 text-gray-400 hover:text-${themeColor} backdrop-blur-md border border-white/5 transition-all duration-500 transform hover:-translate-y-1 min-w-[44px] min-h-[44px] flex items-center justify-center`}
                     >
                       <Linkedin className="h-5 w-5" />
                     </a>
@@ -140,7 +140,7 @@ const LeadershipCard = ({ member, type }: { member: any, type: 'president' | 'co
                       href={member.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white backdrop-blur-md border border-white/5 transition-all duration-500 transform hover:-translate-y-1"
+                      className="p-4 rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white backdrop-blur-md border border-white/5 transition-all duration-500 transform hover:-translate-y-1 min-w-[44px] min-h-[44px] flex items-center justify-center"
                     >
                       <Github className="h-5 w-5" />
                     </a>
@@ -151,7 +151,7 @@ const LeadershipCard = ({ member, type }: { member: any, type: 'president' | 'co
                       target="_blank" 
                       rel="noopener noreferrer"
                       title={`Chat on WhatsApp with ${member.whatsapp.split('/').pop()}`}
-                      className="p-3 rounded-xl bg-white/5 hover:bg-[#25D366]/20 text-gray-400 hover:text-[#25D366] backdrop-blur-md border border-white/5 transition-all duration-500 transform hover:-translate-y-1 group/wa"
+                      className="p-4 rounded-xl bg-white/5 hover:bg-[#25D366]/20 text-gray-400 hover:text-[#25D366] backdrop-blur-md border border-white/5 transition-all duration-500 transform hover:-translate-y-1 group/wa min-w-[44px] min-h-[44px] flex items-center justify-center"
                     >
                       <svg 
                         viewBox="0 0 24 24" 
@@ -165,7 +165,7 @@ const LeadershipCard = ({ member, type }: { member: any, type: 'president' | 'co
                   {member.email && (
                     <a 
                       href={`mailto:${member.email}`}
-                      className="p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 text-gray-400 hover:text-emerald-400 backdrop-blur-md border border-white/5 transition-all duration-500 transform hover:-translate-y-1"
+                      className="p-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 text-gray-400 hover:text-emerald-400 backdrop-blur-md border border-white/5 transition-all duration-500 transform hover:-translate-y-1 min-w-[44px] min-h-[44px] flex items-center justify-center"
                     >
                       <Mail className="h-5 w-5" />
                     </a>
@@ -231,11 +231,11 @@ const CrownIcon = ({ className }: { className?: string }) => (
  */
 const CoreMemberCard = ({ member, index }: { member: any, index: number }) => (
   <div 
-    className="group relative animate-fade-in h-full"
+    className="group relative animate-fade-in h-full will-change-transform"
     style={{ animationDelay: `${index * 100}ms` }}
   >
     <div className={`absolute inset-0 bg-gradient-to-br from-ndc-purple/10 to-ndc-blue/10 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl -z-10`}></div>
-    <Card className="bg-slate-900/10 backdrop-blur-3xl border border-white/5 hover:border-white/20 transition-all duration-500 p-8 rounded-[2rem] h-full overflow-hidden shadow-2xl group-hover:-translate-y-2">
+    <Card className="bg-slate-900/10 backdrop-blur-md md:backdrop-blur-3xl border border-white/5 hover:border-white/20 transition-all duration-500 p-8 rounded-[2rem] h-full overflow-hidden shadow-2xl group-hover:-translate-y-2">
       {/* Internal Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:15px_15px]"></div>
       
@@ -297,69 +297,87 @@ const CoreMemberCard = ({ member, index }: { member: any, index: number }) => (
 /**
  * Sub-component: Team Division Card
  */
-const TeamDivisionCard = ({ name, team, index }: { name: string, team: any, index: number }) => (
-  <div 
-    className="group relative animate-fade-in"
-    style={{ animationDelay: `${index * 150}ms` }}
-  >
-    <Card className="bg-slate-900/5 backdrop-blur-3xl border border-white/5 hover:border-ndc-blue/30 transition-all duration-700 p-6 md:p-8 rounded-[2.5rem] relative overflow-hidden shadow-2xl">
-      <div className="absolute top-0 right-0 w-40 h-40 bg-ndc-blue/5 rounded-full blur-[100px] -z-10 group-hover:bg-ndc-blue/10 transition-all duration-1000"></div>
-      
-      <CardContent className="p-0 relative z-10">
-        <div className="flex items-center gap-6 mb-6 md:mb-8">
-          <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-ndc-blue/10 backdrop-blur-xl border border-white/5 flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-inner">
-            {team.icon}
-          </div>
-          <div className="space-y-1">
-            <h4 className="text-xl md:text-2xl font-black text-white tracking-tighter drop-shadow-md">{name}</h4>
-            <div className="flex items-center gap-2">
-              <div className="h-1 w-1 bg-ndc-blue rounded-full"></div>
-              <p className="text-[9px] md:text-[10px] text-ndc-blue font-black uppercase tracking-[0.2em] drop-shadow-sm">
-                {team.leader ? `Leader: ${team.leader}` : 'Department Unit'}
-              </p>
-            </div>
-          </div>
-        </div>
+const TeamDivisionCard = ({ name, team, index }: { name: string, team: any, index: number }) => {
+  const [showAll, setShowAll] = useState(false);
+  const displayMembers = showAll ? team.members : team.members.slice(0, 9);
+  const hasMore = team.members.length > 9;
 
-        {team.members.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {team.members.map((member: string, i: number) => (
-              <div 
-                key={i} 
-                className="flex items-center gap-2 p-2 rounded-xl bg-slate-900/40 backdrop-blur-md border border-white/5 hover:border-ndc-blue/40 hover:bg-slate-800/60 transition-all duration-300 group/member shadow-lg"
-              >
-                <div className="flex-shrink-0 w-1 h-1 rounded-full bg-ndc-blue group-hover/member:scale-125 transition-transform shadow-[0_0_10px_rgba(59,130,246,0.6)]"></div>
-                <span className="text-xs font-semibold text-white/90 group-hover/member:text-white transition-colors tracking-tight leading-none truncate">
-                  {member}
-                </span>
+  return (
+    <div 
+      className="group relative animate-fade-in will-change-transform"
+      style={{ animationDelay: `${index * 150}ms` }}
+    >
+      <Card className="bg-slate-900/5 backdrop-blur-md md:backdrop-blur-3xl border border-white/5 hover:border-ndc-blue/30 transition-all duration-700 p-6 md:p-8 rounded-[2.5rem] relative overflow-hidden shadow-2xl">
+        <div className="absolute top-0 right-0 w-40 h-40 bg-ndc-blue/5 rounded-full blur-[100px] -z-10 group-hover:bg-ndc-blue/10 transition-all duration-1000"></div>
+        
+        <CardContent className="p-0 relative z-10">
+          <div className="flex items-center gap-6 mb-6 md:mb-8">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-ndc-blue/10 backdrop-blur-xl border border-white/5 flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-inner">
+              {team.icon}
+            </div>
+            <div className="space-y-1">
+              <h4 className="text-xl md:text-2xl font-black text-white tracking-tighter drop-shadow-md">{name}</h4>
+              <div className="flex items-center gap-2">
+                <div className="h-1 w-1 bg-ndc-blue rounded-full"></div>
+                <p className="text-[9px] md:text-[10px] text-ndc-blue font-black uppercase tracking-[0.2em] drop-shadow-sm">
+                  {team.leader ? `Leader: ${team.leader}` : 'Department Unit'}
+                </p>
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="flex flex-col items-center justify-center py-16 opacity-40 backdrop-blur-xl rounded-[2rem] border border-dashed border-white/10 group-hover:border-ndc-blue/40 transition-all duration-700 relative overflow-hidden">
-            {/* Background Scanner Effect */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ndc-blue/5 to-transparent -translate-y-full group-hover:animate-scan pointer-events-none"></div>
-            
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-ndc-blue/20 blur-xl rounded-full animate-pulse"></div>
-              <Users className="h-14 w-14 text-gray-500 group-hover:text-ndc-blue/60 transition-colors relative z-10" />
             </div>
+          </div>
 
-            <div className="relative py-2.5 px-6 rounded-full bg-slate-900/60 border border-white/10 backdrop-blur-2xl mb-4 shadow-xl">
-              <p className="text-[11px] font-black uppercase tracking-[0.4em] text-gray-400 group-hover:text-ndc-blue/80 transition-colors">
-                Recruitment Open
+          {team.members.length > 0 ? (
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {displayMembers.map((member: string, i: number) => (
+                  <div 
+                    key={i} 
+                    className="flex items-center gap-2 p-2 rounded-xl bg-slate-900/40 backdrop-blur-md border border-white/5 hover:border-ndc-blue/40 hover:bg-slate-800/60 transition-all duration-300 group/member shadow-lg"
+                  >
+                    <div className="flex-shrink-0 w-1 h-1 rounded-full bg-ndc-blue group-hover/member:scale-125 transition-transform shadow-[0_0_10px_rgba(59,130,246,0.6)]"></div>
+                    <span className="text-xs font-semibold text-white/90 group-hover/member:text-white transition-colors tracking-tight leading-none truncate">
+                      {member}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              
+              {hasMore && (
+                <button 
+                  onClick={() => setShowAll(!showAll)}
+                  className="w-full py-2 px-4 rounded-xl bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-ndc-blue hover:bg-ndc-blue/10 transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  {showAll ? 'Show Less' : `Show ${team.members.length - 9} More Members`}
+                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 ${showAll ? '-rotate-90' : 'rotate-90'}`} />
+                </button>
+              )}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-16 opacity-40 backdrop-blur-xl rounded-[2rem] border border-dashed border-white/10 group-hover:border-ndc-blue/40 transition-all duration-700 relative overflow-hidden">
+              {/* Background Scanner Effect */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ndc-blue/5 to-transparent -translate-y-full group-hover:animate-scan pointer-events-none"></div>
+              
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-ndc-blue/20 blur-xl rounded-full animate-pulse"></div>
+                <Users className="h-14 w-14 text-gray-500 group-hover:text-ndc-blue/60 transition-colors relative z-10" />
+              </div>
+
+              <div className="relative py-2.5 px-6 rounded-full bg-slate-900/60 border border-white/10 backdrop-blur-2xl mb-4 shadow-xl">
+                <p className="text-[11px] font-black uppercase tracking-[0.4em] text-gray-400 group-hover:text-ndc-blue/80 transition-colors">
+                  Recruitment Open
+                </p>
+              </div>
+
+              <p className="text-[10px] font-black text-gray-600 uppercase tracking-[0.2em] max-w-[200px] text-center leading-relaxed">
+                Applications are currently being reviewed for this unit
               </p>
             </div>
-
-            <p className="text-[10px] font-black text-gray-600 uppercase tracking-[0.2em] max-w-[200px] text-center leading-relaxed">
-              Applications are currently being reviewed for this unit
-            </p>
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  </div>
-);
+          )}
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
 
 /**
  * Sub-component: Team Chapter View
@@ -368,7 +386,7 @@ const TeamChapterView = ({ data, isChapter2 }: { data: any, isChapter2: boolean 
   <div className="animate-fade-in space-y-24 relative">
     {isChapter2 && (
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 z-0 pointer-events-none opacity-20">
-        <div className="text-[12rem] font-black text-white/5 tracking-tighter select-none">CHAPTER 2</div>
+        <div className="text-[12rem] font-black text-white/[0.02] tracking-tighter select-none">CHAPTER 2</div>
       </div>
     )}
 

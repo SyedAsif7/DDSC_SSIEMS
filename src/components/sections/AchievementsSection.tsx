@@ -64,12 +64,12 @@ const AchievementsSection = () => {
         </div>
 
         {/* Category Filters - Refined UI */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-16 animate-fade-in" style={{ animationDelay: '100ms' }}>
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-16 animate-fade-in" style={{ animationDelay: '100ms' }}>
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border flex items-center gap-2 ${
+              className={`px-6 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border flex items-center gap-2 min-h-[44px] min-w-[44px] ${
                 activeCategory === cat
                   ? "bg-ndc-purple text-white border-ndc-purple shadow-lg scale-105"
                   : "bg-white/5 text-gray-400 border-white/5 hover:bg-white/10 hover:text-white hover:border-white/10"
@@ -84,18 +84,18 @@ const AchievementsSection = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search achievements..."
-            className="w-full sm:w-64 px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest bg-white/5 text-gray-300 border border-white/5 placeholder:text-gray-500 focus:outline-none focus:border-ndc-purple/40 transition-all"
+            className="w-full sm:w-64 px-4 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest bg-white/5 text-gray-300 border border-white/5 placeholder:text-gray-500 focus:outline-none focus:border-ndc-purple/40 transition-all min-h-[44px]"
             aria-label="Search achievements"
           />
         </div>
 
         {/* Unified Grid - Perfect Spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
           {filteredAchievements.map((achievement, index) => (
             <Link 
               key={achievement.id}
               to={`/achievement/${achievement.id}`}
-              className="group relative flex flex-col h-full rounded-3xl overflow-hidden border border-white/5 bg-white/[0.02] backdrop-blur-xl transition-all duration-500 hover:border-ndc-purple/30 hover:bg-white/[0.04] animate-fade-in active:scale-[0.98]"
+              className="group relative flex flex-col h-full rounded-3xl overflow-hidden border border-white/5 bg-white/[0.02] backdrop-blur-md md:backdrop-blur-xl transition-all duration-500 hover:border-ndc-purple/30 hover:bg-white/[0.04] animate-fade-in active:scale-[0.98] will-change-transform"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Image Container - Premium Interaction */}

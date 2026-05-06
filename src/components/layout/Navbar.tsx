@@ -19,8 +19,8 @@ const Navbar = () => {
     { href: '#about', label: 'About' },
     { href: '#why-join', label: 'Why Join' },
     { href: '#events', label: 'Achievements' },
-    { href: '#projects', label: 'Upcoming Events' },
-    { href: '#gallery', label: 'Gallery' },
+    { href: '#upcoming-events', label: 'Upcoming Events' },
+    { href: '/gallery', label: 'Gallery', isPage: true },
     { href: '#team', label: 'Team' },
     { href: '#partners', label: 'Partners' },
   ];
@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-2xl saturate-150 ${
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-md md:backdrop-blur-2xl saturate-150 ${
         isScrolled 
           ? 'bg-slate-900/40 shadow-lg shadow-code-purple/10 border-b border-white/10' 
           : 'bg-transparent'
@@ -54,8 +54,24 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center gap-1 bg-white/5 p-1 rounded-2xl border border-white/10">
-            {navLinks.map((item) => (
-              isHomePage ? (
+            {navLinks.map((item) => {
+              const isHashLink = item.href.startsWith('#');
+              const isExternalPage = item.isPage;
+
+              if (isExternalPage) {
+                return (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple"
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-code-indigo to-code-pink group-hover:w-1/2 transition-all duration-500 ease-out rounded-full"></span>
+                  </Link>
+                );
+              }
+
+              return isHomePage ? (
                 <a
                   key={item.href}
                   href={item.href}
@@ -73,8 +89,8 @@ const Navbar = () => {
                   <span className="relative z-10">{item.label}</span>
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-code-indigo to-code-pink group-hover:w-1/2 transition-all duration-500 ease-out rounded-full"></span>
                 </Link>
-              )
-            ))}
+              );
+            })}
           </nav>
 
           {/* Right Action & Mobile Toggle */}
@@ -111,8 +127,23 @@ const Navbar = () => {
         {isMenuOpen && (
           <nav className="xl:hidden py-4 border-t border-white/10 animate-fade-in">
             <div className="flex flex-col gap-2">
-              {navLinks.map((item) => (
-                isHomePage ? (
+              {navLinks.map((item) => {
+                const isExternalPage = item.isPage;
+
+                if (isExternalPage) {
+                  return (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-white/10 text-gray-200 active:bg-white/20"
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                }
+
+                return isHomePage ? (
                   <a
                     key={item.href}
                     href={item.href}
@@ -130,8 +161,8 @@ const Navbar = () => {
                   >
                     {item.label}
                   </Link>
-                )
-              ))}
+                );
+              })}
               <a
                 href="https://forms.gle/CHamTqBMouu6ucYa7"
                 target="_blank"

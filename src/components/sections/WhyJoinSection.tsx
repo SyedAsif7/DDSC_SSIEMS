@@ -47,7 +47,7 @@ const WhyJoinSection = () => {
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className="p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2 group backdrop-blur-xl bg-slate-800/40 border-white/10 hover:border-ndc-purple/50"
+              className="p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2 group backdrop-blur-md md:backdrop-blur-xl bg-slate-800/40 border-white/10 hover:border-ndc-purple/50 will-change-transform"
             >
               <div className="mb-6 p-4 rounded-2xl w-fit transition-transform duration-500 group-hover:scale-110 bg-white/5">
                 {benefit.icon}

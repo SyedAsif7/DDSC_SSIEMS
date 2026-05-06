@@ -22,7 +22,7 @@ const JoinSection = () => {
           </p>
         </div>
         
-        <div className="max-w-md mx-auto p-8 backdrop-blur-xl rounded-3xl border transition-all duration-300 transform hover:-translate-y-1 bg-black/30 border-white/10 shadow-2xl hover:shadow-ndc-purple/20">
+        <div className="max-w-md mx-auto p-8 backdrop-blur-md md:backdrop-blur-xl rounded-3xl border transition-all duration-300 transform hover:-translate-y-1 bg-black/30 border-white/10 shadow-2xl hover:shadow-ndc-purple/20 will-change-transform">
           <div className="text-center">
             <img src={getAssetPath("images/Dcode-Logo.png")} alt="DCode Logo" className="h-16 w-auto mx-auto mb-6 animate-pulse-slow" />
             <p className="text-gray-300 mb-6">

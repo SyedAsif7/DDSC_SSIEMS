@@ -13,16 +13,16 @@ const AboutSection = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="p-8 space-y-6 rounded-xl border backdrop-blur-xl bg-black/20 border-white/10 shadow-2xl shadow-ndc-purple/10 hover:scale-105 transition-transform duration-500">
+        <div className="grid md:grid-cols-2 gap-8 mb-16 animate-fade-in" style={{ animationDelay: '200ms' }}>
+          <div className="p-8 space-y-6 rounded-xl border backdrop-blur-md md:backdrop-blur-xl bg-black/20 border-white/10 shadow-2xl shadow-ndc-purple/10 hover:scale-105 transition-transform duration-500 will-change-transform">
             <h3 className="heading-sm text-ndc-purple">Our Vision</h3>
             <p className="text-gray-200">
-              To create a thriving ecosystem where students can transform their technical knowledge into real-world solutions, 
-              developing the skills and mindset necessary to lead technological innovation in the future.
+              To build a vibrant community of passionate developers who collaborate, innovate, and lead in the 
+              ever-evolving world of technology.
             </p>
           </div>
           
-          <div className="p-8 space-y-6 rounded-xl border backdrop-blur-xl bg-black/20 border-white/10 shadow-2xl shadow-ndc-blue/10 hover:scale-105 transition-transform duration-500">
+          <div className="p-8 space-y-6 rounded-xl border backdrop-blur-md md:backdrop-blur-xl bg-black/20 border-white/10 shadow-2xl shadow-ndc-blue/10 hover:scale-105 transition-transform duration-500 will-change-transform">
             <h3 className="heading-sm text-ndc-blue">Our Mission</h3>
             <p className="text-gray-200">
               To provide students with opportunities to work on real-world projects, learn cutting-edge technologies, 
@@ -33,7 +33,7 @@ const AboutSection = () => {
 
         {/* Track Record / Achievements Summary */}
         <div className="mt-16 animate-fade-in">
-          <div className="p-10 rounded-3xl border border-white/10 bg-slate-900/30 backdrop-blur-2xl shadow-2xl relative overflow-hidden group">
+          <div className="p-10 rounded-3xl border border-white/10 bg-slate-900/30 backdrop-blur-md md:backdrop-blur-2xl shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-ndc-purple/10 blur-[100px] -mr-32 -mt-32 transition-all duration-700 group-hover:bg-ndc-purple/20"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-ndc-blue/10 blur-[100px] -ml-32 -mb-32 transition-all duration-700 group-hover:bg-ndc-blue/20"></div>
             

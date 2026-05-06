@@ -13,6 +13,7 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTopButton from "@/components/layout/ScrollToTopButton";
 import { toast } from "sonner";
 import { getAssetPath } from "@/lib/utils";
+import { Helmet } from "react-helmet-async";
 
 const AchievementDetail = () => {
   const { id } = useParams();
@@ -100,6 +101,10 @@ const AchievementDetail = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200">
+      <Helmet>
+        <title>{achievement.title} | DCode Achievements</title>
+        <meta name="description" content={achievement.description} />
+      </Helmet>
       <CollegeHeader />
       <Navbar />
       
@@ -532,7 +537,7 @@ const AchievementDetail = () => {
           <button onClick={() => setIsLightboxOpen(false)} className="absolute top-8 right-8 text-white/40 hover:text-white transition-all"><X size={32} /></button>
           <button onClick={prevImage} className="absolute left-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-all"><ChevronLeft size={48} /></button>
           <button onClick={nextImage} className="absolute right-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-all"><ChevronRight size={48} /></button>
-          <img src={getAssetPath(achievement.images[currentImageIndex])} alt="" className="max-w-full max-h-full object-contain rounded-2xl" />
+          <img src={getAssetPath(achievement.images[currentImageIndex])} alt={`${achievement.title} - image ${currentImageIndex + 1}`} className="max-w-full max-h-full object-contain rounded-2xl" />
         </div>
       )}
 

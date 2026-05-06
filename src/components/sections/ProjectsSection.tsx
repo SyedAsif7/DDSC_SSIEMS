@@ -22,7 +22,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-16 md:py-20 relative overflow-hidden scroll-mt-28 md:scroll-mt-32">
+    <section id="upcoming" className="py-16 md:py-20 relative overflow-hidden scroll-mt-28 md:scroll-mt-32">
       {/* Background decoration */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-ndc-blue/5 blur-[120px] animate-pulse"></div>

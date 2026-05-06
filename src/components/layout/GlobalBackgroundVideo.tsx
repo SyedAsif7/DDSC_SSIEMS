@@ -21,7 +21,7 @@ const GlobalBackgroundVideo = () => {
         muted 
         loop 
         playsInline
-        preload="auto"
+        preload="none"
         poster={getAssetPath("images/ssiems-campus.webp")}
       >
         <source src={getAssetPath("images/background_video.mp4")} type="video/mp4" />

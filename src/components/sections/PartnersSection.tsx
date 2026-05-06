@@ -57,7 +57,7 @@ const PartnersSection = () => {
           {partners.map((partner, index) => (
             <div 
               key={index}
-              className="border rounded-2xl p-6 transition-all duration-300 group backdrop-blur-xl bg-black/30 border-white/10 shadow-xl hover:shadow-ndc-blue/20"
+              className="border rounded-2xl p-6 transition-all duration-300 group backdrop-blur-md md:backdrop-blur-xl bg-black/30 border-white/10 shadow-xl hover:shadow-ndc-blue/20 will-change-transform"
             >
               <div className="flex flex-col sm:flex-row gap-6 items-start">
                 {/* Logo */}
