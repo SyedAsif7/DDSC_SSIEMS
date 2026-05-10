@@ -5,11 +5,8 @@ const GlobalBackgroundVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log("Autoplay was prevented:", error);
-      });
-    }
+    // Let the autoPlay attribute handle the initial play
+    // This effect is mainly for safety or manual controls if needed
   }, []);
 
   return (
@@ -17,15 +14,15 @@ const GlobalBackgroundVideo = () => {
       <video 
         ref={videoRef}
         className="video-bg-content" 
+        src={getAssetPath("images/background_video.mp4")}
         autoPlay
         muted 
         loop 
         playsInline
-        preload="none"
+        preload="auto"
+        crossOrigin="anonymous"
         poster={getAssetPath("images/ssiems-campus.webp")}
-      >
-        <source src={getAssetPath("images/background_video.mp4")} type="video/mp4" />
-      </video>
+      />
       <div className="video-overlay"></div>
     </div>
   );

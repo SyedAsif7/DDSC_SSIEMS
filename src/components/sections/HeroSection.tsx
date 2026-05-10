@@ -65,7 +65,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className={`min-h-[calc(100vh-120px)] flex items-center relative overflow-hidden bg-transparent pt-2`}>
+    <section id="hero" className={`min-h-[calc(100vh-140px)] md:min-h-[calc(100vh-120px)] flex items-center relative overflow-hidden bg-transparent pt-4 sm:pt-6 md:pt-2`}>
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-ndc-blue/10 blur-[140px] animate-pulse"></div>
@@ -73,27 +73,27 @@ const HeroSection = () => {
         <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12 relative z-10 w-full">
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {slides.map((slide, index) => (
-              <div key={index} className="flex-[0_0_100%] min-w-0 grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div key={index} className="flex-[0_0_100%] min-w-0 grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
                 {/* Left Column - Content */}
                 <div className="text-center lg:text-left lg:col-span-1 animate-fade-in">
                   {/* Tagline */}
-                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6">
-                    <span className="px-4 py-2 rounded-full text-sm font-bold backdrop-blur-md border bg-white/10 text-white border-white/20">
+                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6">
+                    <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold backdrop-blur-md border bg-white/10 text-white border-white/20">
                       {slide.tag}
                     </span>
                     {slide.extraBadge && (
-                      <span className="px-4 py-2 rounded-full text-sm font-bold backdrop-blur-md border bg-ndc-purple/20 text-ndc-purple border-ndc-purple/30 animate-pulse">
+                      <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold backdrop-blur-md border bg-ndc-purple/20 text-ndc-purple border-ndc-purple/30 animate-pulse">
                         {slide.extraBadge}
                       </span>
                     )}
                   </div>
 
                   {/* Main Headline */}
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-white">
+                  <h1 className="text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 text-white">
                     {slide.title.split(' ').map((word, i) => (
                       <span key={i} className={word === 'Future' || word === 'Art' || word === 'Real-World' || word === 'Thriving' || word === 'Generative' || word === 'AI.' ? 'gradient-text' : ''}>
                         {word}{' '}
@@ -102,33 +102,36 @@ const HeroSection = () => {
                   </h1>
         
                   {/* Subheading */}
-                  <h2 className="text-xl md:text-2xl font-bold mb-6 flex items-center justify-center lg:justify-start gap-3 text-slate-200">
-                    <span className="p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
-                      {slide.icon}
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 flex items-center justify-center lg:justify-start gap-2 sm:gap-3 text-slate-200">
+                    <span className="p-1.5 sm:p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
+                      {/* Scale icon for mobile */}
+                      <span className="scale-90 sm:scale-100 block">
+                        {slide.icon}
+                      </span>
                     </span>
                     {slide.subtitle}
                   </h2>
         
                   {/* Description */}
-                  <p className="text-lg mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-slate-300">
+                  <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-slate-300 px-2 sm:px-0">
                     {slide.description}
                   </p>
 
                   {/* Countdown Timer for Special Event */}
                   {slide.isSpecial && (
-                    <div className="mb-10 flex justify-center lg:justify-start">
+                    <div className="mb-8 sm:mb-10 flex justify-center lg:justify-start scale-90 sm:scale-100">
                       <CountdownTimer targetDate="2026-05-16T12:30:00" />
                     </div>
                   )}
         
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                  <div className="flex flex-col xs:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start px-4 sm:px-0">
                     <MagneticButton>
                       <Button 
                         onClick={() => handleJoinClick(slide.isSpecial)} 
-                        className="font-bold px-8 py-5 text-lg h-auto bg-gradient-to-r from-ndc-purple via-blue-600 to-ndc-blue hover:from-ndc-blue hover:via-purple-600 hover:to-ndc-purple text-white shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 rounded-2xl"
+                        className="w-full xs:w-auto font-bold px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg h-auto bg-gradient-to-r from-ndc-purple via-blue-600 to-ndc-blue hover:from-ndc-blue hover:via-purple-600 hover:to-ndc-purple text-white shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 rounded-2xl"
                       >
-                        {slide.isSpecial ? "Register for Workshop" : "Join the Club"}
+                        {slide.isSpecial ? "Register Now" : "Join the Club"}
                       </Button>
                     </MagneticButton>
                     
@@ -137,9 +140,9 @@ const HeroSection = () => {
                         <Button 
                           asChild
                           variant="outline"
-                          className="font-bold px-8 py-5 text-lg h-auto bg-white/5 border-white/10 text-white hover:bg-white/10 rounded-2xl transition-all"
+                          className="w-full xs:w-auto font-bold px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg h-auto bg-white/5 border-white/10 text-white hover:bg-white/10 rounded-2xl transition-all"
                         >
-                          <Link to="/workshop" className="flex items-center gap-2">
+                          <Link to="/workshop" className="flex items-center gap-2 justify-center">
                             <Info className="w-5 h-5" />
                             View Details
                           </Link>
@@ -150,7 +153,7 @@ const HeroSection = () => {
                     {!slide.isSpecial && (
                       <a 
                         href="#events" 
-                        className="text-base font-semibold flex items-center gap-2 hover:gap-4 transition-all duration-300 text-white hover:text-ndc-purple"
+                        className="text-sm sm:text-base font-semibold flex items-center gap-2 hover:gap-4 transition-all duration-300 text-white hover:text-ndc-purple mt-2 sm:mt-0"
                         aria-label="View Achievements"
                       >
                         View Achievements <span className="text-xl">→</span>

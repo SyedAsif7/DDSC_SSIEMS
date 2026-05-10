@@ -129,7 +129,7 @@ export const chapter2Data = {
       initials: "GSB",
       bio: "Strategizing and overseeing club operations for the new session.",
       email: "bharosegayu@gmail.com",
-      image: ""
+      image: "images/Chapter_2_ Committe_images/Gayatri Bharose.jpg"
     },
     {
       name: "Sandip Balasaheb Ayewar",
@@ -137,7 +137,7 @@ export const chapter2Data = {
       initials: "SBA",
       bio: "Managing financial resources and budget allocation for upcoming initiatives.",
       email: "sandipayewar@gmail.com",
-      image: ""
+      image: "images/Chapter_2_ Committe_images/Sandip Ayewar.jpg"
     },
     {
       name: "Sanjivani Jaiprakash Jadhav",
@@ -145,7 +145,7 @@ export const chapter2Data = {
       initials: "SJJ",
       bio: "Spearheading technical projects and innovation across the club.",
       email: "sanjivani.jadhav.cs@gmail.com",
-      image: ""
+      image: "images/Chapter_2_ Committe_images/Sanjivani Jadhav.jpg"
     },
     {
       name: "Siddi Yaseen Hussain",
@@ -153,7 +153,7 @@ export const chapter2Data = {
       initials: "SYH",
       bio: "Assisting in technical leadership to handle the increased project load effectively.",
       email: "Ysnhun412@gmail.com",
-      image: ""
+      image: "images/Chapter_2_ Committe_images/Siddi Yaseen Hussain.png"
     },
     {
       name: "Rushikesh Deshmukh",
@@ -161,7 +161,7 @@ export const chapter2Data = {
       initials: "RD",
       bio: "Leading digital outreach and community presence.",
       email: "rushideshmukh0802@gmail.com",
-      image: ""
+      image: "images/Chapter_2_ Committe_images/Rushikesh Deshmukh.jpeg"
     },
     {
       name: "Arpita Mukund Jondhale",
@@ -169,7 +169,7 @@ export const chapter2Data = {
       initials: "AMJ",
       bio: "Directing creative vision and visual identity.",
       email: "arpitajondhale358@gmail.com",
-      image: ""
+      image: "images/Chapter_2_ Committe_images/Arpita Jondhale.JPG"
     },
     {
       name: "Sarvadnya Annarao Kshirsagar",
@@ -177,7 +177,7 @@ export const chapter2Data = {
       initials: "SAK",
       bio: "Orchestrating impactful events and workshops.",
       email: "kshirsagarsarvadnya77@gmail.com",
-      image: ""
+      image: "images/Chapter_2_ Committe_images/Sarvadnya Kshirsagar.jpg"
     }
   ],
   teams: {

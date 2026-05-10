@@ -45,11 +45,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3 md:py-4">
           {/* Brand/Logo */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 group cursor-pointer">
-            <img src={getAssetPath("images/Dcode-Logo.png")} alt="DCode Logo" className="h-8 sm:h-10 md:h-12 w-auto transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" />
-            <span className="text-base sm:text-lg md:text-xl font-bold font-heading transition-all duration-500 hover:scale-105 text-white">
+          <Link to="/" className="flex items-center gap-1.5 sm:gap-3 group cursor-pointer">
+            <img src={getAssetPath("images/Dcode-Logo.png")} alt="DCode Logo" className="h-7 sm:h-10 md:h-12 w-auto transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" />
+            <span className="text-sm sm:text-lg md:text-xl font-bold font-heading transition-all duration-500 hover:scale-105 text-white">
               <span className="gradient-text-horizontal">DCode</span>
-              <span className="hidden xs:inline text-gray-300"> Developers Club</span>
+              <span className="hidden sm:inline text-gray-300"> Developers Club</span>
             </span>
           </Link>
 
