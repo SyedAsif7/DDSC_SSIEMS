@@ -32,24 +32,27 @@ const Index = () => {
       {/* Home */}
       <HeroSection />
       
-      {/* About */}
-      <AboutSection />
-      <WhyJoinSection />
-      
-      {/* Events/Achievements */}
-      <AchievementsSection />
-      
-      {/* Upcoming Events */}
-      <UpcomingEventsSection />
-      
-      {/* Team */}
-      <TeamSection />
-      
-      {/* Partners */}
-      <PartnersSection />
-      
-      {/* Join Us */}
-      <JoinSection />
+      {/* Main Content Area - Properly Spaced and Organized */}
+      <div className="space-y-32 md:space-y-48 pb-32">
+        {/* About */}
+        <AboutSection />
+        <WhyJoinSection />
+        
+        {/* Events/Achievements */}
+        <AchievementsSection />
+        
+        {/* Upcoming Events */}
+        <UpcomingEventsSection />
+
+        {/* Team */}
+        <TeamSection />
+        
+        {/* Partners */}
+        <PartnersSection />
+        
+        {/* Join Us */}
+        <JoinSection />
+      </div>
       
       {/* Contact */}
       <Footer />

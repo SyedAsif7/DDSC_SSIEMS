@@ -8,6 +8,9 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTopButton from "@/components/layout/ScrollToTopButton";
 import { Helmet } from "react-helmet-async";
 
+import SectionHeader from "@/components/ui/SectionHeader";
+import { motion } from "framer-motion";
+
 /**
  * Gallery Page
  * Displays all club photos in a filterable grid with a premium lightbox.
@@ -117,27 +120,14 @@ const Gallery = () => {
             </div>
           </div>
 
-          {/* Header Section */}
-          <div className="max-w-4xl mx-auto text-center mb-20 animate-fade-in" style={{ animationDelay: '100ms' }}>
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple mb-8 shadow-[0_0_20px_rgba(168,85,247,0.15)]">
-              <Sparkles className="w-4 h-4" />
-              <span className="text-[11px] font-black uppercase tracking-[0.3em]">Capturing Excellence</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-white leading-none">
-              Our Visual <span className="gradient-text">Journey</span>
-            </h1>
-            
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <div className="h-[1.5px] w-16 bg-gradient-to-r from-transparent via-ndc-purple/50 to-transparent"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-ndc-purple shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
-              <div className="h-[1.5px] w-16 bg-gradient-to-r from-transparent via-ndc-blue/50 to-transparent"></div>
-            </div>
-
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-medium">
-              Explore the moments that define DCode — from high-stakes hackathons to collaborative learning workshops.
-            </p>
-          </div>
+          <SectionHeader 
+            badgeText="Capturing Excellence"
+            badgeIcon={Sparkles}
+            titlePrefix="Our Visual"
+            titleHighlight="Journey"
+            description="Explore the moments that define DCode — from high-stakes hackathons to collaborative learning workshops."
+            className="mb-20"
+          />
 
           {/* Filter & Search Bar - Premium Design */}
           <div className="sticky top-24 z-30 mb-16 animate-fade-in" style={{ animationDelay: '200ms' }}>

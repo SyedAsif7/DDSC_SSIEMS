@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
+import WorkshopDetails from "./pages/WorkshopDetails";
 import AchievementDetail from "./pages/AchievementDetail";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./hooks/use-theme";
@@ -28,11 +29,18 @@ const App = () => {
             <GlobalBackgroundVideo />
             <Toaster />
             <Sonner />
-            <BrowserRouter basename={basename}>
+            <BrowserRouter 
+              basename={basename}
+              future={{
+                v7_startTransition: true,
+                v7_relativeSplatPath: true,
+              }}
+            >
               <ScrollToTop />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/gallery" element={<Gallery />} />
+                <Route path="/workshop" element={<WorkshopDetails />} />
                 <Route path="/achievement/:id" element={<AchievementDetail />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />

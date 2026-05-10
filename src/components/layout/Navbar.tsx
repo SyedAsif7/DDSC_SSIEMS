@@ -18,6 +18,7 @@ const Navbar = () => {
   const navLinks = [
     { href: '#about', label: 'About' },
     { href: '#why-join', label: 'Why Join' },
+    { href: '/workshop', label: 'Workshop', isPage: true, isNew: true },
     { href: '#events', label: 'Achievements' },
     { href: '#upcoming-events', label: 'Upcoming Events' },
     { href: '/gallery', label: 'Gallery', isPage: true },
@@ -63,9 +64,12 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     to={item.href}
-                    className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple"
+                    className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple flex items-center gap-1.5"
                   >
                     <span className="relative z-10">{item.label}</span>
+                    {item.isNew && (
+                      <span className="flex h-2 w-2 rounded-full bg-ndc-purple animate-pulse shadow-[0_0_8px_rgba(168,85,247,0.8)]"></span>
+                    )}
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-code-indigo to-code-pink group-hover:w-1/2 transition-all duration-500 ease-out rounded-full"></span>
                   </Link>
                 );
@@ -75,18 +79,24 @@ const Navbar = () => {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple"
+                  className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple flex items-center gap-1.5"
                 >
                   <span className="relative z-10">{item.label}</span>
+                  {item.isNew && (
+                    <span className="flex h-2 w-2 rounded-full bg-ndc-purple animate-pulse shadow-[0_0_8px_rgba(168,85,247,0.8)]"></span>
+                  )}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-code-indigo to-code-pink group-hover:w-1/2 transition-all duration-500 ease-out rounded-full"></span>
                 </a>
               ) : (
                 <Link
                   key={item.href}
                   to={`/${item.href}`}
-                  className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple"
+                  className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple flex items-center gap-1.5"
                 >
                   <span className="relative z-10">{item.label}</span>
+                  {item.isNew && (
+                    <span className="flex h-2 w-2 rounded-full bg-ndc-purple animate-pulse shadow-[0_0_8px_rgba(168,85,247,0.8)]"></span>
+                  )}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-code-indigo to-code-pink group-hover:w-1/2 transition-all duration-500 ease-out rounded-full"></span>
                 </Link>
               );
@@ -136,9 +146,12 @@ const Navbar = () => {
                       key={item.href}
                       to={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className="px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-white/10 text-gray-200 active:bg-white/20"
+                      className="px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-white/10 text-gray-200 active:bg-white/20 flex items-center justify-between"
                     >
                       {item.label}
+                      {item.isNew && (
+                        <span className="px-2 py-0.5 rounded-full text-[8px] font-black bg-ndc-purple text-white animate-pulse">NEW</span>
+                      )}
                     </Link>
                   );
                 }
@@ -148,18 +161,24 @@ const Navbar = () => {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-white/10 text-gray-200 active:bg-white/20"
+                    className="px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-white/10 text-gray-200 active:bg-white/20 flex items-center justify-between"
                   >
                     {item.label}
+                    {item.isNew && (
+                      <span className="px-2 py-0.5 rounded-full text-[8px] font-black bg-ndc-purple text-white animate-pulse">NEW</span>
+                    )}
                   </a>
                 ) : (
                   <Link
                     key={item.href}
                     to={`/${item.href}`}
                     onClick={() => setIsMenuOpen(false)}
-                    className="px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-white/10 text-gray-200 active:bg-white/20"
+                    className="px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-white/10 text-gray-200 active:bg-white/20 flex items-center justify-between"
                   >
                     {item.label}
+                    {item.isNew && (
+                      <span className="px-2 py-0.5 rounded-full text-[8px] font-black bg-ndc-purple text-white animate-pulse">NEW</span>
+                    )}
                   </Link>
                 );
               })}

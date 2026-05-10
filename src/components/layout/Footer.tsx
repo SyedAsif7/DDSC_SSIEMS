@@ -138,28 +138,24 @@ const Footer = () => {
         </div>
         
         {/* Copyright Section */}
-        <div className="border-t border-white/20 pt-12">
-          <div className="flex flex-col items-center gap-4 text-center">
-            <p className="text-gray-400 text-xl transition-all duration-300 hover:text-white">
+        <div className="border-t border-white/10 pt-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <p className="text-gray-400 text-sm font-medium tracking-wide">
               © {new Date().getFullYear()} DCode Developers Club. All rights reserved.
             </p>
-            <div className="flex flex-col sm:flex-row items-center gap-3 text-xl md:text-2xl text-gray-400 group/dev pt-4">
-              <span className="font-medium flex items-center gap-2">
-                Made by
-              </span>
+            
+            <div className="flex items-center gap-3 text-sm text-gray-400 group/dev">
+              <span className="font-medium">Designed & Developed by</span>
               <a 
                 href="https://www.linkedin.com/in/the-syed-asif" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="relative group/name"
               >
-                <span className="bg-gradient-to-r from-ndc-purple via-ndc-blue to-ndc-purple bg-clip-text text-transparent font-black tracking-tighter hover:scale-110 transition-all duration-500 block px-2">
+                <span className="bg-gradient-to-r from-ndc-purple via-ndc-blue to-ndc-purple bg-clip-text text-transparent font-black tracking-tight hover:scale-105 transition-all duration-500 block px-1">
                   Syed Asif
                 </span>
-                <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-ndc-purple to-ndc-blue rounded-full transition-all duration-700 group-hover/name:w-full"></div>
-                
-                {/* Developer Badge Glow */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-ndc-purple/20 to-ndc-blue/20 blur-xl rounded-full opacity-0 group-hover/name:opacity-100 transition-opacity duration-700 -z-10"></div>
+                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-ndc-purple to-ndc-blue rounded-full transition-all duration-700 group-hover/name:w-full"></div>
               </a>
             </div>
           </div>

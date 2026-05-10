@@ -17,28 +17,33 @@ export const upcomingEvents: UpcomingEventItem[] = [
     title: "Generative AI Workshop",
     icon: "workshops",
     badge: "Featured Event",
-    date: "16th May 2026",
+    date: "16th May 2026 (Saturday)",
     time: "12:30 PM Sharp",
     venue: "APJ Abdul Kalam Auditorium, SSIEMS Parbhani",
     points: [
-      "Hands-On Workshop on GCP",
-      "Conducted by a Google Developer Expert (GDE)",
-      "Generative AI & LLM Fundamentals"
+      "Learn Generative AI concepts & real-world use cases",
+      "Hands-on experience with Google Cloud Platform",
+      "Build and deploy AI-powered solutions",
+      "Learn from a Google Developer Expert (GDE)",
+      "E-Certificate will be provided to all participants"
     ]
   },
   {
-    title: "Hackathons",
+    title: "National Hackathons",
     icon: "hackathons",
-    points: ["National-level challenges", "Team formation & ideation", "Problem statements TBA"]
+    badge: "Coming Soon",
+    points: ["National-level technical challenges", "Smart India Hackathon (SIH) prep", "Collaborative team building"]
   },
   {
-    title: "Workshops",
+    title: "Tech Workshops",
     icon: "workshops",
-    points: ["Hands-on sessions", "Expert-led guidance", "Schedule TBA"]
+    badge: "Monthly",
+    points: ["Web & Mobile development", "Cloud & DevOps sessions", "Open-source contributions"]
   },
   {
-    title: "Competitions",
+    title: "Coding Contests",
     icon: "competitions",
-    points: ["Coding contests", "Robotics & automation", "Registration TBA"]
+    badge: "Seasonal",
+    points: ["Competitive programming rounds", "Logic & algorithm challenges", "Win exclusive rewards"]
   }
 ];

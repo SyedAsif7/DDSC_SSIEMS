@@ -6,54 +6,7 @@ import { chapter2Data } from "@/data/teamChapters2";
 import { useState } from "react";
 import { getAssetPath } from "@/lib/utils";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-/**
- * Sub-component: Section Header
- */
-const SectionHeader = ({ title, subtitle, description, isChapter2 }: { title: string, subtitle: string, description: string, isChapter2?: boolean }) => (
-  <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in">
-    <div className="inline-block mb-4 relative group">
-      {isChapter2 ? (
-        <div className="relative">
-          {/* Enhanced Chapter 2 Glow Effect */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-ndc-purple via-ndc-blue to-ndc-purple rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-          
-          <span className="relative flex items-center gap-2 px-6 py-2 rounded-full bg-slate-900/80 border border-ndc-purple/30 backdrop-blur-2xl shadow-[0_0_20px_rgba(168,85,247,0.2)] overflow-hidden">
-            {/* Shimmer Effect for Chapter 2 */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-shimmer"></div>
-            
-            <span className="text-[11px] font-black tracking-[0.3em] uppercase bg-gradient-to-r from-ndc-purple to-ndc-blue bg-clip-text text-transparent">
-              {subtitle}
-            </span>
-            
-            <div className="flex gap-1">
-              <div className="w-1 h-1 rounded-full bg-ndc-purple animate-ping"></div>
-              <div className="w-1 h-1 rounded-full bg-ndc-blue animate-ping delay-300"></div>
-            </div>
-          </span>
-        </div>
-      ) : (
-        <span className="px-4 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase bg-white/5 text-gray-400 border border-white/10 backdrop-blur-xl">
-          {subtitle}
-        </span>
-      )}
-    </div>
-    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-white leading-tight">
-      {title.split(' ').map((word, i) => (
-        word.toLowerCase() === 'leadership' || word.toLowerCase() === 'team' ? 
-        <span key={i} className="gradient-text"> {word}</span> : <span key={i}> {word}</span>
-      ))}
-    </h2>
-    <div className="flex items-center justify-center gap-3 mb-6">
-      <div className="h-[1.5px] w-12 bg-gradient-to-r from-transparent via-ndc-purple/40 to-transparent"></div>
-      <div className="w-2 h-2 rounded-full bg-ndc-purple shadow-[0_0_15px_rgba(168,85,247,0.6)] animate-pulse"></div>
-      <div className="h-[1.5px] w-12 bg-gradient-to-r from-transparent via-ndc-purple/40 to-transparent"></div>
-    </div>
-    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-sm opacity-90">
-      {description}
-    </p>
-  </div>
-);
+import SectionHeader from "@/components/ui/SectionHeader";
 
 /**
  * Sub-component: Leadership Card (President/Coordinator)
@@ -481,19 +434,21 @@ const TeamSection = () => {
       </div>
 
       <div className="section-container relative z-10">
+        <SectionHeader 
+          badgeText={showChapter1 ? "Chapter 1 Team" : "Chapter 2 Team"}
+          badgeIcon={Users}
+          titlePrefix="Meet Our"
+          titleHighlight="Leadership Team"
+          description={showChapter1 
+            ? "Honoring the visionary leaders who laid the foundation of our club and started the legacy."
+            : "A dedicated team of visionary leaders and innovators working together to foster a thriving tech community."
+          }
+          centered
+        />
+        
         <div className="flex flex-col items-center">
-          <SectionHeader 
-            title="Meet Our Leadership Team" 
-            subtitle={showChapter1 ? "Chapter 1 Team" : "Chapter 2 Team"} 
-            description={showChapter1 
-              ? "Honoring the visionary leaders who laid the foundation of our club and started the legacy."
-              : "A dedicated team of visionary leaders and innovators working together to foster a thriving tech community."
-            }
-            isChapter2={!showChapter1}
-          />
-          
           {/* Chapter Toggle Button */}
-          <div className="flex justify-center mb-16 relative">
+          <div className="flex justify-center mb-16 mt-12 relative">
             <button
               onClick={() => setActiveChapter(showChapter1 ? "chapter2" : "chapter1")}
               className="group relative flex items-center gap-3 px-8 py-3.5 rounded-[2rem] bg-slate-950/40 backdrop-blur-2xl border border-white/10 hover:border-ndc-purple/40 transition-all duration-500 shadow-2xl overflow-hidden active:scale-95"

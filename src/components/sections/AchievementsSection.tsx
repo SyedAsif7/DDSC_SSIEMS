@@ -8,6 +8,8 @@ import { Code, Terminal, Cpu, Zap, Trophy, Award, ExternalLink, Sparkles, Calend
 import { Link } from "react-router-dom";
 import { achievements } from "@/data/achievements";
 import { getAssetPath } from "@/lib/utils";
+import { motion } from "framer-motion";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const AchievementsSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -39,7 +41,7 @@ const AchievementsSection = () => {
   };
 
   return (
-    <section id="events" className="py-24 md:py-24 relative overflow-hidden bg-transparent scroll-mt-28 md:scroll-mt-32">
+    <section id="events" className="py-24 relative overflow-hidden bg-transparent scroll-mt-28 md:scroll-mt-32">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
@@ -48,117 +50,111 @@ const AchievementsSection = () => {
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-ndc-blue/5 blur-[100px] rounded-full pointer-events-none"></div>
 
       <div className="section-container relative z-10">
-        {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple mb-6 backdrop-blur-md">
-            <Trophy className="w-3.5 h-3.5" />
-            <span className="text-[10px] font-bold uppercase tracking-widest">Excellence in Action</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white leading-tight tracking-tight">
-            Participations & <span className="gradient-text">Achievements</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-ndc-purple to-ndc-blue mx-auto mb-8 rounded-full"></div>
-          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed font-medium">
-            Celebrating technical excellence and innovation from national hackathons to premier technical festivals.
-          </p>
-        </div>
+        <SectionHeader 
+          badgeText="Excellence in Action"
+          badgeIcon={Trophy}
+          titlePrefix="Participations &"
+          titleHighlight="Achievements"
+          description="Celebrating technical excellence and innovation from national hackathons to premier technical festivals."
+          centered
+        />
 
         {/* Category Filters - Refined UI */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-16 animate-fade-in" style={{ animationDelay: '100ms' }}>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border flex items-center gap-2 min-h-[44px] min-w-[44px] ${
-                activeCategory === cat
-                  ? "bg-ndc-purple text-white border-ndc-purple shadow-lg scale-105"
-                  : "bg-white/5 text-gray-400 border-white/5 hover:bg-white/10 hover:text-white hover:border-white/10"
-              }`}
-            >
-              {cat === "All" && <LayoutGrid size={12} />}
-              {cat}
-            </button>
-          ))}
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search achievements..."
-            className="w-full sm:w-64 px-4 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest bg-white/5 text-gray-300 border border-white/5 placeholder:text-gray-500 focus:outline-none focus:border-ndc-purple/40 transition-all min-h-[44px]"
-            aria-label="Search achievements"
-          />
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-16 mt-12 animate-fade-in" style={{ animationDelay: '100ms' }}>
+          <div className="flex flex-wrap items-center justify-center gap-3 p-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-2 ${
+                  activeCategory === cat
+                    ? "bg-gradient-to-r from-ndc-purple to-ndc-blue text-white shadow-lg shadow-ndc-purple/20 scale-105"
+                    : "text-gray-400 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                {cat === "All" && <LayoutGrid size={14} />}
+                {cat}
+              </button>
+            ))}
+          </div>
+          
+          <div className="relative group">
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Search achievements..."
+              className="w-full sm:w-72 px-6 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-widest bg-white/5 text-gray-200 border border-white/10 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-ndc-purple/40 focus:border-transparent transition-all backdrop-blur-md"
+              aria-label="Search achievements"
+            />
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-ndc-purple transition-colors">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
         </div>
 
-        {/* Unified Grid - Perfect Spacing */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-          {filteredAchievements.map((achievement, index) => (
-            <Link 
-              key={achievement.id}
-              to={`/achievement/${achievement.id}`}
-              className="group relative flex flex-col h-full rounded-3xl overflow-hidden border border-white/5 bg-white/[0.02] backdrop-blur-md md:backdrop-blur-xl transition-all duration-500 hover:border-ndc-purple/30 hover:bg-white/[0.04] animate-fade-in active:scale-[0.98] will-change-transform"
-              style={{ animationDelay: `${index * 100}ms` }}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {filteredAchievements.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Image Container - Premium Interaction */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={getAssetPath(achievement.images[0])} 
-                  alt={achievement.title} 
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
-                
-                {/* View Details Hint Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-ndc-purple/5 backdrop-blur-[1px] z-10">
-                  <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <span className="text-[9px] font-bold text-white uppercase tracking-widest">View Details</span>
-                    <ChevronRight className="w-3 h-3 text-white group-hover:translate-x-0.5 transition-transform" />
+              <Link 
+                to={`/achievement/${item.id}`}
+                className="group relative flex flex-col h-full rounded-[2rem] bg-slate-900/40 backdrop-blur-xl border border-white/10 hover:border-ndc-purple/40 transition-all duration-500 hover:-translate-y-2 overflow-hidden shadow-2xl min-h-[400px]"
+              >
+                {/* Background Photo for specific categories */}
+                {item.images && item.images.length > 0 && (
+                  <div className="absolute inset-0 z-0">
+                    <img 
+                      src={getAssetPath(item.images[0])} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
                   </div>
-                </div>
+                )}
 
-                {/* Tags Section - Clean Placement */}
-                <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-20">
-                  <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-black/40 backdrop-blur-md border border-white/5 text-white">
-                    {getIcon(achievement.icon)}
-                    <span className="text-[8px] font-bold uppercase tracking-wider">{achievement.category}</span>
-                  </div>
-                  {achievement.highlight && (
-                    <div className="px-2.5 py-1 rounded-lg bg-ndc-purple/90 text-white text-[8px] font-bold uppercase tracking-widest shadow-lg">
-                      {achievement.highlight}
+                {/* Hover Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-ndc-purple/10 to-ndc-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-1"></div>
+                
+                <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-ndc-purple group-hover:scale-110 group-hover:bg-ndc-purple/10 transition-all duration-500 backdrop-blur-md">
+                      {getIcon(item.icon)}
                     </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Content Section - Polished Typography */}
-              <div className="p-6 flex flex-col flex-1 relative z-20">
-                <h3 className="text-lg font-bold text-white group-hover:text-ndc-purple transition-colors line-clamp-2 leading-tight mb-3 tracking-tight">
-                  {achievement.title}
-                </h3>
-                
-                <p className="text-gray-500 text-xs leading-relaxed line-clamp-3 mb-6 flex-1 font-medium">
-                  {achievement.description}
-                </p>
-
-                {/* Footer Metadata - Detailed Info */}
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between mt-auto">
-                  <div className="flex items-center gap-3 text-gray-500 text-[9px] font-bold uppercase tracking-widest">
-                    <span className="flex items-center gap-1.5 group-hover:text-gray-400 transition-colors">
-                      <Calendar className="w-3 h-3 text-ndc-blue" />
-                      {achievement.date?.split('/')[2] || achievement.date || '2025'}
-                    </span>
-                    <span className="flex items-center gap-1.5 group-hover:text-gray-400 transition-colors">
-                      <MapPin className="w-3 h-3 text-ndc-blue" />
-                      {achievement.location?.split(',')[0] || achievement.location}
-                    </span>
+                    <div className="flex flex-col items-end gap-2">
+                      <span className="px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest bg-ndc-purple/20 text-ndc-purple border border-ndc-purple/30 backdrop-blur-md">
+                        {item.category}
+                      </span>
+                    </div>
                   </div>
+
+                  <h3 className="text-xl md:text-2xl font-black text-white mb-4 leading-tight group-hover:text-ndc-purple transition-colors duration-300 tracking-tight">
+                    {item.title}
+                  </h3>
                   
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/5 text-ndc-purple transition-all group-hover:bg-ndc-purple group-hover:text-white">
-                    <ExternalLink className="w-3.5 h-3.5" />
+                  <p className="text-gray-300 text-sm font-medium leading-relaxed mb-8 line-clamp-3">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-auto flex items-center justify-between pt-6 border-t border-white/10 group-hover:border-ndc-purple/20 transition-colors">
+                    <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 backdrop-blur-sm">
+                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{item.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-ndc-purple font-black uppercase text-[10px] tracking-widest group-hover:gap-3 transition-all px-3 py-1.5 rounded-lg bg-ndc-purple/5 border border-ndc-purple/10 backdrop-blur-sm group-hover:bg-ndc-purple/10">
+                      View Details
+                      <ChevronRight size={14} />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
