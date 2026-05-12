@@ -22,7 +22,7 @@ import { Helmet } from "react-helmet-async";
 const Index = () => {
   return (
     <div className="min-h-screen bg-transparent">
-      <AnnouncementModal />
+      {/* <AnnouncementModal /> */}
       <Helmet>
         <title>DCode Developers Club | Building the Future Together</title>
         <meta name="description" content="Official website of DCode Developers Club. Join our community of innovators, builders, and tech enthusiasts." />
