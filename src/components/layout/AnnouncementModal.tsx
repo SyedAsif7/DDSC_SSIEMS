@@ -5,164 +5,200 @@ import {
   DialogHeader, 
   DialogTitle, 
   DialogDescription,
-  DialogFooter
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, MapPin, Sparkles, X, Cloud, Cpu, GraduationCap, Award, Info } from "lucide-react";
+import { Calendar, Clock, MapPin, Sparkles, X, GraduationCap, Award, ChevronRight, Users, Zap, Terminal, Star } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 const AnnouncementModal = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Show modal after a short delay when the website opens
     const timer = setTimeout(() => {
-      const hasSeenAnnouncement = sessionStorage.getItem("hasSeenWorkshopAnnouncement");
-      if (!hasSeenAnnouncement) {
-        setIsOpen(true);
-      }
-    }, 1500);
+      setIsOpen(true);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
-  const handleClose = () => {
-    setIsOpen(false);
-    sessionStorage.setItem("hasSeenWorkshopAnnouncement", "true");
-  };
+  const handleClose = () => setIsOpen(false);
 
-  const onOpenChange = (open: boolean) => {
-    setIsOpen(open);
-    if (!open) {
-      sessionStorage.setItem("hasSeenWorkshopAnnouncement", "true");
+  const containerVariants = {
+    hidden: { opacity: 0, scale: 0.95, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1]
+      }
     }
   };
 
-  return (
-    <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] bg-slate-950/95 backdrop-blur-2xl border-white/10 p-0 overflow-hidden rounded-[2.5rem] shadow-[0_0_50px_rgba(168,85,247,0.3)] group">
-        {/* Decorative Header Background */}
-        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-br from-ndc-purple/30 via-ndc-blue/10 to-transparent -z-10"></div>
-        
-        {/* Close Button - More visible for mobile */}
-        <button 
-          onClick={handleClose}
-          className="absolute top-6 right-6 z-50 p-2 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all active:scale-90"
-        >
-          <X className="w-5 h-5" />
-        </button>
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+  };
 
-        <div className="p-6 md:p-8">
-          <DialogHeader className="mb-6 relative text-center items-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple mb-6 w-fit animate-fade-in">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span className="text-[10px] font-black uppercase tracking-[0.2em]">Special Announcement</span>
-            </div>
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogContent className="w-[95vw] sm:max-w-[700px] bg-black/90 backdrop-blur-2xl border border-white/10 p-0 overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_0_80px_rgba(168,85,247,0.15)] focus:outline-none ring-1 ring-white/5 max-h-[90vh] overflow-y-auto custom-scrollbar">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.1, 0.15, 0.1] 
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-24 -right-24 w-64 h-64 bg-ndc-purple/20 blur-[100px] rounded-full"
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.3, 1],
+              opacity: [0.08, 0.12, 0.08] 
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear", delay: 1 }}
+            className="absolute -bottom-24 -left-24 w-64 h-64 bg-ndc-blue/20 blur-[100px] rounded-full"
+          />
+          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        </div>
+        
+        <motion.div 
+          className="relative p-5 sm:p-10 flex flex-col h-full"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Header Section */}
+          <DialogHeader className="mb-6 sm:mb-8 items-center text-center space-y-3 sm:space-y-4">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple">
+              <Sparkles className="w-3 h-3 sm:w-3.5 h-3.5 animate-pulse" />
+              <span className="text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em]">Featured Event</span>
+            </motion.div>
             
-            <DialogTitle className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tighter mb-4 uppercase">
-              Hands-On <span className="gradient-text">Generative AI</span> Workshop
-            </DialogTitle>
-            
-            <DialogDescription className="text-gray-400 font-medium text-base leading-relaxed max-w-sm">
-              Master the future of AI with industry leading experts at <span className="text-white font-bold">SSIEMS Parbhani</span>.
-            </DialogDescription>
+            <motion.div variants={itemVariants} className="space-y-1 sm:space-y-2">
+              <DialogTitle className="text-lg sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tighter uppercase">
+                Vibe Coding: <span className="gradient-text italic">GenAI Apps</span>
+              </DialogTitle>
+              <DialogDescription className="text-gray-400 font-medium text-[10px] sm:text-base uppercase tracking-[0.15em] leading-relaxed w-full text-center">
+                Building & Deploying on <span className="text-white font-bold">Google Cloud</span>
+              </DialogDescription>
+            </motion.div>
           </DialogHeader>
 
-          <div className="space-y-4 animate-fade-in" style={{ animationDelay: '100ms' }}>
-            {/* Guest Speaker Spotlight - Enhanced */}
-            <div className="relative p-5 rounded-3xl bg-white/5 border border-white/10 overflow-hidden group/speaker hover:border-ndc-purple/40 transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-r from-ndc-purple/10 to-transparent opacity-0 group-hover/speaker:opacity-100 transition-opacity"></div>
-              <div className="relative flex items-center gap-5">
-                <div className="relative flex-shrink-0">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-ndc-purple to-ndc-blue rounded-2xl blur-md opacity-0 group-hover/speaker:opacity-50 transition-opacity"></div>
-                  <img 
-                    src={getAssetPath("images/Ashutosh S. Bhakare.jpg")} 
-                    alt="Ashutosh S. Bhakare" 
-                    className="relative w-16 h-16 rounded-2xl object-cover border border-white/20"
-                  />
-                  <div className="absolute -bottom-2 -right-2 bg-ndc-purple p-1 rounded-lg border border-white/20 shadow-lg">
-                    <Award className="w-3 h-3 text-white" />
+          {/* Main Info Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10">
+            {/* Logistics Column */}
+            <div className="space-y-3 sm:space-y-4">
+              <motion.div variants={itemVariants} className="flex flex-col gap-2.5 sm:gap-3">
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-colors group">
+                  <div className="w-9 h-9 sm:w-10 h-10 rounded-xl bg-ndc-blue/10 flex items-center justify-center border border-ndc-blue/20 group-hover:scale-110 transition-transform">
+                    <Calendar className="w-4 h-4 sm:w-5 h-5 text-ndc-blue" />
+                  </div>
+                  <div>
+                    <p className="text-[8px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">Date</p>
+                    <p className="text-xs sm:text-base font-bold text-white uppercase tracking-tight">May 16, 2026</p>
                   </div>
                 </div>
-                <div>
-                  <p className="text-[10px] font-black text-ndc-purple uppercase tracking-widest mb-1">Guest Speaker</p>
-                  <h4 className="text-lg font-black text-white leading-tight mb-1">Ashutosh S. Bhakare</h4>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tight flex items-center gap-1.5">
-                    <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google" className="w-3 h-3 opacity-80" />
-                    Google Developer Expert (GDE)
-                  </p>
+
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-colors group">
+                  <div className="w-9 h-9 sm:w-10 h-10 rounded-xl bg-ndc-green/10 flex items-center justify-center border border-ndc-green/20 group-hover:scale-110 transition-transform">
+                    <Clock className="w-4 h-4 sm:w-5 h-5 text-ndc-green" />
+                  </div>
+                  <div>
+                    <p className="text-[8px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">Time</p>
+                    <p className="text-xs sm:text-base font-bold text-white uppercase tracking-tight">12:30 PM Onwards</p>
+                  </div>
                 </div>
-              </div>
+
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-ndc-purple/10 to-transparent border border-ndc-purple/20 hover:from-ndc-purple/15 transition-all group">
+                  <div className="w-9 h-9 sm:w-10 h-10 rounded-xl bg-ndc-purple/10 flex items-center justify-center border border-ndc-purple/20 group-hover:scale-110 transition-transform">
+                    <MapPin className="w-4 h-4 sm:w-5 h-5 text-ndc-purple" />
+                  </div>
+                  <div>
+                    <p className="text-[8px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">Venue</p>
+                    <p className="text-xs sm:text-base font-bold text-white uppercase tracking-tight">APJ Auditorium</p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
-            {/* Event Info Grid - Compact for mobile */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="flex flex-col gap-1 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <div className="flex items-center gap-2 mb-1">
-                  <Calendar className="w-3.5 h-3.5 text-ndc-purple" />
-                  <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest">Date</span>
-                </div>
-                <p className="text-[11px] font-bold text-white leading-tight">16th May 2026</p>
+            {/* Speakers Column */}
+            <div className="space-y-3 sm:space-y-4">
+              <motion.p variants={itemVariants} className="text-[9px] sm:text-[10px] text-gray-500 font-black uppercase tracking-[0.3em] pl-1 flex items-center gap-2">
+                <Star className="w-3 h-3 text-ndc-purple" />
+                Expert Mentors
+              </motion.p>
+              <div className="grid grid-cols-1 gap-2.5 sm:gap-3">
+                {[
+                  { name: "Ashutosh S. Bhakare", role: "Red Hat Specialist", img: "Ashutosh S. Bhakare.jpeg" },
+                  { name: "Rachana Bhakare", role: "Platform Instructor", img: "Rachana Bhakare.jpeg" }
+                ].map((speaker, i) => (
+                  <motion.div 
+                    key={i} 
+                    variants={itemVariants}
+                    className="flex items-center gap-3 sm:gap-4 p-3 sm:p-3.5 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-white/10 transition-all group"
+                  >
+                    <div className="relative shrink-0">
+                      <div className="w-10 h-10 sm:w-12 h-12 rounded-xl overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-500 shadow-lg">
+                        <img 
+                          src={getAssetPath(`images/${speaker.img}`)} 
+                          alt={speaker.name} 
+                          className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
+                        />
+                      </div>
+                      <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 sm:w-4 h-4 rounded-full bg-ndc-purple border-2 border-black flex items-center justify-center shadow-lg">
+                        <Zap className="w-2 h-2 text-white fill-current animate-pulse" />
+                      </div>
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="text-[11px] sm:text-sm font-black text-white uppercase tracking-tight truncate group-hover:text-ndc-purple transition-colors">{speaker.name}</h4>
+                      <p className="text-[8px] sm:text-[9px] font-bold text-gray-500 uppercase tracking-widest">{speaker.role}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-              <div className="flex flex-col gap-1 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <div className="flex items-center gap-2 mb-1">
-                  <Clock className="w-3.5 h-3.5 text-ndc-blue" />
-                  <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest">Time</span>
-                </div>
-                <p className="text-[11px] font-bold text-white leading-tight">12:30 PM Sharp</p>
-              </div>
-            </div>
-
-            {/* Venue Card */}
-            <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <div className="p-2.5 rounded-xl bg-ndc-green/10 text-ndc-green flex-shrink-0">
-                <MapPin className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-1">Venue</p>
-                <p className="text-[11px] font-bold text-white leading-relaxed">
-                  APJ Abdul Kalam Auditorium, SSIEMS Parbhani
-                </p>
-              </div>
-            </div>
-            
-            {/* Certificate Alert */}
-            <div className="flex items-center gap-4 p-4 rounded-2xl bg-ndc-purple/10 border border-ndc-purple/20 animate-pulse">
-              <div className="p-2.5 rounded-xl bg-ndc-purple/20 text-ndc-purple flex-shrink-0">
-                <GraduationCap className="w-4 h-4" />
-              </div>
-              <p className="text-[11px] font-bold text-white tracking-tight">
-                E-Certificate provided to all participants
-              </p>
+              
+              <motion.div variants={itemVariants} className="flex items-center gap-2.5 p-3 rounded-2xl bg-ndc-green/5 border border-ndc-green/10 backdrop-blur-sm group hover:bg-ndc-green/10 transition-colors">
+                <Award className="w-4 h-4 text-ndc-green group-hover:rotate-12 transition-transform" />
+                <span className="text-[9px] sm:text-[10px] font-black text-ndc-green uppercase tracking-[0.1em]">Verifiable Certification Included</span>
+              </motion.div>
             </div>
           </div>
 
-          <DialogFooter className="mt-8 flex flex-col sm:flex-row gap-3">
-            <Button 
-              asChild
-              variant="outline"
-              onClick={handleClose}
-              className="w-full sm:flex-1 rounded-2xl border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10 font-bold uppercase text-[10px] tracking-[0.15em] h-14"
-            >
-              <Link to="/workshop" className="flex items-center justify-center gap-2">
-                <Info className="w-4 h-4" />
-                Details
-              </Link>
-            </Button>
-            <Button 
-              asChild
-              className="w-full sm:flex-1 rounded-2xl bg-gradient-to-r from-ndc-purple to-ndc-blue text-white font-black uppercase text-[10px] tracking-[0.15em] h-14 shadow-xl shadow-ndc-purple/20 hover:scale-[1.02] transition-all active:scale-95"
-            >
-              <a href="https://forms.gle/GRLSPbasffrESu1R9" target="_blank" rel="noopener noreferrer">
-                Register Now
-              </a>
-            </Button>
-          </DialogFooter>
-        </div>
-
-        {/* Technical Grid Overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none -z-20 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+          {/* Action Buttons */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <MagneticButton className="flex-1 order-2 sm:order-1">
+              <Button 
+                asChild
+                variant="outline"
+                onClick={handleClose}
+                className="w-full rounded-2xl border-white/10 bg-white/5 hover:bg-white/10 text-white font-black uppercase text-[10px] sm:text-xs tracking-[0.2em] h-12 sm:h-14 transition-all"
+              >
+                <Link to="/workshop">View Roadmap</Link>
+              </Button>
+            </MagneticButton>
+            
+            <MagneticButton className="flex-1 order-1 sm:order-2">
+              <Button 
+                asChild
+                className="w-full rounded-2xl bg-gradient-to-r from-ndc-purple via-ndc-blue to-ndc-purple bg-[length:200%_auto] animate-gradient hover:scale-[1.02] active:scale-[0.98] text-white font-black uppercase text-[10px] sm:text-xs tracking-[0.2em] h-12 sm:h-14 shadow-2xl shadow-ndc-purple/20 transition-all group"
+              >
+                <a href="https://forms.gle/GRLSPbasffrESu1R9" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  Secure Your Spot
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </MagneticButton>
+          </motion.div>
+        </motion.div>
       </DialogContent>
     </Dialog>
   );

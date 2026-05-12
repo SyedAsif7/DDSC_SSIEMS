@@ -95,63 +95,32 @@ const AchievementsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-16 px-4">
           {filteredAchievements.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="group p-8 md:p-10 rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden text-center"
             >
-              <Link 
-                to={`/achievement/${item.id}`}
-                className="group relative flex flex-col h-full rounded-[2rem] bg-slate-900/40 backdrop-blur-xl border border-white/10 hover:border-ndc-purple/40 transition-all duration-500 hover:-translate-y-2 overflow-hidden shadow-2xl min-h-[400px]"
-              >
-                {/* Background Photo for specific categories */}
-                {item.images && item.images.length > 0 && (
-                  <div className="absolute inset-0 z-0">
-                    <img 
-                      src={getAssetPath(item.images[0])} 
-                      alt={item.title} 
-                      className="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
-                  </div>
-                )}
-
-                {/* Hover Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-ndc-purple/10 to-ndc-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-1"></div>
+              <Link to={`/achievement/${item.id}`} className="block h-full">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-white/10 transition-colors"></div>
                 
-                <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-ndc-purple group-hover:scale-110 group-hover:bg-ndc-purple/10 transition-all duration-500 backdrop-blur-md">
-                      {getIcon(item.icon)}
-                    </div>
-                    <div className="flex flex-col items-end gap-2">
-                      <span className="px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest bg-ndc-purple/20 text-ndc-purple border border-ndc-purple/30 backdrop-blur-md">
-                        {item.category}
-                      </span>
-                    </div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-ndc-purple mx-auto mb-8 border border-white/10 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 shadow-inner">
+                    {getIcon(item.icon)}
                   </div>
-
-                  <h3 className="text-xl md:text-2xl font-black text-white mb-4 leading-tight group-hover:text-ndc-purple transition-colors duration-300 tracking-tight">
+                  
+                  <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter mb-4 italic leading-tight">
                     {item.title}
                   </h3>
                   
-                  <p className="text-gray-300 text-sm font-medium leading-relaxed mb-8 line-clamp-3">
+                  <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium">
                     {item.description}
                   </p>
-
-                  <div className="mt-auto flex items-center justify-between pt-6 border-t border-white/10 group-hover:border-ndc-purple/20 transition-colors">
-                    <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 backdrop-blur-sm">
-                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{item.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-ndc-purple font-black uppercase text-[10px] tracking-widest group-hover:gap-3 transition-all px-3 py-1.5 rounded-lg bg-ndc-purple/5 border border-ndc-purple/10 backdrop-blur-sm group-hover:bg-ndc-purple/10">
-                      View Details
-                      <ChevronRight size={14} />
-                    </div>
-                  </div>
                 </div>
               </Link>
             </motion.div>

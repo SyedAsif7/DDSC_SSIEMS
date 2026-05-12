@@ -24,9 +24,9 @@ const CollegeHeader = () => {
   return (
     <header className="w-full relative z-40">
       {/* Main header - Enhanced with better visual hierarchy */}
-      <div className="relative backdrop-blur-2xl bg-gradient-to-r from-slate-900/80 via-slate-800/60 to-slate-900/80 border-b border-white/10 shadow-lg shadow-black/20">
+      <div className="relative backdrop-blur-2xl bg-slate-900/60 border-b border-white/10 shadow-lg shadow-black/20">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="flex flex-row items-center justify-between gap-2 sm:gap-4 py-1.5 sm:py-2 md:py-4">
+          <div className="flex flex-row items-center justify-between gap-2 sm:gap-4 py-1.5 sm:py-2 md:py-3">
             {/* Left: College logo with enhanced presentation */}
             <div className="flex-shrink-0 group">
               <div className="relative flex items-center justify-center">
@@ -34,43 +34,36 @@ const CollegeHeader = () => {
                 <img
                   src={getAssetPath("images/ssiems-logo.png")}
                   alt="Shri Shivaji Institute of Engineering and Management Studies Logo"
-                  className="relative h-8 sm:h-12 md:h-14 lg:h-16 w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                  className="relative h-7 sm:h-10 md:h-12 w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             </div>
   
             {/* Center: Trust name + college name with better typography */}
             <div className="flex-1 text-center leading-tight px-1 sm:px-4">
-              <div className="inline-block relative mb-0 sm:mb-1 max-w-full">
-                <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 rounded-lg blur-md"></div>
-                <p className="relative text-[5px] xs:text-[7px] sm:text-[8px] md:text-xs font-medium tracking-wider uppercase bg-gradient-to-r from-gray-300 via-white to-gray-300 bg-clip-text text-transparent px-1 sm:px-2 break-words">
-                  Marathwada Shikshan Prasarak Mandal's
-                </p>
-              </div>
-              <h1 className="mt-0 sm:mt-1 text-[7px] xs:text-[9px] sm:text-[10px] md:text-sm lg:text-base font-bold tracking-tight bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-lg leading-tight">
-                Shri Shivaji Institute of Engineering and Management Studies
-                <span className="hidden md:inline">,</span>
-                <span className="md:hidden"><br /></span>
-                <span className="text-indigo-300 ml-1">Parbhani</span>
+              <p className="relative text-[5px] xs:text-[7px] sm:text-[8px] md:text-[10px] font-black tracking-[0.2em] uppercase text-gray-400 mb-0.5 sm:mb-1">
+                Marathwada Shikshan Prasarak Mandal's
+              </p>
+              <h1 className="text-[7px] xs:text-[9px] sm:text-[11px] md:text-sm lg:text-base font-black tracking-tight text-white drop-shadow-lg leading-tight uppercase italic">
+                Shri Shivaji Institute of Engineering <br className="xs:hidden" /> and Management Studies
+                <span className="text-ndc-blue ml-1.5">Parbhani</span>
               </h1>
             </div>
   
             {/* Right: Ganesh statue + NAAC badge with enhanced display */}
-            <div className="flex-shrink-0 flex items-center justify-end gap-1 sm:gap-3 md:gap-4">
+            <div className="flex-shrink-0 flex items-center justify-end gap-1.5 sm:gap-3 md:gap-4">
               <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-500 opacity-0 group-hover:opacity-75"></div>
                 <img
                   src={getAssetPath("images/ssiems-ganesh.webp")}
                   alt="Traditional Ganesh statue"
-                  className="relative h-6 sm:h-8 md:h-10 w-auto object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-110"
+                  className="relative h-5 sm:h-8 md:h-9 w-auto object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-500 opacity-0 group-hover:opacity-75"></div>
                 <img
                   src={getAssetPath("images/ssiems-naac.webp")}
                   alt="NAAC B Grade Accreditation"
-                  className="relative h-6 sm:h-8 md:h-10 w-auto object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-110"
+                  className="relative h-5 sm:h-8 md:h-9 w-auto object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
             </div>
