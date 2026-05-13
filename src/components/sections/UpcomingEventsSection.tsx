@@ -66,39 +66,82 @@ const UpcomingEventsSection = () => {
                   )}
                 </div>
 
-                <div className="flex-1 space-y-8 text-center md:text-left">
+                <div className="flex-1 space-y-6 text-center md:text-left">
                   <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple text-[10px] font-black uppercase tracking-[0.2em]">
-                      <Sparkles size={12} className="animate-pulse" />
-                      {event.badge || "Upcoming Event"}
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+                      <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple text-[10px] font-black uppercase tracking-[0.2em]">
+                        <Sparkles size={12} className="animate-pulse" />
+                        {event.badge || "Upcoming Event"}
+                      </div>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 text-[9px] font-bold uppercase tracking-widest">
+                        {getIcon(event.icon)}
+                        <span className="ml-1">{event.icon}</span>
+                      </div>
                     </div>
+
                     <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter italic leading-[0.9]">
                       {event.title.split(' ').map((word, i) => (
                         <span key={i} className={word === 'Vibe' || word === 'Coding:' || word === 'GenAI' ? 'gradient-text' : ''}>{word} </span>
                       ))}
                     </h3>
-                    <p className="text-gray-400 text-base md:text-lg font-medium leading-relaxed max-w-xl">
+                    <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed max-w-xl">
                       {event.description}
                     </p>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
+                  {/* Highlights/Points List */}
+                  {event.points && event.points.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                      {event.points.map((point, i) => (
+                        <div key={i} className="flex items-center gap-3 group/point">
+                          <div className="w-5 h-5 rounded-full bg-ndc-green/10 flex items-center justify-center border border-ndc-green/20 group-hover/point:scale-110 transition-transform">
+                            <CheckCircle2 size={12} className="text-ndc-green" />
+                          </div>
+                          <span className="text-[10px] md:text-xs font-bold text-gray-300 uppercase tracking-tight leading-none group-hover/point:text-white transition-colors">{point}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="flex flex-wrap items-center gap-4 justify-center md:justify-start pt-4">
                     {event.title.includes("Vibe Coding") ? (
-                      <Button asChild className="w-full sm:w-auto h-16 px-10 bg-white text-black hover:bg-gray-100 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] shadow-xl transition-all hover:-translate-y-1">
+                      <Button asChild className="h-14 px-8 bg-white text-black hover:bg-gray-100 rounded-xl font-black uppercase tracking-[0.2em] text-[10px] shadow-xl transition-all hover:-translate-y-1">
                         <Link to="/workshop" className="flex items-center gap-2">
-                          Get Details
+                          View Roadmap
                           <ChevronRight size={16} />
                         </Link>
                       </Button>
                     ) : (
-                      <Button className="w-full sm:w-auto h-16 px-10 bg-white/5 border border-white/10 text-white/50 cursor-not-allowed rounded-2xl font-black uppercase tracking-[0.2em] text-[10px]">
-                        Details Soon
+                      <Button className="h-14 px-8 bg-white/5 border border-white/10 text-white/50 cursor-not-allowed rounded-xl font-black uppercase tracking-[0.2em] text-[10px]">
+                        Coming Soon
                       </Button>
                     )}
-                    {event.venue && (
-                      <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/10">
-                        <MapPin size={16} className="text-ndc-blue" />
-                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{event.venue.split(',')[0]}</span>
+                    
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                      {event.venue && (
+                        <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-400 group/info">
+                          <MapPin size={14} className="text-ndc-blue group-hover/info:scale-110 transition-transform" />
+                          <span className="text-[9px] font-black uppercase tracking-widest">{event.venue.split(',')[0]}</span>
+                        </div>
+                      )}
+                      
+                      {event.time && (
+                        <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-400 group/info">
+                          <Clock size={14} className="text-ndc-green group-hover/info:scale-110 transition-transform" />
+                          <span className="text-[9px] font-black uppercase tracking-widest">{event.time}</span>
+                        </div>
+                      )}
+                    </div>
+
+                    {event.sponsor && (
+                      <div className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group/sponsor">
+                        <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 shrink-0 bg-white/5 flex items-center justify-center p-1">
+                          <img src={getAssetPath(event.sponsor.logo)} alt={event.sponsor.name} className="w-full h-full object-contain" />
+                        </div>
+                        <div className="text-left">
+                          <p className="text-[7px] font-black text-slate-400 uppercase tracking-[0.2em]">{event.sponsor.tier}</p>
+                          <p className="text-[9px] font-bold text-white uppercase tracking-tight">{event.sponsor.name}</p>
+                        </div>
                       </div>
                     )}
                   </div>

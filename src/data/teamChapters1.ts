@@ -104,13 +104,12 @@ export const chapter1Data = {
   }
 };
 
-/*
 export const chapter2Data = {
   president: {
     name: "Syed Asif",
-    role: "President – DDSC",
+    role: "Founder & President",
     initials: "SA",
-    bio: "Visionary leader for Chapter 2, driving technical excellence and fostering a culture of innovation and collaboration.",
+    bio: "Coming soon...!!!",
     image: "lovable-uploads/Asef Ansari.jpg",
     email: "syedasif111005@gmail.com"
   },
@@ -118,7 +117,7 @@ export const chapter2Data = {
     name: "Prof. Shelke S.B.",
     role: "Faculty Coordinator",
     initials: "SB",
-    bio: "Mentoring the new era of tech leaders and bridging the gap between academia and industry.",
+    bio: "Coming soon...!!!",
     image: "lovable-uploads/Prof.-Shelke-S.B.-new.webp",
     email: "snehal.shelke@cse.ssiems.in"
   },
@@ -127,7 +126,7 @@ export const chapter2Data = {
       name: "Gayatri Shriram Bharose",
       role: "Vice President",
       initials: "GSB",
-      bio: "Strategizing and overseeing club operations for the new session.",
+      bio: "Coming soon...!!!",
       email: "bharosegayu@gmail.com",
       image: "images/Chapter_2_ Committe_images/Gayatri Bharose.jpg"
     },
@@ -135,7 +134,7 @@ export const chapter2Data = {
       name: "Sandip Balasaheb Ayewar",
       role: "Treasurer",
       initials: "SBA",
-      bio: "Managing financial resources and budget allocation for upcoming initiatives.",
+      bio: "Coming soon...!!!",
       email: "sandipayewar@gmail.com",
       image: "images/Chapter_2_ Committe_images/Sandip Ayewar.jpg"
     },
@@ -143,7 +142,7 @@ export const chapter2Data = {
       name: "Sanjivani Jaiprakash Jadhav",
       role: "Technical Team Leader",
       initials: "SJJ",
-      bio: "Spearheading technical projects and innovation across the club.",
+      bio: "Coming soon...!!!",
       email: "sanjivani.jadhav.cs@gmail.com",
       image: "images/Chapter_2_ Committe_images/Sanjivani Jadhav.jpg"
     },
@@ -151,7 +150,7 @@ export const chapter2Data = {
       name: "Siddi Yaseen Hussain",
       role: "Vice-Technical Team Leader",
       initials: "SYH",
-      bio: "Assisting in technical leadership to handle the increased project load effectively.",
+      bio: "Coming soon...!!!",
       email: "Ysnhun412@gmail.com",
       image: "images/Chapter_2_ Committe_images/Siddi Yaseen Hussain.png"
     },
@@ -159,7 +158,7 @@ export const chapter2Data = {
       name: "Rushikesh Deshmukh",
       role: "Social Media Team Leader",
       initials: "RD",
-      bio: "Leading digital outreach and community presence.",
+      bio: "Coming soon...!!!",
       email: "rushideshmukh0802@gmail.com",
       image: "images/Chapter_2_ Committe_images/Rushikesh Deshmukh.jpeg"
     },
@@ -167,7 +166,7 @@ export const chapter2Data = {
       name: "Arpita Mukund Jondhale",
       role: "Design Team Leader",
       initials: "AMJ",
-      bio: "Directing creative vision and visual identity.",
+      bio: "Coming soon...!!!",
       email: "arpitajondhale358@gmail.com",
       image: "images/Chapter_2_ Committe_images/Arpita Jondhale.JPG"
     },
@@ -175,7 +174,7 @@ export const chapter2Data = {
       name: "Sarvadnya Annarao Kshirsagar",
       role: "Event Management Team Leader",
       initials: "SAK",
-      bio: "Orchestrating impactful events and workshops.",
+      bio: "Coming soon...!!!",
       email: "kshirsagarsarvadnya77@gmail.com",
       image: "images/Chapter_2_ Committe_images/Sarvadnya Kshirsagar.jpg"
     }
@@ -203,4 +202,3 @@ export const chapter2Data = {
     }
   }
 };
-*/

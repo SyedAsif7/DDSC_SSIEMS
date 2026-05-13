@@ -23,7 +23,7 @@ const Navbar = () => {
     { href: '#upcoming-events', label: 'Upcoming Events' },
     { href: '/gallery', label: 'Gallery', isPage: true },
     { href: '#team', label: 'Team' },
-    { href: '#partners', label: 'Partners' },
+    { href: '#partners', label: 'Sponsors' },
   ];
 
   useEffect(() => {

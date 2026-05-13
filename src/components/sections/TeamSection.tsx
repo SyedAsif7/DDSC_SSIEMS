@@ -344,42 +344,10 @@ const TeamChapterView = ({ data, isChapter2 }: { data: any, isChapter2: boolean 
       </div>
     )}
 
-    {/* Chapter Grid - Modernized with better organization */}
-    <div className="mt-24 md:mt-32 px-4 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        {[data.president, data.coordinator, ...(data.members || [])].map((member, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.05 }}
-            className="group relative p-8 md:p-10 rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-xl overflow-hidden text-center"
-          >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 blur-2xl rounded-full translate-x-12 -translate-y-12 group-hover:bg-white/10 transition-colors"></div>
-            
-            <div className="relative z-10 space-y-6">
-              <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-white/10 mx-auto group-hover:scale-105 transition-transform duration-500 shadow-2xl">
-                <img src={getAssetPath(member.image)} alt={member.name} className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-500" />
-              </div>
-              
-              <div className="space-y-2">
-                <h4 className="text-lg md:text-xl font-black text-white uppercase tracking-tighter italic leading-tight group-hover:text-ndc-purple transition-colors">{member.name}</h4>
-                <p className="text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">{member.role}</p>
-              </div>
-
-              <div className="flex items-center justify-center gap-4 pt-2">
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-ndc-blue transition-colors">
-                  <Linkedin size={16} />
-                </a>
-                <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">
-                  <Github size={16} />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+    {/* Primary Leadership - President & Coordinator */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto px-4 mt-16 md:mt-24 relative z-10">
+      <LeadershipCard member={data.president} type="president" />
+      <LeadershipCard member={data.coordinator} type="coordinator" />
     </div>
 
     {/* Executive Core */}

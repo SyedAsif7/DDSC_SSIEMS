@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowLeft, Sparkles, Calendar, Clock, MapPin, ChevronRight, CheckCircle2, Download, Share2, FileText, Target, User2, Award, Phone, MessageSquare, Users, GraduationCap, Linkedin, Navigation, Zap, Terminal, Eye, Maximize2 } from "lucide-react";
+import { ArrowLeft, Sparkles, Calendar, Clock, MapPin, ChevronRight, CheckCircle2, Download, Share2, FileText, Target, User2, Award, Phone, MessageSquare, Users, GraduationCap, Linkedin, Navigation, Zap, Terminal, Eye, Maximize2, Handshake } from "lucide-react";
 import { Link } from "react-router-dom";
 import CollegeHeader from "@/components/layout/CollegeHeader";
 import Navbar from "@/components/layout/Navbar";
@@ -572,6 +572,108 @@ const WorkshopDetails = () => {
                 </a>
               </Button>
             </motion.div>
+          </div>
+
+          {/* Event Sponsors Section */}
+          <div className="mb-24 md:mb-40 px-4">
+            <SectionHeader 
+              badgeText="Event Supporters"
+              badgeIcon={Handshake}
+              titlePrefix="Our"
+              titleHighlight="Sponsors"
+              description="DCode 2026 is supported by industry leaders committed to student growth and innovation."
+              centered
+            />
+            
+            <div className="max-w-4xl mx-auto mt-12 md:mt-16 space-y-6 md:space-y-8">
+              {/* Academic Partner */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-12 flex flex-col sm:flex-row items-center gap-8 md:gap-12 group hover:border-white/20 transition-all duration-500"
+              >
+                <div className="relative shrink-0">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-700 shadow-2xl bg-white/5 flex items-center justify-center p-4">
+                    <img 
+                      src={getAssetPath("images/ssiems-logo.png")} 
+                      alt="SSIEMS Parbhani" 
+                      className="w-full h-full object-contain" 
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 bg-ndc-blue p-2 md:p-3 rounded-lg md:rounded-xl shadow-2xl border border-white/10">
+                    <GraduationCap className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  </div>
+                </div>
+                
+                <div className="text-center sm:text-left space-y-4 md:space-y-6 flex-1">
+                  <div className="space-y-1.5">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ndc-blue/10 border border-ndc-blue/20 text-ndc-blue mb-2">
+                      <Sparkles className="w-3 h-3" />
+                      <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em]">Official Academic Partner</span>
+                    </div>
+                    <h4 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter">Shri Shivaji Institute of Engineering and Management Studies</h4>
+                    <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed">
+                      Our official academic partner providing resources, spaces, and academic support for the club's activities and growth.
+                    </p>
+                  </div>
+                  
+                  <a 
+                    href="https://ssiems.org.in/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all text-[10px] md:text-xs font-black uppercase tracking-[0.2em] group/link"
+                  >
+                    Visit Institute Website
+                    <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Silver Sponsor */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-12 flex flex-col sm:flex-row items-center gap-8 md:gap-12 group hover:border-white/20 transition-all duration-500"
+              >
+                <div className="relative shrink-0">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-700 shadow-2xl">
+                    <img 
+                      src={getAssetPath("images/sponser_hpworldparbhani.jpeg")} 
+                      alt="HP World Parbhani" 
+                      className="w-full h-full object-cover" 
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 bg-slate-400 p-2 md:p-3 rounded-lg md:rounded-xl shadow-2xl border border-white/10">
+                    <Award className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  </div>
+                </div>
+                
+                <div className="text-center sm:text-left space-y-4 md:space-y-6 flex-1">
+                  <div className="space-y-1.5">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-400/10 border border-slate-400/20 text-slate-400 mb-2">
+                      <Sparkles className="w-3 h-3" />
+                      <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em]">Silver Sponsor</span>
+                    </div>
+                    <h4 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter">HP World, Parbhani</h4>
+                    <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed">
+                      Official Silver Sponsor for DCode 2026. Empowering students with the latest technology solutions and supporting technical innovation in the community.
+                    </p>
+                  </div>
+                  
+                  <a 
+                    href="https://www.hpworldstores.in/convolt-systems-parbhani-maharashtra-431401/Home" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all text-[10px] md:text-xs font-black uppercase tracking-[0.2em] group/link"
+                  >
+                    Visit Website
+                    <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                  </a>
+                </div>
+              </motion.div>
+            </div>
           </div>
 
           {/* 9. FAQ Section */}

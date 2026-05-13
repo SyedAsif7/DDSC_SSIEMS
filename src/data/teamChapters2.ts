@@ -1,9 +1,9 @@
 export const chapter2Data = {
   president: {
-    name: "Coming soon...!!!",
+    name: "Syed Asif",
     role: "Founder & President",
-    initials: "SASG",
-    bio: ".... leads DDSC with a vision to create a vibrant tech community at SSIEMS. He focuses on fostering innovation, collaboration, and hands-on learning for every member.",
+    initials: "SA",
+    bio: "Asif leads DDSC Chapter 2 with a mission to bridge the gap between classroom theory and industry reality. He is committed to building a hands-on learning culture where students don't just learn about technology, but build it themselves.",
     tagline: "Building the future of tech, one line at a time.",
     image: "lovable-uploads/thesyedasif.png",
     linkedin: "https://www.linkedin.com/in/the-syed-asif/",
@@ -15,7 +15,7 @@ export const chapter2Data = {
     name: "Prof. Shelke S.B.",
     role: "Faculty Coordinator",
     initials: "SB",
-    bio: "Guides, mentors, and supports DDSC's vision by bridging the gap between students and the institution. Provides constant encouragement for innovation and excellence.",
+    bio: "Providing strategic mentorship and institutional support, Prof. Shelke empowers the club to reach new heights. She ensures a supportive environment for technical excellence and student-led innovation at SSIEMS.",
     image: "lovable-uploads/Prof.-Shelke-S.B.-new.webp",
     linkedin: "",
     email: "snehal.shelke@cse.ssiems.in"
@@ -25,56 +25,64 @@ export const chapter2Data = {
       name: "Gayatri Shriram Bharose",
       role: "Vice President",
       initials: "GSB",
-      bio: "Supports the president and oversees daily operations of the club.",
+      bio: "Overseeing daily operations and strategizing club initiatives for maximum impact.",
+      email: "bharosegayu@gmail.com",
       image: "images/Chapter_2_ Committe_images/Gayatri Bharose.jpg"
     },
     {
       name: "Sandip Balasaheb Ayewar",
       role: "Secretary",
       initials: "SBA",
-      bio: "Manages club documentation, records, and internal communication.",
+      bio: "Ensuring smooth communication and meticulous documentation of club milestones.",
+      email: "sandipayewar@gmail.com",
       image: "images/Chapter_2_ Committe_images/Sandip Ayewar.jpg"
     },
     {
       name: "Arpita Mukund Jondhale",
       role: "Treasurer",
       initials: "AMJ",
-      bio: "Manages financial planning and resource allocation for club activities.",
+      bio: "Managing the club's financial health and ensuring efficient resource allocation for all events.",
+      email: "arpitajondhale358@gmail.com",
       image: "images/Chapter_2_ Committe_images/Arpita Jondhale.JPG"
     },
     {
       name: "Sanjivani Jaiprakash Jadhav",
       role: "Technical Lead",
       initials: "SJJ",
-      bio: "Leads technical initiatives and guides development projects.",
+      bio: "Spearheading the technical roadmap and mentoring the next generation of builders.",
+      email: "sanjivani.jadhav.cs@gmail.com",
       image: "images/Chapter_2_ Committe_images/Sanjivani Jadhav.jpg"
     },
     {
       name: "Siddi Yaseen Hussain",
       role: "Vice-Technical Team Leader",
       initials: "SYH",
-      bio: "Supports technical projects and helps manage the development team.",
+      bio: "Collaborating on technical projects and helping scale our development community.",
+      email: "Ysnhun412@gmail.com",
       image: "images/Chapter_2_ Committe_images/Siddi Yaseen Hussain.png"
     },
     {
       name: "Rushikesh Anilrao Deshmukh",
       role: "Social Media Lead",
       initials: "RAD",
-      bio: "Manages online presence and community engagement strategies.",
+      bio: "Amplifying our voice and building a vibrant digital community for Chapter 2.",
+      email: "rushideshmukh0802@gmail.com",
       image: "images/Chapter_2_ Committe_images/Rushikesh Deshmukh.jpeg"
     },
     {
       name: "Supriya Satish Shahane",
       role: "Design Lead",
       initials: "SSS",
-      bio: "Oversees visual identity and creative design initiatives.",
+      bio: "Crafting the visual identity of DDSC and ensuring excellence in design.",
+      email: "images/Chapter_2_ Committe_images/Supriya Shahane.jpg",
       image: "images/Chapter_2_ Committe_images/Supriya Shahane.jpg"
     },
     {
       name: "Sarvadnya Annarao Kshirsagar",
       role: "Event Lead",
       initials: "SAK",
-      bio: "Plans and coordinates all club events and workshops.",
+      bio: "Orchestrating memorable experiences and seamless execution of club workshops.",
+      email: "kshirsagarsarvadnya77@gmail.com",
       image: "images/Chapter_2_ Committe_images/Sarvadnya Kshirsagar.jpg"
     }
   ],

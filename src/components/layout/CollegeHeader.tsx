@@ -41,12 +41,12 @@ const CollegeHeader = () => {
   
             {/* Center: Trust name + college name with better typography */}
             <div className="flex-1 text-center leading-tight px-1 sm:px-4">
-              <p className="relative text-[5px] xs:text-[7px] sm:text-[8px] md:text-[10px] font-black tracking-[0.2em] uppercase text-gray-400 mb-0.5 sm:mb-1">
+              <p className="relative text-[6px] xs:text-[7px] sm:text-[8px] md:text-[10px] font-black tracking-[0.2em] uppercase text-gray-400 mb-0.5 sm:mb-1">
                 Marathwada Shikshan Prasarak Mandal's
               </p>
-              <h1 className="text-[7px] xs:text-[9px] sm:text-[11px] md:text-sm lg:text-base font-black tracking-tight text-white drop-shadow-lg leading-tight uppercase italic">
-                Shri Shivaji Institute of Engineering <br className="xs:hidden" /> and Management Studies
-                <span className="text-ndc-blue ml-1.5">Parbhani</span>
+              <h1 className="text-[7.5px] xs:text-[9.5px] sm:text-[12px] md:text-sm lg:text-base xl:text-lg font-black tracking-tight text-white drop-shadow-lg leading-tight uppercase italic whitespace-nowrap">
+                Shri Shivaji Institute of Engineering and Management Studies
+                <span className="text-ndc-blue ml-2">Parbhani</span>
               </h1>
             </div>
   

@@ -42,7 +42,7 @@ const WhyJoinSection = () => {
           centered={true}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-16 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-16 px-4">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -50,23 +50,34 @@ const WhyJoinSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group p-8 md:p-10 rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden"
+              whileHover={{ y: -8 }}
+              className="group p-8 rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden flex flex-col h-full"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-white/10 transition-colors"></div>
+              {/* Top Accent Blur */}
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-white/10 transition-colors`}></div>
               
-              <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-ndc-blue mb-8 border border-white/10 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 shadow-inner">
-                  <benefit.icon size={32} />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center ${benefit.color} mb-8 border border-white/10 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 shadow-inner shrink-0`}>
+                  <benefit.icon size={28} />
                 </div>
                 
-                <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter mb-4 italic leading-tight">
-                  {benefit.title}
-                </h3>
-                
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium">
-                  {benefit.description}
-                </p>
+                <div className="space-y-4 flex-1">
+                  <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter italic leading-[1.1]">
+                    {benefit.title.split(' ').map((word, i) => (
+                      <span key={i} className="block">{word}</span>
+                    ))}
+                  </h3>
+                  
+                  <p className="text-gray-400 text-[13px] md:text-sm leading-relaxed font-medium line-clamp-4">
+                    {benefit.description}
+                  </p>
+                </div>
+
+                {/* Bottom Interactive Indicator */}
+                <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                  <div className={`h-1 w-8 rounded-full bg-gradient-to-r from-white/10 to-transparent group-hover:w-16 transition-all duration-500`}></div>
+                  <div className={`w-2 h-2 rounded-full ${benefit.color} opacity-20 group-hover:opacity-100 group-hover:scale-150 transition-all duration-500`}></div>
+                </div>
               </div>
             </motion.div>
           ))}

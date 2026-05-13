@@ -65,7 +65,7 @@ const Footer = () => {
                 { name: 'Why Join', href: '#why-join', color: 'ndc-blue' },
                 { name: 'Benefits', href: '#benefits', color: 'ndc-green' },
                 { name: 'Our Team', href: '#team', color: 'ndc-purple' },
-                { name: 'Partners', href: '#partners', color: 'ndc-blue' },
+                { name: 'Sponsors', href: '#partners', color: 'ndc-blue' },
                 { name: 'Join Us', href: '#join', color: 'ndc-green' }
               ].map((link, index) => (
                 <li key={index}>

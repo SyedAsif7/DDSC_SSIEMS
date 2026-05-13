@@ -104,23 +104,45 @@ const AchievementsSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group p-8 md:p-10 rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden text-center"
+              className="group rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden flex flex-col h-full"
             >
-              <Link to={`/achievement/${item.id}`} className="block h-full">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-white/10 transition-colors"></div>
-                
-                <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-ndc-purple mx-auto mb-8 border border-white/10 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 shadow-inner">
+              <Link to={`/achievement/${item.id}`} className="block h-full relative">
+                {/* Background Image with Overlay */}
+                <div className="absolute inset-0 z-0">
+                  <img 
+                    src={getAssetPath(item.images[0])} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/40"></div>
+                </div>
+
+                <div className="relative z-10 p-8 md:p-10 text-center flex flex-col h-full items-center justify-center min-h-[320px]">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-white/10 transition-colors"></div>
+                  
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-ndc-purple mb-6 border border-white/10 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 shadow-inner">
                     {getIcon(item.icon)}
                   </div>
                   
-                  <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter mb-4 italic leading-tight">
-                    {item.title}
-                  </h3>
-                  
-                  <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium">
-                    {item.description}
-                  </p>
+                  <div className="space-y-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple text-[8px] font-black uppercase tracking-[0.2em]">
+                      <Sparkles size={10} className="animate-pulse" />
+                      {item.category}
+                    </div>
+                    
+                    <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter italic leading-tight group-hover:text-ndc-purple transition-colors">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed font-medium line-clamp-3 group-hover:text-gray-300 transition-colors">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 flex items-center gap-2 text-[10px] font-black text-white uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                    View Case Study
+                    <ChevronRight size={14} className="text-ndc-purple" />
+                  </div>
                 </div>
               </Link>
             </motion.div>

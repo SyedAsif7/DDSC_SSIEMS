@@ -12,6 +12,11 @@ export interface UpcomingEventItem {
   date?: string;
   time?: string;
   venue?: string;
+  sponsor?: {
+    name: string;
+    logo: string;
+    tier: string;
+  };
 }
 
 export const upcomingEvents: UpcomingEventItem[] = [
@@ -24,6 +29,11 @@ export const upcomingEvents: UpcomingEventItem[] = [
     date: "May 16, 2026",
     time: "12:30 PM Sharp",
     venue: "APJ Abdul Kalam Auditorium, SSIEMS Parbhani",
+    sponsor: {
+      name: "HP World, Parbhani",
+      logo: "images/sponser_hpworldparbhani.jpeg",
+      tier: "Silver Sponsor"
+    },
     points: [
       "Learn Generative AI concepts & real-world use cases",
       "Hands-on experience with Google Cloud Platform",

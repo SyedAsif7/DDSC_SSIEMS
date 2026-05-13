@@ -14,6 +14,14 @@ const PartnersSection = () => {
       labelColor: "text-ndc-blue",
       website: "https://ssiems.org.in/"
     },
+    {
+      name: "HP World, Parbhani",
+      description: "Official Silver Sponsor for DCode 2026. Empowering students with the latest technology solutions and supporting technical innovation in the community.",
+      logo: "images/sponser_hpworldparbhani.jpeg",
+      label: "Silver Sponsor",
+      labelColor: "text-slate-400",
+      website: "https://www.hpworldstores.in/convolt-systems-parbhani-maharashtra-431401/Home"
+    },
   ];
   
   return (
@@ -23,13 +31,13 @@ const PartnersSection = () => {
           badgeText="Collaborations"
           badgeIcon={Handshake}
           titlePrefix="Our"
-          titleHighlight="Partners"
-          description="We collaborate with leading organizations to bring the best opportunities to our members."
+          titleHighlight="Partners & Sponsors"
+          description="We collaborate with leading organizations and sponsors to bring the best opportunities to our members."
           centered
         />
 
         {/* Partners Grid */}
-        <div className="max-w-4xl mx-auto mt-12">
+        <div className="max-w-4xl mx-auto mt-12 space-y-8">
           {partners.map((partner, index) => (
             <motion.div 
               key={index}

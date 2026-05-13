@@ -15,6 +15,14 @@ const PartnersSection = () => {
       labelColor: theme === 'light' ? "text-blue-700" : "text-ndc-blue",
       website: "https://ssiems.org.in/"
     },
+    {
+      name: "HP World, Parbhani",
+      description: "Official Silver Sponsor for DCode 2026. Empowering students with the latest technology solutions and supporting technical innovation in the community.",
+      logo: "images/sponser_hpworldparbhani.jpeg",
+      label: "Silver Sponsor",
+      labelColor: theme === 'light' ? "text-slate-600" : "text-slate-400",
+      website: "https://www.hpworldstores.in/convolt-systems-parbhani-maharashtra-431401/Home"
+    },
     /*
     {
       name: "GDG on Campus PES College of Engineering - Aurangabad, India",
@@ -47,10 +55,10 @@ const PartnersSection = () => {
     <section id="partners" className={theme === 'light' ? 'py-20 bg-gradient-to-br from-gray-50 to-blue-50' : 'py-20 bg-secondary/30'}>
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
-          <h2 className="heading-md mb-6">Our <span className="gradient-text">Partners</span></h2>
+          <h2 className="heading-md mb-6">Our <span className="gradient-text">Partners & Sponsors</span></h2>
           <div className="w-20 h-1 bg-gradient-to-r from-ndc-purple to-ndc-blue mx-auto mb-6"></div>
           <p className={`text-lg ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
-            We collaborate with leading organizations and institutions to bring the best opportunities to our members.
+            We collaborate with leading organizations and sponsors to bring the best opportunities to our members.
           </p>
         </div>
 
