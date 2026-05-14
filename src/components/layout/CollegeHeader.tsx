@@ -32,7 +32,7 @@ const CollegeHeader = () => {
               <div className="relative flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50 group-hover:opacity-75"></div>
                 <img
-                  src={getAssetPath("images/ssiems-logo.png")}
+                  src={getAssetPath("/images/college/ssiems-logo.png")}
                   alt="Shri Shivaji Institute of Engineering and Management Studies Logo"
                   className="relative h-7 sm:h-10 md:h-12 w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
                 />
@@ -54,14 +54,14 @@ const CollegeHeader = () => {
             <div className="flex-shrink-0 flex items-center justify-end gap-1.5 sm:gap-3 md:gap-4">
               <div className="group relative">
                 <img
-                  src={getAssetPath("images/ssiems-ganesh.webp")}
+                  src={getAssetPath("/images/college/ssiems-ganesh.webp")}
                   alt="Traditional Ganesh statue"
                   className="relative h-5 sm:h-8 md:h-9 w-auto object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="group relative">
                 <img
-                  src={getAssetPath("images/ssiems-naac.webp")}
+                  src={getAssetPath("/images/college/ssiems-naac.webp")}
                   alt="NAAC B Grade Accreditation"
                   className="relative h-5 sm:h-8 md:h-9 w-auto object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-110"
                 />

@@ -48,14 +48,17 @@ const AnnouncementModal = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="w-[94vw] sm:max-w-[700px] bg-black/95 backdrop-blur-3xl border border-white/10 p-0 overflow-hidden rounded-[2rem] shadow-[0_0_80px_rgba(168,85,247,0.25)] focus:outline-none ring-1 ring-white/10 max-h-[90vh] overflow-y-auto custom-scrollbar">
-        {/* Custom Close Button for Mobile */}
-        <button 
-          onClick={handleClose}
-          className="absolute right-4 top-4 z-50 p-2 rounded-full bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-all sm:hidden"
-        >
-          <X className="w-5 h-5" />
-        </button>
+      <DialogContent className="w-[90vw] sm:max-w-[480px] bg-black/95 backdrop-blur-3xl border border-white/10 p-0 overflow-hidden rounded-[1.5rem] shadow-[0_0_80px_rgba(168,85,247,0.25)] focus:outline-none ring-1 ring-white/10 max-h-[85vh] overflow-y-auto custom-scrollbar [&>button:last-child]:hidden">
+        {/* Custom Close Button for ALL screens */}
+        <div className="absolute right-4 top-4 z-[60]">
+          <button 
+            onClick={handleClose}
+            className="p-2 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all active:scale-95"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -65,7 +68,7 @@ const AnnouncementModal = () => {
               opacity: [0.1, 0.15, 0.1] 
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-24 -right-24 w-64 h-64 bg-ndc-purple/20 blur-[100px] rounded-full"
+            className="absolute -top-24 -right-24 w-48 h-48 bg-ndc-purple/20 blur-[80px] rounded-full"
           />
           <motion.div 
             animate={{ 
@@ -73,138 +76,112 @@ const AnnouncementModal = () => {
               opacity: [0.08, 0.12, 0.08] 
             }}
             transition={{ duration: 10, repeat: Infinity, ease: "linear", delay: 1 }}
-            className="absolute -bottom-24 -left-24 w-64 h-64 bg-ndc-blue/20 blur-[100px] rounded-full"
+            className="absolute -bottom-24 -left-24 w-48 h-48 bg-ndc-blue/20 blur-[80px] rounded-full"
           />
           <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
         </div>
         
         <motion.div 
-          className="relative p-4 sm:p-10 flex flex-col h-full"
+          className="relative p-4 sm:p-6 flex flex-col h-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Header Section */}
-          <DialogHeader className="mb-4 sm:mb-8 items-center text-center space-y-2 sm:space-y-4">
+          <DialogHeader className="mb-3 sm:mb-5 items-center text-center space-y-2 sm:space-y-3">
             <motion.div variants={itemVariants} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple">
-              <Sparkles className="w-3 h-3 sm:w-3.5 h-3.5 animate-pulse" />
-              <span className="text-[8px] sm:text-xs font-bold uppercase tracking-[0.2em]">Featured Event</span>
+              <Sparkles className="w-3 h-3 sm:w-3 h-3 animate-pulse" />
+              <span className="text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.2em]">Featured Event</span>
             </motion.div>
             
-            <motion.div variants={itemVariants} className="space-y-1 sm:space-y-2">
-              <DialogTitle className="text-2xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tighter uppercase">
+            <motion.div variants={itemVariants} className="space-y-1 sm:space-y-1.5">
+              <DialogTitle className="text-lg sm:text-2xl md:text-3xl font-black text-white leading-[1.1] tracking-tighter uppercase">
                 Vibe Coding: <span className="gradient-text italic">GenAI Apps</span>
               </DialogTitle>
-              <DialogDescription className="text-gray-400 font-medium text-[11px] sm:text-base uppercase tracking-[0.15em] leading-relaxed w-full text-center">
-                Building & Deploying on <span className="text-white font-bold">Google Cloud</span>
-              </DialogDescription>
+              <div className="flex flex-col items-center gap-1.5">
+                <DialogDescription className="text-gray-400 font-medium text-[8px] sm:text-[10px] uppercase tracking-[0.15em] leading-relaxed w-full text-center">
+                  Building & Deploying on <span className="text-white font-bold">Google Cloud</span>
+                </DialogDescription>
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="mt-1 px-3 py-1 rounded-lg bg-red-500/10 border border-red-500/20 text-red-500 text-[8px] sm:text-[9px] font-black uppercase tracking-widest flex items-center gap-1.5"
+                >
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
+                  </span>
+                  Registrations Closed
+                </motion.div>
+              </div>
             </motion.div>
           </DialogHeader>
 
-          {/* Main Info Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 mb-6 sm:mb-10">
-            {/* Logistics Column */}
-            <div className="space-y-2 sm:space-y-4">
-              <motion.div variants={itemVariants} className="flex flex-col gap-2 sm:gap-3">
-                <div className="flex items-center gap-3 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-colors group">
-                  <div className="w-9 h-9 sm:w-10 h-10 rounded-lg sm:rounded-xl bg-ndc-blue/10 flex items-center justify-center border border-ndc-blue/20 group-hover:scale-110 transition-transform">
-                    <Calendar className="w-4 h-4 sm:w-5 h-5 text-ndc-blue" />
-                  </div>
-                  <div>
-                    <p className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">Date</p>
-                    <p className="text-xs sm:text-base font-bold text-white uppercase tracking-tight">May 16, 2026</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-colors group">
-                  <div className="w-9 h-9 sm:w-10 h-10 rounded-lg sm:rounded-xl bg-ndc-green/10 flex items-center justify-center border border-ndc-green/20 group-hover:scale-110 transition-transform">
-                    <Clock className="w-4 h-4 sm:w-5 h-5 text-ndc-green" />
-                  </div>
-                  <div>
-                    <p className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">Time</p>
-                    <p className="text-xs sm:text-base font-bold text-white uppercase tracking-tight">12:30 PM Onwards</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-ndc-purple/10 to-transparent border border-ndc-purple/20 hover:from-ndc-purple/15 transition-all group">
-                  <div className="w-9 h-9 sm:w-10 h-10 rounded-lg sm:rounded-xl bg-ndc-purple/10 flex items-center justify-center border border-ndc-purple/20 group-hover:scale-110 transition-transform">
-                    <MapPin className="w-4 h-4 sm:w-5 h-5 text-ndc-purple" />
-                  </div>
-                  <div>
-                    <p className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">Venue</p>
-                    <p className="text-xs sm:text-base font-bold text-white uppercase tracking-tight">APJ Auditorium</p>
-                  </div>
-                </div>
-              </motion.div>
+          {/* Registration Closed Message */}
+          <motion.div 
+            variants={itemVariants}
+            className="mb-4 p-4 sm:p-5 rounded-[1.25rem] bg-slate-900/40 backdrop-blur-xl border border-white/10 text-center space-y-2 relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-16 h-16 bg-red-500/5 blur-2xl rounded-full -translate-y-6 translate-x-6 group-hover:bg-red-500/10 transition-colors"></div>
+            
+            <div className="relative z-10 space-y-1">
+              <p className="text-xs sm:text-base font-black text-white uppercase italic tracking-tighter">
+                Thank you for the <span className="gradient-text">Massive Response.</span>
+              </p>
+              <p className="text-[8px] sm:text-[10px] font-medium text-gray-400 uppercase tracking-widest leading-relaxed">
+                Slots are full. See you soon!
+              </p>
             </div>
 
-            {/* Speakers Column */}
-            <div className="space-y-2 sm:space-y-4">
-              <motion.p variants={itemVariants} className="text-[9px] sm:text-[10px] text-gray-500 font-black uppercase tracking-[0.3em] pl-1 flex items-center gap-2">
-                <Star className="w-3 h-3 text-ndc-purple" />
-                Expert Mentors
-              </motion.p>
-              <div className="grid grid-cols-1 gap-2 sm:gap-3">
-                {[
-                  { name: "Ashutosh S. Bhakare", role: "Red Hat Specialist", img: "Ashutosh S. Bhakare.jpeg" },
-                  { name: "Rachana Bhakare", role: "Platform Instructor", img: "Rachana Bhakare.jpeg" }
-                ].map((speaker, i) => (
-                  <motion.div 
-                    key={i} 
-                    variants={itemVariants}
-                    className="flex items-center gap-3 sm:gap-4 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-white/10 transition-all group"
-                  >
-                    <div className="relative shrink-0">
-                      <div className="w-10 h-10 sm:w-12 h-12 rounded-lg sm:rounded-xl overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-500 shadow-lg">
-                        <img 
-                          src={getAssetPath(`images/${speaker.img}`)} 
-                          alt={speaker.name} 
-                          className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
-                        />
-                      </div>
-                      <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 sm:w-4 h-4 rounded-full bg-ndc-purple border-2 border-black flex items-center justify-center shadow-lg">
-                        <Zap className="w-2 h-2 text-white fill-current animate-pulse" />
-                      </div>
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="text-[11px] sm:text-sm font-black text-white uppercase tracking-tight truncate group-hover:text-ndc-purple transition-colors">{speaker.name}</h4>
-                      <p className="text-[9px] sm:text-[9px] font-bold text-gray-500 uppercase tracking-widest">{speaker.role}</p>
-                    </div>
-                  </motion.div>
-                ))}
+            <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 pt-1">
+              <div className="flex items-center gap-1 text-[7px] sm:text-[8px] font-black uppercase tracking-[0.2em] text-ndc-purple">
+                <Calendar className="w-2.5 h-2.5" />
+                16th May
               </div>
-              
-              <motion.div variants={itemVariants} className="flex items-center gap-2.5 p-3 rounded-xl sm:rounded-2xl bg-ndc-green/5 border border-ndc-green/10 backdrop-blur-sm group hover:bg-ndc-green/10 transition-colors">
-                <Award className="w-4 h-4 text-ndc-green group-hover:rotate-12 transition-transform" />
-                <span className="text-[9px] sm:text-[10px] font-black text-ndc-green uppercase tracking-[0.1em]">Certification Included</span>
-              </motion.div>
+              <div className="w-0.5 h-0.5 rounded-full bg-white/20"></div>
+              <div className="flex items-center gap-1 text-[7px] sm:text-[8px] font-black uppercase tracking-[0.2em] text-ndc-blue">
+                <MapPin className="w-2.5 h-2.5" />
+                APJ Auditorium
+              </div>
             </div>
-          </div>
+
+            <div className="pt-1">
+              <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[6px] sm:text-[7px] font-black uppercase tracking-[0.2em]">
+                <Terminal className="w-2 h-2" />
+                Laptop Compulsory
+              </div>
+            </div>
+          </motion.div>
 
           {/* Action Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-auto">
-            <div className="flex-1 order-2 sm:order-1">
-              <Button 
-                asChild
-                variant="outline"
-                onClick={handleClose}
-                className="w-full rounded-xl sm:rounded-2xl border-white/10 bg-white/5 hover:bg-white/10 text-white font-black uppercase text-[10px] sm:text-xs tracking-[0.2em] h-12 sm:h-14 transition-all"
-              >
-                <Link to="/workshop">View Roadmap</Link>
-              </Button>
+          <motion.div variants={itemVariants} className="flex flex-col gap-3 mt-auto">
+            <div className="flex flex-row gap-2">
+              <div className="flex-1">
+                <Button 
+                  asChild
+                  variant="outline"
+                  className="w-full rounded-lg border-white/10 bg-white/5 hover:bg-white/10 text-white font-black uppercase text-[7px] sm:text-[9px] tracking-[0.2em] h-9 sm:h-10 transition-all"
+                >
+                  <Link to="/workshop">Roadmap</Link>
+                </Button>
+              </div>
+              
+              <div className="flex-1">
+                <Button 
+                  disabled
+                  className="w-full rounded-lg bg-gray-800 text-gray-500 font-black uppercase text-[7px] sm:text-[9px] tracking-[0.2em] h-9 sm:h-10 cursor-not-allowed opacity-50"
+                >
+                  Slots Full
+                </Button>
+              </div>
             </div>
-            
-            <div className="flex-1 order-1 sm:order-2">
-              <Button 
-                asChild
-                className="w-full rounded-xl sm:rounded-2xl bg-gradient-to-r from-ndc-purple via-ndc-blue to-ndc-purple bg-[length:200%_auto] animate-gradient hover:scale-[1.02] active:scale-[0.98] text-white font-black uppercase text-[10px] sm:text-xs tracking-[0.2em] h-12 sm:h-14 shadow-2xl shadow-ndc-purple/20 transition-all group"
-              >
-                <a href="https://forms.gle/GRLSPbasffrESu1R9" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                  Secure Your Spot
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-            </div>
+
+            <Button 
+              onClick={handleClose}
+              className="w-full rounded-lg bg-white text-black hover:bg-gray-200 font-black uppercase text-[8px] sm:text-[10px] tracking-[0.2em] h-10 sm:h-11 shadow-[0_10px_20px_rgba(255,255,255,0.1)] transition-all"
+            >
+              Close
+            </Button>
           </motion.div>
         </motion.div>
       </DialogContent>

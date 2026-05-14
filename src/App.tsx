@@ -11,8 +11,7 @@ import WorkshopDetails from "./pages/WorkshopDetails";
 import AchievementDetail from "./pages/AchievementDetail";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./hooks/use-theme";
-import ScrollToTop from "./components/ScrollToTop";
-import GlobalBackgroundVideo from "./components/layout/GlobalBackgroundVideo";
+import { ScrollToTop, ScrollToTopButton, GlobalBackgroundVideo } from "./components/layout";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +36,7 @@ const App = () => {
               }}
             >
               <ScrollToTop />
+              <ScrollToTopButton />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/gallery" element={<Gallery />} />

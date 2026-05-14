@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-16 md:py-24 bg-transparent scroll-mt-28 md:scroll-mt-32">
+    <section id="about" className="py-12 md:py-20 bg-transparent scroll-mt-28 md:scroll-mt-32">
       <div className="section-container">
         <SectionHeader 
           badgeText="Our Story"
@@ -15,20 +15,21 @@ const AboutSection = () => {
           centered={true}
         />
         
-        <div className="grid md:grid-cols-2 gap-8 mb-16 mt-16 px-4">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 mt-12 px-4">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-10 md:p-12 space-y-8 rounded-[3rem] border backdrop-blur-xl bg-slate-900/40 border-white/10 shadow-2xl relative overflow-hidden group"
+            className="p-8 md:p-12 space-y-6 md:space-y-8 rounded-[2.5rem] md:rounded-[3rem] border backdrop-blur-xl bg-slate-900/40 border-white/10 shadow-2xl relative overflow-hidden group"
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-ndc-purple/5 blur-3xl rounded-full"></div>
-            <div className="w-16 h-16 rounded-[1.5rem] bg-ndc-purple/10 flex items-center justify-center text-ndc-purple mb-8 group-hover:scale-110 transition-transform shadow-inner">
-              <Target size={32} />
+            <div className="w-14 h-14 md:w-16 md:h-16 rounded-[1.25rem] md:rounded-[1.5rem] bg-ndc-purple/10 flex items-center justify-center text-ndc-purple mb-6 md:mb-8 group-hover:scale-110 transition-transform shadow-inner">
+              <Target size={28} className="md:w-8 md:h-8" />
             </div>
-            <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter italic">Our Vision</h3>
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed font-medium">
+            <div className="space-y-3 md:space-y-4">
+              <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter italic">Our Vision</h3>
+              <p className="text-gray-400 text-sm md:text-lg leading-relaxed font-medium">
                 To build a vibrant community of passionate developers who collaborate, innovate, and lead in the 
                 ever-evolving world of technology.
               </p>
@@ -39,15 +40,16 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-10 md:p-12 space-y-8 rounded-[3rem] border backdrop-blur-xl bg-slate-900/40 border-white/10 shadow-2xl relative overflow-hidden group"
+            className="p-8 md:p-12 space-y-6 md:space-y-8 rounded-[2.5rem] md:rounded-[3rem] border backdrop-blur-xl bg-slate-900/40 border-white/10 shadow-2xl relative overflow-hidden group"
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-ndc-blue/5 blur-3xl rounded-full"></div>
-            <div className="w-16 h-16 rounded-[1.5rem] bg-ndc-blue/10 flex items-center justify-center text-ndc-blue mb-8 group-hover:scale-110 transition-transform shadow-inner">
-              <Rocket size={32} />
+            <div className="w-14 h-14 md:w-16 md:h-16 rounded-[1.25rem] md:rounded-[1.5rem] bg-ndc-blue/10 flex items-center justify-center text-ndc-blue mb-6 md:mb-8 group-hover:scale-110 transition-transform shadow-inner">
+              <Rocket size={28} className="md:w-8 md:h-8" />
             </div>
-            <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter italic">Our Mission</h3>
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed font-medium">
+            <div className="space-y-3 md:space-y-4">
+              <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter italic">Our Mission</h3>
+              <p className="text-gray-400 text-sm md:text-lg leading-relaxed font-medium">
                 To provide students with opportunities to work on real-world projects, learn cutting-edge technologies, 
                 build strong portfolios, and connect with industry professionals.
               </p>

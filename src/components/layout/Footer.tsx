@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="flex items-center mb-6 group">
               <div className="relative">
                 <img 
-                  src={getAssetPath("images/Dcode-Logo.png")} 
+                  src={getAssetPath("/images/club/Dcode-Logo.png")} 
                   alt="DCode Logo" 
                   className="h-16 w-auto mr-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6" 
                 />

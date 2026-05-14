@@ -5,7 +5,6 @@ import { getAssetPath } from "@/lib/utils";
 import CollegeHeader from "@/components/layout/CollegeHeader";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ScrollToTopButton from "@/components/layout/ScrollToTopButton";
 import { Helmet } from "react-helmet-async";
 
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -23,31 +22,31 @@ const Gallery = () => {
   // Comprehensive gallery data from the images directory
   const galleryItems = useMemo(() => [
     // SIH Internal Hackathon
-    { url: "images/competition/SIH Internal Hackathon images/SIH 1.jpg", category: "Hackathons", title: "SIH Internal Hackathon 2024", date: "Jan 2024" },
-    { url: "images/competition/SIH Internal Hackathon images/SIH 2.jpg", category: "Hackathons", title: "SIH Internal Hackathon 2024", date: "Jan 2024" },
-    { url: "images/competition/SIH Internal Hackathon images/SIH 3.jpg", category: "Hackathons", title: "SIH Internal Hackathon 2024", date: "Jan 2024" },
-    { url: "images/competition/SIH Internal Hackathon images/SIH 4.jpg", category: "Hackathons", title: "SIH Internal Hackathon 2024", date: "Jan 2024" },
+    { url: "/images/events/SIH Internal Hackathon images/SIH 1.jpg", category: "Hackathons", title: "SIH Internal Hackathon 2024", date: "Jan 2024" },
+    { url: "/images/events/SIH Internal Hackathon images/SIH 2.jpg", category: "Hackathons", title: "SIH Internal Hackathon 2024", date: "Jan 2024" },
+    { url: "/images/events/SIH Internal Hackathon images/SIH 3.jpg", category: "Hackathons", title: "SIH Internal Hackathon 2024", date: "Jan 2024" },
+    { url: "/images/events/SIH Internal Hackathon images/SIH 4.jpg", category: "Hackathons", title: "SIH Internal Hackathon 2024", date: "Jan 2024" },
     
     // SIH Workshop
-    { url: "images/competition/SIH One Day Workshop images/Workshop conducted for Sih 1.jpg", category: "Workshops", title: "SIH Preparation Workshop", date: "Feb 2024" },
-    { url: "images/competition/SIH One Day Workshop images/Workshop conducted for Sih 2.jpg", category: "Workshops", title: "SIH Preparation Workshop", date: "Feb 2024" },
+    { url: "/images/events/SIH One Day Workshop images/Workshop conducted for Sih 1.jpg", category: "Workshops", title: "SIH Preparation Workshop", date: "Feb 2024" },
+    { url: "/images/events/SIH One Day Workshop images/Workshop conducted for Sih 2.jpg", category: "Workshops", title: "SIH Preparation Workshop", date: "Feb 2024" },
     
     // Techfest
-    { url: "images/competition/Techfest images/Techfest zonal codecode.jpg", category: "Competitions", title: "IIT Bombay Techfest Zonal", date: "Dec 2023" },
-    { url: "images/competition/Techfest images/Techfest zonal linefollower.jpg", category: "Competitions", title: "IIT Bombay Techfest Zonal", date: "Dec 2023" },
+    { url: "/images/events/Techfest images/Techfest zonal codecode.jpg", category: "Competitions", title: "IIT Bombay Techfest Zonal", date: "Dec 2023" },
+    { url: "/images/events/Techfest images/Techfest zonal linefollower.jpg", category: "Competitions", title: "IIT Bombay Techfest Zonal", date: "Dec 2023" },
     
     // Eclearnix
-    { url: "images/competition/eclearnix hackathon 360 images/eclearnix hackathon 360.png", category: "Hackathons", title: "Eclearnix Hackathon 360", date: "Mar 2024" },
+    { url: "/images/events/eclearnix hackathon 360 images/eclearnix hackathon 360.png", category: "Hackathons", title: "Eclearnix Hackathon 360", date: "Mar 2024" },
     
     // Club Meetings & Sessions (Original Gallery Items)
-    { url: "images/5e6f6f4e-3e10-4db7-8c58-1abdecf9cb21.png", category: "Events", title: "First DDSC Meeting", date: "Aug 2023" },
-    { url: "images/371c7355-893e-47ba-aee5-6b71e894e9ac.png", category: "Events", title: "Collaboration Session", date: "Sep 2023" },
-    { url: "images/8b55aaf1-820b-4689-838d-0cb2feb287e1.png", category: "Events", title: "Knowledge Sharing", date: "Oct 2023" },
-    { url: "images/42e7bbe7-c7ee-40ce-afc1-ed364cc71526.png", category: "Events", title: "Strategic Planning", date: "Nov 2023" },
+    { url: "/images/gallery/5e6f6f4e-3e10-4db7-8c58-1abdecf9cb21.png", category: "Events", title: "First DDSC Meeting", date: "Aug 2023" },
+    { url: "/images/gallery/371c7355-893e-47ba-aee5-6b71e894e9ac.png", category: "Events", title: "Collaboration Session", date: "Sep 2023" },
+    { url: "/images/gallery/8b55aaf1-820b-4689-838d-0cb2feb287e1.png", category: "Events", title: "Knowledge Sharing", date: "Oct 2023" },
+    { url: "/images/gallery/42e7bbe7-c7ee-40ce-afc1-ed364cc71526.png", category: "Events", title: "Strategic Planning", date: "Nov 2023" },
     
     // Campus & Misc
-    { url: "images/ssiems-campus.webp", category: "Campus", title: "SSIEMS Campus", date: "General" },
-    { url: "images/DDSC Main Committe.jpeg", category: "Events", title: "DDSC Main Committee", date: "Aug 2023" },
+    { url: "/images/college/ssiems-campus.webp", category: "Campus", title: "SSIEMS Campus", date: "General" },
+    { url: "/images/club/DDSC Main Committe.jpeg", category: "Events", title: "DDSC Main Committee", date: "Aug 2023" },
   ], []);
 
   const categories = ["All", "Events", "Hackathons", "Workshops", "Competitions", "Campus"];
@@ -302,7 +301,6 @@ const Gallery = () => {
       )}
 
       <Footer />
-      <ScrollToTopButton />
     </div>
   );
 };

@@ -10,7 +10,6 @@ import { useEffect, useState, useCallback } from "react";
 import CollegeHeader from "@/components/layout/CollegeHeader";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ScrollToTopButton from "@/components/layout/ScrollToTopButton";
 import { toast } from "sonner";
 import { getAssetPath } from "@/lib/utils";
 import { Helmet } from "react-helmet-async";
@@ -542,7 +541,6 @@ const AchievementDetail = () => {
       )}
 
       <Footer />
-      <ScrollToTopButton />
     </div>
   );
 };

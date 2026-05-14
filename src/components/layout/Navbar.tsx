@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between py-3 md:py-4">
           {/* Brand/Logo */}
           <Link to="/" className="flex items-center gap-1.5 sm:gap-3 group cursor-pointer">
-            <img src={getAssetPath("images/Dcode-Logo.png")} alt="DCode Logo" className="h-7 sm:h-10 md:h-12 w-auto transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" />
+            <img src={getAssetPath("/images/club/Dcode-Logo.png")} alt="DCode Logo" className="h-7 sm:h-10 md:h-12 w-auto transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" />
             <span className="text-sm sm:text-lg md:text-xl font-bold font-heading transition-all duration-500 hover:scale-105 text-white">
               <span className="gradient-text-horizontal">DCode</span>
               <span className="hidden sm:inline text-gray-300"> Developers Club</span>

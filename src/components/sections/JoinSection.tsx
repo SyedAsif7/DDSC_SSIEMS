@@ -39,7 +39,7 @@ const JoinSection = () => {
             <div className="flex-shrink-0 relative group">
               <div className="absolute -inset-4 bg-white/5 blur-2xl rounded-full scale-0 group-hover:scale-100 transition-transform duration-700"></div>
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-[2.5rem] bg-white/5 border border-white/10 flex items-center justify-center relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-inner">
-                <img src={getAssetPath("images/Dcode-Logo.png")} alt="DCode Logo" className="h-20 md:h-24 w-auto drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]" />
+                <img src={getAssetPath("/images/club/Dcode-Logo.png")} alt="DCode Logo" className="h-20 md:h-24 w-auto drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]" />
               </div>
             </div>
             

@@ -19,6 +19,7 @@ const HeroSection = () => {
       tag: "✨ Featured Workshop",
       isSpecial: true,
       extraBadge: "📜 E-Certificate Provided",
+      laptopBadge: "💻 Laptop Compulsory",
       detailsLink: "/workshop"
     },
     {
@@ -65,35 +66,40 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className={`min-h-[calc(100vh-140px)] md:min-h-[calc(100vh-120px)] flex items-center relative overflow-hidden bg-transparent pt-4 sm:pt-6 md:pt-2`}>
+    <section id="hero" className={`min-h-[calc(100vh-140px)] xs:min-h-[calc(100vh-120px)] md:min-h-[70vh] flex items-center relative overflow-hidden bg-transparent pt-2 sm:pt-4 md:pt-0`}>
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-ndc-blue/10 blur-[140px] animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-ndc-purple/10 blur-[140px] animate-pulse delay-700"></div>
+        <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-ndc-blue/10 blur-[80px] sm:blur-[140px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-ndc-purple/10 blur-[80px] sm:blur-[140px] animate-pulse delay-700"></div>
         <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8 relative z-10 w-full">
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {slides.map((slide, index) => (
-              <div key={index} className="flex-[0_0_100%] min-w-0 grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
+              <div key={index} className="flex-[0_0_100%] min-w-0 grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
                 {/* Left Column - Content */}
-                <div className="text-center lg:text-left lg:col-span-1 animate-fade-in order-2 lg:order-1">
+                <div className="text-center lg:text-left lg:col-span-1 animate-fade-in order-1 px-2 sm:px-0">
                   {/* Tagline */}
-                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-6 sm:mb-8">
-                    <span className="px-4 py-2 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] backdrop-blur-md border bg-white/10 text-white border-white/20">
+                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-4 sm:mb-6">
+                    <span className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[9px] sm:text-xs font-black uppercase tracking-[0.2em] backdrop-blur-md border bg-white/10 text-white border-white/20">
                       {slide.tag}
                     </span>
                     {slide.extraBadge && (
-                      <span className="px-4 py-2 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] backdrop-blur-md border bg-ndc-purple/20 text-ndc-purple border-ndc-purple/30 animate-pulse">
+                      <span className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[9px] sm:text-xs font-black uppercase tracking-[0.2em] backdrop-blur-md border bg-ndc-purple/20 text-ndc-purple border-ndc-purple/30 animate-pulse">
                         {slide.extraBadge}
+                      </span>
+                    )}
+                    {slide.laptopBadge && (
+                      <span className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[9px] sm:text-xs font-black uppercase tracking-[0.2em] backdrop-blur-md border bg-amber-500/20 text-amber-500 border-amber-500/30">
+                        {slide.laptopBadge}
                       </span>
                     )}
                   </div>
 
                   {/* Main Headline */}
-                  <h1 className="text-4xl xs:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] mb-6 sm:mb-8 text-white uppercase italic">
+                  <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1] sm:leading-[0.95] mb-4 sm:mb-6 text-white uppercase italic">
                     {slide.title.split(' ').map((word, i) => (
                       <span key={i} className={word === 'Future' || word === 'Art' || word === 'Real-World' || word === 'Thriving' || word === 'Generative' || word === 'AI.' ? 'gradient-text drop-shadow-[0_0_30px_rgba(168,85,247,0.3)]' : ''}>
                         {word}{' '}
@@ -102,45 +108,55 @@ const HeroSection = () => {
                   </h1>
         
                   {/* Subheading */}
-                  <h2 className="text-base sm:text-lg md:text-xl font-bold mb-6 sm:mb-8 flex items-center justify-center lg:justify-start gap-3 text-slate-400 uppercase tracking-widest">
-                    <span className="w-8 h-px bg-slate-700 hidden lg:block"></span>
+                  <h2 className="text-sm sm:text-base md:text-lg font-bold mb-4 sm:mb-6 flex items-center justify-center lg:justify-start gap-3 text-slate-400 uppercase tracking-widest">
+                    <span className="w-6 sm:w-8 h-px bg-slate-700 hidden lg:block"></span>
                     {slide.subtitle}
                   </h2>
         
                   {/* Description */}
-                  <p className="text-sm sm:text-base md:text-lg mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 text-slate-400 px-4 sm:px-0 font-medium">
+                  <p className="text-xs sm:text-sm md:text-lg mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 text-slate-400 px-2 sm:px-0 font-medium">
                     {slide.description}
                   </p>
 
                   {/* Countdown Timer for Special Event */}
                   {slide.isSpecial && (
-                    <div className="mb-10 sm:mb-12 flex justify-center lg:justify-start scale-90 sm:scale-100 origin-center lg:origin-left">
+                    <div className="mb-8 sm:mb-10 flex justify-center lg:justify-start scale-[0.85] xs:scale-90 sm:scale-100 origin-center lg:origin-left">
                       <CountdownTimer targetDate="2026-05-16T12:30:00" />
                     </div>
                   )}
         
                   {/* CTA Buttons */}
-                  <div className="flex flex-col xs:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start px-6 sm:px-0">
-                    <MagneticButton className="w-full xs:w-auto">
-                      <Button 
-                        onClick={() => handleJoinClick(slide.isSpecial)} 
-                        className="w-full xs:w-auto font-black px-10 py-6 text-xs sm:text-sm uppercase tracking-[0.2em] h-auto bg-white text-black hover:bg-gray-100 shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all duration-500 rounded-2xl"
-                      >
-                        {slide.isSpecial ? "Register Now" : "Join the Club"}
-                      </Button>
-                    </MagneticButton>
-                    
-                    {slide.isSpecial && (
+                  <div className="flex flex-col xs:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start px-4 sm:px-0">
+                    {slide.isSpecial ? (
+                      <>
+                        <div className="w-full xs:w-auto">
+                          <Button 
+                            disabled
+                            className="w-full xs:w-auto font-black px-8 py-5 sm:px-10 sm:py-6 text-[10px] sm:text-sm uppercase tracking-[0.2em] h-auto bg-gray-800 text-gray-500 cursor-not-allowed rounded-xl sm:rounded-2xl border border-white/5 opacity-50"
+                          >
+                            Slots Full
+                          </Button>
+                        </div>
+                        <MagneticButton className="w-full xs:w-auto">
+                          <Button 
+                            asChild
+                            variant="outline"
+                            className="w-full xs:w-auto font-black px-8 py-5 sm:px-10 sm:py-6 text-[10px] sm:text-sm uppercase tracking-[0.2em] h-auto bg-white/5 border-white/10 text-white hover:bg-white/10 rounded-xl sm:rounded-2xl transition-all"
+                          >
+                            <Link to="/workshop" className="flex items-center gap-3 justify-center">
+                              <Info className="w-4 h-4" />
+                              Details
+                            </Link>
+                          </Button>
+                        </MagneticButton>
+                      </>
+                    ) : (
                       <MagneticButton className="w-full xs:w-auto">
                         <Button 
-                          asChild
-                          variant="outline"
-                          className="w-full xs:w-auto font-black px-10 py-6 text-xs sm:text-sm uppercase tracking-[0.2em] h-auto bg-white/5 border-white/10 text-white hover:bg-white/10 rounded-2xl transition-all"
+                          onClick={() => handleJoinClick(false)} 
+                          className="w-full xs:w-auto font-black px-8 py-5 sm:px-10 sm:py-6 text-[10px] sm:text-sm uppercase tracking-[0.2em] h-auto bg-white text-black hover:bg-gray-100 shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all duration-500 rounded-xl sm:rounded-2xl"
                         >
-                          <Link to="/workshop" className="flex items-center gap-3 justify-center">
-                            <Info className="w-4 h-4" />
-                            Details
-                          </Link>
+                          Join the Club
                         </Button>
                       </MagneticButton>
                     )}
@@ -148,7 +164,7 @@ const HeroSection = () => {
                     {!slide.isSpecial && (
                       <a 
                         href="#events" 
-                        className="text-xs sm:text-sm font-black uppercase tracking-[0.2em] flex items-center gap-3 hover:gap-5 transition-all duration-300 text-white hover:text-ndc-purple mt-4 sm:mt-0"
+                        className="text-[10px] sm:text-sm font-black uppercase tracking-[0.2em] flex items-center gap-3 hover:gap-5 transition-all duration-300 text-white hover:text-ndc-purple mt-2 sm:mt-0"
                         aria-label="View Achievements"
                       >
                         Achievements <ChevronRight size={16} />
@@ -158,20 +174,20 @@ const HeroSection = () => {
                 </div>
         
                 {/* Right Column - Logo/Graphic */}
-                <div className="flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0">
+                <div className="flex justify-center items-center order-2 mb-6 sm:mb-8 lg:mb-0">
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="relative w-48 sm:w-64 md:w-80 lg:w-full max-w-md group"
+                    className="relative w-32 xs:w-40 sm:w-56 md:w-64 lg:w-full max-w-md group"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-ndc-purple to-ndc-blue rounded-full blur-[80px] md:blur-[120px] opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-ndc-purple to-ndc-blue rounded-full blur-[60px] sm:blur-[100px] md:blur-[120px] opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                     <motion.img 
                       whileHover={{ scale: 1.05, rotate: 2 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      src={getAssetPath("images/Dcode-Logo.png")} 
+                      src={getAssetPath("/images/club/Dcode-Logo.png")} 
                       alt="DCode Developers Club Logo" 
-                      className="w-full h-auto object-contain opacity-95 drop-shadow-[0_0_50px_rgba(0,0,0,0.5)]" 
+                      className="w-full h-auto object-contain opacity-95 drop-shadow-[0_0_30px_rgba(0,0,0,0.5)]" 
                     />
                   </motion.div>
                 </div>
@@ -182,15 +198,15 @@ const HeroSection = () => {
 
         {/* Slider Navigation Controls */}
         {slides.length > 1 && (
-          <div className="mt-12 flex items-center justify-center lg:justify-start gap-3">
+          <div className="mt-8 sm:mt-10 md:mt-12 flex items-center justify-center lg:justify-start gap-3">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => emblaApi?.scrollTo(index)}
-                className={`h-2.5 rounded-full transition-all duration-500 ${
+                className={`h-2 rounded-full transition-all duration-500 ${
                   selectedIndex === index 
-                    ? 'w-10 bg-gradient-to-r from-ndc-purple to-ndc-blue shadow-[0_0_15px_rgba(139,51,234,0.5)]' 
-                    : 'w-2.5 bg-white/20 hover:bg-white/40'
+                    ? 'w-8 bg-gradient-to-r from-ndc-purple to-ndc-blue shadow-[0_0_15px_rgba(139,51,234,0.5)]' 
+                    : 'w-2 bg-white/20 hover:bg-white/40'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -200,9 +216,9 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden md:block">
-        <div className="w-6 h-10 rounded-full border-2 flex justify-center p-1 border-white/30">
-          <div className="w-1 h-2 rounded-full bg-white/50"></div>
+      <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden md:block">
+        <div className="w-5 h-8 sm:w-6 sm:h-10 rounded-full border-2 flex justify-center p-1 border-white/30">
+          <div className="w-0.5 h-1.5 sm:w-1 sm:h-2 rounded-full bg-white/50"></div>
         </div>
       </div>
     </section>

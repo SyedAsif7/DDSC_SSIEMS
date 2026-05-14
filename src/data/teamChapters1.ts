@@ -5,7 +5,7 @@ export const chapter1Data = {
     initials: "SDI",
     bio: "Danish built DDSC from the ground up—not just as a club, but as a launchpad for Tech makers, dreamers, and doers. He leads with the belief that learning happens best when you create, collaborate, and challenge yourself every day.",
     tagline: "From ideas to impact — together.",
-    image: "lovable-uploads/37e91a02-fe41-4401-801a-8bafaf180aca.png",
+    image: "/images/team/37e91a02-fe41-4401-801a-8bafaf180aca.png",
     linkedin: "https://www.linkedin.com/in/techdanish/",
     github: "https://github.com/vipdanish",
     email: "techdanish001@gmail.com"
@@ -15,7 +15,7 @@ export const chapter1Data = {
     role: "Faculty Coordinator",
     initials: "SB",
     bio: "Guides, mentors, and supports DDSC's vision by bridging the gap between students and the institution. Provides constant encouragement for innovation and excellence.",
-    image: "lovable-uploads/Prof.-Shelke-S.B.-new.webp",
+    image: "/images/team/Prof.-Shelke-S.B.-new.webp",
     linkedin: "",
     email: "snehal.shelke@cse.ssiems.in"
   },
@@ -25,42 +25,42 @@ export const chapter1Data = {
       role: "Vice President",
       initials: "SS",
       bio: "Supports the president and oversees daily operations of the club.",
-      image: "lovable-uploads/WhatsApp Image 2025-06-01 at 16.08.39_8c4b091f.jpg"
+      image: "/images/team/WhatsApp Image 2025-06-01 at 16.08.39_8c4b091f.jpg"
     },
     {
       name: "Karan Ingole",
       role: "Treasurer",
       initials: "KI",
       bio: "Manages financial planning and resource allocation for club activities.",
-      image: "lovable-uploads/WhatsApp Image 2025-06-19 at 22.42.19_8035b078.jpg"
+      image: "/images/team/WhatsApp Image 2025-06-19 at 22.42.19_8035b078.jpg"
     },
     {
       name: "Shaikh Ab Raheman",
       role: "Technical Lead",
       initials: "SAR",
       bio: "Leads technical initiatives and guides development projects.",
-      image: "lovable-uploads/slazzer-edit-image.png"
+      image: "/images/team/slazzer-edit-image.png"
     },
     {
       name: "Prem Bharose",
       role: "Social Media Lead",
       initials: "PB",
       bio: "Manages online presence and community engagement strategies.",
-      image: "lovable-uploads/WhatsApp Image 2025-06-19 at 22.39.26_d224b0f5.jpg"
+      image: "/images/team/WhatsApp Image 2025-06-19 at 22.39.26_d224b0f5.jpg"
     },
     {
       name: "Jadhav Vaishnavi",
       role: "Design Lead",
       initials: "JV",
       bio: "Oversees visual identity and creative design initiatives.",
-      image: "lovable-uploads/IMG-20250619-WA0114[2](1)(1).png"
+      image: "/images/team/IMG-20250619-WA0114[2](1)(1).png"
     },
     {
       name: "Geeta Jadhav",
       role: "Event Lead",
       initials: "GJ",
       bio: "Plans and coordinates all club events and workshops.",
-      image: "lovable-uploads/WhatsApp Image 2025-06-19 at 23.07.58_e9242bf2.jpg"
+      image: "/images/team/WhatsApp Image 2025-06-19 at 23.07.58_e9242bf2.jpg"
     }
   ],
   teams: {
@@ -104,101 +104,3 @@ export const chapter1Data = {
   }
 };
 
-export const chapter2Data = {
-  president: {
-    name: "Syed Asif",
-    role: "Founder & President",
-    initials: "SA",
-    bio: "Coming soon...!!!",
-    image: "lovable-uploads/Asef Ansari.jpg",
-    email: "syedasif111005@gmail.com"
-  },
-  coordinator: {
-    name: "Prof. Shelke S.B.",
-    role: "Faculty Coordinator",
-    initials: "SB",
-    bio: "Coming soon...!!!",
-    image: "lovable-uploads/Prof.-Shelke-S.B.-new.webp",
-    email: "snehal.shelke@cse.ssiems.in"
-  },
-  coreTeam: [
-    {
-      name: "Gayatri Shriram Bharose",
-      role: "Vice President",
-      initials: "GSB",
-      bio: "Coming soon...!!!",
-      email: "bharosegayu@gmail.com",
-      image: "images/Chapter_2_ Committe_images/Gayatri Bharose.jpg"
-    },
-    {
-      name: "Sandip Balasaheb Ayewar",
-      role: "Treasurer",
-      initials: "SBA",
-      bio: "Coming soon...!!!",
-      email: "sandipayewar@gmail.com",
-      image: "images/Chapter_2_ Committe_images/Sandip Ayewar.jpg"
-    },
-    {
-      name: "Sanjivani Jaiprakash Jadhav",
-      role: "Technical Team Leader",
-      initials: "SJJ",
-      bio: "Coming soon...!!!",
-      email: "sanjivani.jadhav.cs@gmail.com",
-      image: "images/Chapter_2_ Committe_images/Sanjivani Jadhav.jpg"
-    },
-    {
-      name: "Siddi Yaseen Hussain",
-      role: "Vice-Technical Team Leader",
-      initials: "SYH",
-      bio: "Coming soon...!!!",
-      email: "Ysnhun412@gmail.com",
-      image: "images/Chapter_2_ Committe_images/Siddi Yaseen Hussain.png"
-    },
-    {
-      name: "Rushikesh Deshmukh",
-      role: "Social Media Team Leader",
-      initials: "RD",
-      bio: "Coming soon...!!!",
-      email: "rushideshmukh0802@gmail.com",
-      image: "images/Chapter_2_ Committe_images/Rushikesh Deshmukh.jpeg"
-    },
-    {
-      name: "Arpita Mukund Jondhale",
-      role: "Design Team Leader",
-      initials: "AMJ",
-      bio: "Coming soon...!!!",
-      email: "arpitajondhale358@gmail.com",
-      image: "images/Chapter_2_ Committe_images/Arpita Jondhale.JPG"
-    },
-    {
-      name: "Sarvadnya Annarao Kshirsagar",
-      role: "Event Management Team Leader",
-      initials: "SAK",
-      bio: "Coming soon...!!!",
-      email: "kshirsagarsarvadnya77@gmail.com",
-      image: "images/Chapter_2_ Committe_images/Sarvadnya Kshirsagar.jpg"
-    }
-  ],
-  teams: {
-    technical: {
-      leader: "Sanjivani Jaiprakash Jadhav",
-      icon: "🛠",
-      members: ["Siddi Yaseen Hussain (Vice-Technical Team Leader)"]
-    },
-    socialMedia: {
-      leader: "Rushikesh Deshmukh",
-      icon: "📣",
-      members: []
-    },
-    design: {
-      leader: "Arpita Mukund Jondhale",
-      icon: "🎨",
-      members: []
-    },
-    eventManagement: {
-      leader: "Sarvadnya Annarao Kshirsagar",
-      icon: "🎯",
-      members: []
-    }
-  }
-};

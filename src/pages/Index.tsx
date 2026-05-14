@@ -14,9 +14,7 @@ import TeamSection from "@/components/sections/TeamSection";
 import JoinSection from "@/components/sections/JoinSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import Footer from "@/components/layout/Footer";
-import ScrollToTopButton from "@/components/layout/ScrollToTopButton";
 import AnnouncementModal from "@/components/layout/AnnouncementModal";
-import GlobalBackgroundVideo from "@/components/layout/GlobalBackgroundVideo";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
@@ -27,11 +25,6 @@ const Index = () => {
         <title>DCode Developers Club | Building the Future Together</title>
         <meta name="description" content="Official website of DCode Developers Club. Join our community of innovators, builders, and tech enthusiasts." />
       </Helmet>
-      {/* Fixed Background Video Layer */}
-      <div className="fixed inset-0 z-[-1]">
-        <GlobalBackgroundVideo />
-        <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px]"></div>
-      </div>
 
       <div className="relative z-10 min-h-screen flex flex-col">
         <CollegeHeader />
@@ -45,7 +38,7 @@ const Index = () => {
             {/* Subtle Gradient Overlays between sections */}
             <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-slate-950 to-transparent pointer-events-none"></div>
             
-            <div className="space-y-32 md:space-y-48 pb-32">
+            <div className="space-y-24 md:space-y-40 pb-24">
               {/* About */}
               <AboutSection />
               {/* Events/Achievements */}
@@ -64,7 +57,6 @@ const Index = () => {
         </main>
         
         <Footer />
-        <ScrollToTopButton />
       </div>
     </div>
   );

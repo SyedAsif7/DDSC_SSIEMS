@@ -19,9 +19,9 @@ const GlobalBackgroundVideo = () => {
         loop 
         playsInline
         preload="auto"
-        poster={getAssetPath("images/ssiems-campus.webp")}
+        poster={getAssetPath("/images/college/ssiems-campus.webp")}
       >
-        <source src={getAssetPath("images/background_video.mp4")} type="video/mp4" />
+        <source src={getAssetPath("/images/background_video.mp4")} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="video-overlay"></div>

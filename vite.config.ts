@@ -25,17 +25,17 @@ export default defineConfig(({ mode }) => ({
         theme_color: '#8b33ea',
         icons: [
           {
-            src: 'images/Dcode-Logo.png',
+            src: 'images/club/Dcode-Logo.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'images/Dcode-Logo.png',
+            src: 'images/club/Dcode-Logo.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: 'images/Dcode-Logo.png',
+            src: 'images/club/Dcode-Logo.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'

@@ -57,6 +57,7 @@ const WhyJoinSection = () => {
               <div className={`absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-white/10 transition-colors`}></div>
               
               <div className="relative z-10 flex flex-col h-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none"></div>
                 <div className={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center ${benefit.color} mb-8 border border-white/10 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 shadow-inner shrink-0`}>
                   <benefit.icon size={28} />
                 </div>

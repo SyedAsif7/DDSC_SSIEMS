@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import CollegeHeader from "@/components/layout/CollegeHeader";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ScrollToTopButton from "@/components/layout/ScrollToTopButton";
 import WorkshopFAQ from "@/components/sections/WorkshopFAQ";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
@@ -97,35 +96,55 @@ const WorkshopDetails = () => {
           </motion.div>
 
           {/* 1. Hero Section */}
-          <div className="max-w-5xl mx-auto text-center mb-12 md:mb-24">
-            <ParallaxSection offset={15}>
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="space-y-6 md:space-y-8"
-              >
-                {/* Premium Badge */}
-                <div className="inline-flex items-center gap-2 md:gap-2.5 px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple shadow-[0_0_40px_rgba(168,85,247,0.15)] backdrop-blur-md">
-                  <Sparkles className="w-3 h-3 md:w-4 md:h-4 animate-spin-slow" />
-                  <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em]">Exclusive Learning Event</span>
+          <div className="max-w-5xl mx-auto text-center mb-12 md:mb-24 px-4">
+            <div className="flex flex-col items-center gap-8 md:gap-12">
+              <div className="space-y-6">
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-500">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                    </span>
+                    <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">Registrations Closed</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple">
+                    <Sparkles size={14} className="animate-pulse" />
+                    <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">Featured Workshop</span>
+                  </div>
                 </div>
                 
-                {/* Main Heading */}
-                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-[1] md:leading-[1.1] uppercase italic">
-                  Vibe Coding: <br className="block md:hidden" />
-                  <span className="gradient-text drop-shadow-[0_0_40px_rgba(59,130,246,0.3)]">GenAI Apps</span>
+                <h1 className="text-4xl md:text-8xl font-black text-white leading-[0.85] tracking-tighter uppercase italic">
+                  Vibe Coding <br />
+                  <span className="gradient-text">GenAI Apps</span>
                 </h1>
-                
-                <div className="flex items-center justify-center gap-3 md:gap-4 px-4">
-                  <span className="hidden sm:block h-px w-8 md:w-20 bg-gradient-to-r from-transparent to-ndc-purple/50"></span>
-                  <p className="text-ndc-purple font-black text-[9px] md:text-sm uppercase tracking-[0.2em] md:tracking-[0.4em] text-center leading-relaxed">
-                    Building & Deploying <br className="block sm:hidden" /> on Google Cloud
-                  </p>
-                  <span className="hidden sm:block h-px w-8 md:w-20 bg-gradient-to-l from-transparent to-ndc-purple/50"></span>
+              </div>
+
+              <div className="w-full max-w-2xl">
+                <div className="p-8 md:p-12 rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/10 space-y-6 relative overflow-hidden group shadow-2xl">
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-red-500/5 blur-[80px] rounded-full -translate-y-24 translate-x-24 group-hover:bg-red-500/10 transition-colors"></div>
+                  
+                  <div className="relative z-10 space-y-4">
+                    <p className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter leading-tight">
+                      Thank you for the <span className="gradient-text">Massive Response.</span>
+                    </p>
+                    <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed uppercase tracking-wider">
+                      Slots are full. See you soon!
+                    </p>
+                  </div>
+
+                  <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+                    <div className="px-5 py-2.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] md:text-xs font-black uppercase tracking-widest flex items-center gap-2.5">
+                      <Users className="w-4 h-4" />
+                      Slots Full
+                    </div>
+                    <div className="px-5 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] md:text-xs font-black uppercase tracking-widest flex items-center gap-2.5">
+                      <Terminal className="w-4 h-4" />
+                      Laptop Compulsory
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            </ParallaxSection>
+              </div>
+            </div>
           </div>
 
           {/* 2. Quick Logistics Grid */}
@@ -167,32 +186,8 @@ const WorkshopDetails = () => {
 
           {/* 3. Primary CTA & Countdown */}
           <div className="flex flex-col items-center mb-24 md:mb-40 px-4">
-            <div className="scale-75 sm:scale-90 md:scale-125 mb-12 md:mb-16 drop-shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+            <div className="scale-75 sm:scale-90 md:scale-125 drop-shadow-[0_0_30px_rgba(168,85,247,0.2)]">
               <CountdownTimer targetDate="2026-05-16T12:30:00" />
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-2xl">
-              <MagneticButton className="flex-1">
-                <Button 
-                  asChild
-                  className="w-full h-16 md:h-20 bg-gradient-to-r from-ndc-purple via-ndc-blue to-ndc-purple bg-[length:200%_auto] animate-gradient text-white rounded-[1.25rem] font-black text-sm md:text-lg uppercase tracking-[0.2em] shadow-2xl shadow-ndc-purple/20 hover:scale-[1.02] active:scale-[0.98] transition-all group overflow-hidden relative"
-                >
-                  <a href="https://forms.gle/GRLSPbasffrESu1R9" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 relative z-10">
-                    Register Now
-                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </Button>
-              </MagneticButton>
-              <MagneticButton className="flex-1">
-                <Button 
-                  onClick={handleAddToCalendar}
-                  variant="outline"
-                  className="w-full h-16 md:h-20 border-white/10 bg-white/5 hover:bg-white/10 text-white rounded-[1.25rem] font-black text-sm md:text-lg uppercase tracking-[0.2em] transition-all hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  <Calendar className="w-5 h-5 mr-3" />
-                  Add to Calendar
-                </Button>
-              </MagneticButton>
             </div>
           </div>
 
@@ -307,7 +302,7 @@ const WorkshopDetails = () => {
                   <div className="flex flex-col sm:flex-row gap-8 md:gap-10 items-center sm:items-start text-center sm:text-left mb-8 md:mb-10 relative z-10">
                     <div className="relative flex-shrink-0">
                       <div className="w-32 h-32 md:w-48 md:h-48 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-700 shadow-2xl">
-                        <img src={getAssetPath(`images/${speaker.img}`)} alt={speaker.name} className="w-full h-full object-cover" />
+                        <img src={getAssetPath(`/images/team/${speaker.img}`)} alt={speaker.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="absolute -bottom-2 -right-2 md:-bottom-3 md:-right-3 bg-ndc-purple p-3 md:p-4 rounded-xl md:rounded-2xl shadow-2xl border border-white/10 animate-bounce-slow">
                         <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -373,7 +368,7 @@ const WorkshopDetails = () => {
                     <DialogTrigger asChild>
                       <button className="relative w-full rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-slate-900/40 backdrop-blur-xl aspect-[1/1.414] cursor-zoom-in group/flyer transition-transform duration-500 hover:scale-[1.01]">
                         <img 
-                          src={getAssetPath("images/Hands-on workshop on Vibe Coding.jpg")} 
+                          src={getAssetPath("/images/events/Hands-on workshop on Vibe Coding.jpg")} 
                           alt="Official Workshop Flyer" 
                           className="w-full h-full object-cover transition-all duration-700 group-hover/flyer:scale-105"
                         />
@@ -404,8 +399,9 @@ const WorkshopDetails = () => {
                       <motion.img 
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        src={getAssetPath("images/Hands-on workshop on Vibe Coding.jpg")} 
-                        alt="Flyer Full Resolution" 
+                        transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
+                        src={getAssetPath("/images/events/Hands-on workshop on Vibe Coding.jpg")}
+                        alt="Official Workshop Flyer" 
                         className="max-w-full max-h-[90vh] object-contain rounded-xl md:rounded-2xl shadow-[0_0_100px_rgba(0,0,0,0.8)]"
                       />
                     </DialogContent>
@@ -446,7 +442,7 @@ const WorkshopDetails = () => {
                       asChild
                       className="h-16 md:h-20 flex-1 bg-white text-black hover:bg-gray-100 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] md:text-xs shadow-2xl transition-all hover:-translate-y-1"
                     >
-                      <a href={getAssetPath("images/Hands-on workshop on Vibe Coding.jpg")} download className="flex items-center justify-center gap-3">
+                      <a href={getAssetPath("/images/events/Hands-on workshop on Vibe Coding.jpg")} download className="flex items-center justify-center gap-3">
                         <Download className="w-4 h-4 md:w-5 md:h-5" />
                         Download Flyer
                       </a>
@@ -596,7 +592,7 @@ const WorkshopDetails = () => {
                 <div className="relative shrink-0">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-700 shadow-2xl bg-white/5 flex items-center justify-center p-4">
                     <img 
-                      src={getAssetPath("images/ssiems-logo.png")} 
+                      src={getAssetPath("/images/college/ssiems-logo.png")} 
                       alt="SSIEMS Parbhani" 
                       className="w-full h-full object-contain" 
                     />
@@ -640,7 +636,7 @@ const WorkshopDetails = () => {
                 <div className="relative shrink-0">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-700 shadow-2xl">
                     <img 
-                      src={getAssetPath("images/sponser_hpworldparbhani.jpeg")} 
+                      src={getAssetPath("/images/sponsors/sponser_hpworldparbhani.jpeg")} 
                       alt="HP World Parbhani" 
                       className="w-full h-full object-cover" 
                     />
@@ -693,20 +689,18 @@ const WorkshopDetails = () => {
             
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-8xl font-black text-white mb-8 md:mb-10 tracking-tighter uppercase leading-none italic">
-                Ready to <span className="gradient-text">Vibe?</span>
+                Slots <span className="gradient-text">Full.</span>
               </h2>
               <p className="text-lg md:text-2xl text-gray-400 mb-12 md:mb-16 font-medium leading-relaxed px-4">
-                Seats are limited and filling fast. Claim your free spot today and join the GenAI revolution in Parbhani.
+                Thank you for the overwhelming interest. All seats for the 16th May workshop are currently occupied.
               </p>
-              <MagneticButton className="inline-block w-full sm:w-auto">
-                <Button asChild className="h-20 md:h-24 px-12 md:px-20 bg-white text-black hover:bg-gray-100 rounded-[1.5rem] md:rounded-[2rem] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-lg shadow-2xl transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
-                  <a href="https://forms.gle/GRLSPbasffrESu1R9" target="_blank" rel="noopener noreferrer">
-                    Claim Free Spot
-                  </a>
+              <div className="inline-block w-full sm:w-auto">
+                <Button disabled className="h-20 md:h-24 px-12 md:px-20 bg-gray-800 text-gray-500 rounded-[1.5rem] md:rounded-[2rem] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-lg shadow-2xl cursor-not-allowed w-full sm:w-auto">
+                  Registrations Closed
                 </Button>
-              </MagneticButton>
+              </div>
               <p className="mt-10 md:mt-12 text-[9px] md:text-xs text-gray-500 font-bold uppercase tracking-[0.3em] md:tracking-[0.5em] opacity-50 px-4">
-                Exclusive for SSIEMS Students & Tech Enthusiasts
+                Stay tuned for future events and workshops!
               </p>
             </div>
           </motion.div>
@@ -714,7 +708,6 @@ const WorkshopDetails = () => {
       </main>
 
       <Footer />
-      <ScrollToTopButton />
     </div>
   );
 };
