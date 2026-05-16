@@ -17,11 +17,11 @@ const AnnouncementModal = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 800);
-
-    return () => clearTimeout(timer);
+    // Workshop day - keeping it closed
+    // const timer = setTimeout(() => {
+    //   setIsOpen(true);
+    // }, 800);
+    // return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => setIsOpen(false);

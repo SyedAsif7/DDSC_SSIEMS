@@ -5,7 +5,7 @@ export const chapter2Data = {
     initials: "SA",
     bio: "Asif leads DDSC Chapter 2 with a mission to bridge the gap between classroom theory and industry reality. He is committed to building a hands-on learning culture where students don't just learn about technology, but build it themselves.",
     tagline: "Building the future of tech, one line at a time.",
-    image: "/images/team/0a894d06-59ec-435e-b30a-bab2549d95d9.png",
+    image: "/images/team/Syed asif.jpeg",
     linkedin: "https://www.linkedin.com/in/the-syed-asif/",
     github: "https://github.com/SyedAsif7",
     email: "syedasif111005@gmail.com",
