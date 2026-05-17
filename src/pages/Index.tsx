@@ -13,6 +13,7 @@ import UpcomingEventsSection from "@/components/sections/UpcomingEventsSection";
 import TeamSection from "@/components/sections/TeamSection";
 import JoinSection from "@/components/sections/JoinSection";
 import PartnersSection from "@/components/sections/PartnersSection";
+import GallerySliderSection from "@/components/sections/GallerySliderSection";
 import Footer from "@/components/layout/Footer";
 import AnnouncementModal from "@/components/layout/AnnouncementModal";
 import { Helmet } from "react-helmet-async";
@@ -48,6 +49,8 @@ const Index = () => {
               <WhyJoinSection />
               {/* Upcoming Events */}
               <UpcomingEventsSection />
+              {/* Gallery Slider */}
+              <GallerySliderSection />
               {/* Team */}
               <TeamSection />
               {/* Partners */}

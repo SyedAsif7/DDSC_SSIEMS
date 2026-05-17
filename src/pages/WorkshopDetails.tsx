@@ -7,6 +7,9 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { Camera } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAssetPath } from "@/lib/utils";
 
@@ -50,7 +53,7 @@ const WorkshopDetails = () => {
   const stats = [
     { label: "Days to Organise", value: "8-10 Days", icon: Calendar },
     { label: "Speakers", value: "2 GDEs", icon: User2 },
-    { label: "Total Students", value: "167", icon: Users },
+    { label: "Total Students", value: "200+", icon: Users },
     { label: "Certificates", value: "For All", icon: Award },
     { label: "Entry Fee", value: "Free", icon: Zap },
     { label: "Chapter", value: "Chapter 1", icon: Star }
@@ -60,6 +63,19 @@ const WorkshopDetails = () => {
     { text: "This was not just a workshop. This was a movement. Parbhani proved today that small cities have big dreams.", author: "Syed Asif", role: "President DDSC" },
     { text: "From a blank editor to a live AI app — in minutes. That is the power of Vibe Coding.", author: "Ashutosh S. Bhakare", role: "Google Developer Expert" },
     { text: "Seeing students from Parbhani build and deploy real AI applications was truly inspiring.", author: "Rachana Bhakare", role: "Google Developer Expert" }
+  ];
+
+  const galleryImages = [
+    { src: "/images/Vibe coding workshop/IMG_9211.jpg", caption: "Workshop Session in APJ Abdul Kalam Auditorium" },
+    { src: "/images/Vibe coding workshop/IMG_9399.jpg", caption: "Students engaging with the AI workflow" },
+    { src: "/images/Vibe coding workshop/Participates in auditorium.jpg", caption: "Full house of enthusiastic participants" },
+    { src: "/images/Vibe coding workshop/Student is presenting her workshop model.jpg", caption: "Student presenting her GenAI model" },
+    { src: "/images/Vibe coding workshop/President syed asif delvering vote of thanks.jpg", caption: "President Syed Asif delivering the vote of thanks" },
+    { src: "/images/Vibe coding workshop/Stage image of director.jpg", caption: "Director addressing the attendees" },
+    { src: "/images/Vibe coding workshop/Meeeting of team with speakers.jpg", caption: "Core team meeting with Google Developer Experts" },
+    { src: "/images/Vibe coding workshop/Design team.jpeg", caption: "Creative minds of the Design Team" },
+    { src: "/images/Vibe coding workshop/Registration desk.jpg", caption: "Welcoming participants at the Registration Desk" },
+    { src: "/images/Vibe coding workshop/Sponser hp world delvering speech.JPG", caption: "Sponsor HP World delivering a speech" },
   ];
 
   return (
@@ -203,6 +219,62 @@ const WorkshopDetails = () => {
                     <span className="text-sm md:text-base font-bold text-white">{detail.value}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 3.5 Event Gallery Slider Section */}
+          <div className="mb-24 md:mb-40">
+            <SectionHeader 
+              badgeText="Visual Journey"
+              badgeIcon={Camera}
+              titlePrefix="Event"
+              titleHighlight="Gallery"
+              description="Glimpses of the Vibe Coding Workshop."
+              centered
+            />
+            <div className="max-w-5xl mx-auto mt-12 px-4 md:px-12">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 3000,
+                    stopOnInteraction: true,
+                  })
+                ]}
+                className="w-full relative group/carousel"
+              >
+                <CarouselContent className="-ml-4">
+                  {galleryImages.map((image, index) => (
+                    <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/2">
+                      <div className="p-1">
+                        <div className="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-white/5 border border-white/10 shadow-xl">
+                          <img 
+                            src={encodeURI(getAssetPath(image.src))} 
+                            alt={image.caption}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p className="text-white text-sm md:text-base font-bold italic tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                              {image.caption}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="hidden md:block">
+                  <CarouselPrevious className="bg-slate-900 border-white/20 hover:bg-white/10 text-white -left-4" />
+                  <CarouselNext className="bg-slate-900 border-white/20 hover:bg-white/10 text-white -right-4" />
+                </div>
+              </Carousel>
+              <div className="mt-8 text-center md:hidden">
+                <p className="text-xs text-gray-500 font-bold uppercase tracking-widest italic">Swipe to explore gallery</p>
               </div>
             </div>
           </div>

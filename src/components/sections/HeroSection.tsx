@@ -13,10 +13,10 @@ const HeroSection = () => {
     {
       title: "Vibe Coding Workshop — Chapter 1.",
       subtitle: "A Massive Success — Chapter 1 Completed",
-      description: "167 student developers built and deployed live GenAI apps in record time. Chapter 1 proved that Parbhani is ready for the future.",
+      description: "200+ student developers built and deployed live GenAI apps in record time. Chapter 1 proved that Parbhani is ready for the future.",
       icon: <Sparkles className="w-6 h-6 text-ndc-blue" />,
       tag: "✨ Chapter 1 Success",
-      extraBadge: "✅ 167+ Participants",
+      extraBadge: "✅ 200+ Participants",
       bgImage: "/images/Vibe coding workshop/IMG_9211.jpg"
     },
     {
@@ -76,7 +76,7 @@ const HeroSection = () => {
     {
       title: "Event Excellence.",
       subtitle: "Logistics & Coordination Team",
-      description: "Orchestrating memorable experiences and ensuring a smooth journey for all 167 participants.",
+      description: "Orchestrating memorable experiences and ensuring a smooth journey for all 200+ participants.",
       icon: <Users className="w-6 h-6 text-ndc-purple" />,
       tag: "🎪 Management",
       extraBadge: "Success",

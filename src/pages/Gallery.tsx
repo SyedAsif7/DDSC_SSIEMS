@@ -47,8 +47,8 @@ const Gallery = () => {
     { url: "/images/Vibe coding workshop/Tree plantation by speakers.jpg", category: "Workshops", title: "Tree Plantation Ceremony", date: "May 2026" },
     { url: "/images/Vibe coding workshop/Meeeting of team with speakers.jpg", category: "Workshops", title: "Team meeting with GDE", date: "May 2026" },
     { url: "/images/Vibe coding workshop/IMG_9211.jpg", category: "Workshops", title: "Workshop Session", date: "May 2026" },
-    { url: "/images/Vibe coding workshop/IMG_9314.jpg", category: "Workshops", title: "Hands-on Coding", date: "May 2026" },
-    { url: "/images/Vibe coding workshop/IMG_9492.jpg", category: "Workshops", title: "Group Photo", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/IMG_9317.jpg", category: "Workshops", title: "Hands-on Coding", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/Ful Team.jpg", category: "Workshops", title: "Group Photo", date: "May 2026" },
     
     // Club Meetings & Sessions (Original Gallery Items)
     { url: "/images/gallery/5e6f6f4e-3e10-4db7-8c58-1abdecf9cb21.png", category: "Events", title: "First DDSC Meeting", date: "Aug 2023" },

@@ -267,7 +267,7 @@ export const achievements: Achievement[] = [
     icon: 'zap',
     stats: [
       { label: "Speakers", value: "2 GDEs", color: "indigo" },
-      { label: "Students", value: "167", color: "purple" },
+      { label: "Students", value: "200+", color: "purple" },
       { label: "Reach", value: "Parbhani & Beyond", color: "pink" },
       { label: "Status", value: "Successful", color: "green" }
     ],
