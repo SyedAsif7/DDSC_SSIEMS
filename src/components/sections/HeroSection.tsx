@@ -2,47 +2,109 @@ import { Button } from "@/components/ui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState, useCallback } from "react";
-import { Sparkles, Code2, Rocket, Users, Info, ChevronRight } from "lucide-react";
+import { Sparkles, Code2, Rocket, Users, Info, ChevronRight, Handshake, ArrowLeft, ArrowRight } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
-import CountdownTimer from "@/components/ui/CountdownTimer";
 import { Link } from "react-router-dom";
 import MagneticButton from "@/components/ui/MagneticButton";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const HeroSection = () => {
   const slides = [
     {
-      title: "Hands-On Workshop on Generative AI.",
-      subtitle: "Conducted by a Google Developer Expert",
-      description: "Explore the power of Generative AI and build real-world solutions using Google Cloud Platform. 16th May 2026, APJ Abdul Kalam Auditorium. E-Certificates for all!",
-      icon: <Sparkles className="w-6 h-6 text-ndc-purple" />,
-      tag: "✨ Featured Workshop",
-      isSpecial: true,
-      extraBadge: "📜 E-Certificate Provided",
-      laptopBadge: "💻 Laptop Compulsory",
-      detailsLink: "/workshop"
+      title: "Vibe Coding Workshop — Chapter 1.",
+      subtitle: "A Massive Success — Chapter 1 Completed",
+      description: "167 student developers built and deployed live GenAI apps in record time. Chapter 1 proved that Parbhani is ready for the future.",
+      icon: <Sparkles className="w-6 h-6 text-ndc-blue" />,
+      tag: "✨ Chapter 1 Success",
+      extraBadge: "✅ 167+ Participants",
+      bgImage: "/images/Vibe coding workshop/IMG_9211.jpg"
     },
     {
-      title: "Building the Future of Technology Together.",
-      subtitle: "DCode Developers Student Club",
-      description: "A hub for tech enthusiasts to grow skills, work on impactful projects, and build their future together at SSIEMS.",
+      title: "The Team Behind the Magic.",
+      subtitle: "DDSC Chapter 2 Core Committee",
+      description: "A passionate group of student developers who organized this massive event in just 8 to 10 days.",
+      icon: <Users className="w-6 h-6 text-ndc-purple" />,
+      tag: "✨ Core Team",
+      extraBadge: "👑 Leadership",
+      bgImage: "/images/Vibe coding workshop/Core team.jpg"
+    },
+    {
+      title: "Leadership & Vision.",
+      subtitle: "Director SSIEMS Addressing the Event",
+      description: "Honored to have Dr. Anand K. Pathrikar, Director SSIEMS, supporting student-led innovation and the future of tech.",
       icon: <Rocket className="w-6 h-6 text-ndc-blue" />,
-      tag: "🚀 Innovation Hub",
-      isSpecial: false
+      tag: "🏛️ Institutional Support",
+      extraBadge: "Director SSIEMS",
+      bgImage: "/images/Vibe coding workshop/Director.jpg"
     },
     {
-      title: "Master the Art of Modern Development.",
-      subtitle: "Hands-on Learning Experience",
-      description: "Dive deep into full-stack development, AI, and cloud computing through our specialized workshops and bootcamps.",
-      icon: <Code2 className="w-6 h-6 text-ndc-blue" />,
-      tag: "💻 Skill Up",
-      isSpecial: false
+      title: "Mastering GenAI Workflow.",
+      subtitle: "Hands-on Technical Session",
+      description: "Students learned the complete Vibe Coding workflow: Prototype, Generate, Build, and Deploy live microservices.",
+      icon: <Code2 className="w-6 h-6 text-ndc-green" />,
+      tag: "💻 Technical Excellence",
+      extraBadge: "Live Coding",
+      bgImage: "/images/Vibe coding workshop/IMG_9314.jpg"
+    },
+    {
+      title: "Innovating with AI.",
+      subtitle: "Student Project Presentations",
+      description: "Witnessing the creativity of young developers building real-world AI applications using Gemini Models.",
+      icon: <Sparkles className="w-6 h-6 text-ndc-blue" />,
+      tag: "🚀 Student Innovation",
+      extraBadge: "Demo Day",
+      bgImage: "/images/Vibe coding workshop/Student is presenting her workshop model.jpg"
+    },
+    {
+      title: "Roots of Sustainability.",
+      subtitle: "Tree Plantation Ceremony",
+      description: "Marking the beginning of a sustainable tech journey with our distinguished Google Developer Experts.",
+      icon: <Rocket className="w-6 h-6 text-ndc-purple" />,
+      tag: "🌱 Sustainable Tech",
+      extraBadge: "Tradition",
+      bgImage: "/images/Vibe coding workshop/Tree plantation by speakers.jpg"
+    },
+    {
+      title: "Technical Support Squad.",
+      subtitle: "Technical & Management Teams",
+      description: "The specialized units that ensured technical excellence and seamless execution of every workshop detail.",
+      icon: <Users className="w-6 h-6 text-ndc-blue" />,
+      tag: "⚙️ Team Work",
+      extraBadge: "Operations",
+      bgImage: "/images/Vibe coding workshop/Technical Team.jpg"
+    },
+    {
+      title: "Event Excellence.",
+      subtitle: "Logistics & Coordination Team",
+      description: "Orchestrating memorable experiences and ensuring a smooth journey for all 167 participants.",
+      icon: <Users className="w-6 h-6 text-ndc-purple" />,
+      tag: "🎪 Management",
+      extraBadge: "Success",
+      bgImage: "/images/Vibe coding workshop/Event management team.jpeg"
+    },
+    {
+      title: "GDE Mentorship.",
+      subtitle: "Meeting with Industry Experts",
+      description: "Bridging the gap between academia and industry through interactive sessions with Google Developer Experts.",
+      icon: <Handshake className="w-6 h-6 text-ndc-blue" />,
+      tag: "🤝 Expert Guidance",
+      extraBadge: "GDE Session",
+      bgImage: "/images/Vibe coding workshop/Meeeting of team with speakers.jpg"
+    },
+    {
+      title: "Unforgettable Moments.",
+      subtitle: "Reliving the Chapter 1 Energy",
+      description: "Capturing the energy and excitement of our first-ever hands-on workshop in Parbhani.",
+      icon: <Sparkles className="w-6 h-6 text-ndc-blue" />,
+      tag: "📸 Visual Journey",
+      extraBadge: "Memories",
+      bgImage: "/images/Vibe coding workshop/IMG_9492.jpg"
     }
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: slides.length > 1 }, 
-    slides.length > 1 ? [Autoplay({ delay: 6000 })] : []
+    { loop: true, skipSnaps: false }, 
+    [Autoplay({ delay: 6000, stopOnInteraction: false })]
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -58,167 +120,149 @@ const HeroSection = () => {
     emblaApi.on("select", onSelect);
   }, [emblaApi, onSelect]);
 
-  const handleJoinClick = (isWorkshop = false) => {
-    const url = isWorkshop 
-      ? "https://forms.gle/GRLSPbasffrESu1R9" 
-      : "https://forms.gle/CHamTqBMouu6ucYa7";
-    window.open(url, "_blank");
-  };
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   return (
-    <section id="hero" className={`min-h-[calc(100vh-140px)] xs:min-h-[calc(100vh-120px)] md:min-h-[70vh] flex items-center relative overflow-hidden bg-transparent pt-2 sm:pt-4 md:pt-0`}>
-      {/* Background Decorative Elements */}
+    <section id="hero" className="relative overflow-hidden bg-[#050505] pt-16 sm:pt-20 md:pt-24 pb-12">
+      {/* Dynamic Background Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-ndc-blue/10 blur-[80px] sm:blur-[140px] animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-ndc-purple/10 blur-[80px] sm:blur-[140px] animate-pulse delay-700"></div>
-        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.05)_0%,transparent_70%)]"></div>
+        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-ndc-purple/10 blur-[120px] rounded-full animate-pulse"></div>
+        <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-ndc-blue/10 blur-[120px] rounded-full animate-pulse delay-1000"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8 relative z-10 w-full">
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {slides.map((slide, index) => (
-              <div key={index} className="flex-[0_0_100%] min-w-0 grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
-                {/* Left Column - Content */}
-                <div className="text-center lg:text-left lg:col-span-1 animate-fade-in order-1 px-2 sm:px-0">
-                  {/* Tagline */}
-                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-4 sm:mb-6">
-                    <span className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[9px] sm:text-xs font-black uppercase tracking-[0.2em] backdrop-blur-md border bg-white/10 text-white border-white/20">
-                      {slide.tag}
-                    </span>
-                    {slide.extraBadge && (
-                      <span className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[9px] sm:text-xs font-black uppercase tracking-[0.2em] backdrop-blur-md border bg-ndc-purple/20 text-ndc-purple border-ndc-purple/30 animate-pulse">
-                        {slide.extraBadge}
-                      </span>
-                    )}
-                    {slide.laptopBadge && (
-                      <span className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[9px] sm:text-xs font-black uppercase tracking-[0.2em] backdrop-blur-md border bg-amber-500/20 text-amber-500 border-amber-500/30">
-                        {slide.laptopBadge}
-                      </span>
-                    )}
-                  </div>
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="relative group">
+          {/* Main Slider Container */}
+          <div className="overflow-hidden rounded-[2.5rem] sm:rounded-[3.5rem] md:rounded-[4rem] border border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] bg-slate-950" ref={emblaRef}>
+            <div className="flex">
+              {slides.map((slide, index) => (
+                <div key={index} className="flex-[0_0_100%] min-w-0 relative">
+                  {/* Photo Frame */}
+                  <div className="relative aspect-[16/10] sm:aspect-[16/8] md:aspect-[21/9] overflow-hidden">
+                    {/* Cinematic Layers */}
+                    <img 
+                      src={getAssetPath(slide.bgImage)} 
+                      alt="" 
+                      className="absolute inset-0 w-full h-full object-cover opacity-30 blur-2xl scale-110" 
+                    />
+                    <motion.img 
+                      initial={{ scale: 1.1, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      src={getAssetPath(slide.bgImage)} 
+                      alt={slide.title} 
+                      className="absolute inset-0 w-full h-full object-contain z-10 transition-transform duration-[2s] hover:scale-[1.03]" 
+                    />
+                    
+                    {/* Top Status Header */}
+                    <div className="absolute top-0 left-0 right-0 z-20 p-6 sm:p-10 flex items-center justify-between pointer-events-none">
+                      <div className="flex items-center gap-3">
+                        <div className="px-4 py-1.5 rounded-full bg-slate-950/40 backdrop-blur-md border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] text-white">
+                          {slide.tag}
+                        </div>
+                        {slide.extraBadge && (
+                          <div className="px-4 py-1.5 rounded-full bg-ndc-purple/20 backdrop-blur-md border border-ndc-purple/30 text-[9px] font-black uppercase tracking-[0.2em] text-ndc-purple animate-pulse">
+                            {slide.extraBadge}
+                          </div>
+                        )}
+                      </div>
+                      <div className="hidden sm:flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/40 backdrop-blur-md border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">
+                        <span className="w-1.5 h-1.5 rounded-full bg-ndc-green animate-pulse"></span>
+                        Relive the moment
+                      </div>
+                    </div>
 
-                  {/* Main Headline */}
-                  <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1] sm:leading-[0.95] mb-4 sm:mb-6 text-white uppercase italic">
-                    {slide.title.split(' ').map((word, i) => (
-                      <span key={i} className={word === 'Future' || word === 'Art' || word === 'Real-World' || word === 'Thriving' || word === 'Generative' || word === 'AI.' ? 'gradient-text drop-shadow-[0_0_30px_rgba(168,85,247,0.3)]' : ''}>
+                    {/* Gradient Overlay for Footer Integration */}
+                    <div className="absolute inset-0 z-15 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Arrows (Integrated into frame edges) */}
+          <button 
+            onClick={scrollPrev}
+            className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-950/20 hover:bg-slate-950/40 backdrop-blur-md border border-white/5 flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0"
+            aria-label="Previous slide"
+          >
+            <ArrowLeft size={24} />
+          </button>
+          <button 
+            onClick={scrollNext}
+            className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-950/20 hover:bg-slate-950/40 backdrop-blur-md border border-white/5 flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0"
+            aria-label="Next slide"
+          >
+            <ArrowRight size={24} />
+          </button>
+        </div>
+
+        {/* Content Section - Sophisticated Metadata Bar */}
+        <div className="mt-10 sm:mt-14 max-w-5xl mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={selectedIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: "circOut" }}
+              className="grid md:grid-cols-12 gap-8 items-end"
+            >
+              <div className="md:col-span-8 space-y-4 text-center md:text-left px-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] text-white uppercase italic">
+                    {slides[selectedIndex].title.split(' ').map((word, i) => (
+                      <span key={i} className={['Future', 'Magic.', 'Innovation.', 'Excellence.', 'Workflow.', 'Energy', 'Chapter', '1.', 'Vibe', 'Coding'].includes(word) ? 'gradient-text' : ''}>
                         {word}{' '}
                       </span>
                     ))}
                   </h1>
-        
-                  {/* Subheading */}
-                  <h2 className="text-sm sm:text-base md:text-lg font-bold mb-4 sm:mb-6 flex items-center justify-center lg:justify-start gap-3 text-slate-400 uppercase tracking-widest">
-                    <span className="w-6 sm:w-8 h-px bg-slate-700 hidden lg:block"></span>
-                    {slide.subtitle}
-                  </h2>
-        
-                  {/* Description */}
-                  <p className="text-xs sm:text-sm md:text-lg mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 text-slate-400 px-2 sm:px-0 font-medium">
-                    {slide.description}
-                  </p>
-
-                  {/* Countdown Timer for Special Event */}
-                  {slide.isSpecial && (
-                    <div className="mb-8 sm:mb-10 flex justify-center lg:justify-start scale-[0.85] xs:scale-90 sm:scale-100 origin-center lg:origin-left">
-                      <CountdownTimer targetDate="2026-05-16T12:30:00" />
-                    </div>
-                  )}
-        
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col xs:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start px-4 sm:px-0">
-                    {slide.isSpecial ? (
-                      <>
-                        <div className="w-full xs:w-auto">
-                          <Button 
-                            disabled
-                            className="w-full xs:w-auto font-black px-8 py-5 sm:px-10 sm:py-6 text-[10px] sm:text-sm uppercase tracking-[0.2em] h-auto bg-gray-800 text-gray-500 cursor-not-allowed rounded-xl sm:rounded-2xl border border-white/5 opacity-50"
-                          >
-                            Slots Full
-                          </Button>
-                        </div>
-                        <MagneticButton className="w-full xs:w-auto">
-                          <Button 
-                            asChild
-                            variant="outline"
-                            className="w-full xs:w-auto font-black px-8 py-5 sm:px-10 sm:py-6 text-[10px] sm:text-sm uppercase tracking-[0.2em] h-auto bg-white/5 border-white/10 text-white hover:bg-white/10 rounded-xl sm:rounded-2xl transition-all"
-                          >
-                            <Link to="/workshop" className="flex items-center gap-3 justify-center">
-                              <Info className="w-4 h-4" />
-                              Details
-                            </Link>
-                          </Button>
-                        </MagneticButton>
-                      </>
-                    ) : (
-                      <MagneticButton className="w-full xs:w-auto">
-                        <Button 
-                          onClick={() => handleJoinClick(false)} 
-                          className="w-full xs:w-auto font-black px-8 py-5 sm:px-10 sm:py-6 text-[10px] sm:text-sm uppercase tracking-[0.2em] h-auto bg-white text-black hover:bg-gray-100 shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all duration-500 rounded-xl sm:rounded-2xl"
-                        >
-                          Join the Club
-                        </Button>
-                      </MagneticButton>
-                    )}
-
-                    {!slide.isSpecial && (
-                      <a 
-                        href="#events" 
-                        className="text-[10px] sm:text-sm font-black uppercase tracking-[0.2em] flex items-center gap-3 hover:gap-5 transition-all duration-300 text-white hover:text-ndc-purple mt-2 sm:mt-0"
-                        aria-label="View Achievements"
-                      >
-                        Achievements <ChevronRight size={16} />
-                      </a>
-                    )}
+                  <div className="flex items-center justify-center md:justify-start gap-3">
+                    <span className="w-10 h-px bg-ndc-purple/50"></span>
+                    <h2 className="text-xs sm:text-sm font-black uppercase tracking-[0.3em] text-ndc-blue italic">
+                      {slides[selectedIndex].subtitle}
+                    </h2>
                   </div>
                 </div>
-        
-                {/* Right Column - Logo/Graphic */}
-                <div className="flex justify-center items-center order-2 mb-6 sm:mb-8 lg:mb-0">
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="relative w-32 xs:w-40 sm:w-56 md:w-64 lg:w-full max-w-md group"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-ndc-purple to-ndc-blue rounded-full blur-[60px] sm:blur-[100px] md:blur-[120px] opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                    <motion.img 
-                      whileHover={{ scale: 1.05, rotate: 2 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      src={getAssetPath("/images/club/Dcode-Logo.png")} 
-                      alt="DCode Developers Club Logo" 
-                      className="w-full h-auto object-contain opacity-95 drop-shadow-[0_0_30px_rgba(0,0,0,0.5)]" 
-                    />
-                  </motion.div>
-                </div>
+                
+                <p className="text-xs sm:text-sm md:text-base text-slate-400 font-medium leading-relaxed max-w-2xl mx-auto md:mx-0">
+                  {slides[selectedIndex].description}
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Slider Navigation Controls */}
-        {slides.length > 1 && (
-          <div className="mt-8 sm:mt-10 md:mt-12 flex items-center justify-center lg:justify-start gap-3">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => emblaApi?.scrollTo(index)}
-                className={`h-2 rounded-full transition-all duration-500 ${
-                  selectedIndex === index 
-                    ? 'w-8 bg-gradient-to-r from-ndc-purple to-ndc-blue shadow-[0_0_15px_rgba(139,51,234,0.5)]' 
-                    : 'w-2 bg-white/20 hover:bg-white/40'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+              <div className="md:col-span-4 flex flex-col items-center md:items-end gap-6 px-4">
+                {/* Progress Indicators */}
+                <div className="flex items-center gap-2.5">
+                  {slides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => emblaApi?.scrollTo(index)}
+                      className={`h-1.5 rounded-full transition-all duration-500 ${
+                        selectedIndex === index 
+                          ? 'w-10 bg-gradient-to-r from-ndc-purple to-ndc-blue shadow-[0_0_15px_rgba(139,51,234,0.3)]' 
+                          : 'w-1.5 bg-white/10 hover:bg-white/30'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden md:block">
-        <div className="w-5 h-8 sm:w-6 sm:h-10 rounded-full border-2 flex justify-center p-1 border-white/30">
-          <div className="w-0.5 h-1.5 sm:w-1 sm:h-2 rounded-full bg-white/50"></div>
+                <MagneticButton>
+                  <Button 
+                    asChild
+                    className="font-black px-10 py-7 text-xs uppercase tracking-[0.2em] h-auto bg-white text-black hover:bg-slate-100 shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all duration-500 rounded-2xl group/btn overflow-hidden relative"
+                  >
+                    <Link to="/workshop" className="flex items-center gap-3 relative z-10">
+                      <span>Full Success Story</span>
+                      <ChevronRight size={18} className="transition-transform group-hover/btn:translate-x-1" />
+                    </Link>
+                  </Button>
+                </MagneticButton>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

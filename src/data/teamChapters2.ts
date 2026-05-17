@@ -1,8 +1,8 @@
 export const chapter2Data = {
   president: {
-    name: "Syed Asif",
-    role: "Founder & President",
-    initials: "SA",
+    name: "Syed Asif Syed Gaffar",
+    role: "President",
+    initials: "SASG",
     bio: "Asif leads DDSC Chapter 2 with a mission to bridge the gap between classroom theory and industry reality. He is committed to building a hands-on learning culture where students don't just learn about technology, but build it themselves.",
     tagline: "Building the future of tech, one line at a time.",
     image: "/images/team/Syed asif.jpeg",
@@ -35,7 +35,7 @@ export const chapter2Data = {
       initials: "SBA",
       bio: "Ensuring smooth communication and meticulous documentation of club milestones.",
       email: "sandipayewar@gmail.com",
-      image: "/images/team/Sandip Ayewar.jpg"
+      image: "/images/team/Sandip Ayewar.jpeg"
     },
     {
       name: "Arpita Mukund Jondhale",
@@ -47,7 +47,7 @@ export const chapter2Data = {
     },
     {
       name: "Sanjivani Jaiprakash Jadhav",
-      role: "Technical Lead",
+      role: "Technical Team Leader",
       initials: "SJJ",
       bio: "Spearheading the technical roadmap and mentoring the next generation of builders.",
       email: "sanjivani.jadhav.cs@gmail.com",
@@ -55,15 +55,15 @@ export const chapter2Data = {
     },
     {
       name: "Siddi Yaseen Hussain",
-      role: "Vice-Technical Team Leader",
+      role: "Vice Technical Team Leader",
       initials: "SYH",
       bio: "Collaborating on technical projects and helping scale our development community.",
       email: "Ysnhun412@gmail.com",
       image: "/images/team/Siddi Yaseen Hussain.png"
     },
     {
-      name: "Rushikesh Anilrao Deshmukh",
-      role: "Social Media Lead",
+      name: "Rushikesh Deshmukh",
+      role: "Social Media Team Leader",
       initials: "RAD",
       bio: "Amplifying our voice and building a vibrant digital community for Chapter 2.",
       email: "rushideshmukh0802@gmail.com",
@@ -71,7 +71,7 @@ export const chapter2Data = {
     },
     {
       name: "Supriya Satish Shahane",
-      role: "Design Lead",
+      role: "Design Team Leader",
       initials: "SSS",
       bio: "Crafting the visual identity of DDSC and ensuring excellence in design.",
       email: "supriyashahane@gmail.com",
@@ -79,11 +79,11 @@ export const chapter2Data = {
     },
     {
       name: "Sarvadnya Annarao Kshirsagar",
-      role: "Event Lead",
+      role: "Event Management Team Leader",
       initials: "SAK",
       bio: "Orchestrating memorable experiences and seamless execution of club workshops.",
       email: "kshirsagarsarvadnya77@gmail.com",
-      image: "/images/team/Sarvadnya Kshirsagar.jpg"
+      image: "/images/team/Sarvadnya Kshirsagar.JPEG"
     }
   ],
   teams: {

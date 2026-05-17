@@ -81,7 +81,7 @@ const AboutSection = () => {
                   {[
                     { label: "SIH Nationalists", color: "bg-ndc-purple" },
                     { label: "IIT-B Finalists", color: "bg-ndc-blue" },
-                    { label: "National Rankers", color: "bg-ndc-green" }
+                    { label: "Vibe Coding Success", color: "bg-ndc-green" }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 group/item">
                       <div className={`w-2.5 h-2.5 rounded-full ${item.color} shadow-[0_0_15px_rgba(255,255,255,0.3)] animate-pulse`}></div>

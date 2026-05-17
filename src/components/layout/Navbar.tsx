@@ -18,7 +18,6 @@ const Navbar = () => {
   const navLinks = [
     { href: '#about', label: 'About' },
     { href: '#why-join', label: 'Why Join' },
-    { href: '/workshop', label: 'Workshop', isPage: true, isNew: true },
     { href: '#events', label: 'Achievements' },
     { href: '#upcoming-events', label: 'Upcoming Events' },
     { href: '/gallery', label: 'Gallery', isPage: true },

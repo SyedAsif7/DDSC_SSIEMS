@@ -28,9 +28,13 @@ const AchievementDetail = () => {
     .slice(0, 3);
 
   useEffect(() => {
+    if (Number(id) === 5) {
+      navigate("/workshop", { replace: true });
+      return;
+    }
     window.scrollTo(0, 0);
     setCurrentImageIndex(0);
-  }, [id]);
+  }, [id, navigate]);
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (isLightboxOpen) {
@@ -416,10 +420,10 @@ const AchievementDetail = () => {
                     </div>
                     <div>
                       <h3 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-1">
-                        Excellence in Collaboration
+                        Organizing Teams
                       </h3>
                       <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">
-                        Participating Teams & Innovations
+                        Roles & Responsibilities
                       </p>
                     </div>
                   </div>

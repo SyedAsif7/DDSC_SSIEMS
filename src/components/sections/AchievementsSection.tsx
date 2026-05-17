@@ -106,7 +106,7 @@ const AchievementsSection = () => {
               whileHover={{ y: -5 }}
               className="group rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden flex flex-col h-full"
             >
-              <Link to={`/achievement/${item.id}`} className="block h-full relative">
+              <Link to={item.id === 5 ? "/workshop" : `/achievement/${item.id}`} className="block h-full relative">
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0">
                   <img 

@@ -250,5 +250,58 @@ export const achievements: Achievement[] = [
         project: "PPT & Abstract Mentorship"
       }
     ]
+  },
+  {
+    id: 5,
+    category: "WORKSHOP",
+    title: "Vibe Coding: GenAI Apps",
+    description: "Rapidly Building and Deploying GenAI Apps on Google Cloud — Chapter 1 of DDSC's journey.",
+    fullDescription: "On 16th May 2026, DCode Developers Club (DDSC) in association with SSIEMS, Parbhani organized its first-ever hands-on technical workshop. The experience took students from a blank editor to a live AI application in minutes, covering the complete Vibe Coding workflow from prototyping with Google AI Studio to deploying microservices on Google Cloud Run.",
+    images: [
+      "/images/Vibe coding workshop/IMG_9211.jpg",
+      "/images/Vibe coding workshop/IMG_9213.jpg",
+      "/images/Vibe coding workshop/IMG_9220.jpg",
+      "/images/Vibe coding workshop/IMG_9314.jpg",
+      "/images/Vibe coding workshop/Core team.jpg"
+    ],
+    icon: 'zap',
+    stats: [
+      { label: "Speakers", value: "2 GDEs", color: "indigo" },
+      { label: "Students", value: "167", color: "purple" },
+      { label: "Reach", value: "Parbhani & Beyond", color: "pink" },
+      { label: "Status", value: "Successful", color: "green" }
+    ],
+    highlight: "Workshop Completed",
+    highlights: [
+      "Hands-on development with Google Gemini AI",
+      "Production deployment on Google Cloud Run",
+      "Interactive session with a Google Developer Expert",
+      "Certificate of participation for all attendees"
+    ],
+    date: "16/05/2026",
+    location: "APJ Abdul Kalam Auditorium, SSIEMS",
+    size: 'large',
+    teams: [
+      {
+        name: "Technical Team",
+        members: ["Sanjivani Jadhav", "Siddi Yaseen Hussain", "Shaikh Ab Raheman"],
+        project: "Workshop Technical Support",
+        abstract: "A technical support team providing hands-on guidance for building and deploying GenAI applications on Google Cloud."
+      },
+      {
+        name: "Event Management",
+        members: ["Sarvadnya Kshirsagar", "Priyanka Awachar", "Vaishnavi Udawant"],
+        project: "Logistics & Coordination",
+        abstract: "An event management team responsible for logistics, registration, and coordination of the workshop."
+      }
+    ],
+    judges: [
+      { name: "Ashutosh S. Bhakare", role: "Speaker", designation: "Google Developer Expert (GDE)" },
+      { name: "Rachana Bhakare", role: "Speaker", designation: "Google Developer Expert (GDE)" }
+    ],
+    coordinators: [
+      { name: "Syed Asif", role: "Student", email: "syedasif111005@gmail.com", phone: "8788740090" },
+      { name: "Prof. Shelke S. B.", role: "Faculty", email: "snehal.shelke@cse.ssiems.in" }
+    ]
   }
 ];

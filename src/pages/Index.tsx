@@ -16,6 +16,8 @@ import PartnersSection from "@/components/sections/PartnersSection";
 import Footer from "@/components/layout/Footer";
 import AnnouncementModal from "@/components/layout/AnnouncementModal";
 import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 const Index = () => {
   return (

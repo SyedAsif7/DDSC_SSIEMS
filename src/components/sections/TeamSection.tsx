@@ -68,7 +68,7 @@ const LeadershipCard = ({ member, type }: { member: any, type: 'president' | 'co
                   </div>
                 </div>
                 
-                {isPresident && member.tagline && (
+                {member.tagline && (
                   <div className="py-2 px-4 rounded-xl bg-white/[0.03] border border-white/5 backdrop-blur-xl inline-block shadow-inner">
                     <p className="text-ndc-purple font-black italic text-xs tracking-tight drop-shadow-md transition-transform duration-500">"{member.tagline}"</p>
                   </div>

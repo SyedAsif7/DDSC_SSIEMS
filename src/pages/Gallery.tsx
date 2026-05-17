@@ -38,6 +38,18 @@ const Gallery = () => {
     // Eclearnix
     { url: "/images/events/eclearnix hackathon 360 images/eclearnix hackathon 360.png", category: "Hackathons", title: "Eclearnix Hackathon 360", date: "Mar 2024" },
     
+    // Vibe Coding Workshop
+    { url: "/images/Vibe coding workshop/Core team.jpg", category: "Workshops", title: "Vibe Coding: Core Team", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/Director.jpg", category: "Workshops", title: "Director addressing the Workshop", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/Technical Team.jpg", category: "Workshops", title: "Technical Team", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/Event management team.jpeg", category: "Workshops", title: "Event Management Team", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/Student is presenting her workshop model.jpg", category: "Workshops", title: "Student Presentation", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/Tree plantation by speakers.jpg", category: "Workshops", title: "Tree Plantation Ceremony", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/Meeeting of team with speakers.jpg", category: "Workshops", title: "Team meeting with GDE", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/IMG_9211.jpg", category: "Workshops", title: "Workshop Session", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/IMG_9314.jpg", category: "Workshops", title: "Hands-on Coding", date: "May 2026" },
+    { url: "/images/Vibe coding workshop/IMG_9492.jpg", category: "Workshops", title: "Group Photo", date: "May 2026" },
+    
     // Club Meetings & Sessions (Original Gallery Items)
     { url: "/images/gallery/5e6f6f4e-3e10-4db7-8c58-1abdecf9cb21.png", category: "Events", title: "First DDSC Meeting", date: "Aug 2023" },
     { url: "/images/gallery/371c7355-893e-47ba-aee5-6b71e894e9ac.png", category: "Events", title: "Collaboration Session", date: "Sep 2023" },
