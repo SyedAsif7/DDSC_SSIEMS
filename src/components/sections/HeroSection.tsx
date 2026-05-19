@@ -29,6 +29,15 @@ const HeroSection = () => {
       bgImage: "/images/Vibe coding workshop/Core team.jpg"
     },
     {
+      title: "GDE Mentorship.",
+      subtitle: "Meeting with Industry Experts",
+      description: "Bridging the gap between academia and industry through interactive sessions with Google Developer Experts.",
+      icon: <Handshake className="w-6 h-6 text-ndc-blue" />,
+      tag: "🤝 Expert Guidance",
+      extraBadge: "GDE Session",
+      bgImage: "/images/Vibe coding workshop/Meeeting of team with speakers.jpg"
+    },
+    {
       title: "Leadership & Vision.",
       subtitle: "Director SSIEMS Addressing the Event",
       description: "Honored to have Dr. Anand K. Pathrikar, Director SSIEMS, supporting student-led innovation and the future of tech.",
@@ -38,13 +47,22 @@ const HeroSection = () => {
       bgImage: "/images/Vibe coding workshop/Director.jpg"
     },
     {
-      title: "Mastering GenAI Workflow.",
-      subtitle: "Hands-on Technical Session",
-      description: "Students learned the complete Vibe Coding workflow: Prototype, Generate, Build, and Deploy live microservices.",
-      icon: <Code2 className="w-6 h-6 text-ndc-green" />,
-      tag: "💻 Technical Excellence",
-      extraBadge: "Live Coding",
-      bgImage: "/images/Vibe coding workshop/IMG_9314.jpg"
+      title: "Strong Partnerships.",
+      subtitle: "Sponsor HP World Parbhani",
+      description: "A big thank you to HP World Parbhani for their incredible support in making our workshop a grand success.",
+      icon: <Handshake className="w-6 h-6 text-ndc-blue" />,
+      tag: "🤝 Our Sponsor",
+      extraBadge: "HP World",
+      bgImage: "/images/Vibe coding workshop/Sponser hp world delvering speech.JPG"
+    },
+    {
+      title: "Visionary Leadership.",
+      subtitle: "President Syed Asif Delivering Vote of Thanks",
+      description: "Our President, Syed Asif, sharing the vision for DDSC and expressing gratitude to the community for a successful Chapter 1.",
+      icon: <Users className="w-6 h-6 text-ndc-blue" />,
+      tag: "👑 Leadership",
+      extraBadge: "President DDSC",
+      bgImage: "/images/Vibe coding workshop/President syed asif delvering vote of thanks.jpg"
     },
     {
       title: "Innovating with AI.",
@@ -56,15 +74,6 @@ const HeroSection = () => {
       bgImage: "/images/Vibe coding workshop/Student is presenting her workshop model.jpg"
     },
     {
-      title: "Roots of Sustainability.",
-      subtitle: "Tree Plantation Ceremony",
-      description: "Marking the beginning of a sustainable tech journey with our distinguished Google Developer Experts.",
-      icon: <Rocket className="w-6 h-6 text-ndc-purple" />,
-      tag: "🌱 Sustainable Tech",
-      extraBadge: "Tradition",
-      bgImage: "/images/Vibe coding workshop/Tree plantation by speakers.jpg"
-    },
-    {
       title: "Technical Support Squad.",
       subtitle: "Technical & Management Teams",
       description: "The specialized units that ensured technical excellence and seamless execution of every workshop detail.",
@@ -72,6 +81,15 @@ const HeroSection = () => {
       tag: "⚙️ Team Work",
       extraBadge: "Operations",
       bgImage: "/images/Vibe coding workshop/Technical Team.jpg"
+    },
+    {
+      title: "The Creative Core.",
+      subtitle: "Meet the Design Team",
+      description: "The creative powerhouses responsible for the visual identity and aesthetic excellence of the DCode Developers Club.",
+      icon: <Sparkles className="w-6 h-6 text-ndc-purple" />,
+      tag: "🎨 Design Team",
+      extraBadge: "Creative Minds",
+      bgImage: "/images/Vibe coding workshop/Design team.jpeg"
     },
     {
       title: "Event Excellence.",
@@ -83,22 +101,13 @@ const HeroSection = () => {
       bgImage: "/images/Vibe coding workshop/Event management team.jpeg"
     },
     {
-      title: "GDE Mentorship.",
-      subtitle: "Meeting with Industry Experts",
-      description: "Bridging the gap between academia and industry through interactive sessions with Google Developer Experts.",
-      icon: <Handshake className="w-6 h-6 text-ndc-blue" />,
-      tag: "🤝 Expert Guidance",
-      extraBadge: "GDE Session",
-      bgImage: "/images/Vibe coding workshop/Meeeting of team with speakers.jpg"
-    },
-    {
-      title: "Unforgettable Moments.",
-      subtitle: "Reliving the Chapter 1 Energy",
-      description: "Capturing the energy and excitement of our first-ever hands-on workshop in Parbhani.",
-      icon: <Sparkles className="w-6 h-6 text-ndc-blue" />,
-      tag: "📸 Visual Journey",
-      extraBadge: "Memories",
-      bgImage: "/images/Vibe coding workshop/IMG_9492.jpg"
+      title: "Roots of Sustainability.",
+      subtitle: "Tree Plantation Ceremony",
+      description: "Marking the beginning of a sustainable tech journey with our distinguished Google Developer Experts.",
+      icon: <Rocket className="w-6 h-6 text-ndc-purple" />,
+      tag: "🌱 Sustainable Tech",
+      extraBadge: "Tradition",
+      bgImage: "/images/Vibe coding workshop/Tree plantation by speakers.jpg"
     }
   ];
 
@@ -204,65 +213,70 @@ const HeroSection = () => {
           <AnimatePresence mode="wait">
             <motion.div 
               key={selectedIndex}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: "circOut" }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="grid md:grid-cols-12 gap-8 items-end"
             >
-              <div className="md:col-span-8 space-y-4 text-center md:text-left px-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] text-white uppercase italic">
+              <div className="md:col-span-8 space-y-6 text-center md:text-left px-4">
+                <div className="space-y-4">
+                  <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] text-white uppercase italic">
                     {slides[selectedIndex].title.split(' ').map((word, i) => (
-                      <span key={i} className={['Future', 'Magic.', 'Innovation.', 'Excellence.', 'Workflow.', 'Energy', 'Chapter', '1.', 'Vibe', 'Coding'].includes(word) ? 'gradient-text' : ''}>
+                      <span key={i} className={['Future', 'Magic.', 'Innovation.', 'Excellence.', 'Workflow.', 'Energy', 'Chapter', '1.', 'Vibe', 'Coding', 'Creative', 'Core.', 'Leadership.', 'Partnerships.'].includes(word) ? 'gradient-text' : ''}>
                         {word}{' '}
                       </span>
                     ))}
                   </h1>
-                  <div className="flex items-center justify-center md:justify-start gap-3">
-                    <span className="w-10 h-px bg-ndc-purple/50"></span>
-                    <h2 className="text-xs sm:text-sm font-black uppercase tracking-[0.3em] text-ndc-blue italic">
+                  <div className="flex items-center justify-center md:justify-start gap-4">
+                    <div className="h-px w-12 bg-gradient-to-r from-ndc-purple to-transparent opacity-50"></div>
+                    <p className="text-ndc-purple text-xs md:text-sm font-black uppercase tracking-[0.4em] drop-shadow-sm">
                       {slides[selectedIndex].subtitle}
-                    </h2>
+                    </p>
                   </div>
                 </div>
                 
-                <p className="text-xs sm:text-sm md:text-base text-slate-400 font-medium leading-relaxed max-w-2xl mx-auto md:mx-0">
-                  {slides[selectedIndex].description}
+                <p className="text-gray-400 text-base md:text-xl font-medium leading-relaxed max-w-2xl mx-auto md:mx-0 opacity-80 italic">
+                  "{slides[selectedIndex].description}"
                 </p>
               </div>
 
-              <div className="md:col-span-4 flex flex-col items-center md:items-end gap-6 px-4">
-                {/* Progress Indicators */}
-                <div className="flex items-center gap-2.5">
-                  {slides.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => emblaApi?.scrollTo(index)}
-                      className={`h-1.5 rounded-full transition-all duration-500 ${
-                        selectedIndex === index 
-                          ? 'w-10 bg-gradient-to-r from-ndc-purple to-ndc-blue shadow-[0_0_15px_rgba(139,51,234,0.3)]' 
-                          : 'w-1.5 bg-white/10 hover:bg-white/30'
-                      }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
-
-                <MagneticButton>
-                  <Button 
-                    asChild
-                    className="font-black px-10 py-7 text-xs uppercase tracking-[0.2em] h-auto bg-white text-black hover:bg-slate-100 shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all duration-500 rounded-2xl group/btn overflow-hidden relative"
-                  >
-                    <Link to="/workshop" className="flex items-center gap-3 relative z-10">
-                      <span>Full Success Story</span>
-                      <ChevronRight size={18} className="transition-transform group-hover/btn:translate-x-1" />
-                    </Link>
-                  </Button>
-                </MagneticButton>
+              <div className="md:col-span-4 flex justify-center md:justify-end pb-2">
+                <Link to="/workshop" className="group/btn relative">
+                  <div className="absolute -inset-4 bg-ndc-purple/20 blur-xl rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
+                  <MagneticButton>
+                    <div className="relative px-8 py-4 rounded-2xl bg-white text-black font-black uppercase tracking-widest text-xs flex items-center gap-3 group-hover/btn:bg-ndc-purple group-hover/btn:text-white transition-all duration-500 shadow-2xl">
+                      Explore Chapter 1
+                      <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </div>
+                  </MagneticButton>
+                </Link>
               </div>
             </motion.div>
           </AnimatePresence>
+
+          {/* Pagination Indicators - More technical look */}
+          <div className="flex justify-center md:justify-start gap-3 mt-12 px-4">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => emblaApi && emblaApi.scrollTo(index)}
+                className={`group relative h-1.5 transition-all duration-700 rounded-full overflow-hidden ${
+                  selectedIndex === index ? 'w-12 bg-ndc-purple' : 'w-4 bg-white/10 hover:bg-white/20'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              >
+                {selectedIndex === index && (
+                  <motion.div 
+                    className="absolute inset-0 bg-white/30"
+                    initial={{ x: "-100%" }}
+                    animate={{ x: "0%" }}
+                    transition={{ duration: 6, ease: "linear" }}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -59,6 +59,58 @@ const WorkshopDetails = () => {
     { label: "Chapter", value: "Chapter 1", icon: Star }
   ];
 
+  const ceremonySteps = [
+    {
+      title: "The Grand Welcome",
+      subtitle: "Opening Address",
+      content: "The APJ Abdul Kalam Auditorium came alive as we welcomed dignitaries, faculty, and 200+ enthusiastic student developers. The atmosphere was charged with the spirit of our motto: Learn. Build. Innovate.",
+      icon: Users,
+      color: "text-ndc-blue"
+    },
+    {
+      title: "Lighting of the Lamp",
+      subtitle: "A Tradition of Knowledge",
+      content: "Our respected Director and Guest of Honour ushered in the workshop by lighting the ceremonial lamp—a symbol of removing ignorance and inspiring innovation through the light of knowledge.",
+      icon: Zap,
+      color: "text-ndc-purple"
+    },
+    {
+      title: "Leadership Induction",
+      subtitle: "Committee Appointments",
+      content: "A celebratory moment where our newly appointed Committee Heads received their official appointment letters, ready to lead DDSC toward greater heights with dedication and excellence.",
+      icon: Award,
+      color: "text-ndc-green"
+    },
+    {
+      title: "Visionary Words",
+      subtitle: "Dignitaries' Address",
+      content: "Insightful words from our HOD and Director Sir, who shared the vision behind SSIEMS supporting student-led initiatives and the significance of mastering future technologies like GenAI.",
+      icon: Quote,
+      color: "text-ndc-blue"
+    },
+    {
+      title: "Expert Insights",
+      subtitle: "The GDE Address",
+      content: "The Google Developer Expert (GDE) shared a powerful vision: moving from a blank editor to a live URL in minutes. The auditorium was absolutely charged and ready to start coding.",
+      icon: Sparkles,
+      color: "text-ndc-purple"
+    },
+    {
+      title: "Let the Vibe Coding Begin!",
+      subtitle: "The Workshop Kickoff",
+      content: "Laptops open, minds sharp. The session officially began, guiding students through prototyping in AI Studio, generating logic with Gemini, and deploying live on Google Cloud.",
+      icon: Rocket,
+      color: "text-ndc-green"
+    },
+    {
+      title: "Vote of Thanks",
+      subtitle: "President's Address",
+      content: "President Syed Asif delivered a heartfelt vote of thanks, expressing gratitude to the dignitaries, GDEs, and participants for making DDSC's Chapter 1 a massive success.",
+      icon: Handshake,
+      color: "text-ndc-blue"
+    }
+  ];
+
   const quotes = [
     { text: "This was not just a workshop. This was a movement. Parbhani proved today that small cities have big dreams.", author: "Syed Asif", role: "President DDSC" },
     { text: "From a blank editor to a live AI app — in minutes. That is the power of Vibe Coding.", author: "Ashutosh S. Bhakare", role: "Google Developer Expert" },
@@ -194,6 +246,72 @@ const WorkshopDetails = () => {
                   </div>
                 </div>
               </motion.div>
+            </div>
+          </div>
+
+          {/* 2.5 The Ceremony Section */}
+          <div className="mb-24 md:mb-40 relative">
+            <div className="premium-glow"></div>
+            
+            <div className="text-center mb-20 relative z-10">
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple mb-6 backdrop-blur-md"
+              >
+                <Star size={14} className="animate-pulse" />
+                <span className="text-[10px] font-black uppercase tracking-[0.3em]">Relive the Moment</span>
+              </motion.div>
+              
+              <h2 className="text-4xl md:text-7xl font-black text-white leading-[0.9] uppercase italic mb-8 tracking-tighter">
+                The <span className="gradient-text">Ceremony</span>
+              </h2>
+              
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="h-px w-16 bg-gradient-to-r from-transparent to-ndc-purple/50"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-ndc-purple shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
+                <div className="h-px w-16 bg-gradient-to-l from-transparent to-ndc-blue/50"></div>
+              </div>
+              
+              <p className="text-gray-400 text-lg md:text-xl font-medium max-w-3xl mx-auto leading-relaxed italic opacity-80">
+                From the traditional lighting of the lamp to the high-energy workshop kickoff—capturing the essence of a landmark day.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+              {ceremonySteps.map((step, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="group relative p-10 rounded-[3rem] bg-slate-900/40 border border-white/5 hover:border-ndc-purple/30 transition-all duration-700 overflow-hidden shadow-2xl backdrop-blur-3xl"
+                >
+                  {/* Hover Background Shimmer */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-ndc-purple/5 via-transparent to-ndc-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none"></div>
+                  
+                  {/* Decorative Icon Watermark */}
+                  <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-all duration-700 group-hover:scale-125 group-hover:rotate-12">
+                    <step.icon size={120} />
+                  </div>
+                  
+                  <div className={`w-16 h-16 rounded-2xl bg-white/[0.03] flex items-center justify-center mb-8 ${step.color} border border-white/10 shadow-inner group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <step.icon size={32} />
+                  </div>
+                  
+                  <div className="space-y-4 relative z-10">
+                    <div className="flex items-center gap-3">
+                      <div className={`h-px w-6 bg-current ${step.color} opacity-30`}></div>
+                      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-gray-300 transition-colors">{step.subtitle}</p>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-black text-white uppercase italic leading-[0.95] tracking-tighter group-hover:gradient-text transition-all duration-500">{step.title}</h3>
+                    <p className="text-base text-gray-400 leading-relaxed font-medium opacity-80 group-hover:opacity-100 transition-opacity">{step.content}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
 

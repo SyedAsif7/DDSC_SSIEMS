@@ -41,22 +41,45 @@ const Index = () => {
             {/* Subtle Gradient Overlays between sections */}
             <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-slate-950 to-transparent pointer-events-none"></div>
             
-            <div className="space-y-24 md:space-y-40 pb-24">
+            <div className="space-y-0">
               {/* About */}
-              <AboutSection />
+              <section className="section-spacing">
+                <AboutSection />
+              </section>
+
               {/* Events/Achievements */}
-              <AchievementsSection />
-              <WhyJoinSection />
+              <section className="section-spacing bg-white/[0.01]">
+                <AchievementsSection />
+              </section>
+
+              <section className="section-spacing">
+                <WhyJoinSection />
+              </section>
+
               {/* Upcoming Events */}
-              <UpcomingEventsSection />
+              <section className="section-spacing bg-white/[0.01]">
+                <UpcomingEventsSection />
+              </section>
+
               {/* Gallery Slider */}
-              <GallerySliderSection />
+              <section className="section-spacing">
+                <GallerySliderSection />
+              </section>
+
               {/* Team */}
-              <TeamSection />
+              <section className="section-spacing bg-white/[0.01]">
+                <TeamSection />
+              </section>
+
               {/* Partners */}
-              <PartnersSection />
+              <section className="section-spacing">
+                <PartnersSection />
+              </section>
+
               {/* Join Us */}
-              <JoinSection />
+              <section className="section-spacing bg-ndc-purple/[0.02]">
+                <JoinSection />
+              </section>
             </div>
           </div>
         </main>

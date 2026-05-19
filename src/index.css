@@ -90,20 +90,42 @@
   }
 
   .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
+    @apply bg-slate-950/40 backdrop-blur-2xl border border-white/10 shadow-2xl transition-all duration-500 hover:border-white/20;
   }
 
-  .gradient-text-horizontal {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-code-indigo via-code-purple to-code-pink;
+  .premium-glow {
+    @apply absolute inset-0 bg-gradient-to-br from-ndc-purple/10 via-transparent to-ndc-blue/10 blur-[100px] pointer-events-none -z-10;
   }
 
-  .gradient-text-vertical {
-    @apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60;
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-ndc-purple via-indigo-400 to-ndc-blue font-black;
   }
 
-  .hover-glow {
-    @apply transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:border-code-purple/50;
+  .gradient-border {
+    @apply relative p-px overflow-hidden;
   }
+
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-ndc-purple via-transparent to-ndc-blue opacity-20 transition-opacity duration-500;
+  }
+
+  .gradient-border:hover::before {
+    @apply opacity-50;
+  }
+
+  .section-spacing {
+    @apply py-24 md:py-40;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .animate-fade-in {

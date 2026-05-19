@@ -7,10 +7,16 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const galleryImages = [
-  { src: "/images/Vibe coding workshop/Design team.jpeg", caption: "Creative minds of the Design Team" },
-  { src: "/images/Vibe coding workshop/Registration desk.jpg", caption: "Welcoming participants at the Registration Desk" },
   { src: "/images/Vibe coding workshop/President syed asif delvering vote of thanks.jpg", caption: "President Syed Asif delivering the vote of thanks" },
+  { src: "/images/Vibe coding workshop/Design team.jpeg", caption: "Creative minds of the Design Team" },
   { src: "/images/Vibe coding workshop/Sponser hp world delvering speech.JPG", caption: "Sponsor HP World delivering a speech" },
+  { src: "/images/Vibe coding workshop/Registration desk.jpg", caption: "Welcoming participants at the Registration Desk" },
+  { src: "/images/Vibe coding workshop/Technical Team.jpg", caption: "The Technical Team driving innovation" },
+  { src: "/images/Vibe coding workshop/Participates in auditorium.jpg", caption: "Full house at our signature workshop" },
+  { src: "/images/Vibe coding workshop/Student is presenting her workshop model.jpg", caption: "Showcasing student-led innovation" },
+  { src: "/images/events/SIH One Day Workshop images/Workshop conducted for Sih 1.jpg", caption: "Intensive learning session during SIH workshop" },
+  { src: "/images/Vibe coding workshop/Tree plantation by speakers.jpg", caption: "Commitment to a sustainable future" },
+  { src: "/images/Vibe coding workshop/Ful Team.jpg", caption: "The incredible team behind the scenes" },
 ];
 
 const GallerySliderSection = () => {

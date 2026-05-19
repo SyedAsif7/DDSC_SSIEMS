@@ -46,14 +46,14 @@ const Navbar = () => {
           {/* Brand/Logo */}
           <Link to="/" className="flex items-center gap-1.5 sm:gap-3 group cursor-pointer">
             <img src={getAssetPath("/images/club/Dcode-Logo.png")} alt="DCode Logo" className="h-7 sm:h-10 md:h-12 w-auto transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" />
-            <span className="text-sm sm:text-lg md:text-xl font-bold font-heading transition-all duration-500 hover:scale-105 text-white">
-              <span className="gradient-text-horizontal">DCode</span>
-              <span className="hidden sm:inline text-gray-300"> Developers Club</span>
+            <span className="text-sm sm:text-lg md:text-xl font-black font-heading transition-all duration-500 hover:scale-105 text-white uppercase italic tracking-tighter">
+              <span className="gradient-text">DCode</span>
+              <span className="hidden sm:inline text-gray-400"> Developers Club</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-1 bg-white/5 p-1 rounded-2xl border border-white/10">
+          <nav className="hidden xl:flex items-center gap-1 bg-white/[0.03] p-1 rounded-2xl border border-white/10 backdrop-blur-md">
             {navLinks.map((item) => {
               const isHashLink = item.href.startsWith('#');
               const isExternalPage = item.isPage;
@@ -63,13 +63,12 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     to={item.href}
-                    className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple flex items-center gap-1.5"
+                    className="relative group px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white flex items-center gap-1.5"
                   >
                     <span className="relative z-10">{item.label}</span>
                     {item.isNew && (
                       <span className="flex h-2 w-2 rounded-full bg-ndc-purple animate-pulse shadow-[0_0_8px_rgba(168,85,247,0.8)]"></span>
                     )}
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-code-indigo to-code-pink group-hover:w-1/2 transition-all duration-500 ease-out rounded-full"></span>
                   </Link>
                 );
               }
@@ -78,25 +77,23 @@ const Navbar = () => {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple flex items-center gap-1.5"
+                  className="relative group px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white flex items-center gap-1.5"
                 >
                   <span className="relative z-10">{item.label}</span>
                   {item.isNew && (
                     <span className="flex h-2 w-2 rounded-full bg-ndc-purple animate-pulse shadow-[0_0_8px_rgba(168,85,247,0.8)]"></span>
                   )}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-code-indigo to-code-pink group-hover:w-1/2 transition-all duration-500 ease-out rounded-full"></span>
                 </a>
               ) : (
                 <Link
                   key={item.href}
                   to={`/${item.href}`}
-                  className="relative group px-3 py-2 text-sm font-medium font-primary transition-all duration-300 rounded-xl hover:bg-white/10 text-gray-300 hover:text-code-purple flex items-center gap-1.5"
+                  className="relative group px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white flex items-center gap-1.5"
                 >
                   <span className="relative z-10">{item.label}</span>
                   {item.isNew && (
                     <span className="flex h-2 w-2 rounded-full bg-ndc-purple animate-pulse shadow-[0_0_8px_rgba(168,85,247,0.8)]"></span>
                   )}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-code-indigo to-code-pink group-hover:w-1/2 transition-all duration-500 ease-out rounded-full"></span>
                 </Link>
               );
             })}
