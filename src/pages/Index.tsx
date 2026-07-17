@@ -14,11 +14,12 @@ import TeamSection from "@/components/sections/TeamSection";
 import JoinSection from "@/components/sections/JoinSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import GallerySliderSection from "@/components/sections/GallerySliderSection";
+
+import TimelineSection from "@/components/sections/TimelineSection";
+import WorkshopFAQ from "@/components/sections/WorkshopFAQ";
 import Footer from "@/components/layout/Footer";
 import AnnouncementModal from "@/components/layout/AnnouncementModal";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 
 const Index = () => {
   return (
@@ -43,41 +44,51 @@ const Index = () => {
             
             <div className="space-y-0">
               {/* About */}
-              <section className="section-spacing">
+              <section id="about" className="section-spacing">
                 <AboutSection />
               </section>
 
               {/* Events/Achievements */}
-              <section className="section-spacing bg-white/[0.01]">
+              <section id="events" className="section-spacing bg-white/[0.01]">
                 <AchievementsSection />
               </section>
 
-              <section className="section-spacing">
+              <section id="why-join" className="section-spacing">
                 <WhyJoinSection />
               </section>
 
               {/* Upcoming Events */}
-              <section className="section-spacing bg-white/[0.01]">
+              <section id="upcoming-events" className="section-spacing bg-white/[0.01]">
                 <UpcomingEventsSection />
               </section>
 
               {/* Gallery Slider */}
-              <section className="section-spacing">
+              <section id="gallery" className="section-spacing">
                 <GallerySliderSection />
               </section>
 
+              {/* Timeline */}
+              <section id="timeline" className="section-spacing">
+                <TimelineSection />
+              </section>
+
+              {/* FAQ */}
+              <section id="faq" className="section-spacing bg-white/[0.01]">
+                <WorkshopFAQ />
+              </section>
+
               {/* Team */}
-              <section className="section-spacing bg-white/[0.01]">
+              <section id="team" className="section-spacing bg-white/[0.01]">
                 <TeamSection />
               </section>
 
               {/* Partners */}
-              <section className="section-spacing">
+              <section id="partners" className="section-spacing">
                 <PartnersSection />
               </section>
 
               {/* Join Us */}
-              <section className="section-spacing bg-ndc-purple/[0.02]">
+              <section id="join" className="section-spacing bg-ndc-purple/[0.02]">
                 <JoinSection />
               </section>
             </div>

@@ -7,31 +7,32 @@
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 0 0% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 0 0% 98%;
+    /* Light theme variables */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
     --primary: 250 84% 54%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 199 89% 48%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
     --ring: 250 84% 54%;
     --radius: 0.75rem;
 
-    /* Global Video Background Variables */
-    --bg: #05060a;
+    /* Global Video Background Variables (light) */
+    --bg: #f8fafc;
     --neon: #00b3ff;
-    --white: #ffffff;
+    --white: #020617;
   }
 
   .dark {
@@ -54,6 +55,11 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 250 84% 54%;
+
+    /* Global Video Background Variables (dark) */
+    --bg: #05060a;
+    --neon: #00b3ff;
+    --white: #ffffff;
   }
 
   * {
@@ -61,7 +67,7 @@
   }
   
   body {
-    @apply bg-transparent text-foreground antialiased overflow-x-hidden;
+    @apply bg-transparent text-foreground antialiased overflow-x-hidden font-primary;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
     scroll-behavior: smooth;
     background-color: var(--bg);
@@ -90,7 +96,7 @@
   }
 
   .glass-card {
-    @apply bg-slate-950/40 backdrop-blur-2xl border border-white/10 shadow-2xl transition-all duration-500 hover:border-white/20;
+    @apply bg-slate-950/70 backdrop-blur-xl border border-white/15 shadow-2xl transition-all duration-500 hover:border-white/25;
   }
 
   .premium-glow {
@@ -167,10 +173,10 @@
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Video Background styles */
@@ -204,6 +210,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, transparent 0%, rgba(5, 6, 10, 0.4) 100%);
+  background: radial-gradient(circle at center, rgba(5, 6, 10, 0.3) 0%, rgba(5, 6, 10, 0.7) 100%);
   z-index: 2;
 }

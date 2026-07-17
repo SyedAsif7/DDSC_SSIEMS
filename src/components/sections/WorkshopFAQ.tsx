@@ -31,7 +31,7 @@ const WorkshopFAQ = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-transparent">
+    <section id="faq" className="py-24 relative overflow-hidden bg-transparent">
       <div className="section-container max-w-4xl relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ndc-green/10 border border-ndc-green/20 text-ndc-green mb-6">

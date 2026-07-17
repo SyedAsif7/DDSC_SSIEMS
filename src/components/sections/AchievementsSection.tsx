@@ -4,7 +4,7 @@
  * Includes a premium header, responsive grid cards, and a bottom CTA to join.
  */
 import { useState, useMemo } from "react";
-import { Code, Terminal, Cpu, Zap, Trophy, Award, ExternalLink, Sparkles, Calendar, MapPin, ChevronRight, LayoutGrid } from "lucide-react";
+import { Code, Terminal, Cpu, Zap, Trophy, Sparkles, ChevronRight, LayoutGrid } from "lucide-react";
 import { Link } from "react-router-dom";
 import { achievements } from "@/data/achievements";
 import { getAssetPath } from "@/lib/utils";
@@ -173,12 +173,5 @@ const AchievementsSection = () => {
     </section>
   );
 };
-
-// Simple Filter Icon for UI
-const FilterIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-  </svg>
-);
 
 export default AchievementsSection;

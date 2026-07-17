@@ -162,7 +162,7 @@ const HeroSection = () => {
                       transition={{ duration: 1.5, ease: "easeOut" }}
                       src={getAssetPath(slide.bgImage)} 
                       alt={slide.title} 
-                      className="absolute inset-0 w-full h-full object-contain z-10 transition-transform duration-[2s] hover:scale-[1.03]" 
+                      className="absolute inset-0 w-full h-full object-contain z-10 transition-transform duration-2000 hover:scale-[1.03]" 
                     />
                     
                     {/* Top Status Header */}

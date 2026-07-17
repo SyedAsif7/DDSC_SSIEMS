@@ -6,3 +6,4 @@ export { default as ScrollToTopButton } from "./ScrollToTopButton";
 export { default as ScrollToTop } from "./ScrollToTop";
 export { default as AnnouncementModal } from "./AnnouncementModal";
 export { default as GlobalBackgroundVideo } from "./GlobalBackgroundVideo";
+export { default as SplashScreen } from "./SplashScreen";
