@@ -31,7 +31,7 @@ const timelineItems = [
 
 const TimelineSection = () => {
   return (
-    <section id="timeline" className="py-24 relative overflow-hidden bg-transparent">
+    <section id="timeline" className="section-spacing relative overflow-hidden bg-transparent scroll-mt-28 md:scroll-mt-32">
       <div className="section-container relative z-10">
         <SectionHeader
           badgeText="Our Journey"
@@ -60,14 +60,14 @@ const TimelineSection = () => {
               >
                 {/* Content */}
                 <div className="flex-1">
-                  <div className="p-8 rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/10 hover:border-ndc-purple/30 transition-all duration-500 shadow-xl">
+                  <div className="p-8 rounded-3xl bg-slate-900/40 backdrop-blur-xl border border-white/10 hover:border-ndc-purple/30 transition-all duration-500 shadow-xl">
                     <span className="inline-block px-3 py-1 rounded-full bg-ndc-purple/10 text-ndc-purple text-sm font-bold mb-4">
                       {item.year}
                     </span>
                     <h3 className="text-2xl font-black text-white mb-2">
                       {item.icon} {item.title}
                     </h3>
-                    <p className="text-gray-400">{item.description}</p>
+                    <p className="text-on-glass-muted">{item.description}</p>
                   </div>
                 </div>
 

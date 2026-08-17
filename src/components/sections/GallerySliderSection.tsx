@@ -21,7 +21,7 @@ const galleryImages = [
 
 const GallerySliderSection = () => {
   return (
-    <section className="py-32 relative overflow-hidden" id="gallery-slider">
+    <section id="gallery" className="section-spacing relative overflow-hidden scroll-mt-28 md:scroll-mt-32">
       {/* Background Glow Effects */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-ndc-purple/10 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-ndc-blue/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
@@ -58,7 +58,7 @@ const GallerySliderSection = () => {
             }}
             plugins={[
               Autoplay({
-                delay: 4000,
+                delay: 7000,
                 stopOnInteraction: true,
               })
             ]}
@@ -68,12 +68,13 @@ const GallerySliderSection = () => {
               {galleryImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-4 md:pl-8 basis-[85%] md:basis-[60%] lg:basis-[50%]">
                   <div className="p-2">
-                    <div className="group relative rounded-[2rem] overflow-hidden aspect-[16/10] bg-slate-900/50 border border-white/10 shadow-2xl transition-all duration-700 hover:border-ndc-purple/30 hover:shadow-ndc-purple/20">
+                    <div className="group relative rounded-3xl overflow-hidden aspect-[16/10] bg-slate-900/50 border border-white/10 shadow-2xl transition-all duration-700 hover:border-ndc-purple/30 hover:shadow-ndc-purple/20">
                       <img 
                         src={encodeURI(getAssetPath(image.src))} 
                         alt={image.caption}
                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                         loading="lazy"
+                        decoding="async"
                       />
                       
                       {/* Premium Gradient Overlay */}
@@ -105,7 +106,7 @@ const GallerySliderSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center flex flex-col items-center justify-center gap-6"
         >
-          <p className="text-xs text-gray-500 font-black uppercase tracking-[0.2em] italic hidden md:block">
+          <p className="text-xs text-gray-300 font-medium tracking-wide hidden md:block">
             Swipe or use arrows to explore
           </p>
           <Link 

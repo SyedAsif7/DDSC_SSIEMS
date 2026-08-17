@@ -187,6 +187,7 @@ const Gallery = () => {
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                     loading="lazy"
+                    decoding="async"
                   />
                   
                   {/* Premium Overlay */}

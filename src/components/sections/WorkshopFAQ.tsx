@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { HelpCircle } from "lucide-react";
 
 const WorkshopFAQ = () => {
@@ -31,38 +32,38 @@ const WorkshopFAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 relative overflow-hidden bg-transparent">
-      <div className="section-container max-w-4xl relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ndc-green/10 border border-ndc-green/20 text-ndc-green mb-6">
-            <HelpCircle className="w-4 h-4" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em]">Common Questions</span>
-          </div>
-          <h2 className="heading-md text-white mb-6">Workshop <span className="gradient-text">FAQ</span></h2>
-          <p className="text-gray-400 font-medium max-w-xl mx-auto">Everything you need to know before joining the session.</p>
-        </div>
+    <section id="faq" className="section-spacing relative overflow-hidden bg-transparent scroll-mt-28 md:scroll-mt-32">
+      <div className="section-container relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeader
+            badgeText="Common Questions"
+            badgeIcon={HelpCircle}
+            titlePrefix="Workshop"
+            titleHighlight="FAQ"
+            description="Everything you need to know before joining the session."
+          />
 
-        <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-2xl px-6 md:px-8 overflow-hidden transition-all duration-300 data-[state=open]:border-ndc-purple/40 shadow-xl"
-              >
-                <AccordionTrigger className="text-left text-white font-bold hover:no-underline py-6 md:text-lg tracking-tight">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-400 text-base font-medium leading-relaxed pb-6">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-2xl px-6 md:px-8 overflow-hidden transition-all duration-300 data-[state=open]:border-ndc-purple/40 shadow-xl"
+                >
+                  <AccordionTrigger className="text-left text-white font-bold hover:no-underline py-6 md:text-lg tracking-tight">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-on-glass-muted text-base leading-relaxed pb-6">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </div>
 
-      {/* Background Decorative Gradient */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gradient-to-t from-ndc-purple/5 to-transparent -z-10"></div>
     </section>
   );

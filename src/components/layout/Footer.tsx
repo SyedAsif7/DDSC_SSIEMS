@@ -2,162 +2,178 @@ import { Instagram, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
 
 const Footer = () => {
+  const quickLinks = [
+    { name: "About Us", href: "#about" },
+    { name: "Why Join", href: "#why-join" },
+    { name: "Achievements", href: "#events" },
+    { name: "Our Team", href: "#team" },
+    { name: "Sponsors", href: "#partners" },
+    { name: "Join Us", href: "#join" },
+  ];
+
   return (
-    <footer id="contact" className={`relative pt-10 pb-6 overflow-hidden transition-all duration-1000 bg-transparent backdrop-blur-xl border-t border-white/10`}>
-      {/* Enhanced animated background elements */}
-      <div className="absolute inset-0 z-0 opacity-50">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-ndc-purple/60 blur-[150px] animate-pulse delay-0"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-ndc-blue/60 blur-[150px] animate-pulse delay-300"></div>
-        <div className="absolute top-1/3 right-1/3 w-72 h-72 rounded-full bg-ndc-green/50 blur-[120px] animate-pulse delay-700"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-48 h-48 rounded-full bg-ndc-purple/50 blur-[100px] animate-pulse delay-1000"></div>
+    <footer
+      id="contact"
+      className="relative pt-16 pb-8 overflow-hidden bg-transparent backdrop-blur-xl border-t border-white/10"
+    >
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-72 h-72 rounded-full bg-ndc-purple/20 blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-ndc-blue/20 blur-[120px]" />
       </div>
-      
+
       <div className="section-container relative z-10">
-        <div className="grid md:grid-cols-4 gap-12 mb-10">
-          {/* Enhanced Brand Section */}
-          <div className="md:col-span-2 space-y-6 animate-fade-in">
-            <div className="flex items-center mb-6 group">
-              <div className="relative">
-                <img 
-                  src={getAssetPath("/images/club/Dcode-Logo.png")} 
-                  alt="DCode Logo" 
-                  className="h-16 w-auto mr-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-ndc-purple to-ndc-blue opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-full blur-xl"></div>
-              </div>
-              <div>
-                <h3 className="text-3xl font-bold text-white transition-all duration-500 group-hover:scale-105">DCode</h3>
-                <h4 className="text-xl font-medium text-white/90 transition-all duration-500 group-hover:text-ndc-blue">Developers Club</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
+          {/* Brand */}
+          <div className="lg:col-span-2 space-y-5">
+            <div className="flex items-center gap-3">
+              <img
+                src={getAssetPath("/images/club/Dcode-Logo.png")}
+                alt=""
+                className="h-11 w-auto object-contain"
+              />
+              <div className="w-px h-9 bg-white/20" aria-hidden="true" />
+              <div className="flex flex-col gap-0.5">
+                <span className="gradient-text text-xl font-black font-heading tracking-tight leading-none">
+                  DCode
+                </span>
+                <span className="text-[11px] font-semibold tracking-[0.12em] uppercase text-gray-200 leading-none">
+                  Developers Club
+                </span>
               </div>
             </div>
-            <p className="text-gray-300 text-lg leading-relaxed max-w-lg transition-all duration-500 hover:text-white hover:scale-105">
-              Empowering students through technology, innovation, and community at Shri Shivaji Institute of Engineering and Management Studies (SSIEMS), Parbhani.
+
+            <p className="text-on-glass-muted text-base leading-relaxed max-w-md">
+              Empowering students through technology, innovation, and community at
+              Shri Shivaji Institute of Engineering and Management Studies (SSIEMS), Parbhani.
             </p>
-            
-            {/* Enhanced Social Links */}
-            <div className="flex space-x-4">
-              <a href="https://www.instagram.com/ddsc_club/" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-pink-500/30 p-4 rounded-2xl transition-all duration-500 hover:scale-125 hover:rotate-12 group backdrop-blur-md border border-white/20 hover:border-pink-400/50">
-                <Instagram className="h-6 w-6 text-white group-hover:text-pink-400 transition-colors duration-300" />
-              </a>
-              <a href="https://www.linkedin.com/in/dcodeclub" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-blue-500/30 p-4 rounded-2xl transition-all duration-500 hover:scale-125 hover:-rotate-12 group backdrop-blur-md border border-white/20 hover:border-blue-400/50">
-                <Linkedin className="h-6 w-6 text-white group-hover:text-blue-400 transition-colors duration-300" />
-              </a>
-              <a href="mailto:ddsc.team@gmail.com" className="bg-white/10 hover:bg-red-500/30 p-4 rounded-2xl transition-all duration-500 hover:scale-125 hover:rotate-12 group backdrop-blur-md border border-white/20 hover:border-red-400/50">
-                <Mail className="h-6 w-6 text-white group-hover:text-red-400 transition-colors duration-300" />
-              </a>
-              <a href="https://chat.whatsapp.com/GzsHCCMYjeAIYGmhpQnXC6" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-green-500/30 p-4 rounded-2xl transition-all duration-500 hover:scale-125 hover:-rotate-12 group backdrop-blur-md border border-white/20 hover:border-green-400/50">
-                <svg className="h-6 w-6 text-white group-hover:text-green-400 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.690"/>
+
+            <div className="flex items-center gap-2.5 pt-1">
+              {[
+                {
+                  href: "https://www.instagram.com/ddsc_club/",
+                  label: "Instagram",
+                  icon: <Instagram className="h-5 w-5" />,
+                  hover: "hover:border-pink-400/40 hover:text-pink-300",
+                },
+                {
+                  href: "https://www.linkedin.com/in/dcodeclub",
+                  label: "LinkedIn",
+                  icon: <Linkedin className="h-5 w-5" />,
+                  hover: "hover:border-sky-400/40 hover:text-sky-300",
+                },
+                {
+                  href: "mailto:ddsc.team@gmail.com",
+                  label: "Email",
+                  icon: <Mail className="h-5 w-5" />,
+                  hover: "hover:border-red-400/40 hover:text-red-300",
+                },
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  aria-label={social.label}
+                  className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white transition-colors ${social.hover}`}
+                >
+                  {social.icon}
+                </a>
+              ))}
+              <a
+                href="https://chat.whatsapp.com/GzsHCCMYjeAIYGmhpQnXC6"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white transition-colors hover:border-green-400/40 hover:text-green-300"
+              >
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.690" />
                 </svg>
               </a>
             </div>
           </div>
-          
-          {/* Enhanced Quick Links */}
-          <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-            <h3 className="text-xl font-bold mb-8 text-white relative inline-block group">
+
+          {/* Quick links */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-white mb-5">
               Quick Links
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-ndc-purple to-ndc-blue rounded-full transition-all duration-500 group-hover:h-2"></div>
             </h3>
-            <ul className="space-y-4">
-              {[
-                { name: 'About Us', href: '#about', color: 'ndc-purple' },
-                { name: 'Why Join', href: '#why-join', color: 'ndc-blue' },
-                { name: 'Benefits', href: '#benefits', color: 'ndc-green' },
-                { name: 'Our Team', href: '#team', color: 'ndc-purple' },
-                { name: 'Sponsors', href: '#partners', color: 'ndc-blue' },
-                { name: 'Join Us', href: '#join', color: 'ndc-green' }
-              ].map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-300 hover:text-white transition-all duration-500 flex items-center gap-3 group py-2 hover:scale-105"
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors"
                   >
-                    <span className={`w-0 h-1 bg-${link.color} group-hover:w-6 transition-all duration-500 rounded-full`}></span>
-                    <span className="group-hover:translate-x-2 transition-all duration-500 text-base group-hover:text-lg">
-                      {link.name}
-                    </span>
+                    {link.name}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-          
-          {/* Enhanced Contact Info */}
-          <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
-            <h3 className="text-xl font-bold mb-8 text-white relative inline-block group">
-              Contact Us
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-ndc-blue to-ndc-green rounded-full transition-all duration-500 group-hover:h-2"></div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-white mb-5">
+              Contact
             </h3>
-            <ul className="space-y-10">
-              <li className="group hover:scale-105 transition-all duration-500">
-                <div className="flex items-start gap-5">
-                  <div className="p-5 rounded-2xl bg-white/10 group-hover:bg-ndc-blue/30 transition-all duration-500 mt-1 backdrop-blur-md border border-white/20 group-hover:border-ndc-blue/50 group-hover:scale-110">
-                    <Mail className="h-7 w-7 text-ndc-blue transition-all duration-300 group-hover:text-white" />
-                  </div>
-                  <div>
-                    <span className="font-semibold text-white/90 block mb-3 text-xl">Email</span>
-                    <a href="mailto:ddsc.team@gmail.com" className="text-gray-300 hover:text-white transition-all duration-300 text-lg hover:underline">
-                      ddsc.team@gmail.com
-                    </a>
-                  </div>
+            <ul className="space-y-5">
+              <li className="flex items-start gap-3">
+                <Mail className="h-4 w-4 text-ndc-blue mt-1 shrink-0" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Email</p>
+                  <a
+                    href="mailto:ddsc.team@gmail.com"
+                    className="text-gray-200 hover:text-white text-sm font-medium transition-colors"
+                  >
+                    ddsc.team@gmail.com
+                  </a>
                 </div>
               </li>
-              <li className="group hover:scale-105 transition-all duration-500">
-                <div className="flex items-start gap-5">
-                  <div className="p-5 rounded-2xl bg-white/10 group-hover:bg-ndc-green/30 transition-all duration-500 mt-1 backdrop-blur-md border border-white/20 group-hover:border-ndc-green/50 group-hover:scale-110">
-                    <MapPin className="h-7 w-7 text-ndc-green transition-all duration-300 group-hover:text-white" />
-                  </div>
-                  <div>
-                    <span className="font-semibold text-white/90 block mb-3 text-xl">Location</span>
-                    <p className="text-gray-300 leading-relaxed text-lg">
-                      Marathwada Shikshan Prasarak Mandal’s<br />
-                      Shri Shivaji Institute Of Engg. &amp; Management Studies, Vasmat Road,<br />
-                      Parbhani – 431401, Maharashtra (India)<br />
-                      Email: director@ssiems.in<br />
-                      Tel. Office: 02452-223529 &nbsp;|&nbsp; Director: 02452-234109
-                    </p>
-                  </div>
+              <li className="flex items-start gap-3">
+                <MapPin className="h-4 w-4 text-ndc-green mt-1 shrink-0" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Location</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    SSIEMS, Vasmat Road,<br />
+                    Parbhani – 431401, Maharashtra
+                  </p>
                 </div>
               </li>
-              <li className="group hover:scale-105 transition-all duration-500">
-                <div className="flex items-start gap-5">
-                  <div className="p-5 rounded-2xl bg-white/10 group-hover:bg-ndc-purple/30 transition-all duration-500 mt-1 backdrop-blur-md border border-white/20 group-hover:border-ndc-purple/50 group-hover:scale-110">
-                    <ExternalLink className="h-7 w-7 text-ndc-purple transition-all duration-300 group-hover:text-white" />
-                  </div>
-                  <div>
-                    <span className="font-semibold text-white/90 block mb-3 text-xl">Website</span>
-                    <a href="https://ssiems.org.in" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-all duration-300 text-lg hover:underline">
-                      ssiems.org.in
-                    </a>
-                  </div>
+              <li className="flex items-start gap-3">
+                <ExternalLink className="h-4 w-4 text-ndc-purple mt-1 shrink-0" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Website</p>
+                  <a
+                    href="https://ssiems.org.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-200 hover:text-white text-sm font-medium transition-colors"
+                  >
+                    ssiems.org.in
+                  </a>
                 </div>
               </li>
             </ul>
           </div>
         </div>
-        
-        {/* Copyright Section */}
-        <div className="border-t border-white/10 pt-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-gray-400 text-sm font-medium tracking-wide">
+
+        <div className="border-t border-white/10 pt-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-gray-300 text-sm">
               © {new Date().getFullYear()} DCode Developers Club. All rights reserved.
             </p>
-            
-            <div className="flex items-center gap-3 text-sm text-gray-400 group/dev">
-              <span className="font-medium">Designed & Developed by</span>
-              <a 
-                href="https://www.linkedin.com/in/the-syed-asif" 
-                target="_blank" 
+            <p className="text-sm text-gray-300">
+              Designed &amp; Developed by{" "}
+              <a
+                href="https://www.linkedin.com/in/the-syed-asif"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="relative group/name"
+                className="font-semibold text-white hover:text-ndc-blue transition-colors"
               >
-                <span className="bg-gradient-to-r from-ndc-purple via-ndc-blue to-ndc-purple bg-clip-text text-transparent font-black tracking-tight hover:scale-105 transition-all duration-500 block px-1">
-                  Syed Asif
-                </span>
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-ndc-purple to-ndc-blue rounded-full transition-all duration-700 group-hover/name:w-full"></div>
+                Syed Asif
               </a>
-            </div>
+            </p>
           </div>
         </div>
       </div>

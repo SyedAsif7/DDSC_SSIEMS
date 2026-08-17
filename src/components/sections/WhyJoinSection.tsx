@@ -31,7 +31,7 @@ const WhyJoinSection = () => {
   ];
 
   return (
-    <section id="why-join" className="py-16 md:py-24 bg-transparent scroll-mt-28 md:scroll-mt-32">
+    <section id="why-join" className="section-spacing bg-transparent scroll-mt-28 md:scroll-mt-32">
       <div className="section-container">
         <SectionHeader 
           badgeText="Growth & Opportunity"
@@ -42,7 +42,7 @@ const WhyJoinSection = () => {
           centered={true}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-16 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-16">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -51,7 +51,7 @@ const WhyJoinSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -8 }}
-              className="group p-8 rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden flex flex-col h-full"
+              className="group p-8 rounded-3xl bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden flex flex-col h-full"
             >
               {/* Top Accent Blur */}
               <div className={`absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-white/10 transition-colors`}></div>
@@ -63,13 +63,11 @@ const WhyJoinSection = () => {
                 </div>
                 
                 <div className="space-y-4 flex-1">
-                  <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter italic leading-[1.1]">
-                    {benefit.title.split(' ').map((word, i) => (
-                      <span key={i} className="block">{word}</span>
-                    ))}
+                  <h3 className="text-lg md:text-xl font-bold text-white tracking-tight leading-snug">
+                    {benefit.title}
                   </h3>
                   
-                  <p className="text-gray-400 text-[13px] md:text-sm leading-relaxed font-medium line-clamp-4">
+                  <p className="text-on-glass-muted text-sm md:text-base leading-relaxed line-clamp-4">
                     {benefit.description}
                   </p>
                 </div>

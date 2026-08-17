@@ -1,30 +1,35 @@
-
 /**
  * Index (Homepage)
- * Composes all major sections in the recommended order with sticky navbar alignment.
+ * Composes all major sections in nav-aligned order with sticky navbar.
+ * Below-fold sections are code-split so the first paint stays light.
  */
+import { lazy, Suspense } from "react";
 import CollegeHeader from "@/components/layout/CollegeHeader";
 import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
-import AboutSection from "@/components/sections/AboutSection";
-import WhyJoinSection from "@/components/sections/WhyJoinSection";
-import AchievementsSection from "@/components/sections/AchievementsSection";
-import UpcomingEventsSection from "@/components/sections/UpcomingEventsSection";
-import TeamSection from "@/components/sections/TeamSection";
-import JoinSection from "@/components/sections/JoinSection";
-import PartnersSection from "@/components/sections/PartnersSection";
-import GallerySliderSection from "@/components/sections/GallerySliderSection";
-
-import TimelineSection from "@/components/sections/TimelineSection";
-import WorkshopFAQ from "@/components/sections/WorkshopFAQ";
 import Footer from "@/components/layout/Footer";
-import AnnouncementModal from "@/components/layout/AnnouncementModal";
 import { Helmet } from "react-helmet-async";
+
+const AboutSection = lazy(() => import("@/components/sections/AboutSection"));
+const WhyJoinSection = lazy(() => import("@/components/sections/WhyJoinSection"));
+const AchievementsSection = lazy(() => import("@/components/sections/AchievementsSection"));
+const UpcomingEventsSection = lazy(() => import("@/components/sections/UpcomingEventsSection"));
+const TeamSection = lazy(() => import("@/components/sections/TeamSection"));
+const JoinSection = lazy(() => import("@/components/sections/JoinSection"));
+const PartnersSection = lazy(() => import("@/components/sections/PartnersSection"));
+const GallerySliderSection = lazy(() => import("@/components/sections/GallerySliderSection"));
+const TimelineSection = lazy(() => import("@/components/sections/TimelineSection"));
+const WorkshopFAQ = lazy(() => import("@/components/sections/WorkshopFAQ"));
+
+const SectionFallback = () => (
+  <div className="section-spacing flex justify-center py-16" aria-hidden="true">
+    <div className="h-10 w-10 rounded-full border-2 border-ndc-purple/40 border-t-transparent animate-spin" />
+  </div>
+);
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-transparent">
-      <AnnouncementModal />
       <Helmet>
         <title>DCode Developers Club | Building the Future Together</title>
         <meta name="description" content="Official website of DCode Developers Club. Join our community of innovators, builders, and tech enthusiasts." />
@@ -35,64 +40,21 @@ const Index = () => {
         <Navbar />
         
         <main className="flex-1">
-          {/* Home */}
           <HeroSection />
-          
-          <div className="relative">
-            {/* Subtle Gradient Overlays between sections */}
-            <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-slate-950 to-transparent pointer-events-none"></div>
-            
-            <div className="space-y-0">
-              {/* About */}
-              <section id="about" className="section-spacing">
-                <AboutSection />
-              </section>
 
-              {/* Events/Achievements */}
-              <section id="events" className="section-spacing bg-white/[0.01]">
-                <AchievementsSection />
-              </section>
-
-              <section id="why-join" className="section-spacing">
-                <WhyJoinSection />
-              </section>
-
-              {/* Upcoming Events */}
-              <section id="upcoming-events" className="section-spacing bg-white/[0.01]">
-                <UpcomingEventsSection />
-              </section>
-
-              {/* Gallery Slider */}
-              <section id="gallery" className="section-spacing">
-                <GallerySliderSection />
-              </section>
-
-              {/* Timeline */}
-              <section id="timeline" className="section-spacing">
-                <TimelineSection />
-              </section>
-
-              {/* FAQ */}
-              <section id="faq" className="section-spacing bg-white/[0.01]">
-                <WorkshopFAQ />
-              </section>
-
-              {/* Team */}
-              <section id="team" className="section-spacing bg-white/[0.01]">
-                <TeamSection />
-              </section>
-
-              {/* Partners */}
-              <section id="partners" className="section-spacing">
-                <PartnersSection />
-              </section>
-
-              {/* Join Us */}
-              <section id="join" className="section-spacing bg-ndc-purple/[0.02]">
-                <JoinSection />
-              </section>
-            </div>
-          </div>
+          <Suspense fallback={<SectionFallback />}>
+            {/* Order matches navbar: About → Why Join → Achievements → … */}
+            <AboutSection />
+            <WhyJoinSection />
+            <AchievementsSection />
+            <UpcomingEventsSection />
+            <GallerySliderSection />
+            <TimelineSection />
+            <WorkshopFAQ />
+            <TeamSection />
+            <PartnersSection />
+            <JoinSection />
+          </Suspense>
         </main>
         
         <Footer />

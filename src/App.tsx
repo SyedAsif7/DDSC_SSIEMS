@@ -5,10 +5,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 import { ThemeProvider } from "./hooks/use-theme";
-import { ScrollToTop, ScrollToTopButton, GlobalBackgroundVideo, SplashScreen } from "./components/layout";
-import { AnimatePresence } from "framer-motion";
+import { ScrollToTop, ScrollToTopButton, GlobalBackgroundVideo } from "./components/layout";
 
 // Lazy load pages for better chunking
 const Index = lazy(() => import("./pages/Index"));
@@ -23,18 +22,12 @@ const App = () => {
   // Dynamically set basename based on Vite's BASE_URL
   // This allows the app to work on both Vercel (root /) and GitHub Pages (/DDSC_SSIEMS/)
   const basename = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '');
-  const [showSplash, setShowSplash] = useState(true);
 
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
           <TooltipProvider>
-            <AnimatePresence>
-              {showSplash && (
-                <SplashScreen onFinished={() => setShowSplash(false)} />
-              )}
-            </AnimatePresence>
             <GlobalBackgroundVideo />
             <Toaster />
             <Sonner />

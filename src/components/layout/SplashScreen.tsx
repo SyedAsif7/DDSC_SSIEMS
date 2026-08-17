@@ -6,11 +6,20 @@ export default function SplashScreen({ onFinished }: { onFinished: () => void })
   const [step, setStep] = useState(0);
 
   useEffect(() => {
+    // Skip splash on return visits in the same session
+    if (sessionStorage.getItem('ddsc-splash-seen') === '1') {
+      onFinished();
+      return;
+    }
+
     const timers = [
-      setTimeout(() => setStep(1), 600),
-      setTimeout(() => setStep(2), 1400),
-      setTimeout(() => setStep(3), 2200),
-      setTimeout(() => onFinished(), 3200),
+      setTimeout(() => setStep(1), 200),
+      setTimeout(() => setStep(2), 500),
+      setTimeout(() => setStep(3), 850),
+      setTimeout(() => {
+        sessionStorage.setItem('ddsc-splash-seen', '1');
+        onFinished();
+      }, 1400),
     ];
     return () => timers.forEach(clearTimeout);
   }, [onFinished]);
@@ -19,7 +28,7 @@ export default function SplashScreen({ onFinished }: { onFinished: () => void })
     <motion.div
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.8, ease: 'easeInOut' }}
+      transition={{ duration: 0.35, ease: 'easeInOut' }}
       className="fixed inset-0 z-[100] bg-slate-950 flex items-center justify-center overflow-hidden"
     >
       {/* Background blobs */}

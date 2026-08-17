@@ -36,13 +36,23 @@ const AchievementDetail = () => {
     setCurrentImageIndex(0);
   }, [id, navigate]);
 
+  const nextImage = useCallback(() => {
+    if (!achievement) return;
+    setCurrentImageIndex((prev) => (prev + 1) % achievement.images.length);
+  }, [achievement]);
+
+  const prevImage = useCallback(() => {
+    if (!achievement) return;
+    setCurrentImageIndex((prev) => (prev - 1 + achievement.images.length) % achievement.images.length);
+  }, [achievement]);
+
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (isLightboxOpen) {
       if (e.key === "Escape") setIsLightboxOpen(false);
       if (e.key === "ArrowRight") nextImage();
       if (e.key === "ArrowLeft") prevImage();
     }
-  }, [isLightboxOpen]);
+  }, [isLightboxOpen, nextImage, prevImage]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
@@ -92,14 +102,6 @@ const AchievementDetail = () => {
     if (l.includes('selected') || l.includes('qualified')) return <Star size={14} />;
     if (l.includes('round')) return <BarChart3 size={14} />;
     return <Sparkles size={14} />;
-  };
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % achievement.images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + achievement.images.length) % achievement.images.length);
   };
 
   return (

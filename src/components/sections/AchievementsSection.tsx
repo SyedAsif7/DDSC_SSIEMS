@@ -41,7 +41,7 @@ const AchievementsSection = () => {
   };
 
   return (
-    <section id="events" className="py-24 relative overflow-hidden bg-transparent scroll-mt-28 md:scroll-mt-32">
+    <section id="events" className="section-spacing relative overflow-hidden bg-transparent scroll-mt-28 md:scroll-mt-32">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
@@ -69,7 +69,7 @@ const AchievementsSection = () => {
                 className={`px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-2 ${
                   activeCategory === cat
                     ? "bg-gradient-to-r from-ndc-purple to-ndc-blue text-white shadow-lg shadow-ndc-purple/20 scale-105"
-                    : "text-gray-400 hover:bg-white/10 hover:text-white"
+                    : "text-gray-200 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 {cat === "All" && <LayoutGrid size={14} />}
@@ -95,7 +95,7 @@ const AchievementsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-16 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-16">
           {filteredAchievements.map((item, index) => (
             <motion.div
               key={item.id}
@@ -104,14 +104,16 @@ const AchievementsSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group rounded-[2.5rem] bg-slate-900/40 backdrop-blur-xl border border-white/5 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden flex flex-col h-full"
+              className="group rounded-3xl bg-slate-950/75 border border-white/5 hover:border-white/20 transition-colors duration-300 shadow-2xl relative overflow-hidden flex flex-col h-full"
             >
               <Link to={item.id === 5 ? "/workshop" : `/achievement/${item.id}`} className="block h-full relative">
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0">
                   <img 
                     src={getAssetPath(item.images[0])} 
-                    alt={item.title} 
+                    alt={item.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/40"></div>
@@ -125,21 +127,21 @@ const AchievementsSection = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple text-[8px] font-black uppercase tracking-[0.2em]">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ndc-purple/10 border border-ndc-purple/20 text-ndc-purple text-[10px] font-black uppercase tracking-[0.16em]">
                       <Sparkles size={10} className="animate-pulse" />
                       {item.category}
                     </div>
                     
-                    <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter italic leading-tight group-hover:text-ndc-purple transition-colors">
+                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-snug group-hover:text-ndc-purple transition-colors">
                       {item.title}
                     </h3>
                     
-                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed font-medium line-clamp-3 group-hover:text-gray-300 transition-colors">
+                    <p className="text-on-glass-muted text-sm md:text-base leading-relaxed line-clamp-3 group-hover:text-gray-100 transition-colors">
                       {item.description}
                     </p>
                   </div>
 
-                  <div className="mt-8 flex items-center gap-2 text-[10px] font-black text-white uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="mt-8 flex items-center gap-2 text-xs font-black text-white uppercase tracking-[0.16em] opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                     View Case Study
                     <ChevronRight size={14} className="text-ndc-purple" />
                   </div>
@@ -155,7 +157,7 @@ const AchievementsSection = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
               <div className="text-left">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">Ready to join our success story?</h4>
-                <p className="text-gray-500 font-medium text-base">Be part of our next national-level challenge and grow your skills.</p>
+                <p className="text-gray-300 font-medium text-base">Be part of our next national-level challenge and grow your skills.</p>
               </div>
               <a 
                 href="https://forms.gle/CHamTqBMouu6ucYa7"

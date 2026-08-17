@@ -234,9 +234,11 @@ const WorkshopDetails = () => {
                 viewport={{ once: true }}
                 className="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl aspect-video group"
               >
-                <img 
+                <img
                   src={getAssetPath("/images/Vibe coding workshop/IMG_9211.jpg")} 
-                  alt="Workshop Session" 
+                  alt="Workshop Session"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
@@ -486,7 +488,7 @@ const WorkshopDetails = () => {
                 >
                   <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
                     <div className="w-32 h-32 rounded-3xl overflow-hidden ring-4 ring-ndc-purple/20 shrink-0">
-                      <img src={getAssetPath(speaker.image)} alt={speaker.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <img src={getAssetPath(speaker.image)} alt={speaker.name} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <div className="space-y-4 text-center md:text-left">
                       <div className="space-y-1">
