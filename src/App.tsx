@@ -14,6 +14,7 @@ const Index = lazy(() => import("./pages/Index"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const WorkshopDetails = lazy(() => import("./pages/WorkshopDetails"));
 const AchievementDetail = lazy(() => import("./pages/AchievementDetail"));
+const TheAsifTalks = lazy(() => import("./pages/TheAsifTalks"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => {
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/workshop" element={<WorkshopDetails />} />
                 <Route path="/achievement/:id" element={<AchievementDetail />} />
+                <Route path="/the-asif-talks" element={<TheAsifTalks />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
