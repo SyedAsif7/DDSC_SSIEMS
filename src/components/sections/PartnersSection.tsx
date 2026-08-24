@@ -14,14 +14,6 @@ const PartnersSection = () => {
       labelColor: "text-ndc-blue",
       website: "https://ssiems.org.in/"
     },
-    {
-      name: "HP World, Parbhani",
-      description: "Official Silver Sponsor for DCode 2026. Empowering students with the latest technology solutions and supporting technical innovation in the community.",
-      logo: "/images/sponsors/sponser_hpworldparbhani.jpeg",
-      label: "Silver Sponsor",
-      labelColor: "text-gray-200",
-      website: "https://www.hpworldstores.in/convolt-systems-parbhani-maharashtra-431401/Home"
-    },
   ];
   
   return (
@@ -31,8 +23,8 @@ const PartnersSection = () => {
           badgeText="Collaborations"
           badgeIcon={Handshake}
           titlePrefix="Our"
-          titleHighlight="Partners & Sponsors"
-          description="We collaborate with leading organizations and sponsors to bring the best opportunities to our members."
+          titleHighlight="Partners"
+          description="We collaborate with leading organizations to bring the best opportunities to our members."
           centered
         />
 

@@ -10,24 +10,28 @@ import { HelpCircle } from "lucide-react";
 const WorkshopFAQ = () => {
   const faqs = [
     {
-      question: "Do I need to bring my own laptop?",
-      answer: "Yes, this is a hands-on workshop. Please bring a laptop with a modern web browser and a stable internet connection (though we will provide Wi-Fi access)."
+      question: "What is DCode Developers Club (DDSC) and who can join?",
+      answer: "DCode Developers Club is the largest student-led developer community at SSIEMS Parbhani. It is open to all students across CSE, AI/DS, and allied engineering branches who are passionate about coding, software development, cloud computing, AI, hackathons, and leadership."
     },
     {
-      question: "Is prior knowledge of Google Cloud Platform required?",
-      answer: "No prior experience with GCP is necessary. We will cover the fundamentals of Generative AI and how to navigate the platform from scratch."
+      question: "What is 'The Asif Talks' and how can students watch or attend?",
+      answer: "The Asif Talks is a flagship studio-grade leadership and public governance talk series hosted by Syed Asif. It bridges regional youth with district administrators, tech leaders, and founders. Live studio sessions are hosted at the Dr. A.P.J. Abdul Kalam Auditorium, and all episodes are broadcast on YouTube (@TheAsifTalks) and Instagram (@theasiftalks)."
     },
     {
-      question: "How will I receive my E-Certificate?",
-      answer: "Digital certificates will be sent to your registered email address after the workshop is completed. Please note that attendance is mandatory; certificates will only be issued to participants who are physically present during the session."
+      question: "How does DDSC prepare students for Smart India Hackathon (SIH) & National Hackathons?",
+      answer: "DDSC conducts internal college hackathons, mentorship sessions, problem statement breakdowns, and multidisciplinary guidance workshops. In SIH 2025, DDSC guided 15 teams and successfully sent 8 teams to the national level, along with securing 4th position at IIT Bombay Techfest."
     },
     {
-      question: "Is there any registration fee?",
-      answer: "No, registration for this workshop is completely free of cost for all participants. However, seats are limited and will be allocated on a first-come, first-served basis."
+      question: "Are workshops and events free of cost? How are certificates issued?",
+      answer: "Yes, DDSC workshops and community tech sessions (like the Google Cloud Vibe Coding Workshop) are completely free of charge. Verified digital E-Certificates are issued to all attendees who actively participate and complete hands-on activities during the sessions."
     },
     {
-      question: "Who can attend this workshop?",
-      answer: "The workshop is open to all students, developers, and tech enthusiasts interested in learning about the future of AI."
+      question: "Do I need prior coding experience before joining the club?",
+      answer: "Not at all! DDSC is built on a peer-learning culture. Whether you are a beginner writing your first line of code or an experienced developer building full-stack applications, we have dedicated tracks, beginner workshops, and senior mentorship to guide your growth."
+    },
+    {
+      question: "How can I join the club or apply for core team leadership roles?",
+      answer: "You can apply anytime through our online membership form via the 'Apply to Join Now' button. Recruitment for core team divisions (Technical, Design, Event Management, Public Relations) opens annually with the announcement of each new club chapter."
     }
   ];
 
@@ -36,25 +40,26 @@ const WorkshopFAQ = () => {
       <div className="section-container relative z-10">
         <div className="max-w-4xl mx-auto">
           <SectionHeader
-            badgeText="Common Questions"
+            badgeText="Got Questions?"
             badgeIcon={HelpCircle}
-            titlePrefix="Workshop"
-            titleHighlight="FAQ"
-            description="Everything you need to know before joining the session."
+            titlePrefix="Frequently Asked"
+            titleHighlight="Questions"
+            description="Everything you need to know about DCode Developers Club, hackathons, workshops, and The Asif Talks."
+            centered
           />
 
-          <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
+          <div className="animate-fade-in mt-12" style={{ animationDelay: '200ms' }}>
             <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq, index) => (
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-2xl px-6 md:px-8 overflow-hidden transition-all duration-300 data-[state=open]:border-ndc-purple/40 shadow-xl"
+                  className="bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl px-6 md:px-8 overflow-hidden transition-all duration-300 data-[state=open]:border-ndc-purple/40 hover:border-white/20 shadow-xl"
                 >
-                  <AccordionTrigger className="text-left text-white font-bold hover:no-underline py-6 md:text-lg tracking-tight">
+                  <AccordionTrigger className="text-left text-white font-bold hover:no-underline py-6 text-base md:text-lg tracking-tight">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-on-glass-muted text-base leading-relaxed pb-6">
+                  <AccordionContent className="text-on-glass-muted text-sm md:text-base leading-relaxed pb-6">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

@@ -41,7 +41,7 @@ const AchievementsSection = () => {
   };
 
   return (
-    <section id="events" className="section-spacing relative overflow-hidden bg-transparent scroll-mt-28 md:scroll-mt-32">
+    <section id="achievements" className="section-spacing relative overflow-hidden bg-transparent scroll-mt-28 md:scroll-mt-32">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>

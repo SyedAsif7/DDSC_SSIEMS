@@ -13,13 +13,14 @@ import { useTheme } from '@/hooks/use-theme';
 const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#why-join', label: 'Why Join' },
-  { href: '#events', label: 'Achievements' },
   { href: '#upcoming-events', label: 'Events' },
+  { href: '#achievements', label: 'Achievements' },
+  { href: '/the-asif-talks', label: 'The Asif Talks', isPage: true },
   { href: '/gallery', label: 'Gallery', isPage: true },
   { href: '#timeline', label: 'Timeline' },
-  { href: '#faq', label: 'FAQ' },
   { href: '#team', label: 'Team' },
-  { href: '#partners', label: 'Sponsors' },
+  { href: '#partners', label: 'Partners' },
+  { href: '#faq', label: 'FAQ' },
 ] as const;
 
 const Navbar = () => {

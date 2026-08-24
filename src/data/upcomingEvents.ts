@@ -48,8 +48,7 @@ export const upcomingEvents: UpcomingEventItem[] = [
     title: "The Asif Talks",
     description:
       "A youth, leadership, and educational media platform founded by Syed Asif, bridging the gap between ambitious students from Tier-2 and Tier-3 cities and prominent leaders across technology, public administration, entrepreneurship, and research. Delivering in-depth podcasts, leadership interviews, live seminars, keynotes, and structured technical sessions in collaboration with DDSC, SSIEMS Parbhani, and Vertex Institute of Technology.",
-    image:
-      "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&q=80&w=2070",
+    image: "/images/the-asif-talks-logo.jpg",
     icon: "podcast",
     categoryLabel: "Podcast · Media Platform",
     badge: "Syed Asif · Official Platform",

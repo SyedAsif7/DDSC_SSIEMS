@@ -43,16 +43,20 @@ const Index = () => {
           <HeroSection />
 
           <Suspense fallback={<SectionFallback />}>
-            {/* Order matches navbar: About → Why Join → Achievements → … */}
+            {/* Story & Value */}
             <AboutSection />
             <WhyJoinSection />
-            <AchievementsSection />
+            {/* Upcoming Highlights & Past Excellence */}
             <UpcomingEventsSection />
+            <AchievementsSection />
+            {/* Visual Moments & Journey Milestones */}
             <GallerySliderSection />
             <TimelineSection />
-            <WorkshopFAQ />
+            {/* Leadership & Institutional Foundation */}
             <TeamSection />
             <PartnersSection />
+            {/* Questions & Action */}
+            <WorkshopFAQ />
             <JoinSection />
           </Suspense>
         </main>
