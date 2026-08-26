@@ -121,9 +121,14 @@ const HeroSection = () => {
               </section>
 
               {/* 1. Headline zone (on mobile order-2: below actions, on desktop md:order-1: above actions) */}
-              <div className="order-2 md:order-1 space-y-3 sm:space-y-6 md:space-y-7">
-                {/* H1 */}
-                <div className="space-y-1.5 sm:space-y-4">
+              <div className="order-2 md:order-1 flex flex-col space-y-3 sm:space-y-6 md:space-y-7">
+                {/* Description (on mobile order-1: upside of DCode title, on desktop md:order-2: below DCode title) */}
+                <p className="order-1 md:order-2 text-on-glass-muted text-[11.5px] min-[380px]:text-xs sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
+                  {headline.description}
+                </p>
+
+                {/* H1 + Tagline (on mobile order-2: below description, on desktop md:order-1: above description) */}
+                <div className="order-2 md:order-1 space-y-1.5 sm:space-y-4">
                   <h1 className="font-heading text-xl min-[360px]:text-2xl min-[400px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] sm:leading-[0.98] text-white">
                     <span className="block">{headline.titlePrimary}</span>
                     <span className="block gradient-text drop-shadow-[0_0_30px_rgba(236,72,153,0.25)]">
@@ -139,11 +144,6 @@ const HeroSection = () => {
                     </p>
                   </div>
                 </div>
-
-                {/* Description */}
-                <p className="text-on-glass-muted text-[11.5px] min-[380px]:text-xs sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
-                  {headline.description}
-                </p>
               </div>
             </motion.div>
 
