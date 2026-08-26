@@ -1,4 +1,4 @@
-﻿import { CheckCircle2, Award, ShieldCheck, GraduationCap } from "lucide-react";
+import { CheckCircle2, Award, ShieldCheck, GraduationCap } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
 
 const CollegeHeader = () => {
@@ -106,21 +106,19 @@ const CollegeHeader = () => {
         </div>
       </div>
 
-      {/* Accreditation Strip */}
-      <div className="bg-slate-950/70 border-t border-white/5 backdrop-blur-md">
-        <div className="section-container py-1.5 sm:py-2">
-          {/* Grid on Mobile (2x2) / Flex on Tablet & Desktop */}
-          <ul className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-x-2.5 gap-y-1 sm:gap-x-6 md:gap-x-8">
+      {/* Accreditation Strip (Hidden below 482px / sm) */}
+      <div className="hidden sm:block bg-slate-950/70 border-t border-white/5 backdrop-blur-md">
+        <div className="section-container py-2">
+          <ul className="flex flex-wrap items-center justify-center gap-x-6 md:gap-x-8">
             {infoItems.map((item) => (
               <li
                 key={item.fullLabel}
-                className="flex items-center gap-1 sm:gap-1.5 text-slate-300 justify-center sm:justify-start"
+                className="flex items-center gap-1.5 text-slate-300 justify-start"
                 title={item.fullLabel}
               >
                 {item.icon}
-                <span className="font-primary text-[9px] sm:text-xs font-medium leading-tight whitespace-nowrap">
-                  <span className="sm:hidden">{item.shortLabel}</span>
-                  <span className="hidden sm:inline">{item.fullLabel}</span>
+                <span className="font-primary text-xs font-medium leading-tight whitespace-nowrap">
+                  {item.fullLabel}
                 </span>
               </li>
             ))}
