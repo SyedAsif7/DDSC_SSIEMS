@@ -133,8 +133,26 @@ const WorkshopDetails = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-slate-200 selection:bg-ndc-purple/30 custom-scrollbar">
       <Helmet>
-        <title>Vibe Coding Workshop Success | DCode Developers Club</title>
-        <meta name="description" content="Relive the success of DCode Developers Club's first hands-on workshop on Vibe Coding and GenAI Apps." />
+        <title>Vibe Coding Workshop Chapter 1 | DCode Developers Club</title>
+        <meta
+          name="description"
+          content="Relive the success of DCode Developers Club's hands-on workshop on Vibe Coding and GenAI Apps on Google Cloud with Google Developer Experts."
+        />
+        <link rel="canonical" href="https://www.dcode.club/workshop" />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="DCode Developers Club" />
+        <meta property="og:url" content="https://www.dcode.club/workshop" />
+        <meta property="og:title" content="Vibe Coding Workshop Chapter 1 · DCode Developers Club" />
+        <meta property="og:description" content="Hands-on GenAI development on Google Cloud with Google Developer Experts at SSIEMS Parbhani." />
+        <meta property="og:image" content="https://www.dcode.club/images/Vibe%20coding%20workshop/IMG_9211.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Vibe Coding Workshop Chapter 1" />
+        <meta name="twitter:description" content="Hands-on GenAI development on Google Cloud with Google Developer Experts at SSIEMS Parbhani." />
+        <meta name="twitter:image" content="https://www.dcode.club/images/Vibe%20coding%20workshop/IMG_9211.jpg" />
       </Helmet>
 
       <CollegeHeader />
@@ -156,7 +174,7 @@ const WorkshopDetails = () => {
             className="mb-8 md:mb-12"
           >
             <Link 
-              to="/#events" 
+              to="/#achievements" 
               className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 active:scale-95"
             >
               <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />

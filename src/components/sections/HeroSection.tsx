@@ -26,6 +26,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { getAssetPath } from "@/lib/utils";
+import AudioWaveform from "@/components/ui/AudioWaveform";
 
 /* -------------------------------------------------------------------------- */
 /*  Typed content model                                                        */
@@ -164,6 +165,7 @@ const HeroSection = () => {
                     {/* A. Status bar */}
                     <header className="flex items-center justify-between gap-1.5 min-w-0">
                       <div className="flex items-center gap-1.5 min-w-0 flex-1">
+                        <AudioWaveform size="xs" barColor="bg-gradient-to-t from-amber-400 to-pink-500" />
                         <span className="relative flex h-2 w-2 shrink-0">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
                           <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />

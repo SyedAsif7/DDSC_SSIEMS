@@ -100,7 +100,25 @@ const Gallery = () => {
     <div className="min-h-screen bg-[#050505] text-slate-200 selection:bg-ndc-purple/30">
       <Helmet>
         <title>Our Gallery | DCode Developers Club</title>
-        <meta name="description" content="Explore the journey of DCode Developers Club through our photo gallery. Moments from hackathons, workshops, and community events." />
+        <meta
+          name="description"
+          content="Explore the journey of DCode Developers Club through our photo gallery. Moments from hackathons, workshops, and community events."
+        />
+        <link rel="canonical" href="https://www.dcode.club/gallery" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DCode Developers Club" />
+        <meta property="og:url" content="https://www.dcode.club/gallery" />
+        <meta property="og:title" content="Photo Gallery · DCode Developers Club" />
+        <meta property="og:description" content="Visual moments and milestones from hackathons, workshops, and community events." />
+        <meta property="og:image" content="https://www.dcode.club/images/gallery/DSC_0036.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Photo Gallery · DCode Developers Club" />
+        <meta name="twitter:description" content="Visual moments and milestones from hackathons, workshops, and community events." />
+        <meta name="twitter:image" content="https://www.dcode.club/images/gallery/DSC_0036.jpg" />
       </Helmet>
 
       <CollegeHeader />

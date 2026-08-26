@@ -55,6 +55,7 @@ export { default as MagneticButton } from './MagneticButton';
 export { default as ParallaxSection } from './ParallaxSection';
 export { default as SectionHeader } from './SectionHeader';
 export { default as ThemeToggle } from './ThemeToggle';
+export { default as AudioWaveform } from './AudioWaveform';
 
 // Hooks
 export { useToast } from './use-toast';

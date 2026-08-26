@@ -38,6 +38,7 @@ import { Helmet } from "react-helmet-async";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Badge } from "@/components/ui/badge";
 import { getAssetPath } from "@/lib/utils";
+import AudioWaveform from "@/components/ui/AudioWaveform";
 
 const pillars = [
   {
@@ -137,11 +138,34 @@ const TheAsifTalks = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-slate-200 custom-scrollbar">
       <Helmet>
-        <title>The Asif Talks | Leadership & Governance Talk Series</title>
+        <title>The Asif Talks | Leadership & Public Governance Talk Series</title>
         <meta
           name="description"
-          content="The Asif Talks — a studio-grade leadership talk series connecting students with top administrators, public officials, and innovators. Season 01 launching August 31, 2026."
+          content="The Asif Talks — a flagship studio-grade leadership talk series hosted by Syed Asif. Inaugural Episode featuring District Collector Shri Sanjaysinh Chavan (IAS) on August 31, 2026."
         />
+        <link rel="canonical" href="https://www.dcode.club/the-asif-talks" />
+
+        {/* OpenGraph / Facebook / WhatsApp */}
+        <meta property="og:type" content="video.episode" />
+        <meta property="og:site_name" content="The Asif Talks · DCode Developers Club" />
+        <meta property="og:url" content="https://www.dcode.club/the-asif-talks" />
+        <meta property="og:title" content="The Asif Talks · Season 01 Premiere with Shri Sanjaysinh Chavan (IAS)" />
+        <meta property="og:description" content="A flagship studio dialogue series hosted by Syed Asif. Connecting students & innovators with top administrative leaders and founders. Aug 31, 2026 at SSIEMS Parbhani." />
+        <meta property="og:image" content="https://www.dcode.club/images/the-asif-talks-logo.jpg" />
+        <meta property="og:image:secure_url" content="https://www.dcode.club/images/the-asif-talks-logo.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="The Asif Talks Official Key Artwork" />
+        <meta property="og:locale" content="en_US" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.dcode.club/the-asif-talks" />
+        <meta name="twitter:title" content="The Asif Talks · Season 01 Premiere" />
+        <meta name="twitter:description" content="Studio dialogue series hosted by Syed Asif featuring Parbhani Collector Shri Sanjaysinh Chavan (IAS)." />
+        <meta name="twitter:image" content="https://www.dcode.club/images/the-asif-talks-logo.jpg" />
+        <meta name="twitter:creator" content="@TheAsifTalks" />
       </Helmet>
 
       <CollegeHeader />
@@ -175,9 +199,14 @@ const TheAsifTalks = () => {
 
           <div className="relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 xl:col-span-8">
-              <Badge className="mb-4 bg-indigo-500/10 text-indigo-300 border-indigo-500/20 rounded-full text-xs font-semibold px-3 py-1">
-                Studio Leadership Talk Series
-              </Badge>
+              <div className="inline-flex items-center gap-2.5 mb-4 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-300 text-xs font-bold shadow-inner">
+                <AudioWaveform size="xs" barColor="bg-gradient-to-t from-indigo-400 via-pink-400 to-amber-300" />
+                <span>Studio Leadership Talk Series</span>
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500" />
+                </span>
+              </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.05]">
                 The Asif Talks
@@ -297,9 +326,12 @@ const TheAsifTalks = () => {
             {/* Top Bar */}
             <div className="bg-white/5 border-b border-white/10 p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
-                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-indigo-300">
-                  {episodeSpotlight.badge}
-                </span>
+                <div className="flex items-center gap-2 mb-1">
+                  <AudioWaveform size="xs" barColor="bg-gradient-to-t from-indigo-400 to-pink-400" />
+                  <span className="text-[11px] font-black uppercase tracking-[0.2em] text-indigo-300">
+                    {episodeSpotlight.badge}
+                  </span>
+                </div>
                 <h3 className="text-xl sm:text-2xl font-black text-white mt-0.5 leading-tight">
                   {episodeSpotlight.title}
                 </h3>

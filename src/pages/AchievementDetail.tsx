@@ -109,6 +109,19 @@ const AchievementDetail = () => {
       <Helmet>
         <title>{achievement.title} | DCode Achievements</title>
         <meta name="description" content={achievement.description} />
+        <link rel="canonical" href={`https://www.dcode.club/achievement/${achievement.id}`} />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="DCode Developers Club" />
+        <meta property="og:url" content={`https://www.dcode.club/achievement/${achievement.id}`} />
+        <meta property="og:title" content={`${achievement.title} · DCode Developers Club`} />
+        <meta property="og:description" content={achievement.description} />
+        <meta property="og:image" content={achievement.images && achievement.images[0] ? `https://www.dcode.club${achievement.images[0]}` : "https://www.dcode.club/icon-512.png"} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={achievement.title} />
+        <meta name="twitter:description" content={achievement.description} />
+        <meta name="twitter:image" content={achievement.images && achievement.images[0] ? `https://www.dcode.club${achievement.images[0]}` : "https://www.dcode.club/icon-512.png"} />
       </Helmet>
       <CollegeHeader />
       <Navbar />
@@ -118,7 +131,7 @@ const AchievementDetail = () => {
           {/* Top Actions Bar */}
           <div className="flex items-center justify-between mb-12 animate-fade-in">
             <Link 
-              to="/#events"
+              to="/#achievements"
               className="group flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-xl text-slate-400 hover:text-white hover:bg-white/10 hover:border-white/10 transition-all duration-500"
             >
               <div className="p-1 rounded-lg bg-white/5 group-hover:bg-ndc-purple/20 group-hover:text-ndc-purple transition-all duration-500">
