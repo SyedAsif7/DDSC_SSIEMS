@@ -101,6 +101,7 @@ const episodeSpotlight = {
   date: "Monday, August 31, 2026",
   guest: "Shri Sanjaysinh Chavan (IAS)",
   guestRole: "District Collector & District Magistrate, Parbhani",
+  guestImage: "/images/sanjaysinh-chavan.jpg",
   overview: "In the inaugural live studio session of The Asif Talks, host Syed Asif hosts Parbhani District Collector Shri Sanjaysinh Chavan (IAS) before an audience of 250+ undergraduates and civil service aspirants.",
   themes: [
     { title: "District Governance & Ground Realities", desc: "Public administration decision-making and civic management during high-stakes challenges." },
@@ -344,10 +345,13 @@ const TheAsifTalks = () => {
 
             {/* Featured Guest Card */}
             <div className="p-6 sm:p-8 bg-gradient-to-r from-indigo-950/80 via-slate-900 to-slate-950 flex flex-col sm:flex-row items-center gap-6 border-b border-white/10">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-indigo-400/30 shadow-2xl shrink-0 bg-slate-950 ring-4 ring-white/10 flex items-center justify-center">
-                <span className="font-heading font-black text-5xl text-indigo-300 drop-shadow-[0_0_20px_rgba(99,102,241,0.6)] select-none">
-                  ?
-                </span>
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-indigo-400/40 shadow-[0_0_30px_rgba(99,102,241,0.3)] shrink-0 bg-slate-950 ring-4 ring-white/15 flex items-center justify-center group">
+                <img
+                  src={getAssetPath(episodeSpotlight.guestImage)}
+                  alt={episodeSpotlight.guest}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="flex-1 text-center sm:text-left">
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-indigo-300 mb-1">
