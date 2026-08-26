@@ -156,13 +156,13 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.08 }}
               className="order-1 lg:order-2 lg:col-span-5 relative w-full"
             >
-              <div className="relative mx-auto w-full max-w-[310px] min-[380px]:max-w-[335px] min-[440px]:max-w-[360px] sm:max-w-md lg:max-w-none lg:sticky lg:top-24">
-                <div className="absolute -inset-1.5 sm:-inset-6 rounded-[2rem] bg-gradient-to-br from-pink-500/20 via-ndc-purple/20 to-ndc-blue/20 blur-2xl opacity-70 pointer-events-none" />
-                <article className="relative rounded-2xl sm:rounded-[2rem] border border-white/10 bg-slate-950/80 backdrop-blur-xl p-2.5 min-[380px]:p-3 min-[440px]:p-4 sm:p-6 md:p-8 shadow-2xl overflow-hidden">
+              <div className="relative mx-auto w-full max-w-[310px] min-[380px]:max-w-[335px] min-[440px]:max-w-[360px] sm:max-w-md lg:max-w-[350px] xl:max-w-[370px] lg:ml-auto lg:sticky lg:top-24">
+                <div className="absolute -inset-1.5 sm:-inset-4 rounded-[2rem] bg-gradient-to-br from-pink-500/20 via-ndc-purple/20 to-ndc-blue/20 blur-2xl opacity-70 pointer-events-none" />
+                <article className="relative rounded-2xl sm:rounded-[2rem] border border-white/10 bg-slate-950/80 backdrop-blur-xl p-2.5 min-[380px]:p-3 min-[440px]:p-3.5 sm:p-4 md:p-5 shadow-2xl overflow-hidden">
                   {/* Subtle pattern */}
                   <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(45deg,#ffffff_25%,transparent_25%,transparent_75%,#ffffff_75%),linear-gradient(45deg,#ffffff_25%,transparent_25%,transparent_75%,#ffffff_75%)] [background-size:24px_24px] [background-position:0_0,12px_12px] pointer-events-none" />
 
-                  <div className="relative z-10 space-y-2.5 min-[380px]:space-y-3 sm:space-y-5 md:space-y-7">
+                  <div className="relative z-10 space-y-2 min-[380px]:space-y-2.5 sm:space-y-3 md:space-y-3.5">
                     {/* A. Status bar */}
                     <header className="flex items-center justify-between gap-1.5 min-w-0">
                       <div className="flex items-center gap-1.5 min-w-0 flex-1">
@@ -171,13 +171,13 @@ const HeroSection = () => {
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
                           <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
                         </span>
-                        <p className="text-[7.5px] min-[380px]:text-[8.5px] sm:text-[10px] font-black uppercase tracking-wider text-gray-300 truncate">
+                        <p className="text-[7.5px] min-[380px]:text-[8.5px] sm:text-[9.5px] font-black uppercase tracking-wider text-gray-300 truncate">
                           {flagshipSpotlight.status}
                         </p>
                       </div>
                       <Badge
                         variant="outline"
-                        className="rounded-md bg-white/5 border-white/10 text-amber-300 text-[7.5px] min-[380px]:text-[8.5px] sm:text-[10px] font-black uppercase tracking-wider shrink-0 gap-1 px-1.5 py-0.5"
+                        className="rounded-md bg-white/5 border-white/10 text-amber-300 text-[7.5px] min-[380px]:text-[8.5px] sm:text-[9.5px] font-black uppercase tracking-wider shrink-0 gap-1 px-1.5 py-0.5"
                       >
                         <Crown className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                         <span>Flagship</span>
@@ -187,7 +187,7 @@ const HeroSection = () => {
                     {/* B. Artwork / Title */}
                     <Link
                       to="/the-asif-talks"
-                      className="group block aspect-square w-full max-w-[200px] min-[380px]:max-w-[220px] min-[440px]:max-w-[250px] sm:max-w-none mx-auto rounded-xl sm:rounded-2xl bg-slate-950 border border-white/15 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl hover:border-indigo-400/50 hover:shadow-indigo-500/20 transition-all"
+                      className="group block aspect-square w-full max-w-[190px] min-[380px]:max-w-[210px] min-[440px]:max-w-[230px] sm:max-w-[230px] lg:max-w-[210px] xl:max-w-[230px] mx-auto rounded-xl sm:rounded-2xl bg-slate-950 border border-white/15 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl hover:border-indigo-400/50 hover:shadow-indigo-500/20 transition-all"
                     >
                       <img
                         src={getAssetPath("/images/the-asif-talks-logo.jpg")}
@@ -196,9 +196,9 @@ const HeroSection = () => {
                         className="w-full h-full object-contain p-1.5 sm:p-2 group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                      <div className="absolute bottom-1.5 right-1.5 sm:bottom-2.5 sm:right-2.5 inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-0.5 sm:py-1 rounded-md sm:rounded-xl bg-black/70 border border-white/20 backdrop-blur-md shadow-lg group-hover:bg-indigo-600/90 transition-colors">
-                        <ChevronRight className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 text-white" />
-                        <span className="text-[7.5px] min-[380px]:text-[8.5px] sm:text-[10px] font-black uppercase tracking-wider text-white">
+                      <div className="absolute bottom-1.5 right-1.5 sm:bottom-2 sm:right-2 inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-black/70 border border-white/20 backdrop-blur-md shadow-lg group-hover:bg-indigo-600/90 transition-colors">
+                        <ChevronRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
+                        <span className="text-[7.5px] min-[380px]:text-[8.5px] sm:text-[9px] font-black uppercase tracking-wider text-white">
                           Explore Series
                         </span>
                       </div>
