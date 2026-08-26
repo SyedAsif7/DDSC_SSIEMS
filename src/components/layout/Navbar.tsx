@@ -4,7 +4,7 @@
  * Uses route-aware links: hash anchors on home and Link navigation off home.
  */
 import { useState, useEffect } from 'react';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, ChevronRight } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import { getAssetPath } from '@/lib/utils';
 import ThemeToggle from '@/components/ui/ThemeToggle';

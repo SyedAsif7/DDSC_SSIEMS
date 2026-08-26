@@ -26,6 +26,35 @@ export function getAssetPath(path: string) {
   const baseUrl = import.meta.env.BASE_URL || '/';
   const cleanPath = preferred.startsWith('/') ? preferred.substring(1) : preferred;
   
-  // Ensure we don't have double slashes and the path is absolute from the base
+// Ensure we don't have double slashes and the path is absolute from the base
   return `${baseUrl}${cleanPath}`;
+}
+
+import { lazy, type ComponentType } from "react";
+
+/**
+ * Automatically retries dynamic component imports by forcing a single page reload
+ * when new Vite deployments invalidate cached chunk hashes.
+ */
+export function lazyRetry<T extends ComponentType<any>>(
+  componentImport: () => Promise<{ default: T }>
+) {
+  return lazy(async () => {
+    const pageHasBeenForceRefreshed = JSON.parse(
+      window.sessionStorage.getItem("page-has-been-force-refreshed") || "false"
+    );
+
+    try {
+      const component = await componentImport();
+      window.sessionStorage.setItem("page-has-been-force-refreshed", "false");
+      return component;
+    } catch (error) {
+      if (!pageHasBeenForceRefreshed) {
+        window.sessionStorage.setItem("page-has-been-force-refreshed", "true");
+        window.location.reload();
+        return { default: (() => null) as unknown as T };
+      }
+      throw error;
+    }
+  });
 }

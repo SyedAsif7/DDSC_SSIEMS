@@ -3,23 +3,24 @@
  * Composes all major sections in nav-aligned order with sticky navbar.
  * Below-fold sections are code-split so the first paint stays light.
  */
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import CollegeHeader from "@/components/layout/CollegeHeader";
 import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import Footer from "@/components/layout/Footer";
 import { Helmet } from "react-helmet-async";
+import { lazyRetry } from "@/lib/utils";
 
-const AboutSection = lazy(() => import("@/components/sections/AboutSection"));
-const WhyJoinSection = lazy(() => import("@/components/sections/WhyJoinSection"));
-const AchievementsSection = lazy(() => import("@/components/sections/AchievementsSection"));
-const UpcomingEventsSection = lazy(() => import("@/components/sections/UpcomingEventsSection"));
-const TeamSection = lazy(() => import("@/components/sections/TeamSection"));
-const JoinSection = lazy(() => import("@/components/sections/JoinSection"));
-const PartnersSection = lazy(() => import("@/components/sections/PartnersSection"));
-const GallerySliderSection = lazy(() => import("@/components/sections/GallerySliderSection"));
-const TimelineSection = lazy(() => import("@/components/sections/TimelineSection"));
-const WorkshopFAQ = lazy(() => import("@/components/sections/WorkshopFAQ"));
+const AboutSection = lazyRetry(() => import("@/components/sections/AboutSection"));
+const WhyJoinSection = lazyRetry(() => import("@/components/sections/WhyJoinSection"));
+const AchievementsSection = lazyRetry(() => import("@/components/sections/AchievementsSection"));
+const UpcomingEventsSection = lazyRetry(() => import("@/components/sections/UpcomingEventsSection"));
+const TeamSection = lazyRetry(() => import("@/components/sections/TeamSection"));
+const JoinSection = lazyRetry(() => import("@/components/sections/JoinSection"));
+const PartnersSection = lazyRetry(() => import("@/components/sections/PartnersSection"));
+const GallerySliderSection = lazyRetry(() => import("@/components/sections/GallerySliderSection"));
+const TimelineSection = lazyRetry(() => import("@/components/sections/TimelineSection"));
+const WorkshopFAQ = lazyRetry(() => import("@/components/sections/WorkshopFAQ"));
 
 const SectionFallback = () => (
   <div className="section-spacing flex justify-center py-16" aria-hidden="true">

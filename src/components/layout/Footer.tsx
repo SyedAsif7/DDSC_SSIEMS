@@ -1,7 +1,11 @@
 import { Instagram, Linkedin, Youtube, Mail, MapPin, ExternalLink } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   const quickLinks = [
     { name: "About Us", href: "#about" },
     { name: "Why Join", href: "#why-join" },
@@ -125,16 +129,34 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
+              {quickLinks.map((link) => {
+                const isAnchor = link.href.startsWith("#");
+                const target = isAnchor && !isHomePage ? `/${link.href}` : link.href;
+
+                if (!isAnchor || !isHomePage) {
+                  return (
+                    <li key={link.href}>
+                      <Link
+                        to={target}
+                        className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  );
+                }
+
+                return (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

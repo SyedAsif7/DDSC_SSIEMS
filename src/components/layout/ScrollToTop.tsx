@@ -14,16 +14,25 @@ const ScrollToTop = () => {
     }
 
     const id = hash.replace('#', '');
-    const timeoutId = window.setTimeout(() => {
+    
+    // Attempt scroll immediately, then retry once more in case lazy components are mounting
+    const scrollTarget = () => {
       const el = document.getElementById(id);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        window.scrollTo(0, 0);
+        return true;
       }
-    }, 80);
+      return false;
+    };
 
-    return () => window.clearTimeout(timeoutId);
+    if (!scrollTarget()) {
+      const timeoutId1 = window.setTimeout(scrollTarget, 100);
+      const timeoutId2 = window.setTimeout(scrollTarget, 300);
+      return () => {
+        window.clearTimeout(timeoutId1);
+        window.clearTimeout(timeoutId2);
+      };
+    }
   }, [pathname, hash]);
 
   return null;

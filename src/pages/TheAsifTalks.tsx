@@ -231,8 +231,9 @@ const TheAsifTalks = () => {
             <div className="lg:col-span-5 xl:col-span-4 flex justify-center">
               <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-indigo-500/30 shadow-[0_0_60px_rgba(99,102,241,0.25)] bg-slate-950 ring-4 ring-white/10 group flex items-center justify-center">
                 <img
-                  src="/images/the-asif-talks-logo.jpg"
+                  src={getAssetPath("/images/the-asif-talks-logo.jpg")}
                   alt="The Asif Talks Official Logo"
+                  loading="lazy"
                   className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -437,7 +438,12 @@ const TheAsifTalks = () => {
               <div>
                 <div className="flex gap-4 items-center mb-4">
                   <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-indigo-500/30 shadow-xl shrink-0 bg-slate-900">
-                    <img src={hostProfile.image} alt={hostProfile.name} className="w-full h-full object-cover" />
+                    <img
+                      src={getAssetPath(hostProfile.image)}
+                      alt={hostProfile.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 mb-1">

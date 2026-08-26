@@ -5,30 +5,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { ThemeProvider } from "./hooks/use-theme";
 import { ScrollToTop, ScrollToTopButton, GlobalBackgroundVideo } from "./components/layout";
-
-// Lazy load pages with automatic retry/reload when new deployments occur
-const lazyRetry = (componentImport: () => Promise<any>) =>
-  lazy(async () => {
-    const pageHasBeenForceRefreshed = JSON.parse(
-      window.sessionStorage.getItem("page-has-been-force-refreshed") || "false"
-    );
-
-    try {
-      const component = await componentImport();
-      window.sessionStorage.setItem("page-has-been-force-refreshed", "false");
-      return component;
-    } catch (error) {
-      if (!pageHasBeenForceRefreshed) {
-        window.sessionStorage.setItem("page-has-been-force-refreshed", "true");
-        window.location.reload();
-        return { default: () => null };
-      }
-      throw error;
-    }
-  });
+import { lazyRetry } from "./lib/utils";
 
 const Index = lazyRetry(() => import("./pages/Index"));
 const Gallery = lazyRetry(() => import("./pages/Gallery"));

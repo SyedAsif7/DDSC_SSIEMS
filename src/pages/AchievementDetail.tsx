@@ -71,7 +71,7 @@ const AchievementDetail = () => {
       <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-white p-4">
         <h1 className="text-4xl font-black mb-4">Achievement Not Found</h1>
         <Link 
-          to="/#events"
+          to="/#achievements"
           className="flex items-center gap-2 px-8 py-4 bg-ndc-purple rounded-xl hover:bg-ndc-purple/80 transition-all font-bold uppercase tracking-widest text-xs"
         >
           <ArrowLeft size={18} />

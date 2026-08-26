@@ -25,6 +25,7 @@ import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { getAssetPath } from "@/lib/utils";
 
 /* -------------------------------------------------------------------------- */
 /*  Typed content model                                                        */
@@ -186,8 +187,9 @@ const HeroSection = () => {
                       className="group block aspect-square w-full max-w-[200px] min-[380px]:max-w-[220px] min-[440px]:max-w-[250px] sm:max-w-none mx-auto rounded-xl sm:rounded-2xl bg-slate-950 border border-white/15 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl hover:border-indigo-400/50 hover:shadow-indigo-500/20 transition-all"
                     >
                       <img
-                        src="/images/the-asif-talks-logo.jpg"
+                        src={getAssetPath("/images/the-asif-talks-logo.jpg")}
                         alt="The Asif Talks Official Platform"
+                        loading="lazy"
                         className="w-full h-full object-contain p-1.5 sm:p-2 group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
