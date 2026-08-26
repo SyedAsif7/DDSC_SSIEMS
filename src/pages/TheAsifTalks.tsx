@@ -1,48 +1,33 @@
 import {
-  ArrowLeft,
-  Sparkles,
-  Mic,
   Users,
   Building2,
-  Briefcase,
   GraduationCap,
   Calendar,
   Headphones,
   MapPin,
-  Handshake,
   CheckCircle2,
   ChevronRight,
   Globe,
   Quote,
   Target,
   Radio,
-  Rocket,
-  Star,
   Youtube,
   Instagram,
   Linkedin,
-  FileText,
-  Share2,
   Mail,
   Phone,
   Camera,
   Cpu,
   Shield,
   Award,
-  Crown,
-  Zap,
-  Layers,
   Clapperboard,
   UserCircle2,
-  BriefcaseBusiness,
   BookOpen,
   ScrollText,
-  PenTool,
   Megaphone,
   UsersRound,
   Wrench,
-  Palette,
-  Bell
+  Palette
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import CollegeHeader from "@/components/layout/CollegeHeader";
@@ -99,29 +84,6 @@ const pillars = [
       "Competitive programming and research guidance",
       "Direct conversations with decision-makers and recruiters"
     ]
-  }
-];
-
-const offerings = [
-  {
-    icon: Mic,
-    title: "In-Depth Podcasts",
-    desc: "Long-form conversations with leaders across governance, technology and entrepreneurship."
-  },
-  {
-    icon: Radio,
-    title: "Leadership Interviews",
-    desc: "Focused interviews with administrators, founders, researchers and community builders."
-  },
-  {
-    icon: Rocket,
-    title: "Live Seminars & Keynotes",
-    desc: "Power-packed offline and online sessions with actionable takeaways for students."
-  },
-  {
-    icon: FileText,
-    title: "Structured Technical Sessions",
-    desc: "Hands-on technical tracks and workshops delivered with communities and partners."
   }
 ];
 
@@ -306,13 +268,6 @@ const productionTeam = [
   }
 ];
 
-const highlights = [
-  "Real roadmaps instead of abstract theory",
-  "Leaders directly connected with regional students",
-  "Digital + offline reach across YouTube, Instagram, campuses",
-  "Collaborations with DDSC, SSIEMS Parbhani and Vertex Institute of Technology"
-];
-
 const TheAsifTalks = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-slate-200 custom-scrollbar">
@@ -462,29 +417,6 @@ const TheAsifTalks = () => {
           </div>
         </section>
 
-        {/* --- Platform Highlights --- */}
-        <section>
-          <SectionHeader
-            badgeText="What the Platform is Built On"
-            badgeIcon={Sparkles}
-            titlePrefix="Platform"
-            titleHighlight="Highlights"
-            description="Studio-grade production, practical roadmaps and a three-way institutional alliance — engineered for regional student success."
-            centered
-          />
-          <ul className="mt-8 max-w-4xl mx-auto grid sm:grid-cols-2 gap-4">
-            {highlights.map((h, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur"
-              >
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-                <span className="text-slate-200 font-medium leading-relaxed">{h}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
         {/* --- 3 Pillars --- */}
         <section>
           <SectionHeader
@@ -523,34 +455,6 @@ const TheAsifTalks = () => {
                       </li>
                     ))}
                   </ul>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* --- Offerings --- */}
-        <section>
-          <SectionHeader
-            badgeText="Formats & Offerings"
-            badgeIcon={Share2}
-            titlePrefix="What the Platform"
-            titleHighlight="Delivers"
-            description="From long-form podcasts and leadership interviews to live keynotes and structured technical sessions — every format is built for real impact."
-            centered
-          />
-          <div className="mt-8 grid sm:grid-cols-2 gap-5">
-            {offerings.map((o, i) => {
-              const Icon = o.icon;
-              return (
-                <article key={i} className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-5 hover:bg-white/[0.07] transition">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-indigo-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-extrabold text-white mb-1">{o.title}</h4>
-                    <p className="text-sm text-slate-400 leading-relaxed">{o.desc}</p>
-                  </div>
                 </article>
               );
             })}
@@ -902,109 +806,24 @@ const TheAsifTalks = () => {
           </div>
         </section>
 
-        {/* --- Mission --- */}
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950/70 backdrop-blur-xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_1px_1px,#ffffff_1px,transparent_0)] [background-size:24px_24px] pointer-events-none" />
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-500/10 blur-3xl rounded-full pointer-events-none" />
-
-          <div className="relative z-10 grid lg:grid-cols-5 gap-10">
-            <div className="lg:col-span-2 space-y-4">
-              <Badge className="bg-indigo-500/10 text-indigo-300 border-indigo-500/20 hover:bg-indigo-500/20 rounded-full text-xs font-bold px-3.5 py-1">
-                <Target className="w-3.5 h-3.5 mr-1.5" />
-                The Core Mission
-              </Badge>
-              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight">
-                Empowering Regional Ambition into National Impact
-              </h3>
-              <p className="text-slate-300 leading-relaxed text-sm md:text-base">
-                Replacing abstract theory with practical career guidance and actionable roadmaps — empowering
-                young people to turn their background into a competitive advantage.
-              </p>
-              <p className="text-slate-400 leading-relaxed text-sm">
-                Built in collaboration with student developer communities such as DDSC, academic institutions
-                like SSIEMS Parbhani, and technical partners including Vertex Institute of Technology, The Asif
-                Talks directly breaks the exposure gap for students in Tier-2 and Tier-3 cities.
-              </p>
-            </div>
-            
-            <div className="lg:col-span-3 grid grid-cols-2 gap-4">
-              {[
-                ["Tier-2 & Tier-3", "Core Focus Area", "bg-indigo-500/10 border-indigo-500/20 text-indigo-300"],
-                ["Students & Builders", "Primary Audience", "bg-pink-500/10 border-pink-500/20 text-pink-300"],
-                ["Digital + Offline", "Broadcast Scope", "bg-emerald-500/10 border-emerald-500/20 text-emerald-300"],
-                ["Roadmaps · Not Talks", "Value Promise", "bg-amber-500/10 border-amber-500/20 text-amber-300"]
-              ].map(([k, v, badgeColor]) => (
-                <div key={k} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5 flex flex-col justify-between hover:bg-white/[0.08] transition">
-                  <p className="font-black text-white text-lg sm:text-xl leading-tight">{k}</p>
-                  <span className={`inline-block mt-3 px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider ${badgeColor} border w-fit`}>
-                    {v}
-                  </span>
-                </div>
-              ))}
-            </div>
+        {/* --- Season 01 Premiere Callout --- */}
+        <section className="rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-indigo-600 via-indigo-700 to-ndc-purple text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 shadow-2xl relative overflow-hidden border border-white/10">
+          <div className="space-y-1">
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-indigo-200">
+              Season 01 Premiere Broadcast
+            </p>
+            <h3 className="text-2xl sm:text-3xl font-black leading-tight">
+              Aug 31, 2026 <span className="text-indigo-200 font-semibold text-lg sm:text-2xl">· Dr. A.P.J. Abdul Kalam Auditorium</span>
+            </h3>
           </div>
-
-          <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8 relative z-10">
-            <div>
-              <p className="text-2xl md:text-3xl font-black text-white leading-tight italic">
-                The Right Stories. <br className="hidden sm:block" />
-                The Right Roadmaps.
-              </p>
-              <p className="mt-2 text-sm text-slate-400 max-w-2xl leading-relaxed">
-                Follow The Asif Talks on YouTube, Instagram and LinkedIn. Season 01 premieres
-                August 31, 2026 — with episodes, seminars and campus sessions crafted to take
-                students from ambition to action.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <a
-                href="https://www.youtube.com/@TheAsifTalks"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 hover:border-red-400/40 hover:bg-red-500/10 rounded-xl text-sm font-bold text-white transition-all shadow-md"
-              >
-                <Youtube className="w-4 h-4 text-red-400" />
-                @TheAsifTalks
-              </a>
-              <a
-                href="https://www.instagram.com/theasiftalks"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 hover:border-pink-400/40 hover:bg-pink-500/10 rounded-xl text-sm font-bold text-white transition-all shadow-md"
-              >
-                <Instagram className="w-4 h-4 text-pink-400" />
-                @theasiftalks
-              </a>
-              <a
-                href="https://www.linkedin.com/in/the-syed-asif"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 hover:border-blue-400/40 hover:bg-blue-500/10 rounded-xl text-sm font-bold text-white transition-all shadow-md"
-              >
-                <Linkedin className="w-4 h-4 text-blue-400" />
-                Syed Asif
-              </a>
-            </div>
-          </div>
-
-          <div className="mt-8 p-6 bg-gradient-to-r from-indigo-600 via-indigo-700 to-ndc-purple text-white rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 shadow-2xl relative z-10">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.3em] text-indigo-200">
-                Season 01 Premiere Broadcast
-              </p>
-              <h3 className="mt-1 text-2xl md:text-3xl font-black leading-tight">
-                Aug 31, 2026 <span className="text-indigo-200">· Dr. A.P.J. Abdul Kalam Auditorium</span>
-              </h3>
-            </div>
-            <Button
-              size="lg"
-              className="bg-white text-indigo-900 hover:bg-indigo-50 rounded-xl h-12 px-6 font-black shadow-xl"
-              onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
-            >
-              <Youtube className="w-4 h-4 mr-2 text-red-600" />
-              Subscribe on YouTube
-            </Button>
-          </div>
+          <Button
+            size="lg"
+            className="w-full sm:w-auto bg-white text-indigo-950 hover:bg-slate-100 rounded-xl h-12 px-6 font-black shadow-xl shrink-0 active:scale-[0.98]"
+            onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
+          >
+            <Youtube className="w-4 h-4 mr-2 text-red-600" />
+            Subscribe on YouTube
+          </Button>
         </section>
 
         {/* --- Connectivity --- */}
