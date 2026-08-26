@@ -450,13 +450,13 @@ const TheAsifTalks = () => {
 
             {/* Official Logo Banner Column */}
             <div className="lg:col-span-5 xl:col-span-4 flex justify-center">
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden border-2 border-indigo-500/30 shadow-[0_0_60px_rgba(99,102,241,0.25)] bg-slate-900 ring-4 ring-white/10 group">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden border-2 border-indigo-500/30 shadow-[0_0_60px_rgba(99,102,241,0.25)] bg-slate-950 ring-4 ring-white/10 group">
                 <img
                   src="/images/the-asif-talks-logo.jpg"
                   alt="The Asif Talks Official Logo"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               </div>
             </div>
           </div>

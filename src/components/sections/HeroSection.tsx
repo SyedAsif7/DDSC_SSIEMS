@@ -177,15 +177,15 @@ const HeroSection = () => {
                     {/* B. Artwork / Title */}
                     <Link
                       to="/the-asif-talks"
-                      className="group block aspect-[16/10] sm:aspect-[4/3] w-full rounded-2xl bg-slate-900 border border-white/15 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl hover:border-indigo-400/50 hover:shadow-indigo-500/20 transition-all"
+                      className="group block aspect-square w-full max-w-[340px] sm:max-w-none mx-auto rounded-2xl bg-slate-950 border border-white/15 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl hover:border-indigo-400/50 hover:shadow-indigo-500/20 transition-all"
                     >
                       <img
                         src="/images/the-asif-talks-logo.jpg"
                         alt="The Asif Talks Official Platform"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                      <div className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-black/60 border border-white/20 backdrop-blur-md shadow-lg group-hover:bg-indigo-600/80 transition-colors">
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                      <div className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-black/70 border border-white/20 backdrop-blur-md shadow-lg group-hover:bg-indigo-600/90 transition-colors">
                         <ChevronRight className="w-3.5 h-3.5 text-white" />
                         <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
                           Explore Series
