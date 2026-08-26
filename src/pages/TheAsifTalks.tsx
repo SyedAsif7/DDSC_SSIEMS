@@ -170,61 +170,11 @@ const institutionalPartners = [
   }
 ];
 
-const sponsorshipTiers = [
-  {
-    tier: "Title Partner",
-    highlight: "Primary Billing · Top Placement",
-    icon: Crown,
-    accent: "from-amber-500/25 via-yellow-500/10 to-orange-500/10",
-    border: "border-amber-400/30",
-    color: "text-amber-300",
-    partner: "Vertex Institute of Technology",
-    deliverables: [
-      "Prominent opening video bumper on YouTube broadcasts",
-      "Primary logo placement on stage LED backdrop",
-      "Live verbal host recognition throughout episodes",
-      "Top billing on all digital passes & event collateral"
-    ]
-  },
-  {
-    tier: "Powered-By Sponsors",
-    highlight: "Broadcast · Foyer · Social Amplification",
-    icon: Zap,
-    accent: "from-pink-500/20 via-purple-500/10 to-indigo-500/10",
-    border: "border-pink-400/30",
-    color: "text-pink-300",
-    partner: "Local Tech · EdTech · Academic Ventures",
-    examples: "e.g., Devansh Edu-Tech, Regional Educational Academies",
-    deliverables: [
-      "Lower-third visual brand pop-ups during broadcast",
-      "Roll-up banner presence in auditorium foyer",
-      "Co-branded social media highlights & reels",
-      "Audience registration acknowledgment"
-    ]
-  },
-  {
-    tier: "Associate Partners",
-    highlight: "Outreach · Print · Community",
-    icon: Layers,
-    accent: "from-emerald-500/20 via-teal-500/10 to-cyan-500/10",
-    border: "border-emerald-400/30",
-    color: "text-emerald-300",
-    partner: "Regional Print & Youth Outreach Partners",
-    deliverables: [
-      "Official event poster logo credits",
-      "Entry registration form inclusion",
-      "Social media story mentions & tags",
-      "Community audience co-promotion"
-    ]
-  }
-];
-
 const episodeSpotlight = {
   badgeTag: "SEASON 01 • INAUGURAL EPISODE",
   mainTitle: "Public Governance, Digital Administration & The Youth Mindset",
   guest: "Shri Sanjaysinh Chavan (IAS)",
   guestTitle: "District Collector & District Magistrate, Parbhani",
-  image: "/images/sanjaysinh-chavan.png",
   overview: [
     "In the inaugural live studio session of The Asif Talks, host Syed Asif sits down with the administrative head of Parbhani district, Shri Sanjaysinh Chavan (IAS).",
     "Recorded live before an audience of over 250 engineering undergraduates, innovators, and civil service aspirants at the Dr. A.P.J. Abdul Kalam Auditorium, this session dives into the realities of district-level public administration, the transformative role of e-governance and technology in public service delivery, and actionable roadmaps for youth from Tier-2 and Tier-3 regions aiming for national-level impact."
@@ -265,7 +215,6 @@ const seasonGuests = [
     date: "Monday, August 31, 2026",
     guest: "Shri Sanjaysinh Chavan (IAS)",
     role: "District Collector & Magistrate, Parbhani",
-    image: "/images/sanjaysinh-chavan.png",
     color: "from-indigo-500/25 via-violet-500/10 to-purple-500/5",
     border: "hover:border-indigo-400/40",
     theme: "text-indigo-300",
@@ -354,30 +303,6 @@ const productionTeam = [
     dept: "Seating · Ushering · Crowd Flow",
     icon: Wrench,
     color: "text-violet-300"
-  }
-];
-
-const productionSpecs = [
-  {
-    icon: Camera,
-    title: "Visual Recording",
-    spec: "3-Camera Cinema Array",
-    desc: "Host Angle, Guest Hero Angle, Audience/Master Wide Shot — all recording in Ultra HD.",
-    accent: "from-indigo-500/20 to-blue-500/5"
-  },
-  {
-    icon: Headphones,
-    title: "Audio Engineering",
-    spec: "Multi-Channel UHF Wireless",
-    desc: "Lavalier transmission with continuous mixer line monitoring for studio-grade clarity.",
-    accent: "from-pink-500/20 to-rose-500/5"
-  },
-  {
-    icon: Cpu,
-    title: "Broadcast Standard",
-    spec: "Professional Mastering",
-    desc: "Episodes normalized to -14 LUFS with custom motion graphics and chapter markers.",
-    accent: "from-emerald-500/20 to-teal-500/5"
   }
 ];
 
@@ -674,58 +599,6 @@ const TheAsifTalks = () => {
           </div>
         </section>
 
-        {/* --- Sponsorship --- */}
-        <section>
-          <SectionHeader
-            badgeText="Sponsorship Tiers"
-            badgeIcon={Award}
-            titlePrefix="Sponsorship &amp; Partnership"
-            titleHighlight="Ecosystem"
-            description="Multi-channel visibility across live staging, full-length YouTube broadcasts, and social platforms — crafted for every tier of partnership."
-            centered
-          />
-          <div className="mt-8 grid md:grid-cols-3 gap-5">
-            {sponsorshipTiers.map((t, i) => {
-              const Icon = t.icon;
-              return (
-                <article key={i} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 hover:bg-white/[0.07] transition">
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                      <Icon className={`w-5 h-5 ${t.color}`} />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                      Tier 0{i + 1}
-                    </span>
-                  </div>
-                  <p className={`text-xs font-bold uppercase tracking-wider ${t.color} mb-1`}>
-                    {t.highlight}
-                  </p>
-                  <h4 className="text-xl font-black text-white leading-tight">{t.tier}</h4>
-                  <div className="mt-3 p-3 rounded-xl border border-white/10 bg-white/5">
-                    <p className="text-sm font-bold text-white">{t.partner}</p>
-                    {"examples" in t && (t as any).examples && (
-                      <p className="text-xs text-slate-400 mt-0.5">{(t as any).examples}</p>
-                    )}
-                  </div>
-                  <div className="mt-4">
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-                      Deliverables
-                    </p>
-                    <ul className="space-y-1.5">
-                      {t.deliverables.map((d, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
-                          <span className="text-indigo-400 mt-0.5">•</span>
-                          <span>{d}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-
         {/* --- Episode Spotlight --- */}
         <section id="spotlight">
           <SectionHeader
@@ -776,12 +649,10 @@ const TheAsifTalks = () => {
 
             {/* Guest Banner */}
             <div className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-ndc-purple text-white p-6 md:p-8 flex flex-col sm:flex-row items-center gap-6">
-              <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden border-2 border-white/30 shadow-2xl shrink-0 bg-slate-900 ring-4 ring-white/10">
-                <img
-                  src={episodeSpotlight.image}
-                  alt={episodeSpotlight.guest}
-                  className="w-full h-full object-cover object-top"
-                />
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-2xl overflow-hidden border-2 border-white/30 shadow-2xl shrink-0 bg-slate-950 ring-4 ring-white/10 flex items-center justify-center">
+                <span className="font-heading font-black text-5xl sm:text-6xl text-indigo-300 drop-shadow-[0_0_20px_rgba(99,102,241,0.6)] select-none">
+                  ?
+                </span>
               </div>
               <div className="flex-1 text-center sm:text-left">
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] opacity-80 mb-1">
@@ -830,12 +701,10 @@ const TheAsifTalks = () => {
               {/* About Guest */}
               <h5 className="text-lg font-black text-white mt-8 mb-3">About the Guest</h5>
               <div className="flex flex-col sm:flex-row gap-6 items-start rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/20 shrink-0 bg-slate-900">
-                  <img
-                    src={episodeSpotlight.image}
-                    alt={episodeSpotlight.guest}
-                    className="w-full h-full object-cover object-top"
-                  />
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-white/20 shrink-0 bg-slate-950 flex items-center justify-center">
+                  <span className="font-heading font-black text-4xl text-indigo-300 select-none">
+                    ?
+                  </span>
                 </div>
                 <div className="space-y-2 flex-1">
                   <h6 className="text-xl font-black text-white">{episodeSpotlight.guest}</h6>
@@ -909,12 +778,10 @@ const TheAsifTalks = () => {
                 </div>
 
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border border-white/20 shrink-0 bg-slate-900">
-                    <img
-                      src={g.image}
-                      alt={g.guest}
-                      className="w-full h-full object-cover object-top"
-                    />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border border-white/20 shrink-0 bg-slate-950 flex items-center justify-center">
+                    <span className="font-heading font-black text-3xl sm:text-4xl text-indigo-300 select-none">
+                      ?
+                    </span>
                   </div>
                   <div>
                     <h4 className="text-xl sm:text-2xl font-black text-white leading-tight">{g.guest}</h4>
@@ -1032,33 +899,6 @@ const TheAsifTalks = () => {
                 })}
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* --- Production Specs --- */}
-        <section>
-          <SectionHeader
-            badgeText="Production Specs"
-            badgeIcon={Cpu}
-            titlePrefix="Technical &amp;"
-            titleHighlight="Production Specs"
-            description="Every episode is engineered to broadcast standards — multi-camera cinema, studio audio, and broadcast-grade mastering."
-            centered
-          />
-          <div className="mt-8 grid md:grid-cols-3 gap-5">
-            {productionSpecs.map((s, i) => {
-              const Icon = s.icon;
-              return (
-                <article key={i} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/[0.08] hover:border-indigo-400/30 transition-all duration-300 group">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6 text-indigo-400" />
-                  </div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">{s.title}</p>
-                  <p className="font-black text-white text-xl mb-2">{s.spec}</p>
-                  <p className="text-sm text-slate-300 leading-relaxed">{s.desc}</p>
-                </article>
-              );
-            })}
           </div>
         </section>
 

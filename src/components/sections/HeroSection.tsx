@@ -48,8 +48,7 @@ const flagshipSpotlight = {
       title: "Shri Sanjaysinh Chavan (IAS)",
       role: "Collector & DM · Parbhani",
       date: "Aug 31, 2026",
-      theme: "Governance · Youth Mindset",
-      image: "/images/sanjaysinh-chavan.png"
+      theme: "Governance · Youth Mindset"
     }
   ],
   meta: { left: "4K Studio · Live Audience", right: "YouTube · Instagram" }
@@ -207,12 +206,10 @@ const HeroSection = () => {
                             className="group/item flex items-center justify-between gap-2.5 px-3 sm:px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] hover:border-white/15 transition-all"
                           >
                             <div className="flex items-center gap-2.5 min-w-0">
-                              <div className="relative shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-white/20 bg-slate-900 shadow-md">
-                                <img
-                                  src={ep.image}
-                                  alt={ep.title}
-                                  className="w-full h-full object-cover object-top"
-                                />
+                              <div className="relative shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-white/20 bg-slate-950 shadow-md flex items-center justify-center">
+                                <span className="font-heading font-black text-sm sm:text-base text-indigo-300 select-none">
+                                  ?
+                                </span>
                               </div>
                               <div className="min-w-0">
                                 <p className="text-xs font-bold text-white truncate">
