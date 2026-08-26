@@ -39,6 +39,7 @@ export interface UpcomingEventItem {
   date: string;
   time?: string;
   venue?: string;
+  venueMapUrl?: string;
   sponsor?: UpcomingEventSponsor;
   cta: UpcomingEventCta;
 }
@@ -55,6 +56,7 @@ export const upcomingEvents: UpcomingEventItem[] = [
     date: "Launching Soon",
     time: "Episodes Weekly",
     venue: "YouTube · Instagram · Live Seminars",
+    venueMapUrl: "https://maps.app.goo.gl/UjZkHVEQpabCZZuTA",
     points: [
       "Public Governance & Leadership Dialogues",
       "Tech, Startups & Entrepreneurship Tracks",

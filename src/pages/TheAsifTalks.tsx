@@ -1,4 +1,4 @@
-﻿import {
+import {
   ArrowLeft,
   Users,
   Building2,
@@ -26,7 +26,8 @@
   UsersRound,
   Wrench,
   Palette,
-  ClipboardList
+  ClipboardList,
+  ExternalLink
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import CollegeHeader from "@/components/layout/CollegeHeader";
@@ -105,6 +106,7 @@ const episodeSpotlight = {
     { title: "Civil Services Blueprint", desc: "Mental resilience, strategic discipline, and analytical mindset needed for UPSC & MPSC exams." }
   ],
   venue: "Dr. A.P.J. Abdul Kalam Auditorium, SSIEMS Parbhani",
+  venueMapUrl: "https://maps.app.goo.gl/UjZkHVEQpabCZZuTA",
   production: "4K Multi-Camera Cinema Array with High-Fidelity Audio Mastering"
 };
 
@@ -345,10 +347,16 @@ const TheAsifTalks = () => {
 
               {/* Venue footer bar */}
               <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-slate-400">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-indigo-400 shrink-0" />
-                  <span className="font-medium">{episodeSpotlight.venue}</span>
-                </div>
+                <a
+                  href={episodeSpotlight.venueMapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-indigo-300 hover:text-white transition-colors group"
+                >
+                  <MapPin className="w-4 h-4 text-indigo-400 group-hover:scale-110 transition-transform shrink-0" />
+                  <span className="font-medium underline decoration-indigo-400/40 underline-offset-4">{episodeSpotlight.venue}</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-indigo-400/80" />
+                </a>
                 <div className="flex items-center gap-2">
                   <Clapperboard className="w-4 h-4 text-indigo-400 shrink-0" />
                   <span className="font-medium">{episodeSpotlight.production}</span>

@@ -160,10 +160,18 @@ const Footer = () => {
                 <MapPin className="h-4 w-4 text-ndc-green mt-1 shrink-0" />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Location</p>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    SSIEMS, Vasmat Road,<br />
-                    Parbhani – 431401, Maharashtra
-                  </p>
+                  <a
+                    href="https://maps.app.goo.gl/UjZkHVEQpabCZZuTA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-white text-sm leading-relaxed transition-colors block group"
+                  >
+                    <span>SSIEMS, Vasmat Road,<br />Parbhani – 431401, Maharashtra</span>
+                    <span className="inline-flex items-center gap-1 text-[11px] text-ndc-blue group-hover:text-sky-300 font-semibold mt-1 transition-colors">
+                      <span>View on Google Maps</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </span>
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">

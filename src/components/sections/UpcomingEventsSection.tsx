@@ -318,14 +318,26 @@ const EventCard = ({ event, index }: { event: UpcomingEventItem; index: number }
           <div className="flex flex-col gap-5 pt-2 border-t border-white/5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex flex-wrap items-center gap-2.5">
-                {event.venue && (
+                {event.venue && event.venueMapUrl ? (
+                  <a
+                    href={event.venueMapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-ndc-blue/40 text-gray-200 hover:text-white transition-all group/meta"
+                  >
+                    <MapPin size={12} className="text-ndc-blue group-hover/meta:scale-110 transition-transform" />
+                    <span className="text-[10.5px] font-black uppercase tracking-[0.18em] truncate max-w-[240px]">
+                      {event.venue}
+                    </span>
+                  </a>
+                ) : event.venue ? (
                   <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-white/[0.03] border border-white/5 text-gray-200 group/meta">
                     <MapPin size={12} className="text-ndc-blue group-hover/meta:scale-110 transition-transform" />
                     <span className="text-[10.5px] font-black uppercase tracking-[0.18em] truncate max-w-[240px]">
                       {event.venue}
                     </span>
                   </div>
-                )}
+                ) : null}
                 {event.time && (
                   <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-white/[0.03] border border-white/5 text-gray-200 group/meta">
                     <Clock size={12} className="text-ndc-green group-hover/meta:scale-110 transition-transform" />
