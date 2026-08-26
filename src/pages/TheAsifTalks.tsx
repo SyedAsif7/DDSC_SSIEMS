@@ -37,6 +37,7 @@ import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Badge } from "@/components/ui/badge";
+import { getAssetPath } from "@/lib/utils";
 
 const pillars = [
   {
@@ -70,24 +71,24 @@ const institutionalPartners = [
     name: "SSIEMS Parbhani",
     fullName: "Shri Shivaji Institute of Engineering & Management Studies",
     role: "Institutional Patron & Venue Host",
-    icon: Building2,
-    color: "text-indigo-300",
+    logo: "/images/alliances/ssiems-logo.png",
+    bgClass: "bg-white",
     desc: "Providing academic patronage, administrative backing, and the Dr. A.P.J. Abdul Kalam Auditorium venue."
   },
   {
     name: "DCode Developers Club",
     fullName: "DDSC Student Community",
     role: "Organizing Student Engine",
-    icon: Users,
-    color: "text-pink-300",
+    logo: "/images/alliances/dcode-logo.jpg",
+    bgClass: "bg-slate-950",
     desc: "Leading stage management, technical execution, registration operations, and student outreach."
   },
   {
     name: "Vertex Institute of Technology",
     fullName: "Industry & Innovation Partner",
     role: "Technical & Industry Backbone",
-    icon: GraduationCap,
-    color: "text-emerald-300",
+    logo: "/images/alliances/vertex-logo.jpg",
+    bgClass: "bg-white",
     desc: "Title partner for technological incubation, digital network amplification, and technical mentorship."
   }
 ];
@@ -377,21 +378,26 @@ const TheAsifTalks = () => {
             centered
           />
           <div className="mt-8 grid md:grid-cols-3 gap-5">
-            {institutionalPartners.map((p, i) => {
-              const Icon = p.icon;
-              return (
-                <article key={i} className="rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl p-5 hover:bg-white/[0.07] transition-all flex flex-col justify-between">
-                  <div>
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-3">
-                      <Icon className={`w-5 h-5 ${p.color}`} />
-                    </div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-indigo-300 mb-0.5">{p.role}</p>
-                    <h4 className="text-base font-extrabold text-white mb-1.5 leading-tight">{p.name}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{p.desc}</p>
+            {institutionalPartners.map((p, i) => (
+              <article
+                key={i}
+                className="rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl p-5 hover:bg-white/[0.07] hover:border-white/20 transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div className={`w-14 h-14 rounded-2xl ${p.bgClass} border border-white/10 flex items-center justify-center p-2 mb-4 shadow-lg group-hover:scale-105 transition-transform overflow-hidden`}>
+                    <img
+                      src={getAssetPath(p.logo)}
+                      alt={p.name}
+                      loading="lazy"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                </article>
-              );
-            })}
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-indigo-300 mb-1">{p.role}</p>
+                  <h4 className="text-base font-extrabold text-white mb-1.5 leading-tight">{p.name}</h4>
+                  <p className="text-xs text-slate-400 leading-relaxed">{p.desc}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
