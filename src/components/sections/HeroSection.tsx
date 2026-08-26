@@ -66,9 +66,9 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-transparent pt-2 sm:pt-12 md:pt-16 pb-6 sm:pb-12 scroll-mt-28"
+      className="relative overflow-hidden bg-transparent pt-0 sm:pt-6 md:pt-10 pb-6 sm:pb-12 scroll-mt-28"
     >
-      <div className="section-container relative z-10 px-2.5 sm:px-6 lg:px-8">
+      <div className="section-container relative z-10 px-2 sm:px-6 lg:px-8 mt-0 pt-0">
         <div className="relative rounded-2xl sm:rounded-3xl md:rounded-[2rem] border border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] bg-gradient-to-br from-slate-950 via-slate-950 to-indigo-950/40 overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-ndc-purple/20 blur-3xl opacity-80" />
@@ -77,7 +77,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)] [background-size:24px_24px] opacity-30" />
           </div>
 
-          <div className="relative z-10 grid lg:grid-cols-12 gap-5 sm:gap-8 md:gap-10 p-2 min-[380px]:p-3 sm:p-8 md:p-12 lg:p-14 items-start">
+          <div className="relative z-10 grid lg:grid-cols-12 gap-4 sm:gap-8 md:gap-10 p-2 min-[380px]:p-2.5 sm:p-8 md:p-12 lg:p-14 items-start">
             {/* ============================================================ */}
             {/* LEFT COLUMN — headline, stats, CTAs                         */}
             {/* ============================================================ */}
@@ -85,11 +85,11 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="order-2 lg:order-1 lg:col-span-7 flex flex-col space-y-4 sm:space-y-8 md:space-y-10 text-center md:text-left"
+              className="order-2 lg:order-1 lg:col-span-7 flex flex-col space-y-3 sm:space-y-8 md:space-y-10 text-center md:text-left"
             >
               {/* Actions zone (on mobile order-1: upside of DCode title & description, on desktop order-2) */}
               <section aria-label="Primary actions" className="order-1 md:order-2">
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 md:gap-4 justify-center md:justify-start pt-1 w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 md:gap-4 justify-center md:justify-start pt-0 w-full sm:w-auto">
                   <Button
                     asChild
                     size="lg"
