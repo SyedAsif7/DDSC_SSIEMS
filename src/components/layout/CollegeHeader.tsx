@@ -106,8 +106,8 @@ const CollegeHeader = () => {
         </div>
       </div>
 
-      {/* Accreditation Strip (Hidden below 482px / sm) */}
-      <div className="hidden sm:block bg-slate-950/70 border-t border-white/5 backdrop-blur-md">
+      {/* Accreditation Strip (Strictly Hidden on screens below 482px / 640px) */}
+      <div className="accreditation-strip hidden sm:block bg-slate-950/70 border-t border-white/5 backdrop-blur-md">
         <div className="section-container py-2">
           <ul className="flex flex-wrap items-center justify-center gap-x-6 md:gap-x-8">
             {infoItems.map((item) => (

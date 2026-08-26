@@ -244,3 +244,10 @@
   background: radial-gradient(circle at center, rgba(5, 6, 10, 0.3) 0%, rgba(5, 6, 10, 0.7) 100%);
   z-index: 2;
 }
+
+/* Hide accreditation strip on all mobile viewports (<= 640px) */
+@media (max-width: 640px) {
+  .accreditation-strip {
+    display: none !important;
+  }
+}
