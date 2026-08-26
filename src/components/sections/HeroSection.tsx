@@ -63,7 +63,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-transparent pt-12 sm:pt-16 md:pt-20 pb-12 scroll-mt-28"
+      className="relative overflow-hidden bg-transparent pt-4 sm:pt-12 md:pt-16 pb-8 sm:pb-12 scroll-mt-28"
     >
       <div className="section-container relative z-10">
         <div className="relative rounded-3xl md:rounded-[2rem] border border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] bg-gradient-to-br from-slate-950 via-slate-950 to-indigo-950/40 overflow-hidden">
