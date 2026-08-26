@@ -1,6 +1,7 @@
 import {
   Users,
   Building2,
+  Briefcase,
   GraduationCap,
   Calendar,
   Headphones,
