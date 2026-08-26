@@ -9,13 +9,33 @@ import { lazy, Suspense } from "react";
 import { ThemeProvider } from "./hooks/use-theme";
 import { ScrollToTop, ScrollToTopButton, GlobalBackgroundVideo } from "./components/layout";
 
-// Lazy load pages for better chunking
-const Index = lazy(() => import("./pages/Index"));
-const Gallery = lazy(() => import("./pages/Gallery"));
-const WorkshopDetails = lazy(() => import("./pages/WorkshopDetails"));
-const AchievementDetail = lazy(() => import("./pages/AchievementDetail"));
-const TheAsifTalks = lazy(() => import("./pages/TheAsifTalks"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+// Lazy load pages with automatic retry/reload when new deployments occur
+const lazyRetry = (componentImport: () => Promise<any>) =>
+  lazy(async () => {
+    const pageHasBeenForceRefreshed = JSON.parse(
+      window.sessionStorage.getItem("page-has-been-force-refreshed") || "false"
+    );
+
+    try {
+      const component = await componentImport();
+      window.sessionStorage.setItem("page-has-been-force-refreshed", "false");
+      return component;
+    } catch (error) {
+      if (!pageHasBeenForceRefreshed) {
+        window.sessionStorage.setItem("page-has-been-force-refreshed", "true");
+        window.location.reload();
+        return { default: () => null };
+      }
+      throw error;
+    }
+  });
+
+const Index = lazyRetry(() => import("./pages/Index"));
+const Gallery = lazyRetry(() => import("./pages/Gallery"));
+const WorkshopDetails = lazyRetry(() => import("./pages/WorkshopDetails"));
+const AchievementDetail = lazyRetry(() => import("./pages/AchievementDetail"));
+const TheAsifTalks = lazyRetry(() => import("./pages/TheAsifTalks"));
+const NotFound = lazyRetry(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
