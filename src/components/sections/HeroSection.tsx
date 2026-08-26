@@ -118,11 +118,16 @@ const HeroSection = () => {
                     size="lg"
                     className="w-full sm:w-auto h-12 px-7 rounded-2xl bg-gradient-to-r from-ndc-purple to-ndc-blue text-white shadow-xl shadow-ndc-purple/25 hover:shadow-ndc-purple/40 hover:-translate-y-0.5 transition-all font-bold active:scale-[0.98]"
                   >
-                    <Link to="/the-asif-talks" className="flex items-center justify-center gap-2">
-                      <Calendar className="w-4 h-4 shrink-0" />
-                      <span>The Asif Talks Series</span>
+                    <a
+                      href="https://syedasif7.github.io/The-Asif-Talks-Registration-Form/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <ClipboardList className="w-4 h-4 shrink-0 text-white" />
+                      <span>Register</span>
                       <ChevronRight className="w-4 h-4 shrink-0" />
-                    </Link>
+                    </a>
                   </Button>
                   <Button
                     asChild
@@ -130,15 +135,10 @@ const HeroSection = () => {
                     variant="outline"
                     className="w-full sm:w-auto h-12 px-7 rounded-2xl bg-white/5 border-white/10 text-white hover:bg-white/10 font-bold active:scale-[0.98]"
                   >
-                    <a
-                      href="https://syedasif7.github.io/The-Asif-Talks-Registration-Form/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2"
-                    >
-                      <ClipboardList className="w-4 h-4 shrink-0 text-indigo-400" />
-                      <span>Register</span>
-                    </a>
+                    <Link to="/the-asif-talks" className="flex items-center justify-center gap-2">
+                      <Calendar className="w-4 h-4 shrink-0 text-indigo-300" />
+                      <span>The Asif Talks Series</span>
+                    </Link>
                   </Button>
                 </div>
               </section>
