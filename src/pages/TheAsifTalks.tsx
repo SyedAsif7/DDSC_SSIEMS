@@ -290,11 +290,11 @@ const TheAsifTalks = () => {
         {/* --- Back Button + Meta --- */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <Link
-            to="/#upcoming-events"
+            to="/"
             className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white font-medium transition active:scale-[0.98]"
           >
             <ArrowLeft className="w-4 h-4 text-indigo-400" />
-            <span>Back to Events</span>
+            <span>Back to Home</span>
           </Link>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
             <span className="inline-flex items-center gap-1.5">
