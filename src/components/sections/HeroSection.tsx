@@ -81,7 +81,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="lg:col-span-7 space-y-8 md:space-y-10 text-center md:text-left"
+              className="order-2 lg:order-1 lg:col-span-7 space-y-8 md:space-y-10 text-center md:text-left"
             >
               {/* 1. Headline zone */}
               <div className="space-y-6 md:space-y-7">
@@ -145,7 +145,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.08 }}
-              className="lg:col-span-5 relative w-full"
+              className="order-1 lg:order-2 lg:col-span-5 relative w-full"
             >
               <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none lg:sticky lg:top-24">
                 <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-pink-500/20 via-ndc-purple/20 to-ndc-blue/20 blur-2xl opacity-70" />
