@@ -58,12 +58,17 @@ const Navbar = () => {
     const to = resolveTo(item);
     const isPage = 'isPage' in item && item.isPage;
     const className = mobile
-      ? `flex items-center justify-between px-4 py-3 rounded-xl text-[15px] font-semibold tracking-tight transition-colors ${
-          isDark ? 'text-gray-100 hover:bg-white/10' : 'text-gray-800 hover:bg-gray-100'
+      ? `flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-semibold tracking-tight transition-all active:scale-[0.98] ${
+          isDark ? 'text-gray-100 hover:bg-white/10 active:bg-white/15' : 'text-gray-800 hover:bg-gray-100 active:bg-gray-200'
         }`
       : `${linkBase} ${linkTone}`;
 
-    const content = <span>{item.label}</span>;
+    const content = (
+      <>
+        <span>{item.label}</span>
+        {mobile && <ChevronRight className="w-4 h-4 opacity-40" />}
+      </>
+    );
     const onClick = mobile ? () => setIsMenuOpen(false) : undefined;
 
     if (isPage || !isHomePage) {
@@ -86,11 +91,11 @@ const Navbar = () => {
       className={`sticky top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         isScrolled
           ? isDark
-            ? 'bg-slate-950/95 border-b border-white/10 shadow-lg shadow-black/20'
-            : 'bg-white/95 border-b border-gray-200 shadow-md'
+            ? 'bg-slate-950/95 border-b border-white/10 shadow-lg shadow-black/20 backdrop-blur-xl'
+            : 'bg-white/95 border-b border-gray-200 shadow-md backdrop-blur-xl'
           : isDark
-            ? 'bg-slate-950/80'
-            : 'bg-white/80'
+            ? 'bg-slate-950/80 backdrop-blur-lg'
+            : 'bg-white/80 backdrop-blur-lg'
       }`}
     >
       <div className="section-container">
@@ -156,9 +161,9 @@ const Navbar = () => {
 
             <button
               type="button"
-              className={`lg:hidden inline-flex flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-xl border transition-colors ${
+              className={`lg:hidden inline-flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl border transition-colors ${
                 isDark
-                  ? 'bg-white/10 border-white/15 text-white hover:bg-white/15'
+                  ? 'bg-white/10 border-white/15 text-white hover:bg-white/15 active:bg-white/20'
                   : 'bg-gray-100 border-gray-200 text-gray-800 hover:bg-gray-200'
               }`}
               onClick={() => setIsMenuOpen((open) => !open)}
@@ -166,17 +171,17 @@ const Navbar = () => {
               aria-expanded={isMenuOpen}
             >
               <span
-                className={`block h-0.5 w-4 rounded-full bg-current transition-transform duration-300 ${
+                className={`block h-0.5 w-5 rounded-full bg-current transition-transform duration-300 ${
                   isMenuOpen ? 'translate-y-2 rotate-45' : ''
                 }`}
               />
               <span
-                className={`block h-0.5 w-4 rounded-full bg-current transition-opacity duration-300 ${
+                className={`block h-0.5 w-5 rounded-full bg-current transition-opacity duration-300 ${
                   isMenuOpen ? 'opacity-0' : ''
                 }`}
               />
               <span
-                className={`block h-0.5 w-4 rounded-full bg-current transition-transform duration-300 ${
+                className={`block h-0.5 w-5 rounded-full bg-current transition-transform duration-300 ${
                   isMenuOpen ? '-translate-y-2 -rotate-45' : ''
                 }`}
               />
@@ -187,22 +192,22 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isMenuOpen && (
           <nav
-            className={`lg:hidden pb-4 border-t animate-fade-in ${
+            className={`lg:hidden pb-5 pt-2 border-t animate-fade-in max-h-[calc(100vh-5rem)] overflow-y-auto ${
               isDark ? 'border-white/10' : 'border-gray-200'
             }`}
             aria-label="Mobile"
           >
-            <div className="flex flex-col gap-1 pt-3">
+            <div className="flex flex-col gap-1.5 pt-2">
               {navLinks.map((item) => renderNavLink(item, true))}
               <a
                 href="https://forms.gle/CHamTqBMouu6ucYa7"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-code-indigo via-code-purple to-code-pink text-white shadow-lg"
+                className="mt-3 inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-black uppercase tracking-wider bg-gradient-to-r from-code-indigo via-code-purple to-code-pink text-white shadow-xl shadow-code-purple/30 active:scale-[0.98]"
               >
                 <Sparkles className="w-4 h-4" />
-                Join Us Now
+                Join DDSC Now
               </a>
             </div>
           </nav>

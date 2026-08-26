@@ -47,7 +47,7 @@ const LeadershipCard = ({ member, type }: { member: TeamMember; type: 'president
       {/* Dynamic Glow Effect - Subtle for smaller footprint */}
       <div className={`absolute inset-0 bg-gradient-to-br ${isPresident ? 'from-ndc-purple/15 via-indigo-500/5' : 'from-emerald-400/15 via-teal-500/5'} to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-xl -z-10`}></div>
       
-      <div className="bg-slate-950/75 p-8 md:p-10 rounded-[2rem] relative overflow-hidden h-full">
+      <div className="bg-slate-950/75 p-5 sm:p-8 md:p-10 rounded-[2rem] relative overflow-hidden h-full">
         {/* Subtle Grid Background */}
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:15px_15px]"></div>
         
@@ -55,21 +55,21 @@ const LeadershipCard = ({ member, type }: { member: TeamMember; type: 'president
         <div className={`absolute -top-24 -right-24 w-64 h-64 rounded-full blur-[80px] transition-all duration-1000 ${isPresident ? 'bg-ndc-purple/10 group-hover:bg-ndc-purple/15' : 'bg-emerald-400/10 group-hover:bg-emerald-400/15'}`}></div>
         
         <div className="relative z-10">
-          <div className="relative mb-8 flex justify-center">
+          <div className="relative mb-6 sm:mb-8 flex justify-center">
             {/* Compact Badge */}
-            <div className={`absolute -top-4 z-20 bg-gradient-to-r ${isPresident ? 'from-ndc-purple via-indigo-600 to-purple-600' : 'from-emerald-500 via-teal-500 to-cyan-500'} text-white px-5 py-2 rounded-full text-[10px] font-black shadow-2xl tracking-[0.2em] uppercase flex items-center gap-2 border border-white/10 transition-transform duration-500`}>
+            <div className={`absolute -top-4 z-20 bg-gradient-to-r ${isPresident ? 'from-ndc-purple via-indigo-600 to-purple-600' : 'from-emerald-500 via-teal-500 to-cyan-500'} text-white px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black shadow-2xl tracking-[0.2em] uppercase flex items-center gap-1.5 sm:gap-2 border border-white/10 transition-transform duration-500`}>
               <Icon className="h-3 w-3" />
               {isPresident ? 'President' : 'Faculty Coordinator'}
             </div>
             
             {/* Shrunk Photo Container */}
-            <div className={`w-36 h-36 overflow-hidden rounded-full ring-1 ring-offset-4 ring-offset-transparent ${isPresident ? 'ring-ndc-purple/30 group-hover:ring-ndc-purple/60' : 'ring-emerald-400/30 group-hover:ring-emerald-400/60'} p-1 transition-all duration-1000 transform group-hover:scale-105 shadow-2xl`}>
+            <div className={`w-28 h-28 sm:w-36 sm:h-36 overflow-hidden rounded-full ring-1 ring-offset-4 ring-offset-transparent ${isPresident ? 'ring-ndc-purple/30 group-hover:ring-ndc-purple/60' : 'ring-emerald-400/30 group-hover:ring-emerald-400/60'} p-1 transition-all duration-1000 transform group-hover:scale-105 shadow-2xl`}>
               <Avatar className="w-full h-full bg-slate-900/80 backdrop-blur-none">
                 {member.image ? (
                   <AvatarImage src={getAssetPath(member.image)} alt={member.name} loading="lazy" decoding="async" className="object-cover" />
                 ) : (
                   <AvatarFallback className="bg-slate-900/50 flex flex-col items-center justify-center">
-                    <Users className={`h-10 w-10 mb-2 ${isPresident ? 'text-ndc-purple/20' : 'text-emerald-400/20'}`} />
+                    <Users className={`h-8 w-8 sm:h-10 sm:w-10 mb-2 ${isPresident ? 'text-ndc-purple/20' : 'text-emerald-400/20'}`} />
                     <span className="text-[8px] font-black text-gray-500 uppercase tracking-[0.2em] opacity-50">Blueprint</span>
                   </AvatarFallback>
                 )}

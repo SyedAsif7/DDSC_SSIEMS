@@ -60,31 +60,31 @@ const AchievementsSection = () => {
         />
 
         {/* Category Filters - Refined UI */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-16 mt-12 animate-fade-in" style={{ animationDelay: '100ms' }}>
-          <div className="flex flex-wrap items-center justify-center gap-3 p-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
+        <div className="w-full flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16 mt-8 sm:mt-12 animate-fade-in" style={{ animationDelay: '100ms' }}>
+          <div className="w-full sm:w-auto overflow-x-auto no-scrollbar touch-scroll flex items-center gap-2 sm:gap-3 p-1.5 sm:p-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-2 ${
+                className={`shrink-0 px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-1.5 sm:gap-2 active:scale-95 ${
                   activeCategory === cat
                     ? "bg-gradient-to-r from-ndc-purple to-ndc-blue text-white shadow-lg shadow-ndc-purple/20 scale-105"
                     : "text-gray-200 hover:bg-white/10 hover:text-white"
                 }`}
               >
-                {cat === "All" && <LayoutGrid size={14} />}
-                {cat}
+                {cat === "All" && <LayoutGrid size={13} />}
+                <span>{cat}</span>
               </button>
             ))}
           </div>
           
-          <div className="relative group">
+          <div className="relative group w-full sm:w-auto">
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search achievements..."
-              className="w-full sm:w-72 px-6 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-widest bg-white/5 text-gray-200 border border-white/10 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-ndc-purple/40 focus:border-transparent transition-all backdrop-blur-md"
+              className="w-full sm:w-72 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl text-xs font-bold uppercase tracking-widest bg-white/5 text-gray-200 border border-white/10 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-ndc-purple/40 focus:border-transparent transition-all backdrop-blur-md"
               aria-label="Search achievements"
             />
             <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-ndc-purple transition-colors">

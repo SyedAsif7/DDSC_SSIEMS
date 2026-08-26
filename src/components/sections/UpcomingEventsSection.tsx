@@ -115,7 +115,7 @@ interface CtaProps {
 
 const EventCta = ({ cta, accentText, accentGlow }: CtaProps) => {
   const base =
-    "h-11 px-6 rounded-2xl font-black uppercase tracking-[0.18em] text-[11px] transition-all duration-300 hover:-translate-y-0.5";
+    "w-full sm:w-auto h-12 sm:h-11 px-6 rounded-2xl font-black uppercase tracking-[0.18em] text-[11px] transition-all duration-300 hover:-translate-y-0.5 inline-flex items-center justify-center active:scale-[0.98]";
 
   if (cta.disabled) {
     return (
@@ -129,7 +129,7 @@ const EventCta = ({ cta, accentText, accentGlow }: CtaProps) => {
   }
 
   const content = (
-    <span className="inline-flex items-center gap-2">
+    <span className="inline-flex items-center justify-center gap-2">
       {cta.label}
       <ChevronRight size={14} />
     </span>
@@ -202,7 +202,7 @@ const EventCard = ({ event, index }: { event: UpcomingEventItem; index: number }
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none" />
       </div>
 
-      <div className="relative z-10 grid lg:grid-cols-12 gap-6 md:gap-10 p-5 md:p-8 lg:p-10">
+      <div className="relative z-10 grid lg:grid-cols-12 gap-5 sm:gap-6 md:gap-10 p-4 sm:p-6 md:p-8 lg:p-10">
         {/* ================== Visual column ================== */}
         <div className="lg:col-span-5">
           <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-[4/3] lg:aspect-[5/4] group/img">

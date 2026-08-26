@@ -88,7 +88,7 @@ const HeroSection = () => {
               <div className="space-y-6 md:space-y-7">
                 {/* H1 */}
                 <div className="space-y-4">
-                  <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[0.98] text-white">
+                  <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.02] sm:leading-[0.98] text-white">
                     <span className="block">{headline.titlePrimary}</span>
                     <span className="block gradient-text drop-shadow-[0_0_30px_rgba(236,72,153,0.25)]">
                       {headline.titleSecondary}
@@ -105,34 +105,34 @@ const HeroSection = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-on-glass-muted text-base md:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
+                <p className="text-on-glass-muted text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
                   {headline.description}
                 </p>
               </div>
 
               {/* Actions zone */}
               <section aria-label="Primary actions">
-                <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 justify-center md:justify-start pt-1">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 md:gap-4 justify-center md:justify-start pt-1 w-full sm:w-auto">
                   <Button
                     asChild
                     size="lg"
-                    className="h-12 px-7 rounded-2xl bg-gradient-to-r from-ndc-purple to-ndc-blue text-white shadow-xl shadow-ndc-purple/25 hover:shadow-ndc-purple/40 hover:-translate-y-0.5 transition-all font-bold"
+                    className="w-full sm:w-auto h-12 px-7 rounded-2xl bg-gradient-to-r from-ndc-purple to-ndc-blue text-white shadow-xl shadow-ndc-purple/25 hover:shadow-ndc-purple/40 hover:-translate-y-0.5 transition-all font-bold active:scale-[0.98]"
                   >
-                    <Link to="/the-asif-talks" className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      The Asif Talks Series
-                      <ChevronRight className="w-4 h-4" />
+                    <Link to="/the-asif-talks" className="flex items-center justify-center gap-2">
+                      <Calendar className="w-4 h-4 shrink-0" />
+                      <span>The Asif Talks Series</span>
+                      <ChevronRight className="w-4 h-4 shrink-0" />
                     </Link>
                   </Button>
                   <Button
                     asChild
                     size="lg"
                     variant="outline"
-                    className="h-12 px-7 rounded-2xl bg-white/5 border-white/10 text-white hover:bg-white/10 font-bold"
+                    className="w-full sm:w-auto h-12 px-7 rounded-2xl bg-white/5 border-white/10 text-white hover:bg-white/10 font-bold active:scale-[0.98]"
                   >
-                    <a href="#join" className="flex items-center gap-2">
-                      <Users className="w-4 h-4" />
-                      Join DDSC Community
+                    <a href="#join" className="flex items-center justify-center gap-2">
+                      <Users className="w-4 h-4 shrink-0" />
+                      <span>Join DDSC Community</span>
                     </a>
                   </Button>
                 </div>
@@ -146,17 +146,17 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.08 }}
-              className="lg:col-span-5 relative"
+              className="lg:col-span-5 relative w-full"
             >
-              <div className="relative mx-auto max-w-sm lg:max-w-none lg:sticky lg:top-24">
+              <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none lg:sticky lg:top-24">
                 <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-pink-500/20 via-ndc-purple/20 to-ndc-blue/20 blur-2xl opacity-70" />
-                <article className="relative rounded-[2rem] border border-white/10 bg-slate-950/70 backdrop-blur-xl p-6 sm:p-8 shadow-2xl overflow-hidden">
+                <article className="relative rounded-[2rem] border border-white/10 bg-slate-950/70 backdrop-blur-xl p-4 sm:p-6 md:p-8 shadow-2xl overflow-hidden">
                   {/* Subtle pattern */}
                   <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(45deg,#ffffff_25%,transparent_25%,transparent_75%,#ffffff_75%),linear-gradient(45deg,#ffffff_25%,transparent_25%,transparent_75%,#ffffff_75%)] [background-size:24px_24px] [background-position:0_0,12px_12px] pointer-events-none" />
 
-                  <div className="relative z-10 space-y-6 md:space-y-7">
+                  <div className="relative z-10 space-y-5 sm:space-y-6 md:space-y-7">
                     {/* A. Status bar */}
-                    <header className="flex items-center justify-between gap-4">
+                    <header className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-2 min-w-0">
                         <span className="relative flex h-3 w-3 shrink-0">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
@@ -201,13 +201,13 @@ const HeroSection = () => {
                         Episode 1 Premiere
                       </div>
                       <ul className="space-y-2">
-                        {flagshipSpotlight.episodes.map((ep, idx) => (
+                        {flagshipSpotlight.episodes.map((ep) => (
                           <li
                             key={ep.id}
-                            className="group/item flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] hover:border-white/15 transition-all"
+                            className="group/item flex items-center justify-between gap-2.5 px-3 sm:px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] hover:border-white/15 transition-all"
                           >
-                            <div className="flex items-center gap-3 min-w-0">
-                              <div className="relative shrink-0 w-10 h-10 rounded-xl overflow-hidden border border-white/20 bg-slate-900 shadow-md">
+                            <div className="flex items-center gap-2.5 min-w-0">
+                              <div className="relative shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-white/20 bg-slate-900 shadow-md">
                                 <img
                                   src={ep.image}
                                   alt={ep.title}
@@ -224,7 +224,7 @@ const HeroSection = () => {
                               </div>
                             </div>
                             <div className="text-right shrink-0">
-                              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-ndc-purple">
+                              <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.16em] sm:tracking-[0.18em] text-ndc-purple">
                                 {ep.date}
                               </p>
                             </div>
@@ -246,30 +246,30 @@ const HeroSection = () => {
                         <span>{flagshipSpotlight.meta.right}</span>
                       </div>
 
-                      <div className="flex items-center justify-between gap-2 pt-1 border-t border-white/5">
+                      <div className="grid grid-cols-3 gap-1.5 sm:gap-2 pt-1 border-t border-white/5">
                         <a
                           href="https://www.youtube.com/@TheAsifTalks"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-red-500/20 hover:border-red-500/40 border border-white/10 text-xs font-bold text-gray-200 transition-colors"
+                          className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-2 rounded-xl bg-white/5 hover:bg-red-500/20 hover:border-red-500/40 border border-white/10 text-[11px] sm:text-xs font-bold text-gray-200 transition-colors"
                         >
-                          <span className="text-red-400">▶</span> YouTube
+                          <span className="text-red-400">▶</span> <span className="truncate">YouTube</span>
                         </a>
                         <a
                           href="https://www.instagram.com/theasiftalks"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-pink-500/20 hover:border-pink-500/40 border border-white/10 text-xs font-bold text-gray-200 transition-colors"
+                          className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-2 rounded-xl bg-white/5 hover:bg-pink-500/20 hover:border-pink-500/40 border border-white/10 text-[11px] sm:text-xs font-bold text-gray-200 transition-colors"
                         >
-                          <span className="text-pink-400">📸</span> Instagram
+                          <span className="text-pink-400">📸</span> <span className="truncate">Insta</span>
                         </a>
                         <a
                           href="https://www.linkedin.com/in/the-syed-asif"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-blue-500/20 hover:border-blue-500/40 border border-white/10 text-xs font-bold text-gray-200 transition-colors"
+                          className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-2 rounded-xl bg-white/5 hover:bg-blue-500/20 hover:border-blue-500/40 border border-white/10 text-[11px] sm:text-xs font-bold text-gray-200 transition-colors"
                         >
-                          <span className="text-blue-400">in</span> LinkedIn
+                          <span className="text-blue-400 font-black">in</span> <span className="truncate">LinkedIn</span>
                         </a>
                       </div>
                     </div>

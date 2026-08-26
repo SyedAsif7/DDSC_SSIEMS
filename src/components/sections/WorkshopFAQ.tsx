@@ -54,12 +54,12 @@ const WorkshopFAQ = () => {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl px-6 md:px-8 overflow-hidden transition-all duration-300 data-[state=open]:border-ndc-purple/40 hover:border-white/20 shadow-xl"
+                  className="bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl px-4 sm:px-6 md:px-8 overflow-hidden transition-all duration-300 data-[state=open]:border-ndc-purple/40 hover:border-white/20 shadow-xl"
                 >
-                  <AccordionTrigger className="text-left text-white font-bold hover:no-underline py-6 text-base md:text-lg tracking-tight">
+                  <AccordionTrigger className="text-left text-white font-bold hover:no-underline py-4 sm:py-6 text-sm sm:text-base md:text-lg tracking-tight">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-on-glass-muted text-sm md:text-base leading-relaxed pb-6">
+                  <AccordionContent className="text-on-glass-muted text-xs sm:text-sm md:text-base leading-relaxed pb-4 sm:pb-6">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

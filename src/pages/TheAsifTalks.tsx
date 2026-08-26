@@ -487,26 +487,26 @@ const TheAsifTalks = () => {
               </div>
 
               {/* CTAs */}
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-indigo-500 to-ndc-blue text-white hover:shadow-indigo-500/25 hover:shadow-xl rounded-xl h-11 px-6 font-bold"
+                  className="w-full sm:w-auto bg-gradient-to-r from-indigo-500 to-ndc-blue text-white hover:shadow-indigo-500/25 hover:shadow-xl rounded-xl h-12 sm:h-11 px-6 font-bold active:scale-[0.98] justify-center"
                   onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
                 >
-                  <Youtube className="w-4 h-4 mr-2 text-red-400" />
-                  Subscribe on YouTube
+                  <Youtube className="w-4 h-4 mr-2 text-red-400 shrink-0" />
+                  <span>Subscribe on YouTube</span>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-white/5 hover:bg-white/10 text-white border-white/15 rounded-xl h-11 px-6 font-bold"
+                  className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border-white/15 rounded-xl h-12 sm:h-11 px-6 font-bold active:scale-[0.98] justify-center"
                   onClick={() => {
                     const el = document.getElementById("guests");
                     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                   }}
                 >
-                  <Users className="w-4 h-4 mr-2" />
-                  View Season 01 Guests
+                  <Users className="w-4 h-4 mr-2 shrink-0" />
+                  <span>View Season 01 Guests</span>
                 </Button>
               </div>
 
@@ -993,10 +993,10 @@ const TheAsifTalks = () => {
                   href={hostProfile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600/30 hover:bg-indigo-600 border border-indigo-400/40 text-white transition-all text-xs font-bold shadow-lg"
+                  className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-600/30 hover:bg-indigo-600 border border-indigo-400/40 text-white transition-all text-xs font-bold shadow-lg active:scale-[0.98]"
                 >
-                  <Linkedin className="w-4 h-4 text-blue-400" />
-                  Connect on LinkedIn
+                  <Linkedin className="w-4 h-4 text-blue-400 shrink-0" />
+                  <span>Connect on LinkedIn</span>
                 </a>
               </div>
             </article>
