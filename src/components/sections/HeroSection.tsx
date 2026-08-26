@@ -84,36 +84,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="order-2 lg:order-1 lg:col-span-7 space-y-4 sm:space-y-8 md:space-y-10 text-center md:text-left"
+              className="order-2 lg:order-1 lg:col-span-7 flex flex-col space-y-4 sm:space-y-8 md:space-y-10 text-center md:text-left"
             >
-              {/* 1. Headline zone */}
-              <div className="space-y-3 sm:space-y-6 md:space-y-7">
-                {/* H1 */}
-                <div className="space-y-1.5 sm:space-y-4">
-                  <h1 className="font-heading text-xl min-[360px]:text-2xl min-[400px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] sm:leading-[0.98] text-white">
-                    <span className="block">{headline.titlePrimary}</span>
-                    <span className="block gradient-text drop-shadow-[0_0_30px_rgba(236,72,153,0.25)]">
-                      {headline.titleSecondary}
-                    </span>
-                  </h1>
-
-                  {/* Tagline with divider */}
-                  <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3">
-                    <div className="h-px w-4 sm:w-10 bg-gradient-to-r from-ndc-purple to-transparent opacity-70" />
-                    <p className="text-violet-300 text-[8.5px] min-[380px]:text-[9.5px] min-[440px]:text-xs md:text-sm font-semibold uppercase tracking-wider sm:tracking-[0.18em]">
-                      {headline.tagline}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-on-glass-muted text-[11.5px] min-[380px]:text-xs sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
-                  {headline.description}
-                </p>
-              </div>
-
-              {/* Actions zone */}
-              <section aria-label="Primary actions">
+              {/* Actions zone (on mobile order-1: upside of DCode title & description, on desktop order-2) */}
+              <section aria-label="Primary actions" className="order-1 md:order-2">
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 md:gap-4 justify-center md:justify-start pt-1 w-full sm:w-auto">
                   <Button
                     asChild
@@ -144,6 +118,32 @@ const HeroSection = () => {
                   </Button>
                 </div>
               </section>
+
+              {/* 1. Headline zone (on mobile order-2: below actions, on desktop md:order-1: above actions) */}
+              <div className="order-2 md:order-1 space-y-3 sm:space-y-6 md:space-y-7">
+                {/* H1 */}
+                <div className="space-y-1.5 sm:space-y-4">
+                  <h1 className="font-heading text-xl min-[360px]:text-2xl min-[400px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] sm:leading-[0.98] text-white">
+                    <span className="block">{headline.titlePrimary}</span>
+                    <span className="block gradient-text drop-shadow-[0_0_30px_rgba(236,72,153,0.25)]">
+                      {headline.titleSecondary}
+                    </span>
+                  </h1>
+
+                  {/* Tagline with divider */}
+                  <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3">
+                    <div className="h-px w-4 sm:w-10 bg-gradient-to-r from-ndc-purple to-transparent opacity-70" />
+                    <p className="text-violet-300 text-[8.5px] min-[380px]:text-[9.5px] min-[440px]:text-xs md:text-sm font-semibold uppercase tracking-wider sm:tracking-[0.18em]">
+                      {headline.tagline}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-on-glass-muted text-[11.5px] min-[380px]:text-xs sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
+                  {headline.description}
+                </p>
+              </div>
             </motion.div>
 
             {/* ============================================================ */}
