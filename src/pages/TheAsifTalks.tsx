@@ -290,11 +290,11 @@ const TheAsifTalks = () => {
         {/* --- Back Button + Meta --- */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <Link
-            to="/events"
-            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white font-medium transition"
+            to="/#upcoming-events"
+            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white font-medium transition active:scale-[0.98]"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Upcoming Events
+            <ArrowLeft className="w-4 h-4 text-indigo-400" />
+            <span>Back to Events</span>
           </Link>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
             <span className="inline-flex items-center gap-1.5">
@@ -817,14 +817,25 @@ const TheAsifTalks = () => {
               Aug 31, 2026 <span className="text-indigo-200 font-semibold text-lg sm:text-2xl">· Dr. A.P.J. Abdul Kalam Auditorium</span>
             </h3>
           </div>
-          <Button
-            size="lg"
-            className="w-full sm:w-auto bg-white text-indigo-950 hover:bg-slate-100 rounded-xl h-12 px-6 font-black shadow-xl shrink-0 active:scale-[0.98]"
-            onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
-          >
-            <Youtube className="w-4 h-4 mr-2 text-red-600" />
-            Subscribe on YouTube
-          </Button>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+            <Button
+              size="lg"
+              className="w-full sm:w-auto bg-white text-indigo-950 hover:bg-slate-100 rounded-xl h-12 px-6 font-black shadow-xl shrink-0 active:scale-[0.98] justify-center"
+              onClick={() => window.open("https://syedasif7.github.io/The-Asif-Talks-Registration-Form/", "_blank")}
+            >
+              <ClipboardList className="w-4 h-4 mr-2 text-indigo-700 shrink-0" />
+              <span>Register Now</span>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border-white/20 rounded-xl h-12 px-6 font-bold shrink-0 active:scale-[0.98] justify-center"
+              onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
+            >
+              <Youtube className="w-4 h-4 mr-2 text-red-400 shrink-0" />
+              <span>YouTube Channel</span>
+            </Button>
+          </div>
         </section>
 
         {/* --- Connectivity --- */}
