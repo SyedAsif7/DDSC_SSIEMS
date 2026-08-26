@@ -17,7 +17,8 @@ import {
   Mic,
   Radio,
   Headphones,
-  Crown
+  Crown,
+  ClipboardList
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -129,9 +130,14 @@ const HeroSection = () => {
                     variant="outline"
                     className="w-full sm:w-auto h-12 px-7 rounded-2xl bg-white/5 border-white/10 text-white hover:bg-white/10 font-bold active:scale-[0.98]"
                   >
-                    <a href="#join" className="flex items-center justify-center gap-2">
-                      <Users className="w-4 h-4 shrink-0" />
-                      <span>Join DDSC Community</span>
+                    <a
+                      href="https://syedasif7.github.io/The-Asif-Talks-Registration-Form/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <ClipboardList className="w-4 h-4 shrink-0 text-indigo-400" />
+                      <span>Register</span>
                     </a>
                   </Button>
                 </div>

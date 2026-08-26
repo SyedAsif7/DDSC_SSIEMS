@@ -27,7 +27,8 @@ import {
   Megaphone,
   UsersRound,
   Wrench,
-  Palette
+  Palette,
+  ClipboardList
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import CollegeHeader from "@/components/layout/CollegeHeader";
@@ -371,22 +372,19 @@ const TheAsifTalks = () => {
                 <Button
                   size="lg"
                   className="w-full sm:w-auto bg-gradient-to-r from-indigo-500 to-ndc-blue text-white hover:shadow-indigo-500/25 hover:shadow-xl rounded-xl h-12 sm:h-11 px-6 font-bold active:scale-[0.98] justify-center"
-                  onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
+                  onClick={() => window.open("https://syedasif7.github.io/The-Asif-Talks-Registration-Form/", "_blank")}
                 >
-                  <Youtube className="w-4 h-4 mr-2 text-red-400 shrink-0" />
-                  <span>Subscribe on YouTube</span>
+                  <ClipboardList className="w-4 h-4 mr-2 text-indigo-200 shrink-0" />
+                  <span>Register for Season 01</span>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border-white/15 rounded-xl h-12 sm:h-11 px-6 font-bold active:scale-[0.98] justify-center"
-                  onClick={() => {
-                    const el = document.getElementById("guests");
-                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
+                  onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
                 >
-                  <Users className="w-4 h-4 mr-2 shrink-0" />
-                  <span>View Season 01 Guests</span>
+                  <Youtube className="w-4 h-4 mr-2 text-red-400 shrink-0" />
+                  <span>Subscribe on YouTube</span>
                 </Button>
               </div>
 
