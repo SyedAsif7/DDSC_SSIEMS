@@ -52,7 +52,7 @@ const flagshipSpotlight = {
       theme: "Governance · Youth Mindset"
     }
   ],
-  meta: { left: "4K Studio · Live Audience", right: "YouTube · Instagram" }
+  meta: "Live Audience · YouTube · Instagram"
 };
 
 /* -------------------------------------------------------------------------- */
@@ -244,9 +244,8 @@ const HeroSection = () => {
                           style={{ backgroundSize: "200% 100%" }}
                         />
                       </div>
-                      <div className="flex items-center justify-between text-[10px] font-black uppercase tracking-[0.18em] text-gray-400">
-                        <span>{flagshipSpotlight.meta.left}</span>
-                        <span>{flagshipSpotlight.meta.right}</span>
+                      <div className="flex items-center justify-center text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 text-center">
+                        <span>{flagshipSpotlight.meta}</span>
                       </div>
 
                       <div className="grid grid-cols-3 gap-1.5 sm:gap-2 pt-1 border-t border-white/5">
