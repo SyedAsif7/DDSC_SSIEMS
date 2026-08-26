@@ -205,45 +205,45 @@ const HeroSection = () => {
                     </Link>
 
                     {/* C. Episode lineup */}
-                    <section aria-label="Upcoming episodes" className="space-y-1 sm:space-y-2">
-                      <div className="flex items-center gap-1.5 text-[8px] min-[380px]:text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-gray-400">
-                        <Radio className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-pink-400" />
+                    <section aria-label="Upcoming episodes" className="space-y-1.5 sm:space-y-2">
+                      <div className="flex items-center gap-1.5 text-[9px] min-[380px]:text-[10.5px] sm:text-xs font-black uppercase tracking-wider text-gray-300">
+                        <Radio className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-pink-400" />
                         <span>Episode 1 Premiere</span>
                       </div>
-                      <ul className="space-y-1 sm:space-y-1.5">
+                      <ul className="space-y-1.5">
                         {flagshipSpotlight.episodes.map((ep) => (
                           <li
                             key={ep.id}
-                            className="group/item flex items-center justify-between gap-1.5 px-2 min-[380px]:px-2.5 sm:px-3.5 py-1.5 min-[380px]:py-2 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] hover:border-white/15 transition-all"
+                            className="group/item flex items-center justify-between gap-2.5 px-2.5 min-[380px]:px-3 sm:px-4 py-2 min-[380px]:py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-white/[0.06] border border-white/10 hover:bg-white/[0.1] hover:border-indigo-400/40 transition-all shadow-md"
                           >
-                            <div className="flex items-center gap-1.5 sm:gap-2 min-w-0 flex-1">
-                              <div className="relative shrink-0 w-6 h-6 min-[380px]:w-7 min-[380px]:h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl overflow-hidden border border-white/20 bg-slate-950 shadow-md flex items-center justify-center">
+                            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                              <div className="relative shrink-0 w-9 h-9 min-[380px]:w-11 min-[380px]:h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden border border-indigo-400/40 bg-slate-950 shadow-md flex items-center justify-center ring-2 ring-white/10">
                                 {"image" in ep && ep.image ? (
                                   <img
                                     src={getAssetPath(ep.image)}
                                     alt={ep.title}
                                     loading="lazy"
-                                    className="w-full h-full object-cover object-top"
+                                    className="w-full h-full object-cover object-top group-hover/item:scale-105 transition-transform duration-500"
                                   />
                                 ) : (
-                                  <span className="font-heading font-black text-[11px] min-[380px]:text-xs sm:text-base text-indigo-300 select-none">
+                                  <span className="font-heading font-black text-sm sm:text-base text-indigo-300 select-none">
                                     ?
                                   </span>
                                 )}
                               </div>
                               <div className="min-w-0 flex-1">
-                                <p className="text-[10px] min-[380px]:text-[11px] sm:text-xs font-bold text-white truncate">
+                                <p className="text-xs min-[380px]:text-sm sm:text-sm font-black text-white truncate leading-snug">
                                   {ep.title}
                                 </p>
-                                <p className="text-[7.5px] min-[380px]:text-[8.5px] sm:text-[10px] font-medium text-gray-400 truncate">
+                                <p className="text-[9px] min-[380px]:text-[10px] sm:text-[11px] font-medium text-slate-300 truncate leading-snug">
                                   {ep.role} · {ep.theme}
                                 </p>
                               </div>
                             </div>
                             <div className="text-right shrink-0 pl-1">
-                              <p className="text-[7px] min-[380px]:text-[8px] sm:text-[10px] font-black uppercase tracking-tight sm:tracking-wider text-ndc-purple whitespace-nowrap">
+                              <span className="inline-block text-[8.5px] min-[380px]:text-[9.5px] sm:text-[11px] font-black uppercase tracking-wider text-indigo-200 bg-indigo-500/20 border border-indigo-400/30 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg whitespace-nowrap shadow-sm">
                                 {ep.date}
-                              </p>
+                              </span>
                             </div>
                           </li>
                         ))}
