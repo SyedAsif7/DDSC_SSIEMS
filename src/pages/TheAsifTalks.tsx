@@ -1,4 +1,6 @@
 import {
+  ArrowLeft,
+  Sparkles,
   Users,
   Building2,
   Briefcase,
