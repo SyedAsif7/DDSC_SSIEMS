@@ -2,22 +2,45 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <script>
-      // Clear legacy service worker and CacheStorage to guarantee instant updates
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-          for (let registration of registrations) {
-            registration.unregister();
+      (function() {
+        // Clear legacy service worker and CacheStorage to guarantee instant updates
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for (let registration of registrations) {
+              registration.unregister();
+            }
+          });
+        }
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            for (let name of names) {
+              caches.delete(name);
+            }
+          });
+        }
+
+        // Auto-recover if browser has stale bundle chunks cached
+        window.addEventListener('error', function(e) {
+          if (e.message && (
+            e.message.indexOf('Failed to fetch dynamically imported module') > -1 ||
+            e.message.indexOf('Loading chunk') > -1 ||
+            e.message.indexOf('missing') > -1
+          )) {
+            const hasReloaded = sessionStorage.getItem('chunk_auto_reload');
+            if (!hasReloaded) {
+              sessionStorage.setItem('chunk_auto_reload', 'true');
+              window.location.reload(true);
+            }
           }
         });
-      }
-      if ('caches' in window) {
-        caches.keys().then(function(names) {
-          for (let name of names) {
-            caches.delete(name);
-          }
-        });
-      }
+      })();
     </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q1JQ4Y719"></script>
@@ -69,12 +92,6 @@
       }
     </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    
     <!-- Primary Meta Tags -->
     <title>DCode Developers Club - Building the Future Together</title>
     <meta name="title" content="DCode Developers Club - Building the Future Together" />
