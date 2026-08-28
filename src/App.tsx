@@ -5,17 +5,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { Suspense, useEffect } from "react";
+import { Suspense, lazy } from "react";
 import { ThemeProvider } from "./hooks/use-theme";
 import { ScrollToTop, ScrollToTopButton, GlobalBackgroundVideo } from "./components/layout";
-import { lazyRetry } from "./lib/utils";
+import Index from "./pages/Index";
+import TheAsifTalks from "./pages/TheAsifTalks";
 
-const Index = lazyRetry(() => import("./pages/Index"));
-const Gallery = lazyRetry(() => import("./pages/Gallery"));
-const WorkshopDetails = lazyRetry(() => import("./pages/WorkshopDetails"));
-const AchievementDetail = lazyRetry(() => import("./pages/AchievementDetail"));
-const TheAsifTalks = lazyRetry(() => import("./pages/TheAsifTalks"));
-const NotFound = lazyRetry(() => import("./pages/NotFound"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const WorkshopDetails = lazy(() => import("./pages/WorkshopDetails"));
+const AchievementDetail = lazy(() => import("./pages/AchievementDetail"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 

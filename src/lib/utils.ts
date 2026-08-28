@@ -32,29 +32,8 @@ export function getAssetPath(path: string) {
 
 import { lazy, type ComponentType } from "react";
 
-/**
- * Automatically retries dynamic component imports by forcing a single page reload
- * when new Vite deployments invalidate cached chunk hashes.
- */
 export function lazyRetry<T extends ComponentType<any>>(
   componentImport: () => Promise<{ default: T }>
 ) {
-  return lazy(async () => {
-    const pageHasBeenForceRefreshed = JSON.parse(
-      window.sessionStorage.getItem("page-has-been-force-refreshed") || "false"
-    );
-
-    try {
-      const component = await componentImport();
-      window.sessionStorage.setItem("page-has-been-force-refreshed", "false");
-      return component;
-    } catch (error) {
-      if (!pageHasBeenForceRefreshed) {
-        window.sessionStorage.setItem("page-has-been-force-refreshed", "true");
-        window.location.reload();
-        return { default: (() => null) as unknown as T };
-      }
-      throw error;
-    }
-  });
+  return lazy(componentImport);
 }
