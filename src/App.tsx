@@ -24,42 +24,6 @@ const App = () => {
   // This allows the app to work on both Vercel (root /) and GitHub Pages (/DDSC_SSIEMS/)
   const basename = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '');
 
-  useEffect(() => {
-    // Proactive background update check for Chrome & Mobile users
-    const checkForUpdates = async () => {
-      try {
-        const res = await fetch(`/?_t=${Date.now()}`, {
-          cache: 'no-store',
-          headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }
-        });
-        if (res.ok) {
-          const text = await res.text();
-          const match = text.match(/window\.__DDSC_VERSION__\s*=\s*["']([^"']+)["']/);
-          const serverVersion = match ? match[1] : null;
-          const currentVersion = (window as any).__DDSC_VERSION__;
-          if (serverVersion && currentVersion && serverVersion !== currentVersion) {
-            console.log('Update detected:', serverVersion, 'replacing', currentVersion);
-            (window as any).__DDSC_VERSION__ = serverVersion;
-            window.location.reload();
-          }
-        }
-      } catch (err) {
-        // Offline or network silent fail
-      }
-    };
-
-    checkForUpdates();
-
-    const handleVisibility = () => {
-      if (document.visibilityState === 'visible') {
-        checkForUpdates();
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibility);
-    return () => document.removeEventListener('visibilitychange', handleVisibility);
-  }, []);
-
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>

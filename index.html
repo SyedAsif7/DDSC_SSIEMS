@@ -9,93 +9,19 @@
     <meta http-equiv="Expires" content="0" />
 
     <script>
-      (function() {
-        const CURRENT_VERSION = "2026-08-29-v1";
-        window.__DDSC_VERSION__ = CURRENT_VERSION;
-
-        // 1. Automatic Cookie Purger: Clears all browser cookies across domains & paths
-        function purgeAllCookies() {
-          try {
-            const cookies = document.cookie.split(";");
-            const host = window.location.hostname;
-            const domains = [
-              "",
-              host,
-              "." + host,
-              ".dcode.club",
-              "dcode.club",
-              "www.dcode.club"
-            ];
-            const paths = ["/", "/the-asif-talks", "/workshop", "/gallery"];
-            for (let i = 0; i < cookies.length; i++) {
-              const cookie = cookies[i];
-              const eqPos = cookie.indexOf("=");
-              const name = eqPos > -1 ? cookie.substring(0, eqPos).trim() : cookie.trim();
-              if (name && !name.startsWith("_ga")) {
-                for (let d of domains) {
-                  for (let p of paths) {
-                    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=" + p + (d ? "; domain=" + d : "");
-                  }
-                }
-              }
-            }
-          } catch (e) {}
-        }
-        purgeAllCookies();
-
-        // 2. Force Chrome to reload if restored from bfcache (Back-Forward Cache)
-        window.addEventListener("pageshow", function(event) {
-          if (event.persisted) {
-            purgeAllCookies();
-            window.location.reload(true);
+      // Automatically recover if a user's browser cached an old bundle hash that no longer exists on the server
+      window.addEventListener('error', function(e) {
+        if (e.message && (
+          e.message.indexOf('Failed to fetch dynamically imported module') > -1 ||
+          e.message.indexOf('Loading chunk') > -1 ||
+          e.message.indexOf('missing') > -1
+        )) {
+          if (!sessionStorage.getItem('chunk_recovered')) {
+            sessionStorage.setItem('chunk_recovered', 'true');
+            window.location.reload();
           }
-        });
-
-        // 3. Clear legacy service worker & CacheStorage
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            for (let registration of registrations) {
-              registration.unregister();
-            }
-          });
         }
-        if ("caches" in window) {
-          caches.keys().then(function(names) {
-            for (let name of names) {
-              caches.delete(name);
-            }
-          });
-        }
-
-        // 4. Version mismatch auto-reload check
-        try {
-          const storedVersion = localStorage.getItem("ddsc_build_ver");
-          if (storedVersion !== CURRENT_VERSION) {
-            localStorage.setItem("ddsc_build_ver", CURRENT_VERSION);
-            if (storedVersion && !sessionStorage.getItem("ddsc_reloaded")) {
-              sessionStorage.setItem("ddsc_reloaded", "1");
-              purgeAllCookies();
-              window.location.reload(true);
-            }
-          }
-        } catch (e) {}
-
-        // 5. Auto-recover if browser has stale bundle chunks cached
-        window.addEventListener("error", function(e) {
-          if (e.message && (
-            e.message.indexOf("Failed to fetch dynamically imported module") > -1 ||
-            e.message.indexOf("Loading chunk") > -1 ||
-            e.message.indexOf("missing") > -1
-          )) {
-            const hasReloaded = sessionStorage.getItem("chunk_auto_reload");
-            if (!hasReloaded) {
-              sessionStorage.setItem("chunk_auto_reload", "true");
-              purgeAllCookies();
-              window.location.reload(true);
-            }
-          }
-        });
-      })();
+      });
     </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q1JQ4Y719"></script>
