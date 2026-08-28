@@ -2,22 +2,26 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <script>
-      // Clear legacy service worker and CacheStorage to guarantee instant updates
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-          for (let registration of registrations) {
-            registration.unregister();
+      // Automatically recover if a user's browser cached an old bundle hash that no longer exists on the server
+      window.addEventListener('error', function(e) {
+        if (e.message && (
+          e.message.indexOf('Failed to fetch dynamically imported module') > -1 ||
+          e.message.indexOf('Loading chunk') > -1 ||
+          e.message.indexOf('missing') > -1
+        )) {
+          if (!sessionStorage.getItem('chunk_recovered')) {
+            sessionStorage.setItem('chunk_recovered', 'true');
+            window.location.reload();
           }
-        });
-      }
-      if ('caches' in window) {
-        caches.keys().then(function(names) {
-          for (let name of names) {
-            caches.delete(name);
-          }
-        });
-      }
+        }
+      });
     </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q1JQ4Y719"></script>
@@ -69,12 +73,6 @@
       }
     </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    
     <!-- Primary Meta Tags -->
     <title>DCode Developers Club - Building the Future Together</title>
     <meta name="title" content="DCode Developers Club - Building the Future Together" />
@@ -132,8 +130,11 @@
         "logo": "https://www.dcode.club/icon-512.png",
         "description": "Join DCode Developers Club - A hub for tech enthusiasts to grow skills, work on impactful projects, and build their future together.",
         "sameAs": [
-          "https://github.com/dcode-club",
-          "https://linkedin.com/company/dcode-club"
+          "https://github.com/SyedAsif7/DDSC_SSIEMS",
+          "https://www.linkedin.com/in/dcodeclub",
+          "https://www.youtube.com/@TheAsifTalks",
+          "https://www.instagram.com/theasiftalks",
+          "https://www.instagram.com/ddsc_club/"
         ]
       }
     </script>
