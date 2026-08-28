@@ -53,9 +53,9 @@ export const upcomingEvents: UpcomingEventItem[] = [
     icon: "podcast",
     categoryLabel: "Podcast · Media Platform",
     badge: "Syed Asif · Official Platform",
-    date: "Launching Soon",
-    time: "Episodes Weekly",
-    venue: "YouTube · Instagram · Live Seminars",
+    date: "Monday, August 31, 2026",
+    time: "12:30 PM – 1:30 PM",
+    venue: "Dr. A.P.J. Abdul Kalam Auditorium, SSIEMS Parbhani",
     venueMapUrl: "https://maps.app.goo.gl/UjZkHVEQpabCZZuTA",
     points: [
       "Public Governance & Leadership Dialogues",

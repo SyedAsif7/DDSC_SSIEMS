@@ -5,6 +5,7 @@ import {
   Briefcase,
   GraduationCap,
   Calendar,
+  Clock,
   Headphones,
   MapPin,
   CheckCircle2,
@@ -99,6 +100,7 @@ const episodeSpotlight = {
   badge: "SEASON 01 • INAUGURAL EPISODE",
   title: "Public Governance, Digital Administration & The Youth Mindset",
   date: "Monday, August 31, 2026",
+  time: "12:30 PM – 1:30 PM",
   guest: "Shri Sanjaysinh Chavan (IAS)",
   guestRole: "District Collector & District Magistrate, Parbhani",
   guestImage: "/images/sanjaysinh-chavan.jpg",
@@ -182,10 +184,14 @@ const TheAsifTalks = () => {
             <ArrowLeft className="w-4 h-4 text-indigo-400" />
             <span>Back to Home</span>
           </Link>
-          <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-400">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-slate-400">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full font-semibold text-indigo-300">
               <Calendar className="w-3.5 h-3.5 text-indigo-400" />
-              Season 01 · August 31, 2026
+              August 31, 2026
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-pink-500/10 border border-pink-500/20 rounded-full font-semibold text-pink-300">
+              <Clock className="w-3.5 h-3.5 text-pink-400" />
+              12:30 PM – 1:30 PM
             </span>
             <span className="hidden sm:inline text-slate-600">•</span>
             <span className="text-slate-400 font-medium">Dr. A.P.J. Abdul Kalam Auditorium</span>
@@ -337,9 +343,15 @@ const TheAsifTalks = () => {
                   {episodeSpotlight.title}
                 </h3>
               </div>
-              <div className="flex items-center gap-2 text-xs font-bold bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full text-slate-300 self-start sm:self-auto">
-                <Calendar className="w-3.5 h-3.5 text-indigo-400" />
-                <span>{episodeSpotlight.date}</span>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-bold self-start sm:self-auto">
+                <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-slate-300">
+                  <Calendar className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>{episodeSpotlight.date}</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-pink-500/10 border border-pink-500/25 px-3 py-1.5 rounded-full text-pink-300 shadow-sm">
+                  <Clock className="w-3.5 h-3.5 text-pink-400" />
+                  <span>{episodeSpotlight.time}</span>
+                </div>
               </div>
             </div>
 
@@ -391,8 +403,9 @@ const TheAsifTalks = () => {
                     <MapPin className="w-5 h-5 text-indigo-400" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-wider text-indigo-300">Official Premiere Venue</p>
+                    <p className="text-[10px] font-black uppercase tracking-wider text-indigo-300">Official Premiere Venue &amp; Schedule</p>
                     <p className="text-sm font-bold text-white leading-snug">{episodeSpotlight.venue}</p>
+                    <p className="text-xs text-pink-300 font-semibold mt-0.5">Monday, August 31, 2026 · 12:30 PM – 1:30 PM</p>
                     <p className="text-xs text-slate-400">Vasmat Road, Parbhani – 431401, Maharashtra</p>
                   </div>
                 </div>

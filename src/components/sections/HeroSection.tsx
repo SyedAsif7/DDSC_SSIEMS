@@ -44,13 +44,14 @@ const flagshipSpotlight = {
   status: "SEASON 01 · PREMIERING SOON",
   program: "The Asif Talks",
   tagline: "Leadership & Governance Talk Series",
-  duration: "60+ min / episode",
+  duration: "12:30 PM – 1:30 PM",
   episodes: [
     {
       id: "ep-01",
       title: "Shri Sanjaysinh Chavan (IAS)",
       role: "Collector & DM · Parbhani",
       date: "Aug 31, 2026",
+      time: "12:30 PM",
       theme: "Governance · Youth Mindset",
       image: "/images/sanjaysinh-chavan.jpg"
     }
@@ -242,7 +243,7 @@ const HeroSection = () => {
                             </div>
                             <div className="text-right shrink-0 pl-1">
                               <span className="inline-block text-[8.5px] min-[380px]:text-[9.5px] sm:text-[11px] font-black uppercase tracking-wider text-indigo-200 bg-indigo-500/20 border border-indigo-400/30 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg whitespace-nowrap shadow-sm">
-                                {ep.date}
+                                {"time" in ep && ep.time ? `${ep.date} · ${ep.time}` : ep.date}
                               </span>
                             </div>
                           </li>
