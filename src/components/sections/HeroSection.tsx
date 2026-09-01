@@ -28,6 +28,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { getAssetPath } from "@/lib/utils";
 import AudioWaveform from "@/components/ui/AudioWaveform";
+import CountdownTimer from "@/components/ui/CountdownTimer";
 
 /* -------------------------------------------------------------------------- */
 /*  Typed content model                                                        */
@@ -122,6 +123,17 @@ const HeroSection = () => {
                     </Link>
                   </Button>
                 </div>
+
+                {/* Live Countdown Clock */}
+                <div className="pt-2.5 sm:pt-4 flex flex-col items-center md:items-start">
+                  <CountdownTimer
+                    targetDate="2026-09-03T12:30:00+05:30"
+                    size="sm"
+                    label="Live Episode #2 Countdown"
+                    showBadge
+                    className="items-center md:items-start"
+                  />
+                </div>
               </section>
 
               {/* 1. Headline zone (hidden on mobile, visible on md+) */}
@@ -212,7 +224,7 @@ const HeroSection = () => {
                     <section aria-label="Upcoming episodes" className="space-y-1.5 sm:space-y-2">
                       <div className="flex items-center gap-1.5 text-[9px] min-[380px]:text-[10.5px] sm:text-xs font-black uppercase tracking-wider text-gray-300">
                         <Radio className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-pink-400" />
-                        <span>Episode 1 Premiere</span>
+                        <span>Live Episode #2 Premiere</span>
                       </div>
                       <ul className="space-y-1.5">
                         {flagshipSpotlight.episodes.map((ep) => (

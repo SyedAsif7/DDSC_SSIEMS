@@ -40,6 +40,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { Badge } from "@/components/ui/badge";
 import { getAssetPath } from "@/lib/utils";
 import AudioWaveform from "@/components/ui/AudioWaveform";
+import CountdownTimer from "@/components/ui/CountdownTimer";
 
 const pillars = [
   {
@@ -272,8 +273,19 @@ const TheAsifTalks = () => {
                 </div>
               </div>
 
+              {/* Live Countdown Timer */}
+              <div className="mt-6 flex flex-col items-center sm:items-start">
+                <CountdownTimer
+                  targetDate="2026-09-03T12:30:00+05:30"
+                  size="sm"
+                  label="Live Episode #2 Premiere Countdown"
+                  showBadge
+                  className="items-center sm:items-start"
+                />
+              </div>
+
               {/* Action Buttons */}
-              <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
+              <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
                 <Button
                   size="lg"
                   className="w-full sm:w-auto bg-gradient-to-r from-indigo-500 via-indigo-600 to-ndc-blue text-white hover:shadow-indigo-500/25 hover:shadow-xl rounded-xl h-12 px-7 font-bold active:scale-[0.98] justify-center shadow-lg"
