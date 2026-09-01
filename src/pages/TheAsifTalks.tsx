@@ -97,14 +97,14 @@ const institutionalPartners = [
 ];
 
 const episodeSpotlight = {
-  badge: "SEASON 01 • INAUGURAL EPISODE",
+  badge: "SEASON 01 • PREMIERE CONCLUDED",
   title: "Public Governance, Digital Administration & The Youth Mindset",
   date: "Monday, August 31, 2026",
-  time: "12:30 PM – 1:30 PM",
+  time: "Successfully Recorded",
   guest: "Shri Sanjaysinh Chavan (IAS)",
   guestRole: "District Collector & District Magistrate, Parbhani",
   guestImage: "/images/sanjaysinh-chavan.jpg",
-  overview: "In the inaugural live studio session of The Asif Talks, host Syed Asif hosts Parbhani District Collector Shri Sanjaysinh Chavan (IAS) before an audience of 250+ undergraduates and civil service aspirants.",
+  overview: "In the inaugural live studio session of The Asif Talks, host Syed Asif hosted Parbhani District Collector Shri Sanjaysinh Chavan (IAS) before an auditorium of 250+ undergraduates and civil service aspirants. Full 4K video episode broadcasting soon on YouTube.",
   themes: [
     { title: "District Governance & Ground Realities", desc: "Public administration decision-making and civic management during high-stakes challenges." },
     { title: "Technology & E-Governance", desc: "How digital infrastructure and IT automation modernize public service delivery." },
@@ -189,9 +189,9 @@ const TheAsifTalks = () => {
               <Calendar className="w-3.5 h-3.5 text-indigo-400" />
               August 31, 2026
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-pink-500/10 border border-pink-500/20 rounded-full font-semibold text-pink-300">
-              <Clock className="w-3.5 h-3.5 text-pink-400" />
-              12:30 PM – 1:30 PM
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/10 border border-emerald-500/25 rounded-full font-bold text-emerald-300">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              Recorded Live · Premiere Concluded
             </span>
             <span className="hidden sm:inline text-slate-600">•</span>
             <span className="text-slate-400 font-medium">Dr. A.P.J. Abdul Kalam Auditorium</span>
@@ -210,8 +210,8 @@ const TheAsifTalks = () => {
                 <AudioWaveform size="xs" barColor="bg-gradient-to-t from-indigo-400 via-pink-400 to-amber-300" />
                 <span>Studio Leadership Talk Series</span>
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
               </div>
 
@@ -245,20 +245,20 @@ const TheAsifTalks = () => {
               <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-gradient-to-r from-indigo-500 to-ndc-blue text-white hover:shadow-indigo-500/25 hover:shadow-xl rounded-xl h-12 px-7 font-bold active:scale-[0.98] justify-center"
-                  onClick={() => window.open("https://syedasif7.github.io/The-Asif-Talks-Registration-Form/", "_blank")}
+                  className="w-full sm:w-auto bg-gradient-to-r from-red-600 to-rose-600 text-white hover:shadow-red-500/25 hover:shadow-xl rounded-xl h-12 px-7 font-bold active:scale-[0.98] justify-center shadow-lg"
+                  onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
                 >
-                  <ClipboardList className="w-4 h-4 mr-2 text-indigo-200 shrink-0" />
-                  <span>Register for Season 01</span>
+                  <Youtube className="w-4 h-4 mr-2 text-white shrink-0" />
+                  <span>Subscribe on YouTube</span>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border-white/15 rounded-xl h-12 px-7 font-bold active:scale-[0.98] justify-center"
-                  onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
+                  onClick={() => window.open("https://www.instagram.com/theasiftalks", "_blank")}
                 >
-                  <Youtube className="w-4 h-4 mr-2 text-red-400 shrink-0" />
-                  <span>Subscribe on YouTube</span>
+                  <Instagram className="w-4 h-4 mr-2 text-pink-400 shrink-0" />
+                  <span>Follow on Instagram</span>
                 </Button>
               </div>
             </div>
@@ -321,11 +321,11 @@ const TheAsifTalks = () => {
         {/* --- Episode 1 Spotlight --- */}
         <section id="spotlight">
           <SectionHeader
-            badgeText="Live Studio Recording"
+            badgeText="Recorded Live Studio Session"
             badgeIcon={Radio}
             titlePrefix="Episode #1"
             titleHighlight="Spotlight"
-            description="Inaugural administrative governance session recorded with Parbhani District's highest public authority."
+            description="Inaugural administrative governance session recorded live with Parbhani District's highest public authority."
             centered
           />
 
@@ -545,29 +545,29 @@ const TheAsifTalks = () => {
           <div className="rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-indigo-600 via-indigo-700 to-ndc-purple text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 shadow-2xl relative overflow-hidden border border-white/10">
             <div className="space-y-1">
               <p className="text-xs font-black uppercase tracking-[0.25em] text-indigo-200">
-                Season 01 Premiere Broadcast
+                Season 01 Premiere Concluded
               </p>
               <h3 className="text-2xl sm:text-3xl font-black leading-tight">
-                Aug 31, 2026 <span className="text-indigo-200 font-semibold text-lg sm:text-2xl">· Dr. A.P.J. Abdul Kalam Auditorium</span>
+                Broadcast Coming Soon <span className="text-indigo-200 font-semibold text-lg sm:text-2xl">· Official 4K Release on YouTube</span>
               </h3>
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-white text-indigo-950 hover:bg-slate-100 rounded-xl h-12 px-6 font-black shadow-xl shrink-0 active:scale-[0.98] justify-center"
-                onClick={() => window.open("https://syedasif7.github.io/The-Asif-Talks-Registration-Form/", "_blank")}
+                onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
               >
-                <ClipboardList className="w-4 h-4 mr-2 text-indigo-700 shrink-0" />
-                <span>Register Now</span>
+                <Youtube className="w-4 h-4 mr-2 text-red-600 shrink-0" />
+                <span>Watch on YouTube</span>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border-white/20 rounded-xl h-12 px-6 font-bold shrink-0 active:scale-[0.98] justify-center"
-                onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
+                onClick={() => window.open("https://www.instagram.com/theasiftalks", "_blank")}
               >
-                <Youtube className="w-4 h-4 mr-2 text-red-400 shrink-0" />
-                <span>YouTube Channel</span>
+                <Instagram className="w-4 h-4 mr-2 text-pink-300 shrink-0" />
+                <span>Instagram Highlights</span>
               </Button>
             </div>
           </div>

@@ -52,9 +52,9 @@ export const upcomingEvents: UpcomingEventItem[] = [
     image: "/images/the-asif-talks-logo.jpg",
     icon: "podcast",
     categoryLabel: "Podcast · Media Platform",
-    badge: "Syed Asif · Official Platform",
-    date: "Monday, August 31, 2026",
-    time: "12:30 PM – 1:30 PM",
+    badge: "Season 01 · Premiere Concluded",
+    date: "Recorded August 31, 2026",
+    time: "Broadcasting on YouTube Soon",
     venue: "Dr. A.P.J. Abdul Kalam Auditorium, SSIEMS Parbhani",
     venueMapUrl: "https://maps.app.goo.gl/UjZkHVEQpabCZZuTA",
     points: [
@@ -64,7 +64,7 @@ export const upcomingEvents: UpcomingEventItem[] = [
       "AI, Cloud, Open Source & Research Journeys"
     ],
     cta: {
-      label: "View Full Details",
+      label: "View Episode Details",
       href: "/the-asif-talks",
       variant: "primary-gradient",
       disabled: false

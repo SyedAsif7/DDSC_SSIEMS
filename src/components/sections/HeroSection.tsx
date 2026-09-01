@@ -18,7 +18,8 @@ import {
   Radio,
   Headphones,
   Crown,
-  ClipboardList
+  ClipboardList,
+  Youtube
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -33,6 +34,8 @@ import AudioWaveform from "@/components/ui/AudioWaveform";
 /* -------------------------------------------------------------------------- */
 
 const headline = {
+  announcement: "Official Student Developer Community · SSIEMS Parbhani",
+  institutionalAffiliation: "Department of Computer Science & Engineering",
   titlePrimary: "DCode",
   titleSecondary: "Developers Club",
   tagline: "Where Curiosity Becomes Code · And Code Becomes Impact",
@@ -41,17 +44,17 @@ const headline = {
 };
 
 const flagshipSpotlight = {
-  status: "SEASON 01 · PREMIERING SOON",
+  status: "SEASON 01 · PREMIERE CONCLUDED",
   program: "The Asif Talks",
   tagline: "Leadership & Governance Talk Series",
-  duration: "12:30 PM – 1:30 PM",
+  duration: "Recorded Live at SSIEMS",
   episodes: [
     {
       id: "ep-01",
       title: "Shri Sanjaysinh Chavan (IAS)",
       role: "Collector & DM · Parbhani",
       date: "Aug 31, 2026",
-      time: "12:30 PM",
+      time: "Concluded",
       theme: "Governance · Youth Mindset",
       image: "/images/sanjaysinh-chavan.jpg"
     }
@@ -96,16 +99,11 @@ const HeroSection = () => {
                     size="lg"
                     className="w-full sm:w-auto h-10 min-[380px]:h-11 sm:h-12 px-4 min-[380px]:px-6 sm:px-7 rounded-xl sm:rounded-2xl bg-gradient-to-r from-ndc-purple to-ndc-blue text-white shadow-xl shadow-ndc-purple/25 hover:shadow-ndc-purple/40 hover:-translate-y-0.5 transition-all font-bold text-xs sm:text-sm active:scale-[0.98]"
                   >
-                    <a
-                      href="https://syedasif7.github.io/The-Asif-Talks-Registration-Form/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2"
-                    >
-                      <ClipboardList className="w-4 h-4 shrink-0 text-white" />
-                      <span>Register</span>
+                    <Link to="/the-asif-talks" className="flex items-center justify-center gap-2">
+                      <Calendar className="w-4 h-4 shrink-0 text-indigo-200" />
+                      <span>The Asif Talks Series</span>
                       <ChevronRight className="w-4 h-4 shrink-0" />
-                    </a>
+                    </Link>
                   </Button>
                   <Button
                     asChild
@@ -113,10 +111,15 @@ const HeroSection = () => {
                     variant="outline"
                     className="w-full sm:w-auto h-10 min-[380px]:h-11 sm:h-12 px-4 min-[380px]:px-6 sm:px-7 rounded-xl sm:rounded-2xl bg-white/5 border-white/10 text-white hover:bg-white/10 font-bold text-xs sm:text-sm active:scale-[0.98]"
                   >
-                    <Link to="/the-asif-talks" className="flex items-center justify-center gap-2">
-                      <Calendar className="w-4 h-4 shrink-0 text-indigo-300" />
-                      <span>The Asif Talks Series</span>
-                    </Link>
+                    <a
+                      href="https://www.youtube.com/@TheAsifTalks"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <Youtube className="w-4 h-4 shrink-0 text-red-400" />
+                      <span>Watch on YouTube</span>
+                    </a>
                   </Button>
                 </div>
               </section>
