@@ -28,7 +28,8 @@ import {
   Wrench,
   Palette,
   ClipboardList,
-  ExternalLink
+  ExternalLink,
+  Video
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import CollegeHeader from "@/components/layout/CollegeHeader";
