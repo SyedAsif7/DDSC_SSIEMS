@@ -46,26 +46,26 @@ export interface UpcomingEventItem {
 
 export const upcomingEvents: UpcomingEventItem[] = [
   {
-    title: "The Asif Talks",
+    title: "The Asif Talks — Episode #2",
     description:
-      "A youth, leadership, and educational media platform founded by Syed Asif, bridging the gap between ambitious students from Tier-2 and Tier-3 cities and prominent leaders across technology, public administration, entrepreneurship, and research. Delivering in-depth podcasts, leadership interviews, live seminars, keynotes, and structured technical sessions in collaboration with DDSC, SSIEMS Parbhani, and Vertex Institute of Technology.",
-    image: "/images/the-asif-talks-logo.jpg",
+      "A flagship youth leadership media platform hosted by Syed Asif. Live Episode #2 features Hon. Mayor Syed Iqbal Syed Khwaja, Mayor of Parbhani Municipal Corporation, exploring urban city infrastructure, Smart City initiatives, civic youth engagement, and public service leadership in collaboration with DDSC, SSIEMS Parbhani, and Vertex Institute of Technology.",
+    image: "/images/syed-iqbal.png",
     icon: "podcast",
-    categoryLabel: "Podcast · Media Platform",
-    badge: "Season 01 · Premiere Concluded",
-    date: "Recorded August 31, 2026",
-    time: "Broadcasting on YouTube Soon",
+    categoryLabel: "Podcast · Live Leadership Dialogue",
+    badge: "Episode #2 · Hon. Mayor Syed Iqbal",
+    date: "Thursday, September 3, 2026",
+    time: "12:30 PM Sharp",
     venue: "Dr. A.P.J. Abdul Kalam Auditorium, SSIEMS Parbhani",
     venueMapUrl: "https://maps.app.goo.gl/UjZkHVEQpabCZZuTA",
     points: [
-      "Public Governance & Leadership Dialogues",
-      "Tech, Startups & Entrepreneurship Tracks",
-      "Campus-to-Career Offline & Live Sessions",
-      "AI, Cloud, Open Source & Research Journeys"
+      "Local Governance & Mayoral Civic Leadership",
+      "Urban Infrastructure, Roads & Smart City Projects",
+      "Youth, Public Spaces & Student Engagement",
+      "Audience Q&A with Hon. Mayor Syed Iqbal Syed Khwaja"
     ],
     cta: {
-      label: "View Episode Details",
-      href: "/the-asif-talks",
+      label: "Register for Episode #2",
+      href: "https://syedasif7.github.io/The-Asif-Talks-Registration-Form/",
       variant: "primary-gradient",
       disabled: false
     }

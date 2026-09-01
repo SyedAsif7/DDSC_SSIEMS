@@ -88,33 +88,64 @@ const institutionalPartners = [
   },
   {
     name: "Vertex Institute of Technology",
-    fullName: "Industry & Innovation Partner",
-    role: "Technical & Industry Backbone",
+    fullName: "Industry & Technical Partner",
+    role: "Technical & Innovation Backbone",
     logo: "/images/alliances/vertex-logo.jpg",
     bgClass: "bg-white",
     desc: "Title partner for technological incubation, digital network amplification, and technical mentorship."
+  },
+  {
+    name: "Hotel Venkatesha",
+    fullName: "Hotel Venkatesha Pure Veg, Parbhani",
+    role: "Title Hospitality Sponsor",
+    logo: "/images/alliances/ssiems-logo.png",
+    bgClass: "bg-amber-500/10",
+    desc: "Official title hospitality sponsor powering event reception and guest accommodations."
+  },
+  {
+    name: "Tulsi Furniture",
+    fullName: "Tulsi Furniture and Electrical, Parbhani",
+    role: "Title Infrastructure Sponsor",
+    logo: "/images/alliances/ssiems-logo.png",
+    bgClass: "bg-emerald-500/10",
+    desc: "Official title infrastructure and electrical sponsor supporting studio stage setup."
   }
 ];
 
 const episodeSpotlight = {
-  badge: "SEASON 01 • PREMIERE CONCLUDED",
-  title: "Public Governance, Digital Administration & The Youth Mindset",
-  date: "Monday, August 31, 2026",
-  time: "Successfully Recorded",
-  guest: "Shri Sanjaysinh Chavan (IAS)",
-  guestRole: "District Collector & District Magistrate, Parbhani",
-  guestImage: "/images/sanjaysinh-chavan.jpg",
-  overview: "In the inaugural live studio session of The Asif Talks, host Syed Asif hosted Parbhani District Collector Shri Sanjaysinh Chavan (IAS) before an auditorium of 250+ undergraduates and civil service aspirants. Full 4K video episode broadcasting soon on YouTube.",
+  badge: "SEASON 01 • LIVE EPISODE #2",
+  title: "Local Governance, Urban Infrastructure & The Smart City Vision",
+  date: "Thursday, September 3, 2026",
+  time: "12:30 PM Sharp",
+  guest: "Hon. Mayor Syed Iqbal Syed Khwaja",
+  guestRole: "Mayor · Parbhani Municipal Corporation (Parbhani Mahanagarpalika)",
+  guestImage: "/images/syed-iqbal.png",
+  overview: "In Episode #2 of The Asif Talks, host Syed Asif welcomes Hon. Mayor Syed Iqbal Syed Khwaja, Mayor of Parbhani Municipal Corporation before an auditorium of 200+ engineering undergraduates, civic innovators, and youth leaders. An exclusive live audience dialogue exploring urban city development, Smart City initiatives, civic youth engagement, and public service leadership.",
   themes: [
-    { title: "District Governance & Ground Realities", desc: "Public administration decision-making and civic management during high-stakes challenges." },
-    { title: "Technology & E-Governance", desc: "How digital infrastructure and IT automation modernize public service delivery." },
-    { title: "Breaking the Regional Gap", desc: "Actionable strategies for Tier-2 & Tier-3 students to build competitive national strength." },
-    { title: "Civil Services Blueprint", desc: "Mental resilience, strategic discipline, and analytical mindset needed for UPSC & MPSC exams." }
+    { title: "Local Governance & Civic Leadership", desc: "Mayoral administration, municipal council operations, and urban governance roadmaps." },
+    { title: "Urban Infrastructure & City Projects", desc: "Modernizing city roads, drainage systems, water distribution, and civic infrastructure." },
+    { title: "Smart City & Tech Integration", desc: "IT automation, digital civic grievance systems, and e-governance in Parbhani." },
+    { title: "Youth, Health & Public Spaces", desc: "Developing city parks, sports complexes, public libraries, and youth recreational centers." },
+    { title: "Civic Responsibility & Student Engagement", desc: "How engineering students and youth can actively participate in city transformation." }
   ],
   venue: "Dr. A.P.J. Abdul Kalam Auditorium, SSIEMS Parbhani",
   venueMapUrl: "https://maps.app.goo.gl/UjZkHVEQpabCZZuTA",
+  registrationUrl: "https://syedasif7.github.io/The-Asif-Talks-Registration-Form/",
   production: "4K Multi-Camera Cinema Array with High-Fidelity Audio Mastering"
 };
+
+const pastEpisodes = [
+  {
+    episode: "Episode #1",
+    title: "Public Governance, Digital Administration & The Youth Mindset",
+    guest: "Shri Sanjaysinh Chavan (IAS)",
+    role: "District Collector & DM, Parbhani",
+    date: "August 31, 2026",
+    status: "Concluded · Video Coming Soon",
+    image: "/images/sanjaysinh-chavan.jpg",
+    youtubeUrl: "https://www.youtube.com/@TheAsifTalks"
+  }
+];
 
 const hostProfile = {
   name: "Syed Asif Syed Gaffar",
@@ -126,7 +157,7 @@ const hostProfile = {
 };
 
 const productionTeam = [
-  { role: "Faculty Advisor", name: "Prof. Shelke S.B.", icon: BookOpen, color: "text-blue-300" },
+  { role: "Faculty Coordinator", name: "Prof. Snehal Shelke (Prof. Shelke S.B.)", icon: BookOpen, color: "text-blue-300" },
   { role: "Vice President & Floor Direction", name: "Gayatri Shriram Bharose", icon: UsersRound, color: "text-pink-300" },
   { role: "Secretary & Documentation", name: "Sandip Balasaheb Ayewar", icon: ScrollText, color: "text-emerald-300" },
   { role: "Treasurer & Registration Head", name: "Arpita Mukund Jondhale", icon: Shield, color: "text-purple-300" },
@@ -141,10 +172,10 @@ const TheAsifTalks = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-slate-200 custom-scrollbar">
       <Helmet>
-        <title>The Asif Talks | Leadership & Public Governance Talk Series</title>
+        <title>The Asif Talks · Episode #2 with Hon. Mayor Syed Iqbal Syed Khwaja</title>
         <meta
           name="description"
-          content="The Asif Talks — a flagship studio-grade leadership talk series hosted by Syed Asif. Inaugural Episode featuring District Collector Shri Sanjaysinh Chavan (IAS) on August 31, 2026."
+          content="The Asif Talks — Live Episode #2 featuring Hon. Mayor Syed Iqbal Syed Khwaja, Mayor of Parbhani Municipal Corporation on Thursday, September 3, 2026 at SSIEMS Parbhani."
         />
         <link rel="canonical" href="https://www.dcode.club/the-asif-talks" />
 
@@ -152,22 +183,22 @@ const TheAsifTalks = () => {
         <meta property="og:type" content="video.episode" />
         <meta property="og:site_name" content="The Asif Talks · DCode Developers Club" />
         <meta property="og:url" content="https://www.dcode.club/the-asif-talks" />
-        <meta property="og:title" content="The Asif Talks · Season 01 Premiere with Shri Sanjaysinh Chavan (IAS)" />
-        <meta property="og:description" content="A flagship studio dialogue series hosted by Syed Asif. Connecting students & innovators with top administrative leaders and founders. Aug 31, 2026 at SSIEMS Parbhani." />
-        <meta property="og:image" content="https://www.dcode.club/images/the-asif-talks-logo.jpg" />
-        <meta property="og:image:secure_url" content="https://www.dcode.club/images/the-asif-talks-logo.jpg" />
-        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:title" content="The Asif Talks · Episode #2 with Hon. Mayor Syed Iqbal Syed Khwaja" />
+        <meta property="og:description" content="Live audience session with Mayor Syed Iqbal Syed Khwaja on urban governance, Smart City roadmaps, and youth leadership. Sep 3, 2026 at SSIEMS Parbhani." />
+        <meta property="og:image" content="https://www.dcode.club/images/syed-iqbal.png" />
+        <meta property="og:image:secure_url" content="https://www.dcode.club/images/syed-iqbal.png" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="The Asif Talks Official Key Artwork" />
+        <meta property="og:image:alt" content="The Asif Talks Episode 2 featuring Hon. Mayor Syed Iqbal Syed Khwaja" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.dcode.club/the-asif-talks" />
-        <meta name="twitter:title" content="The Asif Talks · Season 01 Premiere" />
-        <meta name="twitter:description" content="Studio dialogue series hosted by Syed Asif featuring Parbhani Collector Shri Sanjaysinh Chavan (IAS)." />
-        <meta name="twitter:image" content="https://www.dcode.club/images/the-asif-talks-logo.jpg" />
+        <meta name="twitter:title" content="The Asif Talks · Episode #2 with Hon. Mayor Syed Iqbal Syed Khwaja" />
+        <meta name="twitter:description" content="Live studio dialogue featuring Parbhani Mayor Hon. Syed Iqbal Syed Khwaja on Sep 3, 2026." />
+        <meta name="twitter:image" content="https://www.dcode.club/images/syed-iqbal.png" />
         <meta name="twitter:creator" content="@TheAsifTalks" />
       </Helmet>
 
@@ -185,13 +216,13 @@ const TheAsifTalks = () => {
             <span>Back to Home</span>
           </Link>
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-slate-400">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full font-semibold text-indigo-300">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-500/10 border border-indigo-500/25 rounded-full font-bold text-indigo-300">
               <Calendar className="w-3.5 h-3.5 text-indigo-400" />
-              August 31, 2026
+              Thursday, September 3, 2026
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/10 border border-emerald-500/25 rounded-full font-bold text-emerald-300">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-              Recorded Live · Premiere Concluded
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-pink-500/10 border border-pink-500/20 rounded-full font-semibold text-pink-300">
+              <Clock className="w-3.5 h-3.5 text-pink-400" />
+              12:30 PM Sharp
             </span>
             <span className="hidden sm:inline text-slate-600">•</span>
             <span className="text-slate-400 font-medium">Dr. A.P.J. Abdul Kalam Auditorium</span>
@@ -208,10 +239,10 @@ const TheAsifTalks = () => {
             <div className="lg:col-span-7 xl:col-span-8">
               <div className="inline-flex items-center gap-2.5 mb-4 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-300 text-xs font-bold shadow-inner">
                 <AudioWaveform size="xs" barColor="bg-gradient-to-t from-indigo-400 via-pink-400 to-amber-300" />
-                <span>Studio Leadership Talk Series</span>
+                <span>Season 01 · Live Episode #2</span>
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500" />
                 </span>
               </div>
 
@@ -219,7 +250,7 @@ const TheAsifTalks = () => {
                 The Asif Talks
               </h1>
               <p className="mt-2 text-xl sm:text-2xl font-extrabold tracking-tight text-indigo-300">
-                Bridging Regional Ambition with National Leadership
+                Episode #2 · Hon. Mayor Syed Iqbal Syed Khwaja
               </p>
               <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
                 A studio-grade leadership talk series connecting ambitious students and innovators from Tier-2 &amp; Tier-3 regions with top administrative leaders, public officials, and founders.
@@ -228,8 +259,8 @@ const TheAsifTalks = () => {
               {/* Metrics */}
               <div className="mt-6 grid grid-cols-3 gap-3 max-w-lg">
                 <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-3.5 text-center sm:text-left">
-                  <p className="text-xl sm:text-2xl font-black text-white">300+</p>
-                  <p className="text-[11px] text-slate-400 font-medium mt-0.5 leading-tight">Live Audience</p>
+                  <p className="text-xl sm:text-2xl font-black text-white">200</p>
+                  <p className="text-[11px] text-slate-400 font-medium mt-0.5 leading-tight">Audience Seats</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-3.5 text-center sm:text-left">
                   <p className="text-xl sm:text-2xl font-black text-white">10k+</p>
@@ -245,20 +276,20 @@ const TheAsifTalks = () => {
               <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-gradient-to-r from-red-600 to-rose-600 text-white hover:shadow-red-500/25 hover:shadow-xl rounded-xl h-12 px-7 font-bold active:scale-[0.98] justify-center shadow-lg"
-                  onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
+                  className="w-full sm:w-auto bg-gradient-to-r from-indigo-500 via-indigo-600 to-ndc-blue text-white hover:shadow-indigo-500/25 hover:shadow-xl rounded-xl h-12 px-7 font-bold active:scale-[0.98] justify-center shadow-lg"
+                  onClick={() => window.open(episodeSpotlight.registrationUrl, "_blank")}
                 >
-                  <Youtube className="w-4 h-4 mr-2 text-white shrink-0" />
-                  <span>Subscribe on YouTube</span>
+                  <ClipboardList className="w-4 h-4 mr-2 text-indigo-200 shrink-0" />
+                  <span>Claim Free Audience Pass</span>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border-white/15 rounded-xl h-12 px-7 font-bold active:scale-[0.98] justify-center"
-                  onClick={() => window.open("https://www.instagram.com/theasiftalks", "_blank")}
+                  onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
                 >
-                  <Instagram className="w-4 h-4 mr-2 text-pink-400 shrink-0" />
-                  <span>Follow on Instagram</span>
+                  <Youtube className="w-4 h-4 mr-2 text-red-400 shrink-0" />
+                  <span>Subscribe on YouTube</span>
                 </Button>
               </div>
             </div>
@@ -318,14 +349,14 @@ const TheAsifTalks = () => {
           </div>
         </section>
 
-        {/* --- Episode 1 Spotlight --- */}
+        {/* --- Episode 2 Spotlight --- */}
         <section id="spotlight">
           <SectionHeader
-            badgeText="Recorded Live Studio Session"
+            badgeText="Live Studio Recording"
             badgeIcon={Radio}
-            titlePrefix="Episode #1"
+            titlePrefix="Episode #2"
             titleHighlight="Spotlight"
-            description="Inaugural administrative governance session recorded live with Parbhani District's highest public authority."
+            description="Live municipal leadership and urban governance session featuring the Hon. Mayor of Parbhani."
             centered
           />
 
@@ -357,7 +388,7 @@ const TheAsifTalks = () => {
 
             {/* Featured Guest Card */}
             <div className="p-6 sm:p-8 bg-gradient-to-r from-indigo-950/80 via-slate-900 to-slate-950 flex flex-col sm:flex-row items-center gap-6 border-b border-white/10">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-indigo-400/40 shadow-[0_0_30px_rgba(99,102,241,0.3)] shrink-0 bg-slate-950 ring-4 ring-white/15 flex items-center justify-center group">
+              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-indigo-400/40 shadow-[0_0_30px_rgba(99,102,241,0.3)] shrink-0 bg-slate-950 ring-4 ring-white/15 flex items-center justify-center group">
                 <img
                   src={getAssetPath(episodeSpotlight.guestImage)}
                   alt={episodeSpotlight.guest}
@@ -367,7 +398,7 @@ const TheAsifTalks = () => {
               </div>
               <div className="flex-1 text-center sm:text-left">
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-indigo-300 mb-1">
-                  Featured Guest
+                  Distinguished Guest
                 </p>
                 <h4 className="text-2xl sm:text-3xl font-black text-white leading-tight">
                   {episodeSpotlight.guest}
@@ -383,65 +414,130 @@ const TheAsifTalks = () => {
 
             {/* Discussion Themes Grid */}
             <div className="p-6 sm:p-8 space-y-4">
-              <h5 className="text-sm font-black uppercase tracking-wider text-slate-400">4 Key Discussion Themes</h5>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <h5 className="text-sm font-black uppercase tracking-wider text-slate-400">5 Key Discussion Themes</h5>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {episodeSpotlight.themes.map((th, i) => (
-                  <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                      <h6 className="font-bold text-white text-sm">{th.title}</h6>
+                  <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-4 flex flex-col justify-between hover:bg-white/[0.08] transition-colors">
+                    <div>
+                      <div className="flex items-center gap-2.5 mb-1.5">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <h6 className="font-bold text-white text-sm">{th.title}</h6>
+                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed pl-6.5">{th.desc}</p>
                     </div>
-                    <p className="text-xs text-slate-400 leading-relaxed pl-6.5">{th.desc}</p>
                   </div>
                 ))}
               </div>
 
-              {/* Venue & Location Bar */}
+              {/* Venue, Claim Pass & Location Bar */}
               <div className="mt-6 pt-5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="flex items-start sm:items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-indigo-400" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-wider text-indigo-300">Official Premiere Venue &amp; Schedule</p>
+                    <p className="text-[10px] font-black uppercase tracking-wider text-indigo-300">Live Recording Venue &amp; Schedule</p>
                     <p className="text-sm font-bold text-white leading-snug">{episodeSpotlight.venue}</p>
-                    <p className="text-xs text-pink-300 font-semibold mt-0.5">Monday, August 31, 2026 · 12:30 PM – 1:30 PM</p>
+                    <p className="text-xs text-pink-300 font-semibold mt-0.5">Thursday, September 3, 2026 · 12:30 PM Sharp</p>
                     <p className="text-xs text-slate-400">Vasmat Road, Parbhani – 431401, Maharashtra</p>
                   </div>
                 </div>
-                <a
-                  href={episodeSpotlight.venueMapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/30 hover:border-indigo-400 text-xs font-bold text-indigo-200 hover:text-white transition-all shadow-md shrink-0 group"
-                >
-                  <MapPin className="w-4 h-4 text-indigo-400 group-hover:scale-110 transition-transform shrink-0" />
-                  <span>View Venue on Google Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-                </a>
+                <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+                  <Button
+                    size="sm"
+                    className="bg-gradient-to-r from-indigo-500 to-ndc-blue text-white rounded-xl h-10 px-4 font-bold shadow-md active:scale-[0.98]"
+                    onClick={() => window.open(episodeSpotlight.registrationUrl, "_blank")}
+                  >
+                    <ClipboardList className="w-3.5 h-3.5 mr-1.5" />
+                    <span>Claim Pass (200 Seats)</span>
+                  </Button>
+                  <a
+                    href={episodeSpotlight.venueMapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-slate-300 hover:text-white transition-all shrink-0"
+                  >
+                    <MapPin className="w-3.5 h-3.5 text-indigo-400" />
+                    <span>Google Maps</span>
+                    <ExternalLink className="w-3 h-3 opacity-70" />
+                  </a>
+                </div>
               </div>
             </div>
           </article>
         </section>
 
+        {/* --- Season 01 Archive / Past Episodes --- */}
+        <section id="archive">
+          <SectionHeader
+            badgeText="Season 01 Archive"
+            badgeIcon={Video}
+            titlePrefix="Past"
+            titleHighlight="Episodes"
+            description="Explore our growing library of studio dialogues with high-ranking public administrators and innovators."
+            centered
+          />
+
+          <div className="mt-8 grid md:grid-cols-2 gap-6">
+            {pastEpisodes.map((ep, i) => (
+              <article
+                key={i}
+                className="rounded-2xl border border-white/10 bg-slate-950/70 backdrop-blur-xl p-5 sm:p-6 hover:border-white/20 transition-all flex flex-col sm:flex-row gap-5 items-center justify-between"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/15 bg-slate-900 shrink-0">
+                    <img
+                      src={getAssetPath(ep.image)}
+                      alt={ep.guest}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div>
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-[10px] font-black uppercase tracking-wider mb-1">
+                      <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                      {ep.status}
+                    </span>
+                    <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
+                      {ep.episode}: {ep.guest}
+                    </h4>
+                    <p className="text-xs text-slate-400 mt-0.5">{ep.role}</p>
+                    <p className="text-[11px] text-slate-500 mt-1">Recorded {ep.date}</p>
+                  </div>
+                </div>
+
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border-white/10 rounded-xl font-bold text-xs shrink-0"
+                  onClick={() => window.open(ep.youtubeUrl, "_blank")}
+                >
+                  <Youtube className="w-3.5 h-3.5 mr-1.5 text-red-400" />
+                  <span>Watch on YouTube</span>
+                </Button>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* --- Institutional Alliance --- */}
         <section>
           <SectionHeader
-            badgeText="Alliances"
+            badgeText="Alliances & Sponsors"
             badgeIcon={Building2}
             titlePrefix="Institutional"
-            titleHighlight="Alliances"
-            description="Powered by a three-way collaboration between academia, student engineering, and industry innovation."
+            titleHighlight="Alliances &amp; Sponsors"
+            description="Powered by a multi-stakeholder collaboration between academia, student engineering, industry, and local patrons."
             centered
           />
-          <div className="mt-8 grid md:grid-cols-3 gap-5">
+          <div className="mt-8 grid md:grid-cols-3 lg:grid-cols-5 gap-4">
             {institutionalPartners.map((p, i) => (
               <article
                 key={i}
-                className="rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl p-5 hover:bg-white/[0.07] hover:border-white/20 transition-all flex flex-col justify-between group"
+                className="rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl p-4 hover:bg-white/[0.07] hover:border-white/20 transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <div className={`w-14 h-14 rounded-2xl ${p.bgClass} border border-white/10 flex items-center justify-center p-2 mb-4 shadow-lg group-hover:scale-105 transition-transform overflow-hidden`}>
+                  <div className={`w-12 h-12 rounded-xl ${p.bgClass} border border-white/10 flex items-center justify-center p-2 mb-3 shadow-lg group-hover:scale-105 transition-transform overflow-hidden`}>
                     <img
                       src={getAssetPath(p.logo)}
                       alt={p.name}
@@ -449,19 +545,19 @@ const TheAsifTalks = () => {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-indigo-300 mb-1">{p.role}</p>
-                  <h4 className="text-base font-extrabold text-white mb-1.5 leading-tight">{p.name}</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">{p.desc}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-indigo-300 mb-1">{p.role}</p>
+                  <h4 className="text-sm font-extrabold text-white mb-1 leading-tight">{p.name}</h4>
+                  <p className="text-[11px] text-slate-400 leading-relaxed">{p.desc}</p>
                   {"mapUrl" in p && p.mapUrl && (
                     <a
                       href={p.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-200 transition-colors mt-3"
+                      className="inline-flex items-center gap-1 text-[11px] font-semibold text-indigo-400 hover:text-indigo-200 transition-colors mt-2"
                     >
-                      <MapPin className="w-3.5 h-3.5" />
-                      <span>View on Google Maps</span>
-                      <ExternalLink className="w-3 h-3" />
+                      <MapPin className="w-3 h-3" />
+                      <span>View Map</span>
+                      <ExternalLink className="w-2.5 h-2.5" />
                     </a>
                   )}
                 </div>
@@ -540,34 +636,34 @@ const TheAsifTalks = () => {
           </div>
         </section>
 
-        {/* --- Season 01 Premiere Callout & Connectivity --- */}
+        {/* --- Episode 02 Live Callout & Registration --- */}
         <section className="space-y-6">
           <div className="rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-indigo-600 via-indigo-700 to-ndc-purple text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 shadow-2xl relative overflow-hidden border border-white/10">
             <div className="space-y-1">
               <p className="text-xs font-black uppercase tracking-[0.25em] text-indigo-200">
-                Season 01 Premiere Concluded
+                Live Studio Recording • Season 01
               </p>
               <h3 className="text-2xl sm:text-3xl font-black leading-tight">
-                Broadcast Coming Soon <span className="text-indigo-200 font-semibold text-lg sm:text-2xl">· Official 4K Release on YouTube</span>
+                Episode #2 Live Audience Passes Open <span className="text-indigo-200 font-semibold text-lg sm:text-2xl">· Sep 3, 2026 at 12:30 PM</span>
               </h3>
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-white text-indigo-950 hover:bg-slate-100 rounded-xl h-12 px-6 font-black shadow-xl shrink-0 active:scale-[0.98] justify-center"
-                onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
+                onClick={() => window.open(episodeSpotlight.registrationUrl, "_blank")}
               >
-                <Youtube className="w-4 h-4 mr-2 text-red-600 shrink-0" />
-                <span>Watch on YouTube</span>
+                <ClipboardList className="w-4 h-4 mr-2 text-indigo-700 shrink-0" />
+                <span>Claim Free Pass Now</span>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border-white/20 rounded-xl h-12 px-6 font-bold shrink-0 active:scale-[0.98] justify-center"
-                onClick={() => window.open("https://www.instagram.com/theasiftalks", "_blank")}
+                onClick={() => window.open("https://www.youtube.com/@TheAsifTalks", "_blank")}
               >
-                <Instagram className="w-4 h-4 mr-2 text-pink-300 shrink-0" />
-                <span>Instagram Highlights</span>
+                <Youtube className="w-4 h-4 mr-2 text-red-400 shrink-0" />
+                <span>YouTube Channel</span>
               </Button>
             </div>
           </div>

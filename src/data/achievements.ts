@@ -303,5 +303,54 @@ export const achievements: Achievement[] = [
       { name: "Syed Asif", role: "Student", email: "syedasif111005@gmail.com", phone: "8788740090" },
       { name: "Prof. Shelke S. B.", role: "Faculty", email: "snehal.shelke@cse.ssiems.in" }
     ]
+  },
+  {
+    id: 6,
+    category: "LEADERSHIP",
+    title: "The Asif Talks: Episode #1 Premiere",
+    description: "Inaugural studio leadership talk series featuring District Collector & DM Parbhani Shri Sanjaysinh Chavan (IAS).",
+    fullDescription: "On 31st August 2026, DCode Developers Club (DDSC) in association with SSIEMS Parbhani and Vertex Institute of Technology successfully premiered 'The Asif Talks' Season 01. Host Syed Asif hosted Parbhani District Collector Shri Sanjaysinh Chavan (IAS) before an auditorium of 250+ undergraduates and civil service aspirants. The high-caliber session explored public governance ground realities, IT & e-governance automation, strategies for regional engineering students to break national barriers, and an analytical blueprint for UPSC and MPSC examinations.",
+    images: [
+      "/images/sanjaysinh-chavan.jpg",
+      "/images/the-asif-talks-logo.jpg"
+    ],
+    icon: 'terminal',
+    stats: [
+      { label: "Guest", value: "IAS Collector", color: "indigo" },
+      { label: "Audience", value: "250+", color: "purple" },
+      { label: "Production", value: "4K Cinema", color: "pink" },
+      { label: "Status", value: "Concluded", color: "green" }
+    ],
+    highlight: "Episode #1 Premiere Concluded",
+    highlights: [
+      "Live 4K multi-camera studio recording at Dr. A.P.J. Abdul Kalam Auditorium",
+      "Keynote dialogue on district public administration and high-stakes governance",
+      "Actionable roadmap for Tier-2/Tier-3 engineering students competing nationally",
+      "Interactive Q&A session directly with District Collector Shri Sanjaysinh Chavan (IAS)"
+    ],
+    date: "31/08/2026",
+    location: "Dr. A.P.J. Abdul Kalam Auditorium, SSIEMS",
+    size: 'large',
+    teams: [
+      {
+        name: "Host & Production Direction",
+        members: ["Syed Asif", "Gayatri Bharose", "Sandip Ayewar", "Arpita Jondhale"],
+        project: "The Asif Talks Talk Series",
+        abstract: "Executive student leadership committee driving studio filming, audio mastering, and stage coordination."
+      },
+      {
+        name: "Technical & Cinema Crew",
+        members: ["Sanjivani Jadhav", "Siddi Yaseen Hussain", "Rushikesh Deshmukh", "Supriya Shahane", "Sarvadnya Kshirsagar"],
+        project: "4K Multi-Camera Array & Sound",
+        abstract: "Multi-angle camera operations, dynamic stage lighting, high-fidelity audio capture, and social media broadcasting."
+      }
+    ],
+    judges: [
+      { name: "Shri Sanjaysinh Chavan (IAS)", role: "Distinguished Guest", designation: "District Collector & District Magistrate, Parbhani" }
+    ],
+    coordinators: [
+      { name: "Syed Asif", role: "Student", email: "theasiftalks@gmail.com", phone: "8788740090" },
+      { name: "Prof. Shelke S. B.", role: "Faculty", email: "snehal.shelke@cse.ssiems.in" }
+    ]
   }
 ];
