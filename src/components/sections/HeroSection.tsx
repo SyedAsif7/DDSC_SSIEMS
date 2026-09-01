@@ -57,15 +57,6 @@ const flagshipSpotlight = {
       time: "12:30 PM",
       theme: "Urban Governance · Smart City",
       image: "/images/syed-iqbal.png"
-    },
-    {
-      id: "ep-01",
-      title: "Shri Sanjaysinh Chavan (IAS)",
-      role: "Collector & DM · Parbhani",
-      date: "Aug 31, 2026",
-      time: "Concluded",
-      theme: "Governance · Youth Mindset",
-      image: "/images/sanjaysinh-chavan.jpg"
     }
   ],
   meta: "Live Audience · YouTube · Instagram"
