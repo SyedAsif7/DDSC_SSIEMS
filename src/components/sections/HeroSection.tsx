@@ -48,14 +48,14 @@ const flagshipSpotlight = {
   status: "SEASON 01 · LIVE EPISODE #2",
   program: "The Asif Talks",
   tagline: "Civic Governance & Smart City Leadership",
-  duration: "Thu, Sep 3, 2026 · 12:30 PM",
+  duration: "Fri, Sep 4, 2026 · 11:00 AM (Reporting 10:30 AM)",
   episodes: [
     {
       id: "ep-02",
       title: "Hon. Mayor Syed Iqbal Syed Khwaja",
       role: "Mayor · Parbhani Municipal Corp.",
-      date: "Sep 3, 2026",
-      time: "12:30 PM",
+      date: "Sep 4, 2026",
+      time: "11:00 AM",
       theme: "Urban Governance · Smart City",
       image: "/images/syed-iqbal.png"
     }
@@ -127,9 +127,9 @@ const HeroSection = () => {
                 {/* Live Countdown Clock */}
                 <div className="pt-2.5 sm:pt-4 flex flex-col items-center md:items-start">
                   <CountdownTimer
-                    targetDate="2026-09-03T12:30:00+05:30"
+                    targetDate="2026-09-04T11:00:00+05:30"
                     size="sm"
-                    label="Live Episode #2 Countdown"
+                    label="Live Episode #2 • Sep 4, 11 AM (Reporting 10:30 AM)"
                     showBadge
                     className="items-center md:items-start"
                   />

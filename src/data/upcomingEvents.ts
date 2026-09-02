@@ -53,8 +53,8 @@ export const upcomingEvents: UpcomingEventItem[] = [
     icon: "podcast",
     categoryLabel: "Podcast · Live Leadership Dialogue",
     badge: "Episode #2 · Hon. Mayor Syed Iqbal",
-    date: "Thursday, September 3, 2026",
-    time: "12:30 PM Sharp",
+    date: "Friday, September 4, 2026",
+    time: "11:00 AM (Reporting Time: 10:30 AM Sharp)",
     venue: "Dr. A.P.J. Abdul Kalam Auditorium, SSIEMS Parbhani",
     venueMapUrl: "https://maps.app.goo.gl/UjZkHVEQpabCZZuTA",
     points: [

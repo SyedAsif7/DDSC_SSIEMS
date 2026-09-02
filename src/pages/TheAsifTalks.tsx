@@ -117,8 +117,8 @@ const institutionalPartners = [
 const episodeSpotlight = {
   badge: "SEASON 01 • LIVE EPISODE #2",
   title: "Local Governance, Urban Infrastructure & The Smart City Vision",
-  date: "Thursday, September 3, 2026",
-  time: "12:30 PM Sharp",
+  date: "Friday, September 4, 2026",
+  time: "11:00 AM (Reporting: 10:30 AM)",
   guest: "Hon. Mayor Syed Iqbal Syed Khwaja",
   guestRole: "Mayor · Parbhani Municipal Corporation (Parbhani Mahanagarpalika)",
   guestImage: "/images/syed-iqbal.png",
@@ -177,7 +177,7 @@ const TheAsifTalks = () => {
         <title>The Asif Talks · Episode #2 with Hon. Mayor Syed Iqbal Syed Khwaja</title>
         <meta
           name="description"
-          content="The Asif Talks — Live Episode #2 featuring Hon. Mayor Syed Iqbal Syed Khwaja, Mayor of Parbhani Municipal Corporation on Thursday, September 3, 2026 at SSIEMS Parbhani."
+          content="The Asif Talks — Live Episode #2 featuring Hon. Mayor Syed Iqbal Syed Khwaja, Mayor of Parbhani Municipal Corporation on Friday, September 4, 2026 at 11:00 AM (Reporting Time: 10:30 AM) at SSIEMS Parbhani."
         />
         <link rel="canonical" href="https://www.dcode.club/the-asif-talks" />
 
@@ -186,7 +186,7 @@ const TheAsifTalks = () => {
         <meta property="og:site_name" content="The Asif Talks · DCode Developers Club" />
         <meta property="og:url" content="https://www.dcode.club/the-asif-talks" />
         <meta property="og:title" content="The Asif Talks · Episode #2 with Hon. Mayor Syed Iqbal Syed Khwaja" />
-        <meta property="og:description" content="Live audience session with Mayor Syed Iqbal Syed Khwaja on urban governance, Smart City roadmaps, and youth leadership. Sep 3, 2026 at SSIEMS Parbhani." />
+        <meta property="og:description" content="Live audience session with Mayor Syed Iqbal Syed Khwaja on urban governance, Smart City roadmaps, and youth leadership. Sep 4, 2026 at 11:00 AM (Reporting 10:30 AM) at SSIEMS Parbhani." />
         <meta property="og:image" content="https://www.dcode.club/images/syed-iqbal.png" />
         <meta property="og:image:secure_url" content="https://www.dcode.club/images/syed-iqbal.png" />
         <meta property="og:image:type" content="image/png" />
@@ -199,7 +199,7 @@ const TheAsifTalks = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.dcode.club/the-asif-talks" />
         <meta name="twitter:title" content="The Asif Talks · Episode #2 with Hon. Mayor Syed Iqbal Syed Khwaja" />
-        <meta name="twitter:description" content="Live studio dialogue featuring Parbhani Mayor Hon. Syed Iqbal Syed Khwaja on Sep 3, 2026." />
+        <meta name="twitter:description" content="Live studio dialogue featuring Parbhani Mayor Hon. Syed Iqbal Syed Khwaja on Sep 4, 2026 at 11:00 AM (Reporting 10:30 AM)." />
         <meta name="twitter:image" content="https://www.dcode.club/images/syed-iqbal.png" />
         <meta name="twitter:creator" content="@TheAsifTalks" />
       </Helmet>
@@ -220,11 +220,11 @@ const TheAsifTalks = () => {
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-slate-400">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-500/10 border border-indigo-500/25 rounded-full font-bold text-indigo-300">
               <Calendar className="w-3.5 h-3.5 text-indigo-400" />
-              Thursday, September 3, 2026
+              Friday, September 4, 2026
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-pink-500/10 border border-pink-500/20 rounded-full font-semibold text-pink-300">
               <Clock className="w-3.5 h-3.5 text-pink-400" />
-              12:30 PM Sharp
+              11:00 AM · Reporting 10:30 AM
             </span>
             <span className="hidden sm:inline text-slate-600">•</span>
             <span className="text-slate-400 font-medium">Dr. A.P.J. Abdul Kalam Auditorium</span>
@@ -277,9 +277,9 @@ const TheAsifTalks = () => {
               {/* Live Countdown Timer */}
               <div className="mt-6 flex flex-col items-center sm:items-start">
                 <CountdownTimer
-                  targetDate="2026-09-03T12:30:00+05:30"
+                  targetDate="2026-09-04T11:00:00+05:30"
                   size="sm"
-                  label="Live Episode #2 Premiere Countdown"
+                  label="Live Episode #2 Countdown · Sep 4, 11 AM (Reporting 10:30 AM)"
                   showBadge
                   className="items-center sm:items-start"
                 />
@@ -451,7 +451,7 @@ const TheAsifTalks = () => {
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-wider text-indigo-300">Live Recording Venue &amp; Schedule</p>
                     <p className="text-sm font-bold text-white leading-snug">{episodeSpotlight.venue}</p>
-                    <p className="text-xs text-pink-300 font-semibold mt-0.5">Thursday, September 3, 2026 · 12:30 PM Sharp</p>
+                    <p className="text-xs text-pink-300 font-semibold mt-0.5">Friday, September 4, 2026 · 11:00 AM (Reporting Time: 10:30 AM Sharp)</p>
                     <p className="text-xs text-slate-400">Vasmat Road, Parbhani – 431401, Maharashtra</p>
                   </div>
                 </div>
@@ -657,7 +657,7 @@ const TheAsifTalks = () => {
                 Live Studio Recording • Season 01
               </p>
               <h3 className="text-2xl sm:text-3xl font-black leading-tight">
-                Episode #2 Live Audience Passes Open <span className="text-indigo-200 font-semibold text-lg sm:text-2xl">· Sep 3, 2026 at 12:30 PM</span>
+                Episode #2 Live Audience Passes Open <span className="text-indigo-200 font-semibold text-lg sm:text-2xl">· Sep 4, 2026 at 11:00 AM (Reporting 10:30 AM)</span>
               </h3>
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
